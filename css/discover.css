@@ -1,0 +1,1057 @@
+html, body{
+    scroll-behavior: smooth;
+}
+body {
+    /* font-family:monospace, Georgia, 'Times New Roman', Times, serif; */
+    font-family: 'Alice', serif;
+    cursor: url('../images/circle24.png'), auto;	
+    overflow-x: hidden;
+    box-sizing: border-box;  
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transition: opacity 3s;
+    -webkit-transition: opacity 3s; /* Safari */
+
+}
+p{
+    font-size:15%;
+    color:black;
+}
+a{
+    text-decoration: none;
+    color:rgb(8, 6, 6);
+    padding:10px;
+    }
+/*SCROLLBAR*/
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    /* background: linear-gradient(0deg, #ff0000, #fffb00,#ff0000); */
+    background: #fa4c4c; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ff0000; 
+
+}
+/*SIDE NAV BAR*/
+#navLinks{
+    position:absolute;
+    z-index: 99999;
+    font-size:1.3vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+  
+    position: fixed;
+    width: 13vw;
+    height: 2.5vw;
+    left: 100%;
+    top: 50%;                
+   
+    transform-origin: 0% 0%;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg) translateX(-50%);
+  
+    padding:10px 30px 10px 30px;
+    background-color: transparent;
+    /* border: 0.5px solid rgb(243, 243, 243); */    
+    color:white;
+    text-align: center;
+}
+#navLinks a{
+    color:rgb(255, 255, 255);
+}
+#navLinks a:hover{
+    cursor: pointer;
+  }
+.homebtn, .scroll{
+    display: flex;   
+  }
+.scroll img{
+    width:1.5vw;
+  }
+.homebtn img{
+    width:1.9vw;
+  }
+.scroll{
+    background-color: transparent;
+    border:none;
+}
+.expbtn{
+    text-shadow: rgb(0, 0, 0) 1px 0 10px;
+}
+
+#navLinks:hover{
+    background-color: rgb(252, 249, 249);
+    opacity:0.9;
+}
+    
+#navLinks:hover > a{
+    color: black;
+}
+
+.homebtn:hover{
+    background-color: rgba(0, 0, 0, 0.308)
+}
+#navLinks:hover > .expbtn:hover{
+    color: rgb(194, 64, 12);
+    text-shadow: #FC0 1px 0 10px;
+}
+.scroll:hover{
+    cursor:pointer;
+    background-color: #FC0;
+}
+.previous:hover {
+    cursor:pointer;
+}
+
+/*LANDING SECTION - HISTORY OF SYNAESTHESIA*/
+.hero{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    /* background-color: #fefefe;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='152' height='152' viewBox='0 0 152 152'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='temple' fill='%23b70b00' fill-opacity='0.26'%3E%3Cpath d='M152 150v2H0v-2h28v-8H8v-20H0v-2h8V80h42v20h20v42H30v8h90v-8H80v-42h20V80h42v40h8V30h-8v40h-42V50H80V8h40V0h2v8h20v20h8V0h2v150zm-2 0v-28h-8v20h-20v8h28zM82 30v18h18V30H82zm20 18h20v20h18V30h-20V10H82v18h20v20zm0 2v18h18V50h-18zm20-22h18V10h-18v18zm-54 92v-18H50v18h18zm-20-18H28V82H10v38h20v20h38v-18H48v-20zm0-2V82H30v18h18zm-20 22H10v18h18v-18zm54 0v18h38v-20h20V82h-18v20h-20v20H82zm18-20H82v18h18v-18zm2-2h18V82h-18v18zm20 40v-18h18v18h-18zM30 0h-2v8H8v20H0v2h8v40h42V50h20V8H30V0zm20 48h18V30H50v18zm18-20H48v20H28v20H10V30h20V10h38v18zM30 50h18v18H30V50zm-2-40H10v18h18V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); */
+}
+#background-video-landing{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:85vw;
+    gap:20px;
+}
+.hero h1{
+    /* color:#8a0000; */
+    background: linear-gradient(45deg, #ff0000, #ff4800, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 10px transparent;
+    font-size:7vw;
+    text-align: center;
+    padding:20px;
+    margin: -5px;
+    /* width:85vw; */
+    /* font-family: 'Lilita One', cursive; */
+    font-family: 'Staatliches', cursive;
+    font-size:8vw;
+    /* text-shadow: rgb(0, 0, 0) 1px 0 10px; */
+}
+/* #whatisSyn {
+    font-size:8vw;
+    margin-bottom: 350px;
+    color:yellow;
+} */
+#whatisSyn:hover, #historyof:hover{
+    cursor:pointer;
+    color:white;
+}
+
+/*SECTION 1*/
+#section1 p{
+    font-size: 1.5vw;
+    padding:5px;
+    color:black;
+    /* background-color: rgb(255, 255, 255); */
+    margin:0;
+}
+#section1 a:hover{
+    text-shadow: #FC0 1px 0 10px;
+}
+#scroll-down{
+    position: absolute;
+    z-index: 100;
+    display:flex;
+    /* background-color: rgba(253, 166, 166, 0.822);
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;     */
+    /* text-align: center; */
+    width:50px;
+    height:50px;
+    font-size: 2vw;
+    top:90vh;
+    animation-name: scroll;
+    animation-duration: 1s;
+    animation-direction: alternate-reverse;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes scroll {
+    from {top:90vh;}
+    to {top:88vh;}
+}
+/*ALL PUSHIN LAYERS*/
+.pushin-layer {
+    width: 100vw;
+    height: 100vh;
+    /* position: absolute; */
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color:rgb(255, 255, 255);
+}
+
+/*WHAT IS SYNAESTHESIA SECTION*/
+.whatis{
+    background: linear-gradient(55deg, #0fb8ad 0%, #1fc8db 51%, #c44b06 85%);
+}
+.whatis h1{
+    color:rgb(0, 0, 0);
+    font-size: 5em;
+ }
+ /*DEFINITION OF SYNAESTHESIA*/
+.def{
+    text-align: center;
+    background-color: #ffee00;
+}
+.def h1{    
+    background-color: white;
+    padding:5px;
+    color:black;
+}
+/*SYNAESTHESIA IS... SECTION*/
+.add{
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color:  #ffee00;
+
+    line-height: 0.65;
+    flex-direction: column;
+    gap:10vh;
+   
+}
+.add .flex{
+    /* justify-content: flex-end; */
+    align-items: flex-end;
+    /* flex-direction: row; */
+    /* gap:3vw; */
+    text-align: left;
+}
+.add h2{
+    font-size: 2vw;
+    color:#000000;
+    margin:0;
+    margin-bottom:10px;
+    /* transform: rotate(-90deg);
+    margin-right: -150px; */
+}
+.add h3{
+    font-size: 7vw;
+    margin:0;
+    color: #fdfdfd;
+   
+}
+.add h3:hover{
+    /* color:red; */
+    animation: glow 1s ease-in-out infinite alternate;
+}
+@keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+
+.add #addDescription{
+    font-size: 1.7em;
+    line-height: 1;
+    text-align: end;
+    margin-top: 10vh;
+    background-color: transparent;
+    width:40vw;
+    color:#000000;
+}
+/*SHAPES OVERLAY SECTION*/
+.senses{
+    background-color: transparent;
+}
+#circle{
+    position:absolute; 
+    width: 100px;
+    height: 100px;
+    background: red;
+    border-radius: 50%;
+    filter: blur(0.5rem);
+    /* visibility:hidden; */
+    left:20vw;
+    top:20vh;
+  }
+#square{
+    position:absolute; 
+    width: 80px;
+    height: 80px;
+    background: rgb(180, 17, 255);
+    left:70vw;
+    top:20vh;
+}
+#spiral{
+    position:absolute; 
+    width: 50px;
+    left:50vw;
+    /* top:30vh; */
+}
+#spiral2{
+    position:absolute; 
+    width: 50px;
+    left:80vw;
+    top:30vh;
+}
+#spiral3{
+    position:absolute; 
+    width: 50px;
+    left:10vw;
+    top:30vh;
+}
+/*FACTS ABOUT SYNAESTHESIA*/
+.alltypes{
+    background-color: rgb(37, 241, 173);
+}
+.alltypes p {
+    font-size: 1em; 
+    width:50vw;
+    line-height: 1.4;
+}
+.bold{
+    font-weight:bold;
+}
+
+
+/*4% OF WORLD POPULATION*/
+.percent{
+    background-color: #1a2a6c;
+}
+.percent p{
+    font-size: 1em;
+}
+.percent h1{
+    color:rgb(248, 248, 248);
+    text-shadow: rgb(255, 0, 221) 1px 0 10px;
+    /* position:absolute; */
+}
+.percentdiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.dottedcircle{
+    position:absolute; 
+    width: 500px;
+    height: 500px;
+    background: transparent;
+    border: 2px dotted rgb(255, 255, 255);
+    border-radius: 50%;
+    
+    /* left:20vw;
+    top:20vh; */
+}
+
+/*VIDEO SECTION*/
+
+.video{
+    background-color: #008bba;
+    flex-direction: column;
+}
+
+/* A BRIEF HISTORY OF SYNAESTHESIA */
+.brief{
+    background-color: #8d3f00;
+    background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); 
+}
+
+/* 1812 */
+.yearone{
+    background-color: rgb(0, 0, 0);   
+    /* background-image: url('../images/paper.jpg'); */
+    /* background-repeat:round; */
+    /* background-position: center; */
+    flex-direction: column; 
+}
+.yearone p{
+    color:rgb(255, 255, 255);
+    font-size: 20em; 
+}
+.yearone #smaller{
+    color:rgb(255, 255, 255);
+    font-size: 1.5em;
+    width:50vw;
+    text-align: center;
+    position: absolute;
+    bottom:20%;
+}
+
+/*SACHS'S THESIS*/
+.white{
+    background-color: rgb(255, 255, 255);
+    color:#000000;
+    text-align: center;
+}
+.white img{
+    width:40vw;
+}
+.white figcaption{
+    padding:10px;
+    font-family: 'PT Serif', serif;
+    background-color: #ffffff;
+}
+/*SACHS NUMBER LINE*/
+.sachsnumberContainer{
+    background-color: #850000;
+    overscroll-behavior: none;
+    width: 700vw;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+div.sachsNumbers{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    height: 100vh;  
+    font-family: 'Poller One', cursive;
+}
+.sachsNumbers p{
+    font-size: 15em;
+    color:white;
+    margin: 0;
+}
+#sachnumberdescription{
+    font-size: 2em;
+    padding:30px;
+}
+.sachsNumbers.para{
+    background-color: #850000;
+    color:white;
+    width: 100vw;
+}
+.sachsNumbers.one{
+    background-color: #000000;
+    color:white;
+}
+.sachsNumbers.two{
+    background-color: #ffffff;
+    color:rgb(0, 0, 0);
+}
+.sachsNumbers.two .sachtwo{    
+    color:rgb(8, 5, 5);
+}
+.sachsNumbers.three{
+    background-color: #0EA65C;
+}
+.sachsNumbers.three p{
+    color:#B2BEB5;
+}
+.sachsNumbers.four{
+    background-color: #34D5E3;
+}
+.sachsNumbers.four p{
+    color:#E34234;
+}
+.sachsNumbers.five{
+    background-color: #0800FF;
+}
+.sachsNumbers.five p{
+    color:#F7FF00;
+}
+.sachsNumbers.six{
+    background-color: #dfee9b;    
+}
+.sachsNumbers.six p{
+    color:#4B0082;
+}
+.sachsNumbers.seven{
+    background-color: #38be03;
+}
+.sachsNumbers.seven p{
+    color:#37374d;
+}
+.sachsNumbers.eight{
+    background-color: #00ba9b;
+}
+.sachsNumbers.eight p{
+    color:#5d432c;
+}
+.sachsNumbers.nine{
+    background-color: #96f78b;
+}
+.sachsNumbers.nine p{
+    color:#095E00;
+}
+.sachsNumbers.ten{
+    background-color: #38be03;
+}
+.sachsNumbers.ten p{
+    color:#F7FFBE;
+}
+.sachsNumbers.one .numberdesc{
+    font-size: 2em;}
+
+.sachsNumbers.two .numberdesc{
+    color:rgb(0, 0, 0);
+    font-size: 2em;
+}
+.sachsNumbers.three .numberdesc{
+    font-size: 2em;
+}
+.sachsNumbers.four .numberdesc{
+    font-size: 2em;
+}
+.sachsNumbers.five .numberdesc{
+    font-size: 2em;
+}
+.sachsNumbers.six .numberdesc{
+    font-size: 2em;
+}
+.sachsNumbers.seven .numberdesc{
+    font-size: 2em;
+}
+.sachsNumbers.eight .numberdesc{
+    font-size: 2em;
+}
+.sachsNumbers.nine .numberdesc{
+    font-size: 2em;
+}
+.sachsNumbers.ten .numberdesc{
+    font-size: 2em;
+}
+
+/*OTHER TYPES DESCRIBED BY SACHS*/
+#OtherSachs{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    gap:2vh;
+    background-color: #ffeaea;
+    /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E"); */
+}
+#OtherSachs h1{
+    margin:0;
+}
+#OtherSachs p{
+    font-size: 1em;
+}
+#cardContainer{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:10vw;
+    text-align: center;
+}
+.cards{
+    display:flex;
+    gap:10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:20vw;
+    height:25vw;
+    background-color: transparent;
+    /* border: 1px solid rgb(0, 0, 0); */
+    /* box-shadow: 5px 5px 50px rgba(128, 128, 128, 0.658);
+    border-radius:5px; */
+}
+/* .cards:hover{
+    cursor: pointer;
+} */
+.cards img{
+    width:20vw;
+}
+
+#curvetext{
+    position: absolute;
+    font-size: 0.5em;
+}
+
+/*ALL VERTICAL SCROLL SECTIONS*/
+.verticalScroll{
+    width: 100vw;
+    height: 100vh;
+    /* position: absolute; */
+    display:flex;
+    align-items: center;
+    justify-content: center;;
+}
+
+/* 1948 */
+.verticalScroll.first{
+    background-color: #000000;
+}
+.image{
+    position: absolute;
+    z-index:0;
+}
+#x1948{ 
+    padding:20px;
+    font-size:10em;
+    border-radius: 55px;;
+    color:#ffffff;
+    position: absolute;
+}
+.firework{
+    width: 40vw;
+    position: absolute;
+    animation-name: example ;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes example{
+    from {transform: scale(1);}
+    to {transform: scale(1.1);}
+}
+
+
+.hyper{
+    flex-direction: column;
+    /* background: url('../videos/pexels_ID_4182910.mp4'); */
+    /* background-size: auto; */
+    /* background-size: cover; */
+    /* background: #1a2a6c;  /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); 
+    
+    background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);  */
+    
+}
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+.hyper p{
+    color:white;
+    font-weight: bold;
+    font-size: 2vw;
+}
+#cornaz{
+     font-size: 1.2vw;
+}
+#cite{
+    /* font-size: 1vw; */
+    text-align: center;
+}
+.flower img{
+    width:100vw;
+    text-align: center;
+  
+}
+
+
+#phonopsie{
+    color:rgb(0, 0, 0);
+    border-radius: 85px;;
+    margin-top: 25vh;
+    background-color: rgb(255, 255, 255);
+    font-size: 290%;
+    /* width:50vw; */
+    padding:5px;
+    text-align: center;
+    position: absolute;   
+    
+}
+.nuss{
+    position: absolute;
+    width:20vw;
+}
+.nussbaumer{
+    background: url("../images/ocean.jpg");
+}
+
+.year{    
+    background-color: transparent;
+}
+.year p{
+    font-size: 20em;
+    /* font-family: 'Fraunces', serif; */
+    font-family: 'Rakkas', cursive;
+    color:rgb(177, 2, 40);
+}
+.lads{
+    background-color: rgb(255, 180, 180);
+    color:black; 
+    font-size: 185%;
+    
+}
+.eugen{
+    width:20vw;
+    border: 15px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    border-bottom: 40px solid rgb(255, 255, 255);
+}
+.lehmann{
+    width:19vw;
+    border: 15px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    border-bottom: 40px solid rgb(255, 255, 255);
+}
+.lads figcaption{
+    font-size: 85%;
+    font-family: 'Homemade Apple', cursive;
+}
+#secondary{
+    text-align: center;
+    font-size: 153%;
+    max-width:500px;
+}
+
+
+.types{
+    background-color: rgb(0, 0, 0);    
+}
+.types .mainp{
+    position:absolute;
+    font-size: 1.5vw;
+    margin-bottom:15%;
+    color:white;
+}
+
+.types .mainpara{
+    position:absolute;
+    font-size: 2vw;
+    margin-top:30%;
+    
+    color:white;
+}
+.types figure{
+    display: block;
+    margin:7%;
+}
+.types .first{
+    margin-left: -2.5%;
+}
+.types .hi{
+    color:white;
+    font-size: 2vw;
+    margin-bottom:-20%;
+
+ 
+}
+
+.types img{
+    width:10vw;
+}
+.types img:hover{
+    transform: scale(1.1);
+}
+
+.prevalance{
+    background-color: #000000;
+    flex-direction: column;
+}
+.prevalance p{
+    color:white;
+    font-size: 1.5em;
+    width:60vw;
+}
+
+
+/* .massiveImage {
+    height: 100vh;
+    width: 400vw;
+    background-size: cover;
+    background-position: center;
+
+  }
+  .massiveImage p{
+      color:white;
+   
+      font-size: 280%;
+  } */
+/*CONTAINER FOR HORIZONTAL SCROLL SECTIONS*/
+  .horizontalscroll{
+    overscroll-behavior: none;
+    width: 600%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+/*ALL PANELS IN HORIZONTAL SCROLL SECTION*/
+  .panels{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    font-size: 10em;
+    text-align: center;  
+    
+}
+.panels p{
+    color:white;
+}
+
+/*RISE OF COLOUR HEARING*/
+.last{
+    background: #1a2a6c;  
+    background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); 
+    font-size:4em;
+    /* width: 100%;
+    height: 100vh; */
+    /* display:flex;
+    align-items: center;
+    justify-content: center; */
+    color:rgb(255, 255, 255);
+   
+}
+.last h1{
+    width:80vw;
+    /* position: absolute; */
+}
+/*BOXES SECTION*/
+.panels.one{
+    background-color: #FC0;      
+}
+#squareContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    gap:30px;
+    /* width:90%; */
+}
+
+#swipe-right{
+    animation-name: scrollright;
+    animation-duration: 1s;
+    animation-direction: alternate-reverse;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+@keyframes scrollright {
+    from {margin-left:5%;}
+    to {margin-left:60%;}
+}
+/*ALL BOX CONTAINERS*/
+.container,  .container2, .container3, .container4 {
+    position: relative;
+    width:20vw;
+}
+/*ALL BOX IMAGES*/
+.geoimage, .geoimage2, .geoimage3, .geoimage4 {
+    display: block;
+    width:20vw;
+    height: auto;
+}
+/*ALL BOX P TAGS*/
+.absolute{
+    position: absolute;
+    font-size: 0.9em;
+}
+
+/*FIRST BOX*/
+.overlay2 {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    background-color: #d12a00;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    /* transition: .5s ease; */
+}
+
+.container2:hover .overlay2 {
+    width: 100%;
+    left: 0;
+    /* animation-name: fadeIn;
+    animation-duration: 1s; */
+
+}
+.text2 {
+    color: white;
+    font-size: 0.25em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    /* white-space: nowrap; */
+    width:80%;
+}
+.text2 p{
+    font-size: 0.5em;
+
+}
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+} 
+/*SECOND BOX*/ 
+.overlay3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #21a500;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    /* transition: .5s ease; */
+  }
+  
+.container3:hover .overlay3 {
+    width: 100%;
+    /* animation-name: fadeIn;
+    animation-duration: 1s; */
+  }
+  
+.text3 {
+    color: white;
+    font-size: 0.25em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    /* white-space: nowrap; */
+    width:80%;
+  }
+  .text3 p{
+    font-size: 0.5em;
+  }
+ /*THIRD BOX*/ 
+.overlay {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: #008bba;
+    overflow: hidden;
+    width: 100%;
+    height:0;
+    /* transition: .5s ease; */
+}  
+.container:hover .overlay {
+    bottom: 0;
+    height: 100%;
+}
+.text {
+    color: white;
+    font-size: 0.25em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width:80%;
+}
+.text p{
+    font-size: 0.5em;
+  }
+/*FOURTH BOX*/
+.overlay4 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ff00ea;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    /* transition: .5s ease; */
+  }
+  
+.container4:hover .overlay4 {
+    height: 100%;
+  }
+  
+.text4 {
+    color: white;
+    font-size: 0.25em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width:80%;
+  }
+.text4 p{
+    font-size: 0.5em;
+  }
+/*SECOND SECTION*/
+  .panels.two{
+    background-color: rgb(0, 160, 13);
+    
+}
+.panels.two p{
+    font-size: 0.5em;
+    color:black;
+}
+/*THIRD SECTION*/
+.panels.three{
+    background-color: rgb(1, 101, 158);
+}
+
+/*VERTICAL SCROLL SECTIONS*/
+.down, .down2{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    font-size: 10em;
+    background-color: #ffacff;
+  }
+.down2{
+      background-color: #21a500;
+  }
+
