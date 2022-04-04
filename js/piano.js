@@ -9,6 +9,11 @@ elem.addEventListener("click", function(e) {
 }, false);
 
 let yOffset;
+// document.body.addEventListener('keypress', function(e) {
+//   if (e.key === "Escape") {
+//     console.log('escape button pressed')
+//   }
+// });
 
 function toggleFullScreen(){
 
@@ -25,6 +30,7 @@ function toggleFullScreen(){
           pianosect.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
         }
     } else {
+     
       elem.src = "../images/full-screen.png";
         if (document.cancelFullScreen) {
             document.exitFullscreen();
@@ -37,9 +43,18 @@ function toggleFullScreen(){
             document.webkitCancelFullScreen();
             setTimeout(() => window.scrollTo(0, yOffset), 100);
         }
+
     }
 }
-
+ let pianoInfoBtn = document.querySelector('.pianoInfoIcon');
+ let pianoInfoBox = document.querySelector('.pianoInfoBox');
+ pianoInfoBtn.addEventListener('click', function(){  
+  if(pianoInfoBox.style.visibility === 'hidden'){
+    pianoInfoBox.style.visibility = 'visible';
+  }else{
+    pianoInfoBox.style.visibility = 'hidden';  
+  }
+ })
 
 //TOGGLE KEYBOARD HINTS
 let hintsbtn = document.querySelector('#togglehint');
@@ -50,7 +65,7 @@ hintsbtn.addEventListener('click', function(){
     if(hint.style.visibility === 'hidden'){
       hint.style.visibility = 'visible';
     }else{
-      hint.style.visibility = 'hidden';   
+      hint.style.visibility = 'hidden';  
     }
   })  
 });
@@ -115,6 +130,7 @@ let allKeys = document.querySelectorAll('.key');
 //KEYBOARD EVENTS- keyCode is deprecated - use event.key which will correspond to letters/symbols of keyboard itself
 
 window.addEventListener('keydown', event => {
+
     //select the audio element which has a data key equal to the key of the keyboard event 
     let audio = document.querySelector(`audio[data-key="${event.key}"]`); 
     //select the div which has a data key equal to the key of the keyboard event
