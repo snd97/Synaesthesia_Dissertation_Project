@@ -103,6 +103,23 @@ a{
     justify-content: center;
     align-items: center;
 }
+
+.animated{
+    animation-name: scaleUpscaleDown;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes scaleUpscaleDown{
+    0% {transform: scale(1);}
+    25% {transform: scale(1.1);} 
+    50% {transform: scale(1);}
+    75% {transform: scale(1.1);}
+    100% {transform: scale(1);
+    }
+}
 .glow-on-hover {
     font-size:1em;
     /* font-family: 'Unica One', cursive; */
