@@ -220,7 +220,7 @@ h1.experienceHeading{
 }
 #splash p{
   color:white;
-  width:55vw;
+  width:45vw;
   font-size: 1.2em;
   text-align: center;
   line-height: 1.8;
@@ -232,6 +232,34 @@ h1.experienceHeading{
   padding:5px 12px;
   border-radius: 50%;
   /* border:0.16em solid rgb(0, 0, 0); */
+}
+#showExtraInfo{
+  position: absolute;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.336);
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  text-align: center;
+  cursor:pointer;
+
+}
+#showExtraInfoBox{
+  background-color: rgba(255, 255, 255, 0.822);
+  padding:50px;
+}
+#showExtraInfoBox h2, #showExtraInfoBox p{
+  color:rgb(0, 0, 0);
+  width:45vw;
+}
+#showExtraInfoBox h2{
+  font-size: 3vw;
+  margin-bottom: 50px;
 }
 .enter {
   background-color:#f14e4e;
@@ -404,17 +432,62 @@ h1.experienceHeading{
   margin: 0;
   align-self: center;
 }
-/*FULLSCREEN OPTION*/
-.buttonFull{
-  width:40px;
+#optionsContainer{
+  right:2.5vw;
+  bottom: 1.5vw;
+  display:flex;
   position: absolute;
-  bottom:2vh;
-  right:2vw;  
+  align-items: center;
+  /* justify-content: center; */
+  gap:30px;
+
+}
+/*FULLSCREEN OPTION*/
+.buttonFull, .pianoInfoIcon{
   cursor: pointer;
 }
-.buttonFull:hover{
+.buttonFull:hover, .pianoInfoIcon:hover{
   transform: scale(1.2);
 }
+.pianoInfoBox {
+  /* visibility: hidden; */
+  bottom: 11vh;
+  right:5.5vw; 
+  width: 30vw;
+  height: 20vw;
+  border: 5px solid rgb(230, 226, 0);
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 40px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+  text-align: justify;
+  font-size: 1.2vw;
+}
+.pianoInfoBox img{
+  margin:20px;
+  width:15vw;
+}
+.pianoInfoBox h3{
+  font-weight: bold;
+  margin-bottom: 30px;
+  font-size: 1.4vw;
+}
+.pianoInfoBox:after {
+  content: " ";
+  position: absolute;
+  right: 30px;
+  bottom: -15px;
+  border-top: 15px solid rgb(230, 226, 0);
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-bottom: none;
+}
+
 
 .piano-keys {
   /* display: block; */
