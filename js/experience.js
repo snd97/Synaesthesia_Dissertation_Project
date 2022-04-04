@@ -1,315 +1,17 @@
-
-
-// let paperSound = new Howl({
-//   src: ["../sounds/Page_Turn.mp3"],
-//   preload: true, html5: true
-// });
-// let pickUpSound = new Howl({
-//   src: ["../sounds/pick-up.wav"],
-//   preload: true, html5: true
-// });
-// let paperSound;
-// let pickUpSound;
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  let overlay = document.querySelector('#splash');
-  let enterBtn = document.querySelector('.enter');
-  enterBtn.addEventListener('click', function (e) {
-    overlay.style.visibility = 'hidden';
-    // paperSound = new Howl({
-    //   src: ["../sounds/Page_Turn.mp3"],
-    //   preload: true, html5: true
-    // });
-    // pickUpSound = new Howl({
-    //   src: ["../sounds/pick-up.wav"],
-    //   preload: true, html5: true
-    // });
-    
-  });
-});
-
-
-
-
-let numbersVisible = false;
-let infoButton = document.querySelector('#infoButton');
-let infoBoxContainer = document.querySelector('.infoBoxContainer');
-let infoBox = document.querySelector('.infoBox');
-
-infoButton.addEventListener('click', function(){
-  showVariantInfo();
-})
-infoBoxContainer.addEventListener('click', function (){
-  infoBoxContainer.style.visibility = 'hidden';
-})
-
-function showVariantInfo(){
-  let infoHeading = document.getElementById('infoHeading');
-  let infoPara = document.getElementById('infoPara');
-  if(magazineUpClose.object3D.visible === true){
-    infoHeading.innerHTML = "Grapheme-colour Synaesthesia";
-    infoPara.innerHTML = "The most common type is grapheme-colour synaesthesia in which graphemes are experienced as having a consistent colour";
-  }else if(torus.object3D.visible === true){
-    infoHeading.innerHTML = "Time-Space Synaesthesia: Circular Calendar";
-    infoPara.innerHTML = "Time-space synaesthetes have 'conscious awareness of mappings between time and space (e.g., they may see months arranged in an ellipse, or years as columns or spirals)'";
-  }else if(numbersVisible === true){
-    infoHeading.innerHTML = "Sequence-Space Synaesthesia";
-    infoPara.innerHTML = "Sequence-space synaesthesia can cause any type of ordered sequence (days, months, playing cards, etc.) to be experienced visually, in the mind's eye or in the physical space around them.";
-  }else if (document.querySelector('a-videosphere').object3D.visible === true){
-    infoHeading.innerHTML = "Music-Color Synaesthesia";
-    infoPara.innerHTML = "Pan around the space and experience music in a whole new way...";
-  }
-  else{
-    infoHeading.innerHTML = "Immersive Environment Instructions";
-    infoPara.innerHTML = "Use your mouse to pan around and click on objects in the environment. Click the info button at the bottom right to find out more about the current Synaesthesia variant or enter fullscreen to fully immerse yourself in VR.";
-  }
-
-  infoBoxContainer.style.visibility = 'visible';
-}
-
-
-
-// let randomColor = Math.floor(Math.random()*16777215).toString(16);
-
-
-
-let allHotspots = document.querySelectorAll('.hotspots');
-let tooltip = "";
-let tooltipDiv = document.querySelector(".div-tooltip");
-
-let numbers = document.querySelectorAll('.numbers');
-let clock = document.querySelector('#clock');
-let magazine = document.querySelector('#magazine');
-let magazineUpClose = document.querySelector('#showMagazine');
-// const muteBtn = document.querySelector('.mute');
-let calendar = document.querySelector('#calendar');
-let torus = document.querySelector('#torus');
+// LANDING SECTION //
+let introSection = document.getElementById('1');
+let immersiveSection = document.getElementById('2');
+let pianoSection = document.getElementById('3');
+let hisbtn = document.querySelector('.hisbtn');
 let navLinks = document.getElementById('navLinks');
 
-
-let hisbtn = document.querySelector('.hisbtn');
-
-//change sky when icon is clicked
-
-// function toggleSky(){  
-//   if(document.querySelector('a-sky').getAttribute('src') === '#panorama2'){
-//     document.getElementById('sky').setAttribute('src', '#panorama');
-//     magazine.object3D.visible = true;
-//     magazine.classList.add('rayobjs');
-//     calendar.object3D.visible = true;
-//     calendar.classList.add('rayobjs');
-//     clock.object3D.visible = true;
-//     clock.classList.add('rayobjs');
-//   }else if(document.querySelector('a-sky').getAttribute('src') === '#panorama'){
-//     document.getElementById('sky').setAttribute('src', '#panorama2');
-//     magazine.object3D.visible = false;
-//     magazine.classList.remove('rayobjs');
-//     calendar.object3D.visible = false;
-//     calendar.classList.remove('rayobjs');
-//     clock.object3D.visible = false;
-//     clock.classList.remove('rayobjs');
-//   }
-// }
-//hideObjects function will hide all clickable objects while in thesecond room
-function hideObjects(){
-      magazine.object3D.visible = false;
-      magazine.classList.remove('rayobjs');
-      calendar.object3D.visible = false;
-      calendar.classList.remove('rayobjs');
-      clock.object3D.visible = false;
-      clock.classList.remove('rayobjs');
-}
-function showObjects(){
-    magazine.object3D.visible = true;
-    magazine.classList.add('rayobjs');
-    calendar.object3D.visible = true;
-    calendar.classList.add('rayobjs');
-    clock.object3D.visible = true;
-    clock.classList.add('rayobjs');
-}
-
-
-function toggleSkyVideo(){
- let sky = document.querySelector('a-sky');
- let videosphere = document.querySelector('a-videosphere');
- if(sky.object3D.visible === true){
-  sky.object3D.visible = false;
-  hideObjects();
-  videosphere.object3D.visible = true;
-  videosphere.components.material.data.src.currentTime = 0;
-  videosphere.components.material.material.map.image.play();    
- }else if(videosphere.object3D.visible === true){
-  videosphere.object3D.visible = false;
-  videosphere.components.material.material.map.image.pause();
-  sky.object3D.visible = true; 
-  showObjects(); 
-  
- }
- 
-}
-//SHOW TOOLTIPS ON HOVER
-allHotspots.forEach((spot) => {
-  spot.addEventListener('mouseenter', function(e){
-    displayTooltip(e, this);
-  });
-  spot.addEventListener('mouseleave', function(e){
-    tooltipDiv.style.visibility = "hidden";  
-  })
-});
-
-let audioPickup = document.querySelector('#pickup');
-// console.log(audioPickup);
-
-//CLOCK HOTSPOT
-clock.addEventListener('click', function(){
-  // pickUpSound.play();
-  numbers.forEach((number) =>{
-    if(number.getAttribute('visible') === false){  
-      numbersVisible = true;  
-      number.setAttribute('visible', true);
-    }else{
-      number.setAttribute('visible', false);
-      numbersVisible = false; 
-    }
-  }) 
-});
-
-//MAGAZINE HOTSPOT
-magazine.addEventListener('click', function() {  
-  if((magazineUpClose.object3D.visible) === false){
-     
-    // paperSound.play();
-    magazineUpClose.object3D.visible = true; 
-    magazineUpClose.classList.add('rayobjs');
-    magazine.object3D.visible = false;
-    magazine.classList.remove('rayobjs');   
-  }else{  
-    magazineUpClose.setAttribute('visible', false);
-    magazine.object3D.visible = true;
-    magazineUpClose.classList.remove('rayobjs');
-    magazine.classList.add('rayobjs');
-  }
-});
-
-magazineUpClose.addEventListener('click', function(){
-  
-  if(magazineUpClose.getAttribute('visible') === true){
-    // paperSound.play();
-    magazineUpClose.object3D.visible = false;
-    magazineUpClose.classList.remove('rayobjs');
-    magazine.object3D.visible = true;
-    magazine.classList.add('rayobjs');
-  }
-});
-//CALENDAR HOTSPOT
-calendar.addEventListener('click', function(){
-  
-  // pickUpSound.play();
-  if(torus.object3D.visible === false){      
-    torus.object3D.visible = true;
-    torus.classList.add('rayobjs');
-  }
-  else{
-    torus.object3D.visible = false;
-  }
-});
-
-torus.addEventListener('click', function(){
-  
-  // pickUpSound.play();
-  if(torus.object3D.visible === true){
-    torus.object3D.visible = false;
-    torus.classList.remove('rayobjs');
-  }
-  
-});
-
-
-//FUNCTIONS
-
-let displayTooltip = function(e, obj){
-  tooltip = obj.dataset.tooltip;
-
-  tooltipDiv.innerHTML = tooltip;
-  // tooltipDiv.setAttribute('value', tooltip);
-  // tooltipDiv.value = tooltip;
-  tooltipDiv.style.visibility = "visible";
-
-};
-
-let myEnterVRButton = document.getElementById('myEnterVRButton');
-let immersiveSection = document.getElementById('2');
-
-myEnterVRButton.addEventListener("click", function(e) {
-  e.preventDefault();
-  toggleFullScreen360()
-}, false);
-
-let yOffset360;
-
-function toggleFullScreen360(){
-
-  if ((document.fullScreenElement && document.fullScreenElement !== null) ||
-        (!document.mozFullScreen && !document.webkitIsFullScreen)) {
-          yOffset360 = window.pageYOffset;
-          console.log(yOffset);
-        if (immersiveSection.requestFullScreen) {
-          immersiveSection.requestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-        } else if (document.documentElement.mozRequestFullScreen) {
-          immersiveSection.mozRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-        } else if (document.documentElement.webkitRequestFullScreen) {
-          immersiveSection.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-        }
-    } else {
-        if (document.cancelFullScreen) {
-            document.exitFullscreen();
-            setTimeout(() => window.scrollTo(0, yOffset360), 100);
-            
-        } else if (document.mozCancelFullScreen) {
-            document.mozancelFullScreen();
-            setTimeout(() => window.scrollTo(0, yOffset360), 100);
-        } else if (document.webkitCancelFullScreen) {
-            document.webkitCancelFullScreen();
-            setTimeout(() => window.scrollTo(0, yOffset360), 100);
-        }
-    }
-}
-
-
-
-
-let pianoSection = document.getElementById('3');
-
-// let firsticon = document.querySelector('.imagetochange');
-// let secondicon = document.querySelector('.imagetochangetwo');
-// let home = document.querySelector('.homebtn');
-
-
-
-let introSection = document.getElementById('1');
 introSection.addEventListener('mouseover', event => {
   hisbtn.setAttribute('style', 'color:black');
-  
-  // console.log('mouse is over introSection');
-  // firsticon.src = "../images/home-fill.png";
-  // home.href = "../three.html";
-  // scrolldown.href = "#2"
 });
-
 
 immersiveSection.addEventListener('mouseover', event => {
   hisbtn.setAttribute('style', 'color:black');
-
-  // console.log('mouse is over immersiveSection');
-  // firsticon.src = "../images/icons_left.svg"
-  // home.href = "#1";
-  // scrolldown.href = "#3";
-  // firsticon.src = "../images/icons_left.svg"
 });
-
-
 //Change colour of Discover link when mouse is in the piano section, and then also if it's hovering over the nav links
 pianoSection.addEventListener('mouseover', event => {
   hisbtn.setAttribute('style', 'color:white');
@@ -318,18 +20,7 @@ pianoSection.addEventListener('mouseover', event => {
    });
  });
 
-//Check which section the user is in
-$.fn.isInViewport = function() {
-  var elementTop = $(this).offset().top;
-  var elementBottom = elementTop + $(this).outerHeight();
-
-  var viewportTop = $(window).scrollTop();
-  var viewportBottom = viewportTop + $(window).height();
-
-  return elementBottom > viewportTop && elementTop < viewportBottom;
-};
-
-//on a mousemove, resize or scroll event, check if user is in:
+ //on a mousemove, resize or scroll event, check if user is in:
 // #1 The landing section - if so, ensure arrow icon is correct and if clicked, scroll down to beginning of 360 section
 $(window).on('mousemove resize scroll', function() {
   if ($('.first').isInViewport()) {
@@ -368,3 +59,286 @@ $(window).on('mousemove resize scroll', function() {
   }
 });
 
+//360 IMMERSIVE SECTION
+
+// document.addEventListener('DOMContentLoaded', function() {
+let overlay = document.querySelector('#splash');
+let enterBtn = document.querySelector('.enter');
+enterBtn.addEventListener('click', function (e) {
+  overlay.style.visibility = 'hidden';
+  });
+// });
+
+let infoButton = document.querySelector('#infoButton');
+let infoBoxContainer = document.querySelector('.infoBoxContainer');
+let infoBox = document.querySelector('.infoBox');
+
+let audioPickup = document.querySelector('#pickup');
+
+let allHotspots = document.querySelectorAll('.hotspots');
+let tooltip = "";
+let tooltipDiv = document.querySelector(".div-tooltip");
+
+let numbers = document.querySelectorAll('.numbers');
+let allNumbers = document.getElementById('allNumbers');
+
+let clock = document.querySelector('#clock');
+let magazine = document.querySelector('#magazine');
+let magazineUpClose = document.querySelector('#showMagazine');
+let calendar = document.querySelector('#calendar');
+let torus = document.querySelector('#torus');
+
+let whatsthis = document.getElementById('whatsthis');
+let showExtraInfo = document.querySelector('#showExtraInfo');
+let myEnterVRButton = document.getElementById('myEnterVRButton');
+let yOffset360;
+
+// EVENT LISTENERS //
+
+//Show Immersive Section Instructions
+infoButton.addEventListener('click', function(){
+  infoBoxContainer.style.visibility = 'visible';
+});
+infoBoxContainer.addEventListener('click', function (){
+  infoBoxContainer.style.visibility = 'hidden';
+});
+//SHOW TOOLTIPS ON HOVER
+allHotspots.forEach((spot) => {
+  spot.addEventListener('mouseenter', function(e){
+    displayTooltip(e, this);
+  });
+  spot.addEventListener('mouseleave', function(e){
+    tooltipDiv.style.visibility = "hidden";  
+  })
+});
+
+//CLOCK HOTSPOT
+clock.addEventListener('click', function(){
+  if(allNumbers.object3D.visible === false){ 
+    allNumbers.object3D.visible = true;
+    showVariantInfoBtn();
+    whatsthis.object3D.position.set(2.7, 2, -7.5);
+    whatsthis.object3D.rotation.set(0, 0, 0);
+  }else{
+    allNumbers.object3D.visible = false;
+    hideVariantInfoBtn();
+  }
+});
+
+//MAGAZINE HOTSPOT
+magazine.addEventListener('click', function() {  
+  if((magazineUpClose.object3D.visible) === false){
+    showMagazineUpClose();
+    hideMagazineOnTable();
+    showVariantInfoBtn();
+    whatsthis.object3D.position.set(-7.051, 1, 4.889);
+    whatsthis.object3D.rotation.set(0, -180, 0);
+  }else{  
+    hideMagazineUpClose();
+    showMagazineOnTable();
+    hideVariantInfoBtn();
+  }
+});
+
+magazineUpClose.addEventListener('click', function(){  
+  if(magazineUpClose.getAttribute('visible') === true){
+    hideMagazineUpClose();
+    showMagazineOnTable();
+    hideVariantInfoBtn();
+  }
+});
+//CALENDAR HOTSPOT
+calendar.addEventListener('click', function(){
+  if(torus.object3D.visible === false){      
+    show3DCalendar();
+    showVariantInfoBtn();
+    whatsthis.object3D.position.set(3.86, 2.5, 5.6);
+    whatsthis.object3D.rotation.set(0, 180, 0);
+  }
+  else{
+    hide3DCalendar();
+    hideVariantInfoBtn();
+  }
+});
+
+torus.addEventListener('click', function(){  
+  // pickUpSound.play();
+  if(torus.object3D.visible === true){
+    hide3DCalendar();
+    hideVariantInfoBtn();
+  }  
+});
+//SHOW VARIANT INFORMATION ON CLICK
+whatsthis.addEventListener('click', function(){
+  showExtraInfo.style.visibility = 'visible';
+  assignInfoText();
+});
+//HIDE VARIANT INFO ON CLICK
+showExtraInfo.addEventListener('click', function(){
+  showExtraInfo.style.visibility = 'hidden';
+});
+
+//TOGGLE FULLSCREEN
+myEnterVRButton.addEventListener("click", function(e) {
+  e.preventDefault();
+  toggleFullScreen360();
+}, false);
+
+
+// FUNCTIONS //
+function showMagazineOnTable(){
+  magazine.object3D.visible = true;
+  magazine.classList.add('rayobjs');
+}
+function hideMagazineOnTable(){
+  magazine.object3D.visible = false;
+  magazine.classList.remove('rayobjs'); 
+}
+function showMagazineUpClose(){
+  magazineUpClose.object3D.visible = true; 
+  magazineUpClose.classList.add('rayobjs');
+}
+function hideMagazineUpClose(){
+  magazineUpClose.object3D.visible = false;
+  magazineUpClose.classList.remove('rayobjs');
+}
+function show3DCalendar(){
+  torus.object3D.visible = true;
+  torus.classList.add('rayobjs');
+}
+function hide3DCalendar(){
+  torus.object3D.visible = false;
+  torus.classList.remove('rayobjs');
+}
+function showVariantInfoBtn(){
+  whatsthis.object3D.visible = true;
+  whatsthis.classList.add('rayobjs');
+}
+function hideVariantInfoBtn(){
+  whatsthis.object3D.visible = false;
+  whatsthis.classList.remove('rayobjs');
+}
+function displayTooltip(e, obj){
+  tooltip = obj.dataset.tooltip;
+  tooltipDiv.innerHTML = tooltip;
+  tooltipDiv.style.visibility = "visible";
+}
+function assignInfoText(){
+  let variantH2 = document.getElementById('variantH2');
+  let variantP = document.getElementById('variantP');
+  if(magazineUpClose.object3D.visible === true){
+    variantH2.innerHTML = "Grapheme-colour Synaesthesia";
+    variantP.innerHTML = "The most common type is grapheme-colour synaesthesia in which graphemes are experienced as having a consistent colour";
+  }else if(torus.object3D.visible === true){
+    variantH2.innerHTML = "Time-Space Synaesthesia: Circular Calendar";
+    variantP.innerHTML = "Time-space synaesthetes have 'conscious awareness of mappings between time and space (e.g., they may see months arranged in an ellipse, or years as columns or spirals)'";
+  }else if(allNumbers.object3D.visible === true){
+    variantH2.innerHTML = "Sequence-Space Synaesthesia";
+    variantP.innerHTML = "Sequence-space synaesthesia can cause any type of ordered sequence (days, months, playing cards, etc.) to be experienced visually, in the mind's eye or in the physical space around them.";
+  }
+}
+function toggleFullScreen360(){
+  if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+        (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+          yOffset360 = window.pageYOffset;
+          console.log(yOffset);
+        if (immersiveSection.requestFullScreen) {
+          immersiveSection.requestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+        } else if (document.documentElement.mozRequestFullScreen) {
+          immersiveSection.mozRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+        } else if (document.documentElement.webkitRequestFullScreen) {
+          immersiveSection.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+        }
+    } else {
+        if (document.cancelFullScreen) {
+            document.exitFullscreen();
+            setTimeout(() => window.scrollTo(0, yOffset360), 100);
+            
+        } else if (document.mozCancelFullScreen) {
+            document.mozancelFullScreen();
+            setTimeout(() => window.scrollTo(0, yOffset360), 100);
+        } else if (document.webkitCancelFullScreen) {
+            document.webkitCancelFullScreen();
+            setTimeout(() => window.scrollTo(0, yOffset360), 100);
+        }
+    }
+}
+//CHECK IF USER IS IN PARTICULAR PAGE SECTION
+$.fn.isInViewport = function() {
+  let elementTop = $(this).offset().top;
+  let elementBottom = elementTop + $(this).outerHeight();
+
+  let viewportTop = $(window).scrollTop();
+  let viewportBottom = viewportTop + $(window).height();
+
+  return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+//Exit Room
+function toggleSkyVideo(){
+  let sky = document.querySelector('a-sky');
+  let videosphere = document.querySelector('a-videosphere');
+  if(sky.object3D.visible === true){
+   sky.object3D.visible = false;
+   hideObjects();
+   videosphere.object3D.visible = true;
+   videosphere.components.material.data.src.currentTime = 0;
+   videosphere.components.material.material.map.image.play();    
+  }else if(videosphere.object3D.visible === true){
+   videosphere.object3D.visible = false;
+   videosphere.components.material.material.map.image.pause();
+   sky.object3D.visible = true; 
+   showObjects(); 
+  } 
+ }
+//hideObjects function will hide all clickable objects while in thesecond room
+function hideObjects(){
+  hideMagazineOnTable();
+  calendar.object3D.visible = false;
+  calendar.classList.remove('rayobjs');
+  clock.object3D.visible = false;
+  clock.classList.remove('rayobjs');
+}
+function showObjects(){
+  showMagazineOnTable()
+  calendar.object3D.visible = true;
+  calendar.classList.add('rayobjs');
+  clock.object3D.visible = true;
+  clock.classList.add('rayobjs');
+}
+
+
+//change sky when icon is clicked
+
+// function toggleSky(){  
+//   if(document.querySelector('a-sky').getAttribute('src') === '#panorama2'){
+//     document.getElementById('sky').setAttribute('src', '#panorama');
+//     magazine.object3D.visible = true;
+//     magazine.classList.add('rayobjs');
+//     calendar.object3D.visible = true;
+//     calendar.classList.add('rayobjs');
+//     clock.object3D.visible = true;
+//     clock.classList.add('rayobjs');
+//   }else if(document.querySelector('a-sky').getAttribute('src') === '#panorama'){
+//     document.getElementById('sky').setAttribute('src', '#panorama2');
+//     magazine.object3D.visible = false;
+//     magazine.classList.remove('rayobjs');
+//     calendar.object3D.visible = false;
+//     calendar.classList.remove('rayobjs');
+//     clock.object3D.visible = false;
+//     clock.classList.remove('rayobjs');
+//   }
+// }
+
+// let randomColor = Math.floor(Math.random()*16777215).toString(16);
+
+
+// let paperSound = new Howl({
+//   src: ["../sounds/Page_Turn.mp3"],
+//   preload: true, html5: true
+// });
+// let pickUpSound = new Howl({
+//   src: ["../sounds/pick-up.wav"],
+//   preload: true, html5: true
+// });
+// let paperSound;
+// let pickUpSound;
