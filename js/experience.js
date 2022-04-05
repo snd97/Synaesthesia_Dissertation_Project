@@ -90,37 +90,42 @@ let torus = document.querySelector('#torus');
 
 let whatsthis = document.getElementById('whatsthis');
 let showExtraInfo = document.querySelector('#showExtraInfo');
-let myEnterVRButton = document.getElementById('myEnterVRButton');
+const myEnterVRButton = document.getElementById('myEnterVRButton');
 let yOffset360;
 
 // EVENT LISTENERS //
 
-//Show Immersive Section Instructions
+//Show/hide Immersive Section Instructions when info button is clicked
 infoButton.addEventListener('click', function(){
   infoBoxContainer.style.visibility = 'visible';
 });
 infoBoxContainer.addEventListener('click', function (){
   infoBoxContainer.style.visibility = 'hidden';
 });
+
 //SHOW TOOLTIPS ON HOVER
 allHotspots.forEach((spot) => {
   spot.addEventListener('mouseenter', function(e){
-    displayTooltip(e, this);
+    displayTooltip(e, this); //detect which object has been hovered over and pass it to displayTooltip function to show relevant tip
   });
   spot.addEventListener('mouseleave', function(e){
-    tooltipDiv.style.visibility = "hidden";  
+    tooltipDiv.style.visibility = "hidden";  //once mouse leaves object hide the tooltip
   })
 });
 
 //CLOCK HOTSPOT
 clock.addEventListener('click', function(){
-  if(allNumbers.object3D.visible === false){ 
-    allNumbers.object3D.visible = true;
-    showVariantInfoBtn();
-    whatsthis.object3D.position.set(2.7, 2, -7.5);
+  if(allNumbers.object3D.visible === false){ //check if the numbers are hidden, if so
+    hideMagazineUpClose();                   //ensure other variants are hidden 
+    hide3DCalendar();
+    showMagazineOnTable();
+
+    showAllNumbers()   //show the numbers         
+    showVariantInfoBtn(); //assign the correct variant info text to the ? button
+    whatsthis.object3D.position.set(2.7, 2, -7.5); //assign the ? button's position and rotation
     whatsthis.object3D.rotation.set(0, 0, 0);
-  }else{
-    allNumbers.object3D.visible = false;
+  }else{ //hide the numbers if the clock is clicked again
+    hideAllNumbers()
     hideVariantInfoBtn();
   }
 });
@@ -128,6 +133,9 @@ clock.addEventListener('click', function(){
 //MAGAZINE HOTSPOT
 magazine.addEventListener('click', function() {  
   if((magazineUpClose.object3D.visible) === false){
+    hide3DCalendar();
+    hideAllNumbers()
+
     showMagazineUpClose();
     hideMagazineOnTable();
     showVariantInfoBtn();
@@ -149,7 +157,11 @@ magazineUpClose.addEventListener('click', function(){
 });
 //CALENDAR HOTSPOT
 calendar.addEventListener('click', function(){
-  if(torus.object3D.visible === false){      
+  if(torus.object3D.visible === false){
+    hideAllNumbers()
+    hideMagazineUpClose();
+    showMagazineOnTable();  
+
     show3DCalendar();
     showVariantInfoBtn();
     whatsthis.object3D.position.set(3.86, 2.5, 5.6);
@@ -186,6 +198,12 @@ myEnterVRButton.addEventListener("click", function(e) {
 
 
 // FUNCTIONS //
+function showAllNumbers(){
+  allNumbers.object3D.visible = true;
+}
+function hideAllNumbers(){
+  allNumbers.object3D.visible = false;
+}
 function showMagazineOnTable(){
   magazine.object3D.visible = true;
   magazine.classList.add('rayobjs');
@@ -241,25 +259,25 @@ function toggleFullScreen360(){
   if ((document.fullScreenElement && document.fullScreenElement !== null) ||
         (!document.mozFullScreen && !document.webkitIsFullScreen)) {
           yOffset360 = window.pageYOffset;
-          console.log(yOffset);
+          console.log(yOffset360);
         if (immersiveSection.requestFullScreen) {
-          immersiveSection.requestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+          immersiveSection.requestFullScreen();
         } else if (document.documentElement.mozRequestFullScreen) {
-          immersiveSection.mozRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+          immersiveSection.mozRequestFullScreen();
         } else if (document.documentElement.webkitRequestFullScreen) {
-          immersiveSection.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+          immersiveSection.webkitRequestFullScreen();
         }
     } else {
         if (document.cancelFullScreen) {
             document.exitFullscreen();
-            setTimeout(() => window.scrollTo(0, yOffset360), 100);
+            // setTimeout(() => window.scrollTo(0, yOffset360), 100);
             
         } else if (document.mozCancelFullScreen) {
             document.mozancelFullScreen();
-            setTimeout(() => window.scrollTo(0, yOffset360), 100);
+            // setTimeout(() => window.scrollTo(0, yOffset360), 100);
         } else if (document.webkitCancelFullScreen) {
             document.webkitCancelFullScreen();
-            setTimeout(() => window.scrollTo(0, yOffset360), 100);
+            // setTimeout(() => window.scrollTo(0, yOffset360), 100);
         }
     }
 }
