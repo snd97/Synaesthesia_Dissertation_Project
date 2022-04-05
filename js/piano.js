@@ -1,51 +1,47 @@
 //PIANO SECTION
 
-const elem = document.querySelector('.buttonFull');
-let pianosect = document.querySelector('.piano');
+// let elem = document.querySelector('.buttonFull');
+// let pianosect = document.querySelector('.piano');
 
-elem.addEventListener("click", function(e) {
-  e.preventDefault();
-  toggleFullScreen()
-}, false);
+// elem.addEventListener("click", function(e) {
+//   e.preventDefault();
+//   toggleFullScreen()
+// }, false);
 
-let yOffset;
-// document.body.addEventListener('keypress', function(e) {
-//   if (e.key === "Escape") {
-//     console.log('escape button pressed')
-//   }
-// });
+// let yOffset;
 
-function toggleFullScreen(){
 
-  if ((document.fullScreenElement && document.fullScreenElement !== null) ||
-        (!document.mozFullScreen && !document.webkitIsFullScreen)) {
-          yOffset = window.pageYOffset;
-          console.log(yOffset);
-          elem.src = "../images/exit-full-screen.png";
-        if (pianosect.requestFullScreen) {
-          pianosect.requestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-        } else if (document.documentElement.mozRequestFullScreen) {
-          pianosect.mozRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-        } else if (document.documentElement.webkitRequestFullScreen) {
-          pianosect.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-        }
-    } else {
+// function toggleFullScreen(){
+
+//   if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+//         (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+//           yOffset = window.pageYOffset;
+//           console.log(yOffset);
+//           // elem.src = "../images/exit-full-screen.png";
+//         if (pianosect.requestFullScreen) {
+//           pianosect.requestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+//         } else if (document.documentElement.mozRequestFullScreen) {
+//           pianosect.mozRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+//         } else if (document.documentElement.webkitRequestFullScreen) {
+//           pianosect.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+//         }
+//     } else {
      
-      elem.src = "../images/full-screen.png";
-        if (document.cancelFullScreen) {
-            document.exitFullscreen();
-            setTimeout(() => window.scrollTo(0, yOffset), 100);
+//       // elem.src = "../images/full-screen.png";
+//         if (document.cancelFullScreen) {
+//             document.exitFullscreen();
+//             setTimeout(() => window.scrollTo(0, yOffset), 100);
             
-        } else if (document.mozCancelFullScreen) {
-            document.mozancelFullScreen();
-            setTimeout(() => window.scrollTo(0, yOffset), 100);
-        } else if (document.webkitCancelFullScreen) {
-            document.webkitCancelFullScreen();
-            setTimeout(() => window.scrollTo(0, yOffset), 100);
-        }
+//         } else if (document.mozCancelFullScreen) {
+//             document.mozancelFullScreen();
+//             setTimeout(() => window.scrollTo(0, yOffset), 100);
+//         } else if (document.webkitCancelFullScreen) {
+//             document.webkitCancelFullScreen();
+//             setTimeout(() => window.scrollTo(0, yOffset), 100);
+//         }
 
-    }
-}
+//     }
+// }
  let pianoInfoBtn = document.querySelector('.pianoInfoIcon');
  let pianoInfoBox = document.querySelector('.pianoInfoBox');
  pianoInfoBtn.addEventListener('click', function(){  
@@ -129,45 +125,52 @@ let allKeys = document.querySelectorAll('.key');
 
 //KEYBOARD EVENTS- keyCode is deprecated - use event.key which will correspond to letters/symbols of keyboard itself
 
-window.addEventListener('keydown', event => {
+//listen for a keydown event -ONLY IF the document is NOT in fullscreen (i.e. in VR mode from 360 section) AND only if the piano is in the viewport.
+//this prevents the piano being heard/played if user presses on keyboard whilst not in the piano section.
+window.addEventListener('keydown', event => { 
+if((document.fullScreenElement && document.fullScreenElement !== null) ||
+  (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+    if ($('.piano-keys').isInViewport()){
+      //select the audio element which has a data key equal to the key of the keyboard event 
+      let audio = document.querySelector(`audio[data-key="${event.key}"]`); 
+      //select the div which has a data key equal to the key of the keyboard event
+      let pianoKey = document.querySelector(`div[data-key="${event.key}"]`);
+      
+      //check whether an audio file exists on the key which has been pressed - if not, break out of function
+      if(!audio) return;
+      //use Howler for smooth audio playback which also allows multiple audio to play at once
+      //the source of the audio to play is audio.src
+      let keyboardSounds = new Howl({
+      src: [audio.src]
+      });
+    //so, when the event's key equals one of the audio's data-key values, play the corresponding audio   
+      keyboardSounds.play();
+    //when the audio is played, add some style to the key div
+      pianoKey.setAttribute('style', 'transform: scale(.95); border-color: #f5f242; box-shadow: 0 0 1rem #028ae9;');
 
-    //select the audio element which has a data key equal to the key of the keyboard event 
-    let audio = document.querySelector(`audio[data-key="${event.key}"]`); 
-    //select the div which has a data key equal to the key of the keyboard event
-    let pianoKey = document.querySelector(`div[data-key="${event.key}"]`);
-    
-    //check whether an audio file exists on the key which has been pressed - if not, break out of function
-    if(!audio) return;
-    //use Howler for smooth audio playback which also allows multiple audio to play at once
-    //the source of the audio to play is audio.src
-    let keyboardSounds = new Howl({
-    src: [audio.src]
-    });
-  //so, when the event's key equals one of the audio's data-key values, play the corresponding audio   
-    keyboardSounds.play();
-  //when the audio is played, add some style to the key div
-    pianoKey.setAttribute('style', 'transform: scale(.95); border-color: #f5f242; box-shadow: 0 0 1rem #028ae9;');
+      dataKey = event.key;
+      setCircleColour();
+      setShapeTimeout();
 
-    dataKey = event.key;
-    setCircleColour();
-    setShapeTimeout();
+    //set a timeout and reset the original style
+      setTimeout(function(){
+        pianoKey.style.transform = 'scale(1)';
+        pianoKey.style.borderColor = 'black';
+        pianoKey.style.boxShadow = 'none';
+      }, 60); 
 
-  //set a timeout and reset the original style
-    setTimeout(function(){
-      pianoKey.style.transform = 'scale(1)';
-      pianoKey.style.borderColor = 'black';
-      pianoKey.style.boxShadow = 'none';
-    }, 60); 
+    }
+  }
 });
 
 
-let canvas = document.getElementById('canvas');
+// let canvas = document.getElementById('canvas');
 
-let ctx = canvas.getContext('2d');
-canvas.width = innerWidth;
-canvas.height = innerHeight;
+// let ctx = canvas.getContext('2d');
+// canvas.width = innerWidth;
+// canvas.height = innerHeight;
 
-let party = SmokeMachine(ctx, [227, 39, 164]);
+// let party = SmokeMachine(ctx, [227, 39, 164]);
 
 function setCircleColour(e){
   if(dataKey === 'a'){
