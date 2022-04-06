@@ -250,16 +250,28 @@ h1.experienceHeading{
 
 }
 #showExtraInfoBox{
-  background-color: rgba(255, 255, 255, 0.822);
-  padding:50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffffec;
+  padding:20px;
+  height:30vh;
+  width:50vw;
+  text-align: center;
+  gap:30px;
+  align-items: center;
 }
 #showExtraInfoBox h2, #showExtraInfoBox p{
   color:rgb(0, 0, 0);
-  width:45vw;
+
 }
 #showExtraInfoBox h2{
-  font-size: 3vw;
-  margin-bottom: 50px;
+  font-size: 4vh;
+  /* margin-bottom: 50px; */
+}
+#showExtraInfoBox p{
+  width:80%;
+  font-size: 2vh;
 }
 .enter {
   background-color:#f14e4e;
