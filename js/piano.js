@@ -51,6 +51,9 @@
     pianoInfoBox.style.visibility = 'hidden';  
   }
  })
+ pianoInfoBox.addEventListener('click', function(){  
+  pianoInfoBox.style.visibility = 'hidden';
+ });
 
 //TOGGLE KEYBOARD HINTS
 let hintsbtn = document.querySelector('#togglehint');
