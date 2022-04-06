@@ -244,13 +244,40 @@ descriptors.forEach( (word) => {
 })
 const draggable = Draggable.create(".knob", {
   type: "rotation",
+  bounds:{maxRotation:360, minRotation:0},
   inertia: true,
   onDrag: function(e) {
     console.log(e.target.id); //show the target's id in the console
-    // console.log(this.rotation);
-    // if((this.rotation <= 90) && (this.rotation > 0)){
-    //   console.log('rotation less than 90 degrees and greater than 0');
-    // }
+    console.log(this.rotation);
+    // let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    let otherSachsContainer = document.getElementById('OtherSachs');
+
+    if(e.target.id === 'days'){
+      if((this.rotation <= 360/7) && (this.rotation > 0)){
+        otherSachsContainer.style.backgroundColor = '#44d1fc'; //light blue
+      }else if((this.rotation <= 360/7*2) && (this.rotation > 360/7)){
+      otherSachsContainer.style.backgroundColor = '#00e034'; //green  
+      }
+      else if((this.rotation <= 360/7*3) && (this.rotation > 360/7*2)){
+        otherSachsContainer.style.backgroundColor = '#fff700'; //yellow  
+      }
+      else if((this.rotation <= 360/7*4) && (this.rotation > 360/7*3)){
+        otherSachsContainer.style.backgroundColor = '#ffbf00'; //orange  
+      }
+      else if((this.rotation <= 360/7*5) && (this.rotation > 360/7*4)){
+        otherSachsContainer.style.backgroundColor = '#ff0026'; //red
+      }
+      else if((this.rotation <= 360/7*6) && (this.rotation > 360/7*5)){
+        otherSachsContainer.style.backgroundColor = '#6e0099'; //dark purple
+      }
+      else if((this.rotation < 360) && (this.rotation > 360/7*6)){
+        otherSachsContainer.style.backgroundColor = '#3c22e3'; //dark blue
+      }
+      else{
+        otherSachsContainer.style.backgroundColor = '#ffeaea'; //original pale pink
+      }
+    }
+
   }
 
   
