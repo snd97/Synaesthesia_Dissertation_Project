@@ -174,13 +174,13 @@
 
             <!-- MAGAZINE IN LARGER VIEW - HIDDEN INITIALLY -->  
             <a-entity geometry="primitive: plane;" material="src: #colouredDocument; shader: flat" class="hotspots" data-tooltip="Click to put back"
-                        id="showMagazine" visible="false" scale="1.8 1.8 1.8" 
-                        position="-1.6 1 -0.320" rotation="0 90 0"  sound="on: click; src: #paperSound"
+                        id="showMagazine" visible="false" scale="2 2 2" 
+                        position="-1.3 1 -0.229" rotation="0 90 0"  sound="on: click; src: #paperSound"
                         ></a-entity>
 
             <!-- CALENDAR HOTSPOT -->
-            <a-image class="rayobjs hotspots" id="calendar" src="images/calendar2.jpg" position="5.272 2.159 4.487"
-                    rotation="178.8 5 179.53" width="1" height="1" data-tooltip="Toggle circular calendar"
+            <a-image class="rayobjs hotspots" id="calendar" src="images/calendar2.jpg" position="5.272 2.159 4.4"
+                    rotation="178.8 -5 179.53" width="1" height="1" data-tooltip="Toggle circular calendar"
                     animation__scale="property: scale; to: 1.1 1.1 1.1; dur: 200; startEvents: mouseenter"
                     animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"
                     sound="on: click; src: #pickup">
@@ -239,19 +239,24 @@
             </div>
             <!-- <p id="keyboardInstructions" >Use your mouse or keyboard to play</p> -->
             <div id="toggleContainer">
-                <label class="switch">
-                    <input type="checkbox" id="togglehint">
-                    <span class="slider round"></span>                
-                </label>
-                <p>Toggle Keyboard Hints</p>            
+
+                <div id="toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="togglehint">
+                        <span class="slider round"></span>                
+                    </label>
+                    <p>Keyboard Hints</p>
+                 </div>
+                 <div id="moreinfo">
+                    <img class="pianoInfoIcon" src="images/info2.png" alt="information icon" title="More Info" width="34">
+                    <p>Find out more</p>
+                </div>
+                         
             </div>
-            <div id="optionsContainer">
-                <img class="pianoInfoIcon" src="images/info.png" alt="information icon" title="More Info" width="50">           
-                <!-- <img class="buttonFull" src="images/full-screen.png" alt="fullscreen button" title="Toggle fullscreen" width="40"> -->
-            </div>
+
             <div class="pianoInfoBox" style="visibility:hidden;">
                 <h3>Tone-Colour Synaesthesia</h3>
-                Some Synaesthetes associate specific colours with the musical scale. In this example, each piano note triggers a different colour to appear:
+                Some Synaesthetes associate specific colours with the musical scale. In this example, each piano note triggers a different colour to appear. Use your mouse or keyboard to visualise it for yourself!
                 <img src="images/piano-colours.jpg">
                 Colour perceptions may appear in the mind's eye or in the physical space around the synaesthete and have varying visual forms from person to person.
               </div>

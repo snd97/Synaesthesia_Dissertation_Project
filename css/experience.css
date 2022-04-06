@@ -443,19 +443,19 @@ h1.experienceHeading{
 
 }
 /*FULLSCREEN OPTION*/
-.buttonFull, .pianoInfoIcon{
+.pianoInfoIcon{
   cursor: pointer;
 }
-.buttonFull:hover, .pianoInfoIcon:hover{
+.pianoInfoIcon:hover{
   transform: scale(1.2);
 }
 .pianoInfoBox {
-  /* visibility: hidden; */
-  bottom: 11vh;
-  right:5.5vw; 
+  cursor: pointer;
+  bottom: 25vh;
+  right:27.5vw; 
   width: 30vw;
   height: 20vw;
-  border: 5px solid rgb(230, 226, 0);
+  border: 5px solid rgb(255, 255, 255);
   position: absolute;
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
@@ -480,9 +480,9 @@ h1.experienceHeading{
 .pianoInfoBox:after {
   content: " ";
   position: absolute;
-  right: 30px;
-  bottom: -15px;
-  border-top: 15px solid rgb(230, 226, 0);
+  /* right: 30px; */
+  bottom: -20px;
+  border-top: 15px solid rgb(255, 255, 255);
   border-right: 15px solid transparent;
   border-left: 15px solid transparent;
   border-bottom: none;
@@ -528,16 +528,34 @@ h1.experienceHeading{
 
 #toggleContainer{
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   width:100vw;
   justify-content: center;
+  align-items: flex-end;
+  margin-top:10vw;
+
+  gap:2vw;
+}
+#toggle{
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-top:12vw;
+  justify-content: center;
+  height: 80px;
+  gap:0.5vw;
+}
+#moreinfo{
+  display: flex;
+  height: 80px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap:0.5vw;
 }
 #toggleContainer p{
-  color: white;
-  margin-bottom: 1vh;
+  color: rgb(247, 247, 247);
+  font-size: 1vw;
+  /* margin-bottom: 1vh; */
 }
 .switch {
   position: relative;
