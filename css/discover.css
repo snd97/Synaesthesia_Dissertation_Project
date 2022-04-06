@@ -428,7 +428,7 @@ a{
 }
 .white figcaption{
     padding:10px;
-    font-family: 'PT Serif', serif;
+    /* font-family: 'PT Serif', serif; */
     background-color: #ffffff;
 }
 /*SACHS NUMBER LINE*/
@@ -445,6 +445,7 @@ div.sachsNumbers{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     width: 50vw;
     height: 100vh;  
     font-family: 'Poller One', cursive;
@@ -562,47 +563,78 @@ div.sachsNumbers{
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    gap:2vh;
+    gap:5vh;
     background-color: #ffeaea;
+    /* padding:20px; */
     /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E"); */
 }
 #OtherSachs h1{
+    font-size: 2em;
     margin:0;
 }
 #OtherSachs p{
     font-size: 1em;
+    /* margin-top: -30px; */
+    display: flex;
+    align-items: center;
 }
+
 #cardContainer{
     display:flex;
-    align-items: center;
+    /* flex-wrap: wrap; */
+    align-items: flex-end;
     justify-content: center;
     gap:10vw;
     text-align: center;
+    width:100%;
+    /* padding:30px; */
 }
 .cards{
     display:flex;
-    gap:10px;
+    gap:20px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width:20vw;
     height:25vw;
+    font-size:1.2em;
     background-color: transparent;
-    /* border: 1px solid rgb(0, 0, 0); */
-    /* box-shadow: 5px 5px 50px rgba(128, 128, 128, 0.658);
-    border-radius:5px; */
+    /* width: 500px; */
 }
-/* .cards:hover{
-    cursor: pointer;
-} */
 .cards img{
     width:20vw;
 }
 
-#curvetext{
-    position: absolute;
-    font-size: 0.5em;
+@media (max-width: 800px) { 
+    #OtherSachs h1{
+        font-size: 1em;
+    }
+    #OtherSachs{
+        height: auto;
+        padding-top: 50px;
+        padding-bottom: 150px;
+        gap:10vh;
+    }
+    #OtherSachs p{
+        margin-top: -30px;
+    }
+    #cardContainer{
+        flex-wrap: wrap;
+        gap:40vw;
+        width:100%;
+        padding:30px;
+    }
+    .cards{
+        width: 500px;
+        gap:15px;
+    }
+    .cards img{
+        width:35vh;
+    }
+    
 }
+
+
 
 /*ALL VERTICAL SCROLL SECTIONS*/
 .verticalScroll{
