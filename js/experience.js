@@ -252,7 +252,7 @@ function assignInfoText(){
     variantP.innerHTML = "Time-space synaesthetes have 'conscious awareness of mappings between time and space (e.g., they may see months arranged in an ellipse, or years as columns or spirals)'";
   }else if(allNumbers.object3D.visible === true){
     variantH2.innerHTML = "Sequence-Space Synaesthesia";
-    variantP.innerHTML = "Sequence-space synaesthesia can cause any type of ordered sequence (days, months, playing cards, etc.) to be experienced visually, in the mind's eye or in the physical space around them.";
+    variantP.innerHTML = "Sequence-space synaesthesia can cause any type of ordered sequence (days, months, playing cards, etc.) to be experienced visually, in the mind's eye or in the physical space around them. In this example, each number is represented with its own colour and appear physically in space.";
   }
 }
 function toggleFullScreen360(){
