@@ -87,6 +87,8 @@ let magazine = document.querySelector('#magazine');
 let magazineUpClose = document.querySelector('#showMagazine');
 
 let magUpClose = document.querySelector('#magUpCloseContainer');
+let newspaperToggleBtn = document.querySelector('#newspaperToggle');
+let newspaper = document.querySelector('#magUpClose');
 
 let calendar = document.querySelector('#calendar');
 let torus = document.querySelector('#torus');
@@ -158,13 +160,31 @@ magazine.addEventListener('click', function() {
 //     hideVariantInfoBtn();
 //   }
 // });
-magUpClose.addEventListener('click', function(){  
-  if(magUpClose.style.visibility === 'visible'){
-    hideMagazineUpClose();
-    showMagazineOnTable();
-    hideVariantInfoBtn();
+// magUpClose.addEventListener('click', function(){  
+//   if(magUpClose.style.visibility === 'visible'){
+//     hideMagazineUpClose();
+//     showMagazineOnTable();
+//     hideVariantInfoBtn();
+//   }
+// });
+newspaperToggleBtn.addEventListener('click', function(){
+  if(newspaper.getAttribute('src') == "../images/newspaper--coloured-large.png"){
+    newspaper.setAttribute('src', '../images/newspaper-large-nocolour.png');
+  }
+  else{
+    newspaper.setAttribute('src', '../images/newspaper--coloured-large.png');
   }
 });
+
+// newspaperToggleBtn.addEventListener('click', function(){
+//   if(newspaper.getAttribute('src') == "../images/newspaper-large-nocolour.png"){
+//     newspaper.setAttribute('src', '../images/newspaper--coloured-large.png');
+//   }
+//   else{
+//     newspaper.setAttribute('src', '../images/newspaper-large-nocolour.png');
+//   }
+// }) //this one SHOULD WORK but does not. Event firing twice? 
+
 
 //CALENDAR HOTSPOT
 calendar.addEventListener('click', function(){
@@ -345,7 +365,7 @@ function showObjects(){
 
 $(document).ready(function() {
   $('.zoom').magnify({
-    speed: 200
+    speed: 100
   });
 });
 
