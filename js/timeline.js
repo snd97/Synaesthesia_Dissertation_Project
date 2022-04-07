@@ -285,3 +285,11 @@ const draggable = Draggable.create(".knob", {
 });
 
 preload();
+
+
+$(document).ready(function() {
+  $('.zoom').magnify({
+    speed: 200,
+   
+  });
+});

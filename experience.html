@@ -9,6 +9,7 @@
     <link rel="icon" type="image/x-icon" href="images/new-moon.png"> <!--FAVICON FOR BROWSER TAB-->
     <link rel="stylesheet" href="css/reset.css"/> 
     <link rel="stylesheet" href="css/experience.css"/> 
+    <link rel="stylesheet" href="css/magnify.css">
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap" rel="stylesheet">
@@ -69,6 +70,13 @@
             <!-- <a href="#" id="myEnterVRButton" title="Enter VR / Fullscreen"></a> -->
             <img id="myEnterVRButton" title="Enter VR / Fullscreen" src="images/full-screen.png" width="50">            
         </div>
+
+        <div id="magUpCloseContainer">
+            <div id="magUpClose">
+                <img src="images/coloureddoc.png" data-tooltip="Click to put back" class="hotspots zoom" data-magnify-src="images/coloureddoc.png">
+            </div>
+        </div>
+
         <a-scene embedded vr-mode-ui="enabled: false" keyboard-shortcuts="enterVR: false" >
             <!--  -->
             <a-assets>
@@ -173,10 +181,11 @@
             rotation="270 15 80" data-tooltip="Click to examine" visible="true" sound="on: click; src: #paperSound"></a-image>
 
             <!-- MAGAZINE IN LARGER VIEW - HIDDEN INITIALLY -->  
-            <a-entity geometry="primitive: plane;" material="src: #colouredDocument; shader: flat" class="hotspots" data-tooltip="Click to put back"
-                        id="showMagazine" visible="false" scale="2 2 2" 
+            <!-- <a-entity geometry="primitive: plane;" material="src: #colouredDocument; shader: flat" class="hotspots zoom" data-tooltip="Click to put back"
+                        id="showMagazine" visible="false" scale="2 2 2" data-magnify-src="images/coloureddoc.png"
                         position="-1.3 1 -0.229" rotation="0 90 0"  sound="on: click; src: #paperSound"
-                        ></a-entity>
+                        ></a-entity> -->
+
 
             <!-- CALENDAR HOTSPOT -->
             <a-image class="rayobjs hotspots" id="calendar" src="images/calendar2.jpg" position="5.272 2.159 4.4"
@@ -278,7 +287,7 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
+    <script src="js/jquery.magnify.js"></script>
     <!-- <script src="js/main.js"></script> -->
     <script src="js/experience.js"></script>
     <script src="js/piano.js"></script>

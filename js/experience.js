@@ -85,6 +85,9 @@ let allNumbers = document.getElementById('allNumbers');
 let clock = document.querySelector('#clock');
 let magazine = document.querySelector('#magazine');
 let magazineUpClose = document.querySelector('#showMagazine');
+
+let magUpClose = document.querySelector('#magUpCloseContainer');
+
 let calendar = document.querySelector('#calendar');
 let torus = document.querySelector('#torus');
 
@@ -132,7 +135,7 @@ clock.addEventListener('click', function(){
 
 //MAGAZINE HOTSPOT
 magazine.addEventListener('click', function() {  
-  if((magazineUpClose.object3D.visible) === false){
+  if((magUpClose.style.visibility) === 'hidden'){
     hide3DCalendar();
     hideAllNumbers()
 
@@ -148,13 +151,21 @@ magazine.addEventListener('click', function() {
   }
 });
 
-magazineUpClose.addEventListener('click', function(){  
-  if(magazineUpClose.getAttribute('visible') === true){
+// magazineUpClose.addEventListener('click', function(){  
+//   if(magazineUpClose.getAttribute('visible') === true){
+//     hideMagazineUpClose();
+//     showMagazineOnTable();
+//     hideVariantInfoBtn();
+//   }
+// });
+magUpClose.addEventListener('click', function(){  
+  if(magUpClose.style.visibility === 'visible'){
     hideMagazineUpClose();
     showMagazineOnTable();
     hideVariantInfoBtn();
   }
 });
+
 //CALENDAR HOTSPOT
 calendar.addEventListener('click', function(){
   if(torus.object3D.visible === false){
@@ -212,13 +223,20 @@ function hideMagazineOnTable(){
   magazine.object3D.visible = false;
   magazine.classList.remove('rayobjs'); 
 }
+// function showMagazineUpClose(){
+//   magazineUpClose.object3D.visible = true; 
+//   magazineUpClose.classList.add('rayobjs');
+// }
 function showMagazineUpClose(){
-  magazineUpClose.object3D.visible = true; 
-  magazineUpClose.classList.add('rayobjs');
+  magUpClose.style.visibility = 'visible';
+
 }
+// function hideMagazineUpClose(){
+//   magazineUpClose.object3D.visible = false;
+//   magazineUpClose.classList.remove('rayobjs');
+// }
 function hideMagazineUpClose(){
-  magazineUpClose.object3D.visible = false;
-  magazineUpClose.classList.remove('rayobjs');
+  magUpClose.style.visibility = 'hidden';
 }
 function show3DCalendar(){
   torus.object3D.visible = true;
@@ -324,6 +342,12 @@ function showObjects(){
   clock.classList.add('rayobjs');
 }
 
+
+$(document).ready(function() {
+  $('.zoom').magnify({
+    speed: 200
+  });
+});
 
 //change sky when icon is clicked
 
