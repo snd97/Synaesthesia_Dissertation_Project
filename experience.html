@@ -72,16 +72,19 @@
         </div>
 
         <div id="magUpCloseContainer">
-            <div id="magUpClose">
-                <img src="images/coloureddoc.png" data-tooltip="Click to put back" class="hotspots zoom" data-magnify-src="images/coloureddoc.png">
-            </div>
+           
+                <img src="images/newspaper-large-nocolour.png" id="magUpClose" data-tooltip="Click to put back" class="hotspots zoom changeImage" data-magnify-src="images/newspaper--coloured-large.png">
+                <!-- <img src="images/newspaper--coloured-large.png" style="display:none" id="magUpClose2" data-tooltip="Click to put back" class="hotspots zoom changeImage" data-magnify-src="images/newspaper--coloured-large.png" > -->
+                <button  id="newspaperToggle">See full coloured version</button>
+            
         </div>
 
         <a-scene embedded vr-mode-ui="enabled: false" keyboard-shortcuts="enterVR: false" >
             <!--  -->
             <a-assets>
                 <img id="ringtexture" src="images/Months-new.png" alt="Coloured months to demonstrate synaesthesia">
-                <img id="colouredDocument" src="images/coloureddoc.png" crossorigin="anonymous" alt="Sachs's doctural thesis"/>
+                <!-- <img id="colouredDocument" src="images/Synaesthesia-today-version2.gif" crossorigin="anonymous" alt="Sachs's doctural thesis"/> -->
+                <img id="newspaper" src="images/newspaper-large.png" crossorigin="anonymous" alt="Fictional 'Synaesthesia Today' newspaper"/>
                 <img id="panorama" src="images/comfy_cafe.jpg" crossorigin="anonymous" alt="Equirectangular image of an empty cafe"/>
                 <audio id="pickup" src="sounds/pick-up.wav"></audio>
                 <audio id="paperSound" src="sounds/Page_Turn.mp3"></audio>
@@ -177,7 +180,7 @@
             </div>
 
             <!-- MAGAZINE HOTSPOT -->  
-            <a-image class="rayobjs hotspots" id="magazine" src="images/Ludwig_Sachs_first_documented.png" position="-2.5 -0.5 -0.8"
+            <a-image class="rayobjs hotspots" id="magazine" src="#newspaper" position="-2.5 -0.5 -0.8" width="0.7" height="1"
             rotation="270 15 80" data-tooltip="Click to examine" visible="true" sound="on: click; src: #paperSound"></a-image>
 
             <!-- MAGAZINE IN LARGER VIEW - HIDDEN INITIALLY -->  

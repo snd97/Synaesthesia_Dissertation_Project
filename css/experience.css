@@ -288,12 +288,14 @@ h1.experienceHeading{
   text-align: center;
   cursor:pointer;
 }
-#magUpClose img{
-  width: 50vw;
+#magUpClose, #magUpClose2 {
+  width: 30vw;
   height: auto;
 }
-#magUpCloseContainer h2{
-  color:white;
+#newspaperToggle{
+  z-index: 99999;
+  position:absolute;
+  left:300px;
 }
 .enter {
   background-color:#f14e4e;
