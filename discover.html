@@ -6,8 +6,11 @@
 		<link rel="icon" type="image/x-icon" href="images/new-moon.png"> <!--FAVICON FOR BROWSER TAB-->
 		<title>History of Synaesthesia</title>
 	
-		<link rel='stylesheet' href='css/discover.css'>
+		
 		<link rel="stylesheet" href="css/magnify.css">
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+		<link rel='stylesheet' href='css/discover.css'>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500&display=swap" rel="stylesheet">
@@ -46,12 +49,62 @@
 				</div>
 			</section>
 			<section class="pushin-layer def" id="section3">
-				<div class="flex">
-					<img src="images/senses-removebg-preview.png" alt="The five senses">
-					<h1>A condition which causes unusual sensory experiences</h1>
+				<div id="slickTest" class="slider">
+					<div>
+						<!-- <h3>First Container</h3> -->
+						<div class="senseimages"><img src="images/synesthesia-senses.gif" width="200"></div>
+						<p>A condition which causes unusual sensory perceptions and cognitive experiences.</p>						
+					</div>
+					<div>
+						<!-- <h3>Second Container</h3> -->
+						<div class="senseimages"><img src="images/senses-removebg-preview.png" width="200"></div>
+						<p>For example, visual input could trigger distinct tastes.</p>					</div>
+					<div>
+						<!-- <h3>Third Container</h3> -->
+						<div class="senseimages"><img src="images/senses-removebg-preview.png" width="200"></div>
+						<p>Sound or music could elicit visual experiences such as colour and shapes. </p>						
+					</div>
+					<div>
+						<!-- <h3>Fourth Container</h3> -->
+						<div class="senseimages"><img src="images/senses-removebg-preview.png" width="200"></div>
+						<p>Graphemes such as letters and numbers can invoke feelings or visual perceptions of colour or texture. </p>						
+					</div>
+					<div>
+						<!-- <h3>Fifth Container</h3> -->
+						<div class="senseimages"><img src="images/senses-removebg-preview.png" width="200"></div>
+						<p>Visual Input could trigger auditory experiences </p>						
+					</div>
+					<div>
+						<!-- <h3>Sixth Container</h3> -->
+						<div class="senseimages"><img src="images/senses-removebg-preview.png" width="200"></div>
+						<p>The thought of sequences such as days of the week, numbers or the alphabet could be experienced visually. </p>						
+					</div>
+					<div>
+						<!-- <h3>Seventh Container</h3> -->
+						<div class="senseimages"><img src="images/senses-removebg-preview.png" width="200"></div>
+						<p>And much, much more....</p>						
+					</div>
 				</div>
 			</section> 
+			<section class="pushin-layer alltypes" id="section5">
+				<div>
+					<h1>In fact, there are over 70 different types of Synaesthesia,
+					each its own unique unification of the senses.</h1>
+					<p>Types are generally named in an <span class="bold">“inducer-concurrent”</span> format where the <span class="bold">inducer</span> is the stimulus that triggers the experience and the <span class="bold">concurrent</span> is the involuntary response.</p>
 
+				</div>
+			</section> 
+			<section class="pushin-layer percent" id="section6">
+				<div class="percentdiv">
+					<img src="images/4percent.png">
+					<!-- <div ><img src="images/earth-pixabay.png"></div> -->
+					<!-- <h2>It is thought that about 4% of the world's population has one or more types of Synaesthesia.</h2> -->
+					<!-- <p>...that's about the same amount of red-heads in the world.</p> -->
+					<!-- <img src="images/4928081_ccexpress.png" width=1580> -->
+				</div>
+				
+			</section> 
+			
 			<section class="pushin-layer add" id="section4">
 				<div class="flex">
 					<h2>Synaesthesia is...</h2>
@@ -63,25 +116,7 @@
 						<p id="addDescription">Hover to find out more.</p>
 					<!-- </div>				 -->
 				</div>
-
 			</section>  
-			<section class="pushin-layer alltypes" id="section5">
-				<div>
-					<h1>There are over 70 different types of Synaesthesia,<br>
-					each its own unique unification of the senses.</h1>
-					<p>Types are generally named in an <span class="bold">“inducer-concurrent”</span> format where the <span class="bold">inducer</span> is the stimulus that triggers the experience and the <span class="bold">concurrent</span> is the involuntary response.</p>
-					<p>[Info to be represented in infographic]</p>
-				</div>
-			</section>  
-			<section class="pushin-layer percent" id="section6">
-				<div class="percentdiv">
-					<h1>It is thought that about 4% of the world's population has Synaesthesia</h1>
-					<p>[infographic]</p>
-					<!-- <p>...that's about the same amount of red-heads in the world.</p> -->
-					<!-- <img src="images/4928081_ccexpress.png" width=1580> -->
-				</div>
-				<div class="dottedcircle"></div>
-			</section>
 			<section class="pushin-layer video" id="section7">
 				<h1>How do synaesthetes and non-synaesthetes differ?<br>[animated video]</h1>
 				<img src="images/artificial-intelligence.png" width="500" alt="Cartoon image of brain">
@@ -263,6 +298,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/Draggable.min.js"></script>
 		<script src="https://hammerjs.github.io/dist/hammer.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 		<script src="js/jquery.magnify.js"></script>
         <script src="js/timeline.js"></script>
 				

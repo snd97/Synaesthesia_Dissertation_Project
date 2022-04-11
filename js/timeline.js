@@ -292,4 +292,23 @@ $(document).ready(function() {
     speed: 200,
    
   });
+  $('.slider').slick({
+    centerMode: true,
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  });
+  
+
 });
+
+
+let slider = document.querySelector('.slider');
+
+slider.addEventListener('mousedown', function(){
+  slider.style.cursor = "grabbing";
+});
+slider.addEventListener('mouseup', function(){
+  slider.style.cursor = "grab";
+})
