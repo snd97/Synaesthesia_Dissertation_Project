@@ -84,11 +84,13 @@ let allNumbers = document.getElementById('allNumbers');
 
 let clock = document.querySelector('#clock');
 let magazine = document.querySelector('#magazine');
-let magazineUpClose = document.querySelector('#showMagazine');
+// let magazineUpClose = document.querySelector('#showMagazine');
 
 let magUpClose = document.querySelector('#magUpCloseContainer');
 let newspaperToggleBtn = document.querySelector('#newspaperToggle');
 let newspaper = document.querySelector('#magUpClose');
+let exitNewspaperView = document.getElementById('exitNewspaperView');
+let newspaperMoreInfoBtn = document.getElementById('newspaperVariant');
 
 let calendar = document.querySelector('#calendar');
 let torus = document.querySelector('#torus');
@@ -135,7 +137,7 @@ clock.addEventListener('click', function(){
   }
 });
 
-//MAGAZINE HOTSPOT
+//NEWSPAPER HOTSPOT
 magazine.addEventListener('click', function() {  
   if((magUpClose.style.visibility) === 'hidden'){
     hide3DCalendar();
@@ -143,48 +145,36 @@ magazine.addEventListener('click', function() {
 
     showMagazineUpClose();
     hideMagazineOnTable();
-    showVariantInfoBtn();
-    whatsthis.object3D.position.set(-7.051, 1, 4.889);
-    whatsthis.object3D.rotation.set(0, -180, 0);
   }else{  
+    hideMagazineUpClose();
+    showMagazineOnTable();
+    // hideVariantInfoBtn();
+  }
+});
+//on question mark click
+newspaperMoreInfoBtn.addEventListener('click', function() {  
+  showExtraInfo.style.visibility = 'visible';
+  assignInfoText();
+  });
+//on close button click
+exitNewspaperView.addEventListener('click', function(){  
+  if(magUpClose.style.visibility === 'visible'){
     hideMagazineUpClose();
     showMagazineOnTable();
     hideVariantInfoBtn();
   }
 });
-
-// magazineUpClose.addEventListener('click', function(){  
-//   if(magazineUpClose.getAttribute('visible') === true){
-//     hideMagazineUpClose();
-//     showMagazineOnTable();
-//     hideVariantInfoBtn();
-//   }
-// });
-// magUpClose.addEventListener('click', function(){  
-//   if(magUpClose.style.visibility === 'visible'){
-//     hideMagazineUpClose();
-//     showMagazineOnTable();
-//     hideVariantInfoBtn();
-//   }
-// });
+//on toggle colour/monochrome click
 newspaperToggleBtn.addEventListener('click', function(){
   if(newspaper.getAttribute('src') == "../images/newspaper--coloured-large.png"){
     newspaper.setAttribute('src', '../images/newspaper-large-nocolour.png');
+    newspaperToggleBtn.src = '../images/wheel.png';
   }
   else{
-    newspaper.setAttribute('src', '../images/newspaper--coloured-large.png');
+    newspaper.setAttribute('src', '../images/newspaper--coloured-large.png');    
+    newspaperToggleBtn.src = '../images/blackandwhite.png';
   }
 });
-
-// newspaperToggleBtn.addEventListener('click', function(){
-//   if(newspaper.getAttribute('src') == "../images/newspaper-large-nocolour.png"){
-//     newspaper.setAttribute('src', '../images/newspaper--coloured-large.png');
-//   }
-//   else{
-//     newspaper.setAttribute('src', '../images/newspaper-large-nocolour.png');
-//   }
-// }) //this one SHOULD WORK but does not. Event firing twice? 
-
 
 //CALENDAR HOTSPOT
 calendar.addEventListener('click', function(){
@@ -282,9 +272,9 @@ function displayTooltip(e, obj){
 function assignInfoText(){
   let variantH2 = document.getElementById('variantH2');
   let variantP = document.getElementById('variantP');
-  if(magazineUpClose.object3D.visible === true){
+  if(magUpClose.style.visibility === 'visible'){
     variantH2.innerHTML = "Grapheme-colour Synaesthesia";
-    variantP.innerHTML = "The most common type is grapheme-colour synaesthesia in which graphemes are experienced as having a consistent colour";
+    variantP.innerHTML = "The most common type of Synaesthesia in which letters, numbers, symbols, etc. are experienced as having a consistent colour. Hover over the newspaper to get a glimpse into this phenomenon.";
   }else if(torus.object3D.visible === true){
     variantH2.innerHTML = "Time-Space Synaesthesia: Circular Calendar";
     variantP.innerHTML = "Time-space synaesthetes have 'conscious awareness of mappings between time and space (e.g., they may see months arranged in an ellipse, or years as columns or spirals)'";
