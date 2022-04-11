@@ -230,11 +230,11 @@ descriptors.forEach( (word) => {
     if(word.id === 'involuntary'){
     description.innerHTML = "Sensory experiences happen automatically.";
     }else if(word.id === 'additive'){
-    description.innerHTML = "It adds to normal sensory perception.";
+    description.innerHTML = "Experiences happen in addition to initial sensory input.";
     }else if(word.id === 'idiosyncratic'){
-    description.innerHTML = "Experiences are unique to each individual.";
+    description.innerHTML = "Experiences are unique to the individual - it's unlikely two people share the exact same perceptions.";
     }else if(word.id === 'consistent'){
-    description.innerHTML = "Experiences are consistent over a lifetime.";
+    description.innerHTML = "Experiences are consistent over time - they won't change from childhood into adulthood.";
   }
   word.addEventListener('mouseout', function() {
     description.innerHTML = "Hover to find out more.";
