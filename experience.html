@@ -71,12 +71,15 @@
             <img id="myEnterVRButton" title="Enter VR / Fullscreen" src="images/full-screen.png" width="50">            
         </div>
 
-        <div id="magUpCloseContainer">
-           
-                <img src="images/newspaper-large-nocolour.png" id="magUpClose" data-tooltip="Click to put back" class="hotspots zoom changeImage" data-magnify-src="images/newspaper--coloured-large.png">
-                <!-- <img src="images/newspaper--coloured-large.png" style="display:none" id="magUpClose2" data-tooltip="Click to put back" class="hotspots zoom changeImage" data-magnify-src="images/newspaper--coloured-large.png" > -->
-                <button  id="newspaperToggle">See full coloured version</button>
+        <div id="magUpCloseContainer" style="visibility:hidden;">
             
+            <img src="images/newspaper-large-nocolour.png" id="magUpClose" class="hotspots zoom changeImage"  data-magnify-src="images/newspaper--coloured-large.png">
+            <div id="newspapercontrols">
+                <button  id="exitNewspaperView" class="hotspots" data-tooltip="Click to put back">&#10006;</button>
+                <img src="images/question.png"  id="newspaperVariant" class="hotspots" data-tooltip="Find out more">
+                <img src="images/wheel.png" class="hotspots" data-tooltip="Toggle colour/monochrome newspaper" id="newspaperToggle" >
+            </div>
+        
         </div>
 
         <a-scene embedded vr-mode-ui="enabled: false" keyboard-shortcuts="enterVR: false" >
@@ -88,16 +91,16 @@
                 <img id="panorama" src="images/comfy_cafe.jpg" crossorigin="anonymous" alt="Equirectangular image of an empty cafe"/>
                 <audio id="pickup" src="sounds/pick-up.wav"></audio>
                 <audio id="paperSound" src="sounds/Page_Turn.mp3"></audio>
-                <video id="video" preload="auto"
+                <!-- <video id="video" preload="auto"
                     src="videos/pexels_ID_4182910.mp4"
                     loop="true"
                     crossOrigin="anonymous">
-                </video>
+                </video> -->
             </a-assets>
             
             <!-- <a-sky src="#panosky" id="sky" rotation="0 -130 0"></a-sky> -->
             <a-sky src="#panorama" id="sky" rotation="0 -130 0" visible="true"></a-sky>
-            <a-videosphere rotation="0 -90 0" src="#video" visible="false"></a-videosphere>
+            <!-- <a-videosphere rotation="0 -90 0" src="#video" visible="false"></a-videosphere> -->
 
             <div class="infoBoxContainer">
                 <div id="infoBox">
@@ -109,12 +112,15 @@
                 <a-entity raycaster="objects: .rayobjs" id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
             </a-camera> 
             <!-- <a-image src="images/pin.png" class="rayobjs" position="3.43 0 1.27" rotation="0 -85 0" scale="0.5 0.5 0.5" onclick="show('a2')"></a-image> -->
+
+
             <!-- SWITCH PANORAMA HOTSPOT -->  
-            <a-image src="images/pin.png" class="rayobjs hotspots" position="3.43 0 1.27" rotation="0 -85 0"
+            <!-- <a-image src="images/pin.png" class="rayobjs hotspots" position="3.43 0 1.27" rotation="0 -85 0"
                     scale="0.3 0.3 0.3" data-tooltip="Exit room" onclick="toggleSkyVideo()"
                     animation__scale="property: scale; to: 0.4 0.4 0.4; dur: 200; startEvents: mouseenter"
                     animation__scale_reverse="property: scale; to: 0.3 0.3 0.3; dur: 200; startEvents: mouseleave">
-            </a-image>
+            </a-image> -->
+
             <!-- Tool tip div --> 
             <div class="div-tooltip"></div>  
 
