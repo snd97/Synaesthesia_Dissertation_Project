@@ -229,7 +229,9 @@ a{
 
 /*WHAT IS SYNAESTHESIA SECTION*/
 .whatis{
-    background: linear-gradient(55deg, #0fb8ad 0%, #1fc8db 51%, #c44b06 85%);
+    /* background: linear-gradient(55deg, #0fb8ad 0%, #1fc8db 51%, #c44b06 85%); */
+    background: rgb(255,238,0);
+background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
 }
 .whatis h1{
     color:rgb(0, 0, 0);
@@ -261,8 +263,8 @@ a{
 .slick-slide{
     margin:20px;
     height:50vh;
-    /* background-color: #f1f1f1; */
-    border: 5px solid rgba(250, 250, 250, 0.952);
+    background-color: #ffffff;
+    border: 5px solid rgba(0, 0, 0, 0.952);
     border-radius:10px;
     color:rgb(255, 255, 255);
     padding:30px;
@@ -287,52 +289,13 @@ a{
     left: -35px;
   }
 
-
-/*SHAPES OVERLAY SECTION*/
-/* .senses{
-    background-color: transparent;
-}
-#circle{
-    position:absolute; 
-    width: 100px;
-    height: 100px;
-    background: red;
-    border-radius: 50%;
-    filter: blur(0.5rem); */
-    /* visibility:hidden; */
-    /* left:20vw;
-    top:20vh;
-  }
-#square{
-    position:absolute; 
-    width: 80px;
-    height: 80px;
-    background: rgb(180, 17, 255);
-    left:70vw;
-    top:20vh;
-}
-#spiral{
-    position:absolute; 
-    width: 50px;
-    left:50vw; */
-    /* top:30vh; */
-/* }
-#spiral2{
-    position:absolute; 
-    width: 50px;
-    left:80vw;
-    top:30vh;
-}
-#spiral3{
-    position:absolute; 
-    width: 50px;
-    left:10vw;
-    top:30vh;
-} */
 /*FACTS ABOUT SYNAESTHESIA*/
 .alltypes{
     background-color: #ffee00;
     
+}
+.alltypes img{
+    width:80vw;
 }
 .alltypes p {
     font-size: 1em; 
@@ -393,10 +356,10 @@ a{
 .add{
     font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
     /* background-color:  #ffee00; */
-    background-color:  #ffee00;
-    
-    background-image: url('../images/Senses.png');
+    background-color:  #00a2b8;    
+    background-image: url('../images/mesh.png');
     background-repeat: no-repeat;
+    background-size:contain;
     line-height: 0.65;
     flex-direction: column;
     gap:10vh;
@@ -407,10 +370,11 @@ a{
     align-items: flex-end;
     /* flex-direction: row; */
     /* gap:3vw; */
-    text-align: left;
+    /* text-align: left; */
 }
 .add h2{
-    font-size: 2vw;
+    font-size: 2.5vw;
+    align-self:flex-start;
     color:#000000;
     margin:0;
     margin-bottom:10px;
@@ -438,18 +402,18 @@ a{
 }
 
 .add #addDescription{
-    font-size: 1.7em;
+    font-size: 2vw;
     line-height: 1;
     text-align: end;
-    margin-top: 10vh;
-    background-color: transparent;
-    width:40vw;
+    /* margin-top: 10vh; */
+    width:60vw;
+    height: 50px;
     color:#000000;
 }
 /*VIDEO SECTION*/
 
 .video{
-    background-color: #ffee00;
+    background-color: #00a2b8;
     flex-direction: column;
 }
 
@@ -482,8 +446,8 @@ a{
 
 /*SACHS'S THESIS*/
 .white{
-    background-color: rgb(255, 255, 255);
-    color:#000000;
+    background-color: black;
+    color:#fcfcfc;
     text-align: center;
 }
 .white img{
@@ -492,7 +456,7 @@ a{
 .white figcaption{
     padding:10px;
     /* font-family: 'PT Serif', serif; */
-    background-color: #ffffff;
+    background-color: #ffffff00;
 }
 /*SACHS NUMBER LINE*/
 .sachsnumberContainer{
