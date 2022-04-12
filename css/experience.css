@@ -125,7 +125,7 @@ a{
 /*flex container*/
 .hero{
   height:100vh;
-  max-width:100vw;
+  width:100vw;
   background-color: #ffffff;
   /* background-image: url('../images/little-bokeh.jpg'); */
   display: flex;
@@ -325,7 +325,7 @@ h1.experienceHeading{
   height:50px;
   font-size: 3vh;
   color:rgb(0, 0, 0);
-  background: rgba(247, 243, 7, 0.603);
+  background: rgba(255, 255, 255, 0.603);
 
   border:none;
   cursor:pointer;
