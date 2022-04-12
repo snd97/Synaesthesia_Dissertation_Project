@@ -47,38 +47,39 @@ ball.forEach(ball => {
 });
 
 //TOGGLE FUNCTION
-function myFunction(x) {
-  x.classList.toggle("fa-hourglass-end");
-}
+// function myFunction(x) {
+//   x.classList.toggle("fa-hourglass-end");
+// }
 
 //ADD SCROLLS
 gsap.registerPlugin(ScrollToPlugin);
 
-let whatis = document.getElementById('whatisSyn');
-whatis.addEventListener('click', function(){
-  gsap.to(window, {duration: 1, scrollTo:".whatis"});
+// let whatis = document.getElementById('whatisSyn');
+// whatis.addEventListener('click', function(){
+//   gsap.to(window, {duration: 1, scrollTo:".whatis"});
 
-});
+// });
 
-let historyOf = document.getElementById('historyof');
-historyOf.addEventListener('click', function(){
-  gsap.to(window, {duration: 1, scrollTo:".white"});
+// let historyOf = document.getElementById('historyof');
+// historyOf.addEventListener('click', function(){
+//   gsap.to(window, {duration: 1, scrollTo:".brief"});
 
-})
+// })
 
 //ADD SCROLL TRIGGERS FOR TIMELEINE
 gsap.registerPlugin(ScrollTrigger);
 
 //FIRST VERTICAL SCROLL SECTION
-gsap.utils.toArray(".pushin-layer").forEach((panel, i) => {
-    ScrollTrigger.create({
-      trigger: panel,
-      start: "top top", 
-      pin: true, 
-      pinSpacing: false,
-      scrub:true
-    });
-  });
+// gsap.utils.toArray(".pushin-layer").forEach((panel, i) => {
+//     ScrollTrigger.create({
+//       trigger: panel,
+//       start: "top top", 
+//       pin: true, 
+//       pinSpacing: false,
+//       scrub:true
+//     });
+//   });
+
 
   //SACHS NUMBER LINE
   let sachssections = gsap.utils.toArray(".sachsNumbers");
@@ -99,15 +100,15 @@ gsap.utils.toArray(".pushin-layer").forEach((panel, i) => {
 
 
 //SECOND VERTICAL SCROLL SECTION
-  gsap.utils.toArray(".verticalScroll").forEach((scroll, i) => {
-    ScrollTrigger.create({
-      trigger: scroll,
-      start: "top top", 
-      pin: true, 
-      pinSpacing: false,
-      scrub:true
-    });
-  }); 
+  // gsap.utils.toArray(".verticalScroll").forEach((scroll, i) => {
+  //   ScrollTrigger.create({
+  //     trigger: scroll,
+  //     start: "top top", 
+  //     pin: true, 
+  //     pinSpacing: false,
+  //     scrub:true
+  //   });
+  // }); 
 
 //SECOND HORIZONTAL SCROLL SECTION
   // let sections = gsap.utils.toArray(".panels");
@@ -160,18 +161,41 @@ gsap.utils.toArray(".pushin-layer").forEach((panel, i) => {
   // });
 
 
-
+let scolldown = document.querySelector("#scroll-down");
   let scollbtn = document.querySelector(".scroll");
   let sections = document.querySelectorAll('section');
 
-  scollbtn.addEventListener("click", () => {
-    for(let i=0; i<= sections.length; i++){
-      console.log(i);
-      gsap.to(window, {duration: 1, scrollTo:{y:"#section" + (i + 1), offsetY:70}});
-
-    }
+  scolldown.addEventListener("click", () => {
+    gsap.to(window, {duration: 1, scrollTo:".whatis" });
   });
-  
+
+  scollbtn.addEventListener("click", () => {
+    // if(ScrollTrigger.isInViewport('.hero')){
+    //   gsap.to(window, {duration: 1, scrollTo:".brief" });
+    // }
+    // else if(ScrollTrigger.isInViewport('.brief')){
+    //   gsap.to(window, {duration: 1, scrollTo:".whatis" });
+    // }
+    // else if(ScrollTrigger.isInViewport('.prevalance')){
+    //   gsap.to(window, {duration: 1.5, scrollTo:".whatis" });
+    // }
+    window.scrollBy({
+      top: window.innerHeight,
+      left: 0,
+      behavior: 'smooth'
+    });
+    if(ScrollTrigger.isInViewport('.prevalance')){
+      gsap.to(window, {duration: 1.5, scrollTo:".whatis" });
+    }
+  // });
+  })
+    
+ 
+  // for(let i=0; i<= sections.length; i++){
+
+  //   gsap.to(window, {duration: 1, scrollTo:{y:"#section" + (i + 1), offsetY:70}});
+
+  // }
 
 
     //DOESN'T KNOW WHAT INDEX IS BECAUSE IT'S NOT LOOPING THROUGH ANYTHING RIGHT NOW
