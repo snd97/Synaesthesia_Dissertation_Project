@@ -128,7 +128,7 @@ a{
     display:flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     /* background-color: #fefefe;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='152' height='152' viewBox='0 0 152 152'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='temple' fill='%23b70b00' fill-opacity='0.26'%3E%3Cpath d='M152 150v2H0v-2h28v-8H8v-20H0v-2h8V80h42v20h20v42H30v8h90v-8H80v-42h20V80h42v40h8V30h-8v40h-42V50H80V8h40V0h2v8h20v20h8V0h2v150zm-2 0v-28h-8v20h-20v8h28zM82 30v18h18V30H82zm20 18h20v20h18V30h-20V10H82v18h20v20zm0 2v18h18V50h-18zm20-22h18V10h-18v18zm-54 92v-18H50v18h18zm-20-18H28V82H10v38h20v20h38v-18H48v-20zm0-2V82H30v18h18zm-20 22H10v18h18v-18zm54 0v18h38v-20h20V82h-18v20h-20v20H82zm18-20H82v18h18v-18zm2-2h18V82h-18v18zm20 40v-18h18v18h-18zM30 0h-2v8H8v20H0v2h8v40h42V50h20V8H30V0zm20 48h18V30H50v18zm18-20H48v20H28v20H10V30h20V10h38v18zM30 50h18v18H30V50zm-2-40H10v18h18V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); */
@@ -150,46 +150,51 @@ a{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width:85vw;
+    max-width:100vw;
     gap:20px;
 }
 .hero h1{
-    /* color:#8a0000; */
-    background: linear-gradient(45deg, #ff0000, #ff4800, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    color:#ffffff;
+    /* background: linear-gradient(45deg, #ff0000, #ff4800, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-stroke: 10px transparent;
-    font-size:7vw;
+    -webkit-text-stroke: 10px transparent; */
     text-align: center;
-    padding:20px;
-    margin: -5px;
+    /* padding:20px; */
+    margin: 0;
     /* width:85vw; */
     /* font-family: 'Lilita One', cursive; */
     font-family: 'Staatliches', cursive;
     font-size:8vw;
     /* text-shadow: rgb(0, 0, 0) 1px 0 10px; */
 }
-/* #whatisSyn {
-    font-size:8vw;
-    margin-bottom: 350px;
-    color:yellow;
-} */
-#whatisSyn:hover, #historyof:hover{
-    cursor:pointer;
-    color:white;
-}
-
-/*SECTION 1*/
-#section1 p{
+.hero p{
     font-size: 1.5vw;
     padding:5px;
-    color:black;
+    /* width:70vw; */
+    color:rgb(250, 250, 250);
     /* background-color: rgb(255, 255, 255); */
     margin:0;
 }
-#section1 a:hover{
-    text-shadow: #FC0 1px 0 10px;
+#discoverlinks{
+    display: flex;
+    gap:5vw;
 }
+#whatisSyn, #historyof {
+    color:rgb(255, 255, 255);
+}
+
+#whatisSyn:hover, #historyof:hover{
+    cursor:pointer;
+    color:rgb(208, 211, 21);
+
+}
+
+/*SECTION 1*/
+
+/* #section1 a:hover{
+    text-shadow: #FC0 1px 0 10px;
+} */
 #scroll-down{
     position: absolute;
     z-index: 100;
@@ -208,7 +213,7 @@ a{
     animation-direction: alternate-reverse;
     animation-timing-function: ease;
     animation-iteration-count: infinite;
-
+    cursor: pointer;
 }
 
 @keyframes scroll {
@@ -243,9 +248,13 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
     /* width:100%; */
     padding-top: 20px;
     text-align:center;
-
+    flex-direction: column;
     background-color: #ffee00;
 
+}
+.def h1{
+    color:rgb(0, 0, 0);
+    font-size: 6vh;
 }
  .slider {
     cursor: grab;
@@ -262,7 +271,7 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
 }
 .slick-slide{
     margin:20px;
-    height:50vh;
+    height:55vh;
     background-color: #ffffff;
     border: 5px solid rgba(0, 0, 0, 0.952);
     border-radius:10px;
@@ -273,8 +282,11 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
     font-size: 3vh;
 }
 .slider img{
-    width:45vh;
+    width:500px;
     margin: auto;
+}
+.gifs img{
+    width:1000px;
 }
 .def .slick-dots li button:before {
     font-size:20px;
@@ -354,78 +366,68 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
 }
 /*SYNAESTHESIA IS... SECTION*/
 .add{
-    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    
     /* background-color:  #ffee00; */
-    background-color:  #00a2b8;    
+    background-color:  #ffee00;    
     background-image: url('../images/mesh.png');
     background-repeat: no-repeat;
     background-size:contain;
     line-height: 0.65;
-    flex-direction: column;
-    gap:10vh;
+    /* flex-direction: column; */
+    /* gap:10vh; */
    
 }
-.add .flex{
-    /* justify-content: flex-end; */
+.add .flex{    
     align-items: flex-end;
-    /* flex-direction: row; */
-    /* gap:3vw; */
-    /* text-align: left; */
 }
 .add h2{
     font-size: 2.5vw;
     align-self:flex-start;
     color:#000000;
-    margin:0;
-    margin-bottom:10px;
-    /* transform: rotate(-90deg);
-    margin-right: -150px; */
 }
 .add h3{
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 7vw;
     margin:0;
-    color: #fdfdfd;
-   
+    color: #fdfdfd;   
 }
 .add h3:hover{
-    /* color:red; */
     animation: glow 1s ease-in-out infinite alternate;
+}
+.add p{
+    font-size: 2vw;
+    line-height: 1;
+    text-align: end;
+    width:60vw;
+    height: 50px;
+    color:#000000;
 }
 @keyframes glow {
     from {
       text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-    }
-    
+    }    
     to {
       text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
     }
 }
 
-.add #addDescription{
-    font-size: 2vw;
-    line-height: 1;
-    text-align: end;
-    /* margin-top: 10vh; */
-    width:60vw;
-    height: 50px;
-    color:#000000;
-}
 /*VIDEO SECTION*/
-
 .video{
-    background-color: #00a2b8;
+    /* background-color: #ffee00;  */
+    background: linear-gradient(0deg, rgba(3,133,217,1) 0%, #ffee00 100%);
     flex-direction: column;
 }
 
 /* A BRIEF HISTORY OF SYNAESTHESIA */
 .brief{
+    height: 100vh;
     background-color: #8d3f00;
     background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); 
 }
 
 /* 1812 */
 .yearone{
-    background-color: rgb(0, 0, 0);   
+    background-color: #fdbb2d;   
     /* background-image: url('../images/paper.jpg'); */
     /* background-repeat:round; */
     /* background-position: center; */
@@ -433,30 +435,31 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
 }
 .yearone p{
     color:rgb(255, 255, 255);
-    font-size: 20em; 
+    font-size: 20em;
+    margin:0; 
 }
 .yearone #smaller{
     color:rgb(255, 255, 255);
     font-size: 1.5em;
     width:50vw;
     text-align: center;
-    position: absolute;
-    bottom:20%;
 }
 
 /*SACHS'S THESIS*/
 .white{
-    background-color: black;
-    color:#fcfcfc;
+    background-color: #ffffff; 
+    color:#000000;
     text-align: center;
+    height:120vh;
 }
 .white img{
-    width:40vw;
+    width:50vw;
 }
 .white figcaption{
     padding:10px;
-    /* font-family: 'PT Serif', serif; */
-    background-color: #ffffff00;
+    /* font-family: 'PT Serideff', serif; */
+    background-color: #85000000;
+    font-size: 1vw;
 }
 /*SACHS NUMBER LINE*/
 .sachsnumberContainer{
@@ -589,7 +592,7 @@ div.sachsNumbers{
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
     gap:5vh;
     background-color: #ffeaea;
     /* padding:20px; */
@@ -676,7 +679,7 @@ div.sachsNumbers{
 /*ALL VERTICAL SCROLL SECTIONS*/
 .verticalScroll{
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
     /* position: absolute; */
     display:flex;
     align-items: center;
@@ -748,32 +751,32 @@ div.sachsNumbers{
     /* font-size: 1vw; */
     text-align: center;
 }
-.flower img{
+/* .flower img{
     width:100vw;
     text-align: center;
   
-}
+} */
 
 
-#phonopsie{
+/* #phonopsie{
     color:rgb(0, 0, 0);
     border-radius: 85px;;
     margin-top: 25vh;
     background-color: rgb(255, 255, 255);
-    font-size: 290%;
+    font-size: 290%; */
     /* width:50vw; */
-    padding:5px;
+    /* padding:5px;
     text-align: center;
     position: absolute;   
     
-}
-.nuss{
+} */
+/* .nuss{
     position: absolute;
     width:20vw;
-}
-.nussbaumer{
+} */
+/* .nussbaumer{
     background: url("../images/ocean.jpg");
-}
+} */
 
 .year{    
     background-color: transparent;
