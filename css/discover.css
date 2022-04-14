@@ -240,7 +240,7 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
 }
 .whatis h1{
     color:rgb(0, 0, 0);
-    font-size: 5em;
+    font-size: 7vw;
  }
  /*DEFINITION OF SYNAESTHESIA*/
 
@@ -282,7 +282,7 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
     font-size: 3vh;
 }
 .slider img{
-    width:500px;
+    width:40%;
     margin: auto;
 }
 .gifs img{
@@ -303,8 +303,9 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
 
 /*FACTS ABOUT SYNAESTHESIA*/
 .alltypes{
-    background-color: #ffee00;
-    
+    background-color: #dd0700;
+    /* background: linear-gradient(0deg, #dd0700, rgba(255,238,0,1) 100%); */
+
 }
 .alltypes img{
     width:80vw;
@@ -321,8 +322,8 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
 
 /*4% OF WORLD POPULATION*/
 .percent{
-    background-color: #ffee00;
-
+    background-color: #dd0700;
+    background: linear-gradient(0deg, rgba(255,238,0,1) 10%, #dd0700  100%);
 }
 .percentdiv{
     /* position:absolute;  */
