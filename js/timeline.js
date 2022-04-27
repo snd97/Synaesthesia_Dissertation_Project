@@ -10,7 +10,7 @@ function preload() {
   // console.log(images[1]);
 }
 preload(
-  "../images/coloureddoc.png",
+  "../images/Sachs-coloured-doc.png",
   "../images/Ludwig_Sachs_first_documented.png"
 )
 
@@ -224,7 +224,7 @@ let doctext = document.getElementById('caption');
 
 firstdoc.addEventListener('mouseenter', function(){
   firstdoc.src = images[0].src;
-  doctext.innerHTML = "Sachs had grapheme-colour synaesthesia"
+  doctext.innerHTML = "Sachs had Grapheme-Colour Synaesthesia. He perceived distinct colours for many letters of the alphabet."
 
 
   firstdoc.onmouseout = function(){
@@ -278,27 +278,38 @@ const draggable = Draggable.create(".knob", {
 
     if(e.target.id === 'days'){
       if((this.rotation <= 360/7) && (this.rotation > 0)){
-        otherSachsContainer.style.backgroundColor = '#44d1fc'; //light blue
+        // otherSachsContainer.style.backgroundColor = '#44d1fc';
+        otherSachsContainer.style.backgroundImage = "url('../images/FRIDAY.png')"; //light blue
+        otherSachsContainer.style.backgroundSize = "cover";
+        otherSachsContainer.style.backgroundRepeat = "no-repeat";
       }else if((this.rotation <= 360/7*2) && (this.rotation > 360/7)){
-      otherSachsContainer.style.backgroundColor = '#00e034'; //green  
+      // otherSachsContainer.style.backgroundColor = '#00e034'; //green  
+      otherSachsContainer.style.backgroundImage = "url('../images/THURDAY.png')"; //green 
+      
       }
       else if((this.rotation <= 360/7*3) && (this.rotation > 360/7*2)){
-        otherSachsContainer.style.backgroundColor = '#fff700'; //yellow  
+        // otherSachsContainer.style.backgroundColor = '#fff700'; //yellow 
+        otherSachsContainer.style.backgroundImage = "url('../images/WEDNESDAY.png')"; 
       }
       else if((this.rotation <= 360/7*4) && (this.rotation > 360/7*3)){
-        otherSachsContainer.style.backgroundColor = '#ffbf00'; //orange  
+        // otherSachsContainer.style.backgroundColor = '#ffbf00'; //orange  
+        otherSachsContainer.style.backgroundImage = "url('../images/TUESDAY.png')";
       }
       else if((this.rotation <= 360/7*5) && (this.rotation > 360/7*4)){
-        otherSachsContainer.style.backgroundColor = '#ff0026'; //red
+        // otherSachsContainer.style.backgroundColor = '#ff0026'; //red
+        otherSachsContainer.style.backgroundImage = "url('../images/MONDAY.png')";
       }
       else if((this.rotation <= 360/7*6) && (this.rotation > 360/7*5)){
-        otherSachsContainer.style.backgroundColor = '#6e0099'; //dark purple
+        // otherSachsContainer.style.backgroundColor = '#6e0099'; //dark purple
+        otherSachsContainer.style.backgroundImage = "url('../images/SUNDAY.png')";
       }
       else if((this.rotation < 360) && (this.rotation > 360/7*6)){
-        otherSachsContainer.style.backgroundColor = '#3c22e3'; //dark blue
+        // otherSachsContainer.style.backgroundColor = '#3c22e3'; //dark blue
+        otherSachsContainer.style.backgroundImage = "url('../images/SATURDAY.png')";
       }
       else{
-        otherSachsContainer.style.backgroundColor = '#ffeaea'; //original pale pink
+        // otherSachsContainer.style.backgroundColor = '#ffeaea'; //original pale pink
+        otherSachsContainer.style.backgroundImage = "url('../images/pink-bg.png')";
       }
     }
 
