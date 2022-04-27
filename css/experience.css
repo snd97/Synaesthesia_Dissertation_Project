@@ -107,7 +107,7 @@ a{
     color: black;
 }
 .homebtn:hover, .scroll:hover{
-    background-color: rgba(0, 0, 0, 0.308)
+    background-color: #FC0;
 }
 
 #navLinks:hover > .hisbtn:hover{
@@ -301,7 +301,7 @@ h1.experienceHeading{
   gap:10vh;
   z-index: 9999;
   left:65%;
-  top:5%;
+  top:10%;
 }
 #newspaperVariant{
   cursor:pointer;
@@ -417,12 +417,12 @@ h1.experienceHeading{
 }
 
 #infoButton{
-  background: url('../images/info.png');
+  background: url('../images/icons/info-icon.png');
   background-size: cover;
   border: 0;
   cursor: pointer;
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
 }
 
 #myEnterVRButton{ 
