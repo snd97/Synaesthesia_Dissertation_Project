@@ -279,37 +279,37 @@ const draggable = Draggable.create(".knob", {
     if(e.target.id === 'days'){
       if((this.rotation <= 360/7) && (this.rotation > 0)){
         // otherSachsContainer.style.backgroundColor = '#44d1fc';
-        otherSachsContainer.style.backgroundImage = "url('../images/FRIDAY.png')"; //light blue
+        otherSachsContainer.style.backgroundImage = "url('../images/days/FRIDAY.png')"; //light blue
         otherSachsContainer.style.backgroundSize = "cover";
         otherSachsContainer.style.backgroundRepeat = "no-repeat";
       }else if((this.rotation <= 360/7*2) && (this.rotation > 360/7)){
       // otherSachsContainer.style.backgroundColor = '#00e034'; //green  
-      otherSachsContainer.style.backgroundImage = "url('../images/THURDAY.png')"; //green 
+      otherSachsContainer.style.backgroundImage = "url('../images/days/THURSDAY.png')"; //green 
       
       }
       else if((this.rotation <= 360/7*3) && (this.rotation > 360/7*2)){
         // otherSachsContainer.style.backgroundColor = '#fff700'; //yellow 
-        otherSachsContainer.style.backgroundImage = "url('../images/WEDNESDAY.png')"; 
+        otherSachsContainer.style.backgroundImage = "url('../images/days/WEDNESDAY.png')"; 
       }
       else if((this.rotation <= 360/7*4) && (this.rotation > 360/7*3)){
         // otherSachsContainer.style.backgroundColor = '#ffbf00'; //orange  
-        otherSachsContainer.style.backgroundImage = "url('../images/TUESDAY.png')";
+        otherSachsContainer.style.backgroundImage = "url('../images/days/TUESDAY.png')";
       }
       else if((this.rotation <= 360/7*5) && (this.rotation > 360/7*4)){
         // otherSachsContainer.style.backgroundColor = '#ff0026'; //red
-        otherSachsContainer.style.backgroundImage = "url('../images/MONDAY.png')";
+        otherSachsContainer.style.backgroundImage = "url('../images/days/MONDAY.png')";
       }
       else if((this.rotation <= 360/7*6) && (this.rotation > 360/7*5)){
         // otherSachsContainer.style.backgroundColor = '#6e0099'; //dark purple
-        otherSachsContainer.style.backgroundImage = "url('../images/SUNDAY.png')";
+        otherSachsContainer.style.backgroundImage = "url('../images/days/SUNDAY.png')";
       }
       else if((this.rotation < 360) && (this.rotation > 360/7*6)){
         // otherSachsContainer.style.backgroundColor = '#3c22e3'; //dark blue
-        otherSachsContainer.style.backgroundImage = "url('../images/SATURDAY.png')";
+        otherSachsContainer.style.backgroundImage = "url('../images/days/SATURDAY.png')";
       }
       else{
         // otherSachsContainer.style.backgroundColor = '#ffeaea'; //original pale pink
-        otherSachsContainer.style.backgroundImage = "url('../images/pink-bg.png')";
+        otherSachsContainer.style.backgroundImage = "url('../images/days/pink-bg.png')";
       }
     }
 
