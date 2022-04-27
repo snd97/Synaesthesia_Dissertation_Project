@@ -25,7 +25,7 @@ pianoSection.addEventListener('mouseover', event => {
 $(window).on('mousemove resize scroll', function() {
   if ($('.first').isInViewport()) {
     // console.log('in landing section');
-    $(".imagetochangetwo").attr("src","../images/right.png");
+    $(".imagetochangetwo").attr("src","../images/icons/scroll-arrows.png");
       $(".scroll").on( "click", function() {
         window.scrollTo({
           top: window.innerHeight,
@@ -36,7 +36,7 @@ $(window).on('mousemove resize scroll', function() {
 // #2 The 360 section - if so, ensure arrow icon is correct and if clicked, scroll down to beginning of piano section
   } else if ($('.second').isInViewport()) {
     // console.log('in 360 section');
-    $(".imagetochangetwo").attr("src","../images/right.png");
+    $(".imagetochangetwo").attr("src","../images/icons/scroll-arrows.png");
     $(".scroll").on( "click", function() {      
       window.scrollTo({
         top: window.innerHeight * 2,
@@ -47,7 +47,7 @@ $(window).on('mousemove resize scroll', function() {
 // #3 The piano section - if so, ensure arrow icon is correct and if clicked, scroll to top
   }else if ($('.piano').isInViewport()){
     // console.log('in piano section');
-    $(".imagetochangetwo").attr("src","../images/left2.png");
+    $(".imagetochangetwo").attr("src","../images/icons/scroll-to-top.png");
     $(".scroll").on( "click", function() {      
       window.scrollTo({
         top: 0,
@@ -166,12 +166,12 @@ exitNewspaperView.addEventListener('click', function(){
 });
 //on toggle colour/monochrome click
 newspaperToggleBtn.addEventListener('click', function(){
-  if(newspaper.getAttribute('src') == "../images/newspaper--coloured-large.png"){
-    newspaper.setAttribute('src', '../images/newspaper-large-nocolour.png');
+  if(newspaper.getAttribute('src') == "../images/Synaesthesia_Today_Coloured.png"){
+    newspaper.setAttribute('src', '../images/Synaesthesia_Today_Black_and_white.png');
     newspaperToggleBtn.src = '../images/wheel.png';
   }
   else{
-    newspaper.setAttribute('src', '../images/newspaper--coloured-large.png');    
+    newspaper.setAttribute('src', '../images/Synaesthesia_Today_Coloured.png');    
     newspaperToggleBtn.src = '../images/blackandwhite.png';
   }
 });
@@ -274,10 +274,10 @@ function assignInfoText(){
   let variantP = document.getElementById('variantP');
   if(magUpClose.style.visibility === 'visible'){
     variantH2.innerHTML = "Grapheme-colour Synaesthesia";
-    variantP.innerHTML = "The most common type of Synaesthesia in which letters, numbers, symbols, etc. are experienced as having a consistent colour. Hover over the newspaper to get a glimpse into this phenomenon.";
+    variantP.innerHTML = "The most common type of Synaesthesia in which letters, numbers, symbols, etc. are experienced as having a consistent colour. Hover over the newspaper to get a glimpse of this phenomenon.";
   }else if(torus.object3D.visible === true){
     variantH2.innerHTML = "Time-Space Synaesthesia: Circular Calendar";
-    variantP.innerHTML = "Time-space synaesthetes have 'conscious awareness of mappings between time and space (e.g., they may see months arranged in an ellipse, or years as columns or spirals)'";
+    variantP.innerHTML = "Time-space synaesthetes have 'conscious awareness of mappings between time and space (e.g., they may see months arranged in an ellipse, or years as columns or spirals)'. In this example the months are expierences visually in 3D space. The length of each month is dependent on how the synesthete percieves how long each month feels to them and each also has a distinct colour association.";
   }else if(allNumbers.object3D.visible === true){
     variantH2.innerHTML = "Sequence-Space Synaesthesia";
     variantP.innerHTML = "Sequence-space synaesthesia can cause any type of ordered sequence (days, months, playing cards, etc.) to be experienced visually, in the mind's eye or in the physical space around them. In this example, each number is represented with its own colour and appear physically in space.";
