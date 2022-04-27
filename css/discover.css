@@ -100,7 +100,7 @@ a{
 }
 
 #navLinks:hover{
-    background-color: rgb(252, 249, 249);
+    background-color: rgb(249, 251, 252);
     opacity:0.9;
 }
     
@@ -109,7 +109,7 @@ a{
 }
 
 .homebtn:hover{
-    background-color: rgba(0, 0, 0, 0.308)
+    background-color: #FC0;
 }
 #navLinks:hover > .expbtn:hover{
     color: rgb(194, 64, 12);
@@ -322,7 +322,7 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
 
 /*4% OF WORLD POPULATION*/
 .percent{
-    background-color: #dd0700;
+    background-color: #810400;
     background: linear-gradient(0deg, rgba(255,238,0,1) 10%, #dd0700  100%);
 }
 .percentdiv{
@@ -421,9 +421,20 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
 
 /* A BRIEF HISTORY OF SYNAESTHESIA */
 .brief{
-    height: 100vh;
-    background-color: #8d3f00;
-    background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); 
+    height: 120vh;
+    /* background-color: #8d3f00;
+    background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);  */
+    background-image: url('../images/history_bg.jpg');
+    background-size:cover;
+    /* background-repeat: no-repeat; */
+    flex-direction: column;
+    
+
+}
+.brief p{
+    font-size: 4em;
+    text-align: center;
+    color: white;
 }
 
 /* 1812 */
@@ -449,7 +460,8 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
 /*SACHS'S THESIS*/
 .white{
     background-color: #ffffff; 
-    color:#000000;
+    background-image: url('../images/wooden-table.jpg');
+    color:#ffffff;
     text-align: center;
     height:120vh;
 }
@@ -459,7 +471,7 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
 .white figcaption{
     padding:10px;
     /* font-family: 'PT Serideff', serif; */
-    background-color: #85000000;
+    /* background-color: #e4dab1; */
     font-size: 1vw;
 }
 /*SACHS NUMBER LINE*/
@@ -507,10 +519,10 @@ div.sachsNumbers{
     color:rgb(8, 5, 5);
 }
 .sachsNumbers.three{
-    background-color: #0EA65C;
+    background-color: #0A1045;
 }
 .sachsNumbers.three p{
-    color:#B2BEB5;
+    color:#a6b1a9;
 }
 .sachsNumbers.four{
     background-color: #34D5E3;
@@ -531,10 +543,10 @@ div.sachsNumbers{
     color:#4B0082;
 }
 .sachsNumbers.seven{
-    background-color: #38be03;
+    background-color: #F4EBD9;
 }
 .sachsNumbers.seven p{
-    color:#37374d;
+    color:	#536872;
 }
 .sachsNumbers.eight{
     background-color: #00ba9b;
@@ -615,7 +627,7 @@ div.sachsNumbers{
     /* flex-wrap: wrap; */
     align-items: flex-end;
     justify-content: center;
-    gap:10vw;
+    gap:15vw;
     text-align: center;
     width:100%;
     /* padding:30px; */
@@ -791,7 +803,7 @@ div.sachsNumbers{
 .lads{
     background-color: rgb(255, 180, 180);
     color:black; 
-    font-size: 185%;
+    font-size: 1.2em;
     
 }
 .eugen{
@@ -807,7 +819,7 @@ div.sachsNumbers{
     border-bottom: 40px solid rgb(255, 255, 255);
 }
 .lads figcaption{
-    font-size: 85%;
+    font-size: 1em;
     font-family: 'Homemade Apple', cursive;
 }
 #secondary{
