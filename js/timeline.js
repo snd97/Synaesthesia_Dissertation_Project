@@ -13,8 +13,11 @@ preload(
   "../images/Sachs-coloured-doc.png",
   "../images/Ludwig_Sachs_first_documented.png"
 )
-
-
+let showOnComplete = document.getElementById('showOnComplete');
+let audioOne = document.getElementById("audioOne");
+audioOne.onended = function() {
+  showOnComplete.style.visibility = "visible";
+};
 
 
 //CHANGE TEXT ON HOVER
@@ -53,6 +56,17 @@ ball.forEach(ball => {
 
 //ADD SCROLLS
 gsap.registerPlugin(ScrollToPlugin);
+
+showOnComplete.addEventListener('click', function(){
+  gsap.to(window, {duration: 1, scrollTo:".types"});
+
+});
+
+// let whatis = document.getElementById('whatisSyn');
+// whatis.addEventListener('click', function(){
+//   gsap.to(window, {duration: 1, scrollTo:".whatis"});
+
+// });
 
 // let whatis = document.getElementById('whatisSyn');
 // whatis.addEventListener('click', function(){
@@ -265,59 +279,132 @@ descriptors.forEach( (word) => {
   })
   })
 
-})
-const draggable = Draggable.create(".knob", {
-  type: "rotation",
-  bounds:{maxRotation:360, minRotation:0},
-  inertia: true,
-  onDrag: function(e) {
-    console.log(e.target.id); //show the target's id in the console
-    console.log(this.rotation);
-    // let randomColor = Math.floor(Math.random()*16777215).toString(16);
-    let otherSachsContainer = document.getElementById('OtherSachs');
-
-    if(e.target.id === 'days'){
-      if((this.rotation <= 360/7) && (this.rotation > 0)){
-        // otherSachsContainer.style.backgroundColor = '#44d1fc';
-        otherSachsContainer.style.backgroundImage = "url('../images/days/FRIDAY.png')"; //light blue
-        otherSachsContainer.style.backgroundSize = "cover";
-        otherSachsContainer.style.backgroundRepeat = "no-repeat";
-      }else if((this.rotation <= 360/7*2) && (this.rotation > 360/7)){
-      // otherSachsContainer.style.backgroundColor = '#00e034'; //green  
-      otherSachsContainer.style.backgroundImage = "url('../images/days/THURSDAY.png')"; //green 
-      
-      }
-      else if((this.rotation <= 360/7*3) && (this.rotation > 360/7*2)){
-        // otherSachsContainer.style.backgroundColor = '#fff700'; //yellow 
-        otherSachsContainer.style.backgroundImage = "url('../images/days/WEDNESDAY.png')"; 
-      }
-      else if((this.rotation <= 360/7*4) && (this.rotation > 360/7*3)){
-        // otherSachsContainer.style.backgroundColor = '#ffbf00'; //orange  
-        otherSachsContainer.style.backgroundImage = "url('../images/days/TUESDAY.png')";
-      }
-      else if((this.rotation <= 360/7*5) && (this.rotation > 360/7*4)){
-        // otherSachsContainer.style.backgroundColor = '#ff0026'; //red
-        otherSachsContainer.style.backgroundImage = "url('../images/days/MONDAY.png')";
-      }
-      else if((this.rotation <= 360/7*6) && (this.rotation > 360/7*5)){
-        // otherSachsContainer.style.backgroundColor = '#6e0099'; //dark purple
-        otherSachsContainer.style.backgroundImage = "url('../images/days/SUNDAY.png')";
-      }
-      else if((this.rotation < 360) && (this.rotation > 360/7*6)){
-        // otherSachsContainer.style.backgroundColor = '#3c22e3'; //dark blue
-        otherSachsContainer.style.backgroundImage = "url('../images/days/SATURDAY.png')";
-      }
-      else{
-        // otherSachsContainer.style.backgroundColor = '#ffeaea'; //original pale pink
-        otherSachsContainer.style.backgroundImage = "url('../images/days/pink-bg.png')";
-      }
-    }
-
-  }
-
-  
-
 });
+// let song = new Howl({
+//   src: ['../sounds/music.mp3'],
+//   loop: false
+// });
+// let scaleC = new Howl({
+//   src: ['../sounds/piano/a.wav'],
+//   loop: false
+// });
+// let scaleD = new Howl({
+//   src: ['../sounds/piano/s.wav'],
+//   loop: false
+// });
+// let scaleE = new Howl({
+//   src: ['../sounds/piano/d.wav'],
+//   loop: false
+// });
+// let scaleF = new Howl({
+//   src: ['../sounds/piano/f.wav'],
+//   loop: false
+// });
+// let scaleG = new Howl({
+//   src: ['../sounds/piano/g.wav'],
+//   loop: false
+// });
+// let scaleA = new Howl({
+//   src: ['../sounds/piano/h.wav'],
+//   loop: false
+// });
+// let scaleB= new Howl({
+//   src: ['../sounds/piano/j.wav'],
+//   loop: false
+// });
+// let scaleCH = new Howl({
+//   src: ['../sounds/piano/k.wav'],
+//   loop: false
+// });
+// let scaleDH= new Howl({
+//   src: ['../sounds/piano/l.wav'],
+//   loop: false
+// });
+// let scaleEH = new Howl({
+//   src: ['../sounds/piano/semic.wav'],
+//   loop: false
+// });
+
+// const draggable = Draggable.create(".knob", {
+//   type: "rotation",
+//   bounds:{maxRotation:360, minRotation:0},
+//   inertia: true,
+//   onDrag: function(e) {
+//     // console.log(e.target.id); //show the target's id in the console
+//     // console.log(this.rotation);
+//     // let randomColor = Math.floor(Math.random()*16777215).toString(16);
+//     let otherSachsContainer = document.getElementById('OtherSachs');
+
+//     if(e.target.id === 'days'){
+//       if((this.rotation <= 360/7) && (this.rotation > 0)){
+//         otherSachsContainer.style.backgroundColor = '#44d1fc';
+//         // otherSachsContainer.style.backgroundImage = "url('../images/days/FRIDAY.png')"; //light blue
+//         // otherSachsContainer.style.backgroundSize = "cover";
+//         // otherSachsContainer.style.backgroundRepeat = "no-repeat";
+//       }else if((this.rotation <= 360/7*2) && (this.rotation > 360/7)){
+//       otherSachsContainer.style.backgroundColor = '#00e034'; //green  
+//       // otherSachsContainer.style.backgroundImage = "url('../images/days/THURSDAY.png')"; //green 
+      
+//       }
+//       else if((this.rotation <= 360/7*3) && (this.rotation > 360/7*2)){
+//         otherSachsContainer.style.backgroundColor = '#fff700'; //yellow 
+//         // otherSachsContainer.style.backgroundImage = "url('../images/days/WEDNESDAY.png')"; 
+//       }
+//       else if((this.rotation <= 360/7*4) && (this.rotation > 360/7*3)){
+//         otherSachsContainer.style.backgroundColor = '#ffbf00'; //orange  
+//         // otherSachsContainer.style.backgroundImage = "url('../images/days/TUESDAY.png')";
+//       }
+//       else if((this.rotation <= 360/7*5) && (this.rotation > 360/7*4)){
+//         otherSachsContainer.style.backgroundColor = '#ff0026'; //red
+//         // otherSachsContainer.style.backgroundImage = "url('../images/days/MONDAY.png')";
+//       }
+//       else if((this.rotation <= 360/7*6) && (this.rotation > 360/7*5)){
+//         otherSachsContainer.style.backgroundColor = '#6e0099'; //dark purple
+//         // otherSachsContainer.style.backgroundImage = "url('../images/days/SUNDAY.png')";
+//       }
+//       else if((this.rotation < 360) && (this.rotation > 360/7*6)){
+//         otherSachsContainer.style.backgroundColor = '#3c22e3'; //dark blue
+//         // otherSachsContainer.style.backgroundImage = "url('../images/days/SATURDAY.png')";
+//       }
+//       else{
+//         otherSachsContainer.style.backgroundColor = '#ffeaea'; //original pale pink
+//         // otherSachsContainer.style.backgroundImage = "url('../images/days/pink-bg.png')";
+//       }
+//     }
+
+//     else if(e.target.id === 'musical-scale'){
+//       if((this.rotation <= 360/12) && (this.rotation > 0)){
+//         scaleC.play();
+//       }else if((this.rotation <= 360/12*2) && (this.rotation > 360/12)){
+//         scaleD.play();
+//       }else if((this.rotation <= 360/12*3) && (this.rotation > 360/12*2)){
+//         scaleE.play();
+//       }else if((this.rotation <= 360/12*4) && (this.rotation > 360/12*3)){
+//         scaleF.play();
+//       }else if((this.rotation <= 360/12*5) && (this.rotation > 360/12*4)){
+//         scaleG.play();
+//       }else if((this.rotation <= 360/12*6) && (this.rotation > 360/12*5)){
+//         scaleA.play();
+//       }else if((this.rotation <= 360/12*7) && (this.rotation > 360/12*6)){
+//         scaleB.play();
+//       }else if((this.rotation <= 360/12*8) && (this.rotation > 360/12*7)){
+//         scaleCH.play();
+//       }else if((this.rotation <= 360/12*9) && (this.rotation > 360/12*8)){
+//         scaleDH.play();
+//       }else if((this.rotation <= 360/12*10) && (this.rotation > 360/12*9)){
+//         scaleEH.play();
+//       }else if((this.rotation <= 360/12*11) && (this.rotation > 360/12*10)){
+//         scaleDH.play();
+//       }else if((this.rotation <= 360) && (this.rotation > 360/12*11)){
+//         scaleCH.play();
+//       }else{
+//         scaleC.pause();
+//       }
+//   }
+
+// }
+
+// });
 
 preload();
 
@@ -327,6 +414,12 @@ $(document).ready(function() {
     speed: 200,
    
   });
+  $('.zoomlehmann').magnify({
+    speed: 200,
+   
+  });
+
+  
   $('.slider').slick({
     centerMode: true,
     dots: true,

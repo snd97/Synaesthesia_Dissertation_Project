@@ -40,6 +40,12 @@ html.magnifying > body {
   display: none;
   z-index: 99;
 }
+
+
+/* .bleuler-lehmann .magnify > .magnify-lens {
+  width: 100px;
+  height: 100px;
+} */
 .magnify > .magnify-lens.loading {
   background: #333 !important;
   opacity: 0.8;

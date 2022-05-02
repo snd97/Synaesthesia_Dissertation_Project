@@ -414,11 +414,46 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
 
 /*VIDEO SECTION*/
 .video{
-    /* background-color: #ffee00;  */
-    background: linear-gradient(0deg, rgba(3,133,217,1) 0%, #ffee00 100%);
+    width: 100vw;
+    height: 100vh;
+    /* margin: auto 0; */
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
     flex-direction: column;
-}
+    gap:5vh;
+    background: linear-gradient(0deg, rgba(3,133,217,1) 0%, #ffee00 100%);
 
+}
+.video div{
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-evenly;
+    /* gap:10vh; */
+}
+.video h1{
+    color:white;
+    font-size: 3vw;
+}
+.video p{
+    font-size: 1.4vw;
+    width:25vw;
+    color:black;
+    text-align: center;
+}
+.synaesthetes img{
+    width:24vw;
+}
+.synaesthetes{
+    width:25vw;
+    text-align: center;
+}
+.synaesthetes figcaption{
+    color:white;
+    font-size: 1.4vw;
+}
 /* A BRIEF HISTORY OF SYNAESTHESIA */
 .brief{
     height: 120vh;
@@ -606,33 +641,36 @@ div.sachsNumbers{
     justify-content: center;
     width: 100vw;
     height: 120vh;
-    gap:5vh;
-    background-color: #ffeaea;
-    /* padding:20px; */
-    /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E"); */
+    /* gap:5vh; */
+    background-color: #ffffff;
+    /* background-image: url('../images/paper-texture.jpg');
+    background-size: cover; */
+
 }
-#OtherSachs h1{
+#OtherSachs video{
+    cursor:pointer;
+    width:75vw;
+}
+/* #OtherSachs h1{
     font-size: 2em;
     margin:0;
 }
 #OtherSachs p{
     font-size: 1em;
-    /* margin-top: -30px; */
     display: flex;
     align-items: center;
-}
+} */
 
-#cardContainer{
+/* #cardContainer{
     display:flex;
-    /* flex-wrap: wrap; */
+
     align-items: flex-end;
     justify-content: center;
     gap:15vw;
     text-align: center;
     width:100%;
-    /* padding:30px; */
-}
-.cards{
+} */
+/* .cards{
     display:flex;
     gap:20px;
     flex-direction: column;
@@ -642,11 +680,10 @@ div.sachsNumbers{
     height:25vw;
     font-size:1.2em;
     background-color: transparent;
-    /* width: 500px; */
 }
 .cards img{
     width:20vw;
-}
+} */
 
 @media (max-width: 800px) { 
     .slider {
@@ -666,9 +703,9 @@ div.sachsNumbers{
         height: auto;
         padding-top: 50px;
         padding-bottom: 150px;
-        gap:10vh;
+        /* gap:10vh; */
     }
-    #OtherSachs p{
+    /* #OtherSachs p{
         margin-top: -30px;
     }
     #cardContainer{
@@ -683,7 +720,7 @@ div.sachsNumbers{
     }
     .cards img{
         width:35vh;
-    }
+    } */
     
 }
 
@@ -699,22 +736,15 @@ div.sachsNumbers{
     justify-content: center;;
 }
 
-/* 1948 */
-.verticalScroll.first{
-    background-color: #000000;
-}
-.image{
-    position: absolute;
-    z-index:0;
-}
-#x1948{ 
+
+/* #x1948{ 
     padding:20px;
     font-size:10em;
     border-radius: 55px;;
     color:#ffffff;
     position: absolute;
-}
-.firework{
+} */
+/* .firework{
     width: 40vw;
     position: absolute;
     animation-name: example ;
@@ -727,11 +757,11 @@ div.sachsNumbers{
 @keyframes example{
     from {transform: scale(1);}
     to {transform: scale(1.1);}
-}
+} */
 
-
+/* 
 .hyper{
-    flex-direction: column;
+    flex-direction: column; */
     /* background: url('../videos/pexels_ID_4182910.mp4'); */
     /* background-size: auto; */
     /* background-size: cover; */
@@ -740,8 +770,8 @@ div.sachsNumbers{
     
     background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);  */
     
-}
-#background-video {
+/* } */
+/* #background-video {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
@@ -762,8 +792,8 @@ div.sachsNumbers{
 }
 #cite{
     /* font-size: 1vw; */
-    text-align: center;
-}
+    /* text-align: center;
+}  */
 /* .flower img{
     width:100vw;
     text-align: center;
@@ -791,35 +821,65 @@ div.sachsNumbers{
     background: url("../images/ocean.jpg");
 } */
 
-.year{    
+/* .year{    
     background-color: transparent;
 }
 .year p{
     font-size: 20em;
-    /* font-family: 'Fraunces', serif; */
+    font-family: 'Fraunces', serif;
     font-family: 'Rakkas', cursive;
     color:rgb(177, 2, 40);
-}
-.lads{
+} */
+.bleuler-lehmann{
     background-color: rgb(255, 180, 180);
+    background-image: url('../images/parchment.jpg') ;
+    background-size: cover;
     color:black; 
     font-size: 1.2em;
+}
+.bleuler-lehmann div{
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+  margin:0;
+  position: relative;
+}
+.bleuler-lehmann h1{
+    font-size: 5vw;
+    margin:0;
+    color:#5f4c3a;
+    mix-blend-mode:color-burn; 
+}
+.bleuler-lehmann p{
+    font-size: 1.5vw;
+    margin-top: 50px;
+   
+}
+.bleuler-lehmann img{
+    margin-top:20px;
     
 }
-.eugen{
+#showOnComplete{
+    font-size: 1.2vw;
+    color:#85562d;
+    cursor:pointer;
+
+}
+
+.eugen, .lehmann{
     width:20vw;
     border: 15px solid rgb(255, 255, 255);
     border-radius: 10px;
-    border-bottom: 40px solid rgb(255, 255, 255);
+    border-bottom: 40px solid rgb(245, 245, 245);
 }
-.lehmann{
-    width:19vw;
-    border: 15px solid rgb(255, 255, 255);
+/* .lehmann{
+    width:20vw;
+    border: 15px solid rgb(236, 236, 236);
     border-radius: 10px;
     border-bottom: 40px solid rgb(255, 255, 255);
-}
-.lads figcaption{
-    font-size: 1em;
+} */
+.bleuler-lehmann figcaption{
+    font-size: 1.5vw;
     font-family: 'Homemade Apple', cursive;
 }
 #secondary{
@@ -828,22 +888,21 @@ div.sachsNumbers{
     max-width:500px;
 }
 
-
+/*6 TYPES OF SYNAESTHESIA SECTION*/
 .types{
     background-color: rgb(0, 0, 0);    
 }
-.types .mainp{
+.types .overview{
     position:absolute;
     font-size: 1.5vw;
     margin-bottom:15%;
     color:white;
 }
-
+/*added with javascript*/
 .types .mainpara{
     position:absolute;
     font-size: 2vw;
-    margin-top:30%;
-    
+    margin-top:30%;    
     color:white;
 }
 .types figure{
@@ -853,14 +912,15 @@ div.sachsNumbers{
 .types .first{
     margin-left: -2.5%;
 }
-.types .hi{
+/* .types .h1{
     color:white;
     font-size: 2vw;
-    margin-bottom:-20%;
-
- 
+    margin-bottom:-20%; 
+} */
+.ball{
+    position: absolute;
+    z-index:0;
 }
-
 .types img{
     width:10vw;
 }
