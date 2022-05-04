@@ -792,6 +792,7 @@ input:checked + .slider:before {
 /*yellow zig zag shape*/
 #Csharp{ 
   position:absolute; 
+  transform: scale(0.6);
   /* width: 1vh; */
   /* height: 300px; */
   left:12vw;
@@ -806,7 +807,7 @@ input:checked + .slider:before {
   top:20vh;
   visibility:hidden;
   filter: blur(0.5rem);
-  /* transform: scale(1); */
+  transform: scale(1);
 }
 /*yellow circle*/
 #Eflat{
@@ -904,14 +905,15 @@ input:checked + .slider:before {
 }
 /*orange circle outline*/
 #highC{
-  background-color:transparent;
+  /* background-color:transparent; */
   left:5vw;
   top:45vh;
-  border:3px solid rgb(255, 136, 0);    
+  /* border:3px solid rgb(255, 136, 0);     */
   filter: blur(0.1rem);  
-  border-radius:50%;
+  transform: scale(0.8);
+  /* border-radius:50%;
   -moz-border-radius:50%;
-  -webkit-border-radius:50%;  
+  -webkit-border-radius:50%;   */
   position:absolute;
  
   visibility:hidden;
@@ -924,13 +926,13 @@ input:checked + .slider:before {
   top:5vh;
   /* transform: scale(0.8); */
   filter: blur(0.5rem);
-  transform: scale(0.5);
+  transform: scale(0.8);
   visibility:hidden;
 }
 /*black lined circle*/
 #highD{
   position:absolute;
-  transform: scale(0.8);
+  transform: scale(1.5);
   filter: blur(1rem);
   left:55vw;
   top:50vh;
@@ -942,7 +944,7 @@ input:checked + .slider:before {
   left:65vw;
   top:40vh;
   filter: blur(0.3rem);
-  transform: scale(0.5);
+  transform: scale(0.8);
   visibility:hidden;
 }
 
@@ -989,13 +991,13 @@ input:checked + .slider:before {
   position:absolute; 
   left:75vw;
   top:0vh;
-  filter: blur(0.3rem);
+  filter: blur(0.5rem);
   visibility:hidden;
-  animation-name: moveUp;
+  /* animation-name: moveUp;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-  animation-direction: normal;
+  animation-direction: normal; */
 }
 #highE img, #highD img{
   transform: scale(0.5);
@@ -1006,10 +1008,10 @@ input:checked + .slider:before {
 #A img{
   transform: scale(0.6);
 }
-@keyframes moveUp {
+/* @keyframes moveUp {
   from {transform: translateY(0px);}
   to {transform: translateY(-50px);}
-}
+} */
 
 
 
