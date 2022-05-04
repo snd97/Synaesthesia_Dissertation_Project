@@ -23,31 +23,62 @@ audioOne.onended = function() {
 //CHANGE TEXT ON HOVER
 let type = document.createElement('p');
 type.classList.add('mainpara');
-
+type.textContent = "Rotate the dial clockwise";
 let div = document.getElementById('sixtypes');
 div.appendChild(type);
 
 let ball = document.querySelectorAll('.ball');
-ball.forEach(ball => {
-  ball.addEventListener('mouseover', function (event){
-    if(ball.id === "ball1"){
-      type.textContent = "Sound Photisms"
-    }else if(ball.id === "ball2"){
-      type.textContent = "Light Photisms"
-    }else if(ball.id === "ball3"){
-      type.textContent ="Gustation Photisms"
-    }else if(ball.id === "ball4"){
-      type.textContent = "Olfactory Photisms"
-    }else if(ball.id === "ball5"){
-      type.textContent = "Colour and shape sensations for pain, heat and tactile sensations"
-    }else if(ball.id === "ball6"){
-      type.textContent = "Colour Sensations for Shapes"
-    } 
+// ball.forEach(ball => {
+//   ball.addEventListener('mouseover', function (event){
+//     if(ball.id === "ball1"){
+//       type.textContent = "Sound Photisms"
+//     }else if(ball.id === "ball2"){
+//       type.textContent = "Light Photisms"
+//     }else if(ball.id === "ball3"){
+//       type.textContent ="Gustation Photisms"
+//     }else if(ball.id === "ball4"){
+//       type.textContent = "Olfactory Photisms"
+//     }else if(ball.id === "ball5"){
+//       type.textContent = "Colour and shape sensations for pain, heat and tactile sensations"
+//     }else if(ball.id === "ball6"){
+//       type.textContent = "Colour Sensations for Shapes"
+//     } 
+//   });
+//   ball.onmouseout = function(){
+//     type.textContent = ""
+//   };
+// });
+let typesSection = document.querySelector('.types');
+const draggable = Draggable.create(".ball", {
+    type: "rotation",
+    bounds:{maxRotation:360, minRotation:0},
+    inertia: true,
+    onDrag: function(e) {
+      if(this.rotation <= 0){
+        type.textContent = "(Rotate the dial clockwise)";
+      }else if((this.rotation <= 360/6) && (this.rotation > 0)){
+        type.textContent = "Sound Photisms:  Sounds which elicit color and light perceptions";
+        }else if((this.rotation <= 360/6*2) && (this.rotation > 360/6)){
+          type.textContent = "Light Photisms: Visual elements which trigger sound sensations";
+        }
+        else if((this.rotation <= 360/6*3) && (this.rotation > 360/6*2)){
+          type.textContent ="Gustation Photisms: Tastes which elicit colour sensations";
+        }
+        else if((this.rotation <= 360/6*4) && (this.rotation > 360/6*3)){
+          type.textContent = "Olfactory Photisms: Smells which elicit colour sensations";
+        }
+        else if((this.rotation <= 360/6*5) && (this.rotation > 360/6*4)){
+          type.textContent = "Pain, heat and tactile sensations which elicit colour and shape sensations";
+
+        }
+        else if((this.rotation < 360/6*6) && (this.rotation > 360/6*5)){
+          type.textContent = "Shapes which elicit color perceptions";
+          // typesSection.style.backgroundImage = "url('../images/burn.jpg')";        }
+        }else{
+          type.textContent = "(Rotate the dial anti-clockwise)";
+        }
+      }
   });
-  ball.onmouseout = function(){
-    type.textContent = ""
-  };
-});
 
 //TOGGLE FUNCTION
 // function myFunction(x) {
@@ -161,20 +192,6 @@ gsap.registerPlugin(ScrollTrigger);
  
 
 
- //section 11
-
-  // const randomColor = Math.floor(Math.random()*16777215).toString(16); //creates hex code
-  // let myElement = document.getElementById('section11');
-  // let mc = new Hammer(myElement);
-  
-  // mc.on("swiperight tap", function(ev) {
-  //     console.log(ev.type +" gesture detected.");
-      
-  //     myElement.style.backgroundColor = "#" + randomColor;  
-  //               //add hash to the hex code
-  // });
-
-
 let scolldown = document.querySelector("#scroll-down");
   let scollbtn = document.querySelector(".scroll");
   let sections = document.querySelectorAll('section');
@@ -280,50 +297,7 @@ descriptors.forEach( (word) => {
   })
 
 });
-// let song = new Howl({
-//   src: ['../sounds/music.mp3'],
-//   loop: false
-// });
-// let scaleC = new Howl({
-//   src: ['../sounds/piano/a.wav'],
-//   loop: false
-// });
-// let scaleD = new Howl({
-//   src: ['../sounds/piano/s.wav'],
-//   loop: false
-// });
-// let scaleE = new Howl({
-//   src: ['../sounds/piano/d.wav'],
-//   loop: false
-// });
-// let scaleF = new Howl({
-//   src: ['../sounds/piano/f.wav'],
-//   loop: false
-// });
-// let scaleG = new Howl({
-//   src: ['../sounds/piano/g.wav'],
-//   loop: false
-// });
-// let scaleA = new Howl({
-//   src: ['../sounds/piano/h.wav'],
-//   loop: false
-// });
-// let scaleB= new Howl({
-//   src: ['../sounds/piano/j.wav'],
-//   loop: false
-// });
-// let scaleCH = new Howl({
-//   src: ['../sounds/piano/k.wav'],
-//   loop: false
-// });
-// let scaleDH= new Howl({
-//   src: ['../sounds/piano/l.wav'],
-//   loop: false
-// });
-// let scaleEH = new Howl({
-//   src: ['../sounds/piano/semic.wav'],
-//   loop: false
-// });
+
 
 // const draggable = Draggable.create(".knob", {
 //   type: "rotation",
