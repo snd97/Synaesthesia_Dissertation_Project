@@ -469,7 +469,7 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
 }
 /* A BRIEF HISTORY OF SYNAESTHESIA */
 .brief{
-    height: 120vh;
+    height: 100vh;
     /* background-color: #8d3f00;
     background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);  */
     background-image: url('../images/history_bg.jpg');
@@ -511,7 +511,7 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
     background-image: url('../images/wooden-table.jpg');
     color:#ffffff;
     text-align: center;
-    height:120vh;
+    height:100vh;
 }
 .white img{
     width:50vw;
@@ -647,20 +647,20 @@ div.sachsNumbers{
 }
 
 /*OTHER TYPES DESCRIBED BY SACHS*/
-#OtherSachs{
+#history-video{
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 120vh;
+    height: 100vh;
     /* gap:5vh; */
     background-color: #ffffff;
     /* background-image: url('../images/paper-texture.jpg');
     background-size: cover; */
 
 }
-#OtherSachs video{
+#history-video video{
     cursor:pointer;
     width:75vw;
 }
@@ -712,7 +712,7 @@ div.sachsNumbers{
     #OtherSachs h1{
         font-size: 1em;
     }
-    #OtherSachs{
+    #history-video{
         height: auto;
         padding-top: 50px;
         padding-bottom: 150px;
@@ -742,7 +742,7 @@ div.sachsNumbers{
 /*ALL VERTICAL SCROLL SECTIONS*/
 .verticalScroll{
     width: 100vw;
-    height: 120vh;
+    height: 100vh;
     /* position: absolute; */
     display:flex;
     align-items: center;

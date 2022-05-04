@@ -195,6 +195,7 @@ gsap.registerPlugin(ScrollTrigger);
 let scolldown = document.querySelector("#scroll-down");
   let scollbtn = document.querySelector(".scroll");
   let sections = document.querySelectorAll('section');
+  let arrowtochange = document.querySelector(".arrowtochange");
 
   scolldown.addEventListener("click", () => {
     gsap.to(window, {duration: 1, scrollTo:".whatis" });
@@ -215,11 +216,14 @@ let scolldown = document.querySelector("#scroll-down");
       left: 0,
       behavior: 'smooth'
     });
-    if(ScrollTrigger.isInViewport('.prevalance')){
+    if(ScrollTrigger.isInViewport('.types')){
+
       gsap.to(window, {duration: 1.5, scrollTo:".whatis" });
+      
+      
     }
   // });
-  })
+  });
     
  
   // for(let i=0; i<= sections.length; i++){
