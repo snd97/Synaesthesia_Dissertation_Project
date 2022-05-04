@@ -166,12 +166,12 @@ exitNewspaperView.addEventListener('click', function(){
 });
 //on toggle colour/monochrome click
 newspaperToggleBtn.addEventListener('click', function(){
-  if(newspaper.getAttribute('src') == "../images/Synaesthesia_Today_Coloured.png"){
-    newspaper.setAttribute('src', '../images/Synaesthesia_Today_Black_and_white.png');
+  if(newspaper.getAttribute('src') == "../images/synaesthesia_today_colour.png"){
+    newspaper.setAttribute('src', '../images/synaesthesia_today_black.png');
     newspaperToggleBtn.src = '../images/icons/color-newspaper.png';
   }
   else{
-    newspaper.setAttribute('src', '../images/Synaesthesia_Today_Coloured.png');    
+    newspaper.setAttribute('src', '../images/synaesthesia_today_colour.png');    
     newspaperToggleBtn.src = '../images/icons/greyscale-newspaper.png';
   }
 });
