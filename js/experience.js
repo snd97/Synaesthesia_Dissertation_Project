@@ -25,7 +25,7 @@ pianoSection.addEventListener('mouseover', event => {
 $(window).on('mousemove resize scroll', function() {
   if ($('.first').isInViewport()) {
     // console.log('in landing section');
-    $(".imagetochangetwo").attr("src","../images/icons/scroll-arrows.png");
+    $(".imagetochangetwo").attr("src","images/icons/scroll-arrows.png");
       $(".scroll").on( "click", function() {
         window.scrollTo({
           top: window.innerHeight,
@@ -36,7 +36,7 @@ $(window).on('mousemove resize scroll', function() {
 // #2 The 360 section - if so, ensure arrow icon is correct and if clicked, scroll down to beginning of piano section
   } else if ($('.second').isInViewport()) {
     // console.log('in 360 section');
-    $(".imagetochangetwo").attr("src","../images/icons/scroll-arrows.png");
+    $(".imagetochangetwo").attr("src","images/icons/scroll-arrows.png");
     $(".scroll").on( "click", function() {      
       window.scrollTo({
         top: window.innerHeight * 2,
@@ -47,7 +47,7 @@ $(window).on('mousemove resize scroll', function() {
 // #3 The piano section - if so, ensure arrow icon is correct and if clicked, scroll to top
   }else if ($('.piano').isInViewport()){
     // console.log('in piano section');
-    $(".imagetochangetwo").attr("src","../images/icons/scroll-to-top.png");
+    $(".imagetochangetwo").attr("src","images/icons/scroll-to-top.png");
     $(".scroll").on( "click", function() {      
       window.scrollTo({
         top: 0,
@@ -166,13 +166,13 @@ exitNewspaperView.addEventListener('click', function(){
 });
 //on toggle colour/monochrome click
 newspaperToggleBtn.addEventListener('click', function(){
-  if(newspaper.getAttribute('src') == "../images/synaesthesia_today_colour.png"){
-    newspaper.setAttribute('src', '../images/synaesthesia_today_black.png');
-    newspaperToggleBtn.src = '../images/icons/color-newspaper.png';
+  if(newspaper.getAttribute('src') == "images/synaesthesia_today_colour.png"){
+    newspaper.setAttribute('src', 'images/synaesthesia_today_black.png');
+    newspaperToggleBtn.src = 'images/icons/color-newspaper.png';
   }
   else{
-    newspaper.setAttribute('src', '../images/synaesthesia_today_colour.png');    
-    newspaperToggleBtn.src = '../images/icons/greyscale-newspaper.png';
+    newspaper.setAttribute('src', 'images/synaesthesia_today_colour.png');    
+    newspaperToggleBtn.src = 'images/icons/greyscale-newspaper.png';
   }
 });
 
