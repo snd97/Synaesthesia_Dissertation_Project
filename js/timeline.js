@@ -10,8 +10,8 @@ function preload() {
   // console.log(images[1]);
 }
 preload(
-  "../images/Sachs-coloured-doc.png",
-  "../images/Ludwig_Sachs_first_documented.png"
+  "../images/sachs-coloured.png",
+  "../images/sachs-normal.png"
 )
 let showOnComplete = document.getElementById('showOnComplete');
 let audioOne = document.getElementById("audioOne");
