@@ -1,3 +1,8 @@
+let loader = document.getElementById('preloader');
+window.onload = (event) => {
+  console.log('page is fully loaded');
+  loader.style.visibility = "hidden";
+};
 
 let images = new Array()
 function preload() {

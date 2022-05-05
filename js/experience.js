@@ -1,3 +1,9 @@
+let loader = document.getElementById('preloader');
+window.onload = (event) => {
+  console.log('page is fully loaded');
+  loader.style.visibility = "hidden";
+  // document.body.style.opacity ='1';
+};
 // LANDING SECTION //
 let introSection = document.getElementById('1');
 let immersiveSection = document.getElementById('2');
