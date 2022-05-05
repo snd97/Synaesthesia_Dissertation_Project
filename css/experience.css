@@ -136,7 +136,7 @@ a{
 }
 
 .hero .left{
-  width:40vw;
+  width:43vw;
   display:flex;
   flex-direction: column;
   gap:30px;
@@ -148,7 +148,7 @@ h1.experienceHeading{
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-stroke: 4px transparent;
-  font-size: 4vw;
+  font-size: 4.3vw;
   text-transform: uppercase; 
   /* font-family: 'Palette Mosaic', cursive; */
   font-family: 'Staatliches', cursive;
@@ -162,7 +162,7 @@ h1.experienceHeading{
 }
 
 .hero p{
-  font-size:1.4vw;
+  font-size:1.8vw;
   color: #020202;
 }
 
