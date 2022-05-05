@@ -277,10 +277,10 @@ function assignInfoText(){
     variantP.innerHTML = "The most common type of Synaesthesia in which letters, numbers, symbols, etc. are experienced as having a consistent colour. Hover over the newspaper to get a glimpse of this phenomenon.";
   }else if(torus.object3D.visible === true){
     variantH2.innerHTML = "Time-Space Synaesthesia: Circular Calendar";
-    variantP.innerHTML = "Time-space synaesthetes have 'conscious awareness of mappings between time and space (e.g., they may see months arranged in an ellipse, or years as columns or spirals)'. In this example the months are expierences visually in 3D space. The length of each month is dependent on how the synesthete percieves how long each month feels to them and each also has a distinct colour association.";
+    variantP.innerHTML = "Time-space synaesthetes have 'conscious awareness of mappings between time and space (e.g., they may see months arranged in an ellipse, or years as columns or spirals)'. In this example, months are experienced visually in 3D space. The length of each month is dependent on how the synesthete percieves it and each also has a distinct colour association.";
   }else if(allNumbers.object3D.visible === true){
     variantH2.innerHTML = "Sequence-Space Synaesthesia";
-    variantP.innerHTML = "Sequence-space synaesthesia can cause any type of ordered sequence (days, months, playing cards, etc.) to be experienced visually, in the mind's eye or in the physical space around them. In this example, each number is represented with its own colour and appear physically in space.";
+    variantP.innerHTML = "Sequence-space synaesthesia can cause any type of ordered sequence (days, months, playing cards, etc.) to be experienced visually, in the mind's eye or in the physical space around them. In this example, each number is represented by its own colour and appears physically in space.";
   }
 }
 function toggleFullScreen360(){
