@@ -379,11 +379,26 @@ function showObjects(){
   clock.classList.add('rayobjs');
 }
 
+let windowsize = $(window).width();
+console.log(windowsize);
 
-$(document).ready(function() {
-  $('.zoom').magnify({
-    speed: 100
-  });
+$(document).ready(function() { 
+  if(windowsize > 1920){
+    $('.zoom').magnify({
+      speed: 100,
+      src: 'images/newspaper_colour.png'
+      });
+
+  }
+  else{
+    $('.zoom').magnify({
+      speed: 100,
+      src: 'images/newspaper-colour-smaller.png'
+      });
+
+  }
+    
+
 });
 
 //change sky when icon is clicked
