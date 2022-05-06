@@ -1,9 +1,11 @@
+//PRELOADER - show gif while page is loading. Show page content only when content is finished loading
 let loader = document.getElementById('preloader');
 window.onload = (event) => {
-  console.log('page is fully loaded');
   loader.style.visibility = "hidden";
   // document.body.style.opacity ='1';
 };
+
+
 // LANDING SECTION //
 let introSection = document.getElementById('1');
 let immersiveSection = document.getElementById('2');
@@ -106,6 +108,8 @@ let showExtraInfo = document.querySelector('#showExtraInfo');
 const myEnterVRButton = document.getElementById('myEnterVRButton');
 let yOffset360;
 
+let exitVariantViewBtn = document.getElementById('exitVariantView');
+
 // EVENT LISTENERS //
 
 //Show/hide Immersive Section Instructions when info button is clicked
@@ -132,6 +136,7 @@ clock.addEventListener('click', function(){
     hideMagazineUpClose();                   //ensure other variants are hidden 
     hide3DCalendar();
     showMagazineOnTable();
+    showExitVariantBtn()
 
     showAllNumbers()   //show the numbers         
     showVariantInfoBtn(); //assign the correct variant info text to the ? button
@@ -140,6 +145,7 @@ clock.addEventListener('click', function(){
   }else{ //hide the numbers if the clock is clicked again
     hideAllNumbers()
     hideVariantInfoBtn();
+    hideExitVariantBtn()
   }
 });
 
@@ -187,7 +193,8 @@ calendar.addEventListener('click', function(){
   if(torus.object3D.visible === false){
     hideAllNumbers()
     hideMagazineUpClose();
-    showMagazineOnTable();  
+    showMagazineOnTable();
+    showExitVariantBtn();  
 
     show3DCalendar();
     showVariantInfoBtn();
@@ -201,10 +208,10 @@ calendar.addEventListener('click', function(){
 });
 
 torus.addEventListener('click', function(){  
-  // pickUpSound.play();
   if(torus.object3D.visible === true){
     hide3DCalendar();
     hideVariantInfoBtn();
+    hideExitVariantBtn()
   }  
 });
 //SHOW VARIANT INFORMATION ON CLICK
@@ -223,6 +230,14 @@ myEnterVRButton.addEventListener("click", function(e) {
   toggleFullScreen360();
 }, false);
 
+
+//EXIT VARIANT VIEW
+exitVariantViewBtn.addEventListener('click', function(){
+  hideAllNumbers();
+  hide3DCalendar();
+  hideVariantInfoBtn();
+  hideExitVariantBtn();
+})
 
 // FUNCTIONS //
 function showAllNumbers(){
@@ -269,6 +284,12 @@ function showVariantInfoBtn(){
 function hideVariantInfoBtn(){
   whatsthis.object3D.visible = false;
   whatsthis.classList.remove('rayobjs');
+}
+function showExitVariantBtn(){
+  exitVariantViewBtn.style.visibility = "visible";
+}
+function hideExitVariantBtn(){
+  exitVariantViewBtn.style.visibility = "hidden";
 }
 function displayTooltip(e, obj){
   tooltip = obj.dataset.tooltip;
