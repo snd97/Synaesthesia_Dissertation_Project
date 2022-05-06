@@ -311,8 +311,8 @@ h1.experienceHeading{
   cursor: url('../images/circle24.png'), auto;	
 }
 #magUpClose{
-  height: 90vh;
-  width: auto;
+  height: auto;
+  width: 85vw;
 }
 #newspapercontrols{
   position:absolute;
@@ -321,7 +321,7 @@ h1.experienceHeading{
   align-items: center;
   gap:10vh;
   z-index: 96;
-  left:65%;
+  left:80%;
   top:10%;
 }
 #newspaperVariant{
