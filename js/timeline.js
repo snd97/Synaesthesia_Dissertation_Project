@@ -24,6 +24,20 @@ audioOne.onended = function() {
   showOnComplete.style.visibility = "visible";
 };
 
+// $('.scroll').click(function () {
+
+//   console.log('it was clicked')
+//   let fuller = $(this).closest('.sections').next(),
+//       section = $(this).closest('.sectionsContainer');
+
+//   section.animate({
+//       scrollTop: section.scrollTop() + fuller.offset()
+//   }, 700);
+
+// });
+
+
+
 
 //CHANGE TEXT ON HOVER
 let type = document.createElement('p');
@@ -119,16 +133,6 @@ showOnComplete.addEventListener('click', function(){
 //ADD SCROLL TRIGGERS FOR TIMELEINE
 gsap.registerPlugin(ScrollTrigger);
 
-//FIRST VERTICAL SCROLL SECTION
-// gsap.utils.toArray(".pushin-layer").forEach((panel, i) => {
-//     ScrollTrigger.create({
-//       trigger: panel,
-//       start: "top top", 
-//       pin: true, 
-//       pinSpacing: false,
-//       scrub:true
-//     });
-//   });
 
 
   //SACHS NUMBER LINE
@@ -149,53 +153,6 @@ gsap.registerPlugin(ScrollTrigger);
   });
 
 
-//SECOND VERTICAL SCROLL SECTION
-  // gsap.utils.toArray(".verticalScroll").forEach((scroll, i) => {
-  //   ScrollTrigger.create({
-  //     trigger: scroll,
-  //     start: "top top", 
-  //     pin: true, 
-  //     pinSpacing: false,
-  //     scrub:true
-  //   });
-  // }); 
-
-//SECOND HORIZONTAL SCROLL SECTION
-  // let sections = gsap.utils.toArray(".panels");
-
-  // gsap.to(sections, {
-  //   xPercent: -100 * (sections.length - 1),
-  //   ease: "none",
-  //   scrollTrigger: {
-  //     trigger: ".horizontalscroll",
-  //     pin: true,
-  //     scrub: 1,
-  //     // snap: 1 / (sections.length - 1),
-  //     // base vertical scrolling on how wide the container is so it feels more natural.
-  //     end: "+=3500",
-  //   }
-  // });
-  
-//HORIZONTAL IMAGE SCROLL THROUGH
-// gsap.set(".massiveImage", {backgroundImage: 'url(../images/comfy_cafe.jpg)'})
-
-// gsap.to(".massiveImage", {
-//   xPercent: -100, 
-//   x: () => innerWidth,
-//   ease: "none",
-//   scrollTrigger: {
-//     trigger: ".massiveImage",
-//     start: "top top",
-//     end: () => innerWidth * 5,
-//     scrub: true,
-//     pin: true,
-//     invalidateOnRefresh: true,
-//     anticipatePin: 1
-//   }
-// });
-
- 
-
 
 let scolldown = document.querySelector("#scroll-down");
   let scollbtn = document.querySelector(".scroll");
@@ -206,7 +163,44 @@ let scolldown = document.querySelector("#scroll-down");
     gsap.to(window, {duration: 1, scrollTo:".whatis" });
   });
 
-  scollbtn.addEventListener("click", () => {
+
+  // $(() => {
+  //   let sections = $('.sections'),
+  //     btn = $(".scroll"),
+  //     idx = 1;
+  //   // adding the click listener to the "a" element //
+  //   btn.on('click', e => {
+  //     e.preventDefault(); // preventing the jump to top (and adding "#" to the URL) //
+  //     idx >= sections.length && (idx = 0); // if the counter reaches the number of the section in the page we must decrement it to 0 //
+  //     if(idx === sections.length -1){
+  //       console.log('idx is 0');
+  //       arrowtochange.setAttribute('src', 'images/icons/scroll-to-top.png')
+  //     }
+  //     else{
+  //       arrowtochange.setAttribute('src', 'images/icons/scroll-arrows.png')
+  //     }
+  //     // scroll effect: the "body" and the "html" elements should scroll not a section but the scroll destination is based on the section with the index "idx" offset from the top of the page (all the page not only the viewport) //
+  //       $("html, body").animate({
+  //         scrollTop: $(sections[idx++]).offset().top
+  //       }, 700);
+  //   });
+  // });
+
+
+  // scollbtn.addEventListener("click", () => {
+  //   if(ScrollTrigger.isInViewport('.sachsnumberContainer')){
+
+  //     gsap.to(window, {duration: 1.5, scrollTo:".whatis" });      
+      
+  //   }
+
+  //   else if(ScrollTrigger.isInViewport('.prevalence ')){
+
+  //     gsap.to(window, {duration: 1.5, scrollTo:".whatis" });      
+      
+  //   }
+  // });
+    
     // if(ScrollTrigger.isInViewport('.hero')){
     //   gsap.to(window, {duration: 1, scrollTo:".brief" });
     // }
@@ -216,48 +210,36 @@ let scolldown = document.querySelector("#scroll-down");
     // else if(ScrollTrigger.isInViewport('.prevalance')){
     //   gsap.to(window, {duration: 1.5, scrollTo:".whatis" });
     // }
-    window.scrollBy({
-      top: window.innerHeight,
-      left: 0,
-      behavior: 'smooth'
+
+
+    scolldown.addEventListener("click", () => {
+      gsap.to(window, {duration: 1, scrollTo:".whatis" });
     });
-    if(ScrollTrigger.isInViewport('.types')){
+  
+    scollbtn.addEventListener("click", () => {
+      // if(ScrollTrigger.isInViewport('.hero')){
+      //   gsap.to(window, {duration: 1, scrollTo:".brief" });
+      // }
+      // else if(ScrollTrigger.isInViewport('.brief')){
+      //   gsap.to(window, {duration: 1, scrollTo:".whatis" });
+      // }
+      // else if(ScrollTrigger.isInViewport('.prevalance')){
+      //   gsap.to(window, {duration: 1.5, scrollTo:".whatis" });
+      // }
+      window.scrollBy({
+        top: window.innerHeight,
+        left: 0,
+        behavior: 'smooth'
+      });
+      if(ScrollTrigger.isInViewport('.prevalence')){
+        gsap.to(window, {duration: 1.5, scrollTo:".whatis" });      
+        
+      }
+     
+    // });
+    });
 
-      gsap.to(window, {duration: 1.5, scrollTo:".whatis" });
-      
-      
-    }
-  // });
-  });
-    
- 
-  // for(let i=0; i<= sections.length; i++){
 
-  //   gsap.to(window, {duration: 1, scrollTo:{y:"#section" + (i + 1), offsetY:70}});
-
-  // }
-
-
-    //DOESN'T KNOW WHAT INDEX IS BECAUSE IT'S NOT LOOPING THROUGH ANYTHING RIGHT NOW
-
-// let secs = document.querySelectorAll('section');
-// let currentSection = 0;
-// let buttonContianer = document.querySelector('#startButton');
-
-
-// buttonContianer.addEventListener('click', move);
-
-// function move(e) {
-//   console.log(secs.length);
-//   if (e.target.classList.contains('next') && currentSection < secs.length) {
-
-//     secs[currentSection++].scrollIntoView({ behavior: 'smooth', left: 0 });
-
-//   } else if (currentSection > 0) {
-//     secs[--currentSection].scrollIntoView({ behavior: 'smooth' });
-
-//   }
-// }
 
 let firstdoc = document.getElementById('hoverchange');
 let doctext = document.getElementById('caption');
@@ -273,17 +255,7 @@ firstdoc.addEventListener('mouseenter', function(){
   };
 })
 
-// let synIs = document.getElementById('additive');
 
-// let layer = document.querySelector('.add');
-
-// synIs.addEventListener('mouseover', function(){
-//   synIs.innerHTML = "INVOLUNTARY";
-
-//   synIs.onmouseout = function(){
-//     synIs.innerHTML = "ADDITIVE";
-//   };
-// })
 
 let description = document.getElementById('addDescription');
 
@@ -324,70 +296,13 @@ descriptors.forEach( (word) => {
 //         // otherSachsContainer.style.backgroundImage = "url('../images/days/FRIDAY.png')"; //light blue
 //         // otherSachsContainer.style.backgroundSize = "cover";
 //         // otherSachsContainer.style.backgroundRepeat = "no-repeat";
-//       }else if((this.rotation <= 360/7*2) && (this.rotation > 360/7)){
-//       otherSachsContainer.style.backgroundColor = '#00e034'; //green  
-//       // otherSachsContainer.style.backgroundImage = "url('../images/days/THURSDAY.png')"; //green 
-      
-//       }
-//       else if((this.rotation <= 360/7*3) && (this.rotation > 360/7*2)){
-//         otherSachsContainer.style.backgroundColor = '#fff700'; //yellow 
-//         // otherSachsContainer.style.backgroundImage = "url('../images/days/WEDNESDAY.png')"; 
-//       }
-//       else if((this.rotation <= 360/7*4) && (this.rotation > 360/7*3)){
-//         otherSachsContainer.style.backgroundColor = '#ffbf00'; //orange  
-//         // otherSachsContainer.style.backgroundImage = "url('../images/days/TUESDAY.png')";
-//       }
-//       else if((this.rotation <= 360/7*5) && (this.rotation > 360/7*4)){
-//         otherSachsContainer.style.backgroundColor = '#ff0026'; //red
-//         // otherSachsContainer.style.backgroundImage = "url('../images/days/MONDAY.png')";
-//       }
-//       else if((this.rotation <= 360/7*6) && (this.rotation > 360/7*5)){
-//         otherSachsContainer.style.backgroundColor = '#6e0099'; //dark purple
-//         // otherSachsContainer.style.backgroundImage = "url('../images/days/SUNDAY.png')";
-//       }
-//       else if((this.rotation < 360) && (this.rotation > 360/7*6)){
-//         otherSachsContainer.style.backgroundColor = '#3c22e3'; //dark blue
-//         // otherSachsContainer.style.backgroundImage = "url('../images/days/SATURDAY.png')";
-//       }
 //       else{
 //         otherSachsContainer.style.backgroundColor = '#ffeaea'; //original pale pink
 //         // otherSachsContainer.style.backgroundImage = "url('../images/days/pink-bg.png')";
 //       }
 //     }
 
-//     else if(e.target.id === 'musical-scale'){
-//       if((this.rotation <= 360/12) && (this.rotation > 0)){
-//         scaleC.play();
-//       }else if((this.rotation <= 360/12*2) && (this.rotation > 360/12)){
-//         scaleD.play();
-//       }else if((this.rotation <= 360/12*3) && (this.rotation > 360/12*2)){
-//         scaleE.play();
-//       }else if((this.rotation <= 360/12*4) && (this.rotation > 360/12*3)){
-//         scaleF.play();
-//       }else if((this.rotation <= 360/12*5) && (this.rotation > 360/12*4)){
-//         scaleG.play();
-//       }else if((this.rotation <= 360/12*6) && (this.rotation > 360/12*5)){
-//         scaleA.play();
-//       }else if((this.rotation <= 360/12*7) && (this.rotation > 360/12*6)){
-//         scaleB.play();
-//       }else if((this.rotation <= 360/12*8) && (this.rotation > 360/12*7)){
-//         scaleCH.play();
-//       }else if((this.rotation <= 360/12*9) && (this.rotation > 360/12*8)){
-//         scaleDH.play();
-//       }else if((this.rotation <= 360/12*10) && (this.rotation > 360/12*9)){
-//         scaleEH.play();
-//       }else if((this.rotation <= 360/12*11) && (this.rotation > 360/12*10)){
-//         scaleDH.play();
-//       }else if((this.rotation <= 360) && (this.rotation > 360/12*11)){
-//         scaleCH.play();
-//       }else{
-//         scaleC.pause();
-//       }
-//   }
 
-// }
-
-// });
 
 preload();
 
