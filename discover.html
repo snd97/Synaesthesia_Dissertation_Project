@@ -6,7 +6,7 @@
 		<link rel="icon" type="image/x-icon" href="images/new-moon.png"> <!--FAVICON FOR BROWSER TAB-->
 		<title>Discover Synaesthesia</title>
 	
-		
+		<link rel="stylesheet" href="css/reset.css"> 
 		<link rel="stylesheet" href="css/magnify.css">
 		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
@@ -34,25 +34,24 @@
             <a href="experience.html" class="expbtn">EXPERIENCE</a>
 			<a class="next scroll" id="scroll"><img src="images/icons/scroll-arrows.png" class="arrowtochange" alt="Scroll down button"></a>
         </div>		
-		<main class="push-in">	
-			<section class="hero" id="section1">
+		<main class="push-in sections">	
+			<section class="hero sections" id="section1">
 				<video id="background-video-landing" autoplay loop muted >
 					<source src="videos/pexels_ID_4182910.mp4" type="video/mp4">
 				</video>
 				<div class="flex">
 					<h1>Discover Synaesthesia</h1>
 					<p>Find out all you need to know about Synaesthesia.</p>
-					<!-- <p id="discoverlinks"> <span id="whatisSyn">What exactly is Synaesthesia?</span><span id="historyof">History of Synaesthesia</span></p> -->
-					<!-- <div id="scroll-down">&#709;</div> -->
+	
 					<img id="scroll-down" src="images/down.png" alt="Arrow icon to prompt user to scroll down">
 				</div>
 			</section> 	
-			<section class="pushin-layer whatis" id="section2">
+			<section class="pushin-layer whatis sections" id="section2">
 				<div>
 					<h1>What <em>is</em> Synaesthesia?</h1>
 				</div>
 			</section>
-			<section class="pushin-layer def" id="section3">
+			<section class="pushin-layer def sections" id="section3">
 				<div id="slickTest" class="slider">
 					<div>
 						<div class="senseimages"><img src="images/synesthesia-senses.gif"></div>
@@ -84,16 +83,16 @@
 					</div> -->
 				</div>
 			</section> 
-			<section class="pushin-layer alltypes" id="section5">
+			<section class="pushin-layer alltypes sections" id="section5">
 				<img src="images/seventynew2.png">
 			</section> 
-			<section class="pushin-layer percent" id="section6">
+			<section class="pushin-layer percent sections" id="section6">
 				<div class="percentdiv">
 					<img src="images/worldpop.png">
 				</div>				
 			</section> 
 			
-			<section class="pushin-layer add" id="section4">
+			<section class="pushin-layer add sections" id="section4">
 				<div class="flex">
 					<h2>Synaesthesia is...</h2>
 					<h3 class="words" id="involuntary">INVOLUNTARY</h3>	
@@ -103,7 +102,7 @@
 					<p id="addDescription">Hover to learn more.</p>
 				</div>
 			</section>  
-			<section class="video" id="section7">
+			<section class="pushin-layer video sections" id="section7">
 				<h1>What causes Synaesthesia?</h1>
 				<div>					
 					<figure class="synaesthetes">
@@ -121,15 +120,15 @@
 					
 				</div>
 			</section>  
-			<section class="pushin-layer brief" id="historysection">
+			<section class="pushin-layer brief sections" id="historysection">
 				<p>A BRIEF HISTORY OF <br>SYNAESTHESIA</p>
 			</section>
-			<section class="pushin-layer yearone">
+			<section class="pushin-layer yearone sections">
 				<p>1812</p>
 				<p id="smaller">The first known documented case of Synaesthesia appears in a doctural thesis by Georg Tobias Ludwich Sachs. Hover over the following image to reveal how Sachs saw letters and numbers:</p>
 			</section>	
 
-			<section class="pushin-layer white delay" id="section8">
+			<section class="pushin-layer white delay sections" id="section8">
 				
 				<figure>
 					<img src="images/sachs-normal.png" id="hoverchange" alt="Image of Ludwig Sach's doctural thesis">
@@ -137,60 +136,60 @@
 				</figure>
 			</section>
 			
-				<div class="sachsnumberContainer" id="section9">	
-					<div class="sachsNumbers para">
-						<p id="sachnumberdescription">Sachs also had colours for numbers:
-							<br><span id="swipe-right">&#x2192;</span>
-						</p>
-					</div>
-					<div class="sachsNumbers ten">
-						<p>0</p>
-						<p class="numberdesc">"Pale Yellow"</p></div>
-					<div class="sachsNumbers one">
-						<p>1</p>
-						<p class="numberdesc">"Definitely white"</p>
-					</div>	
-					<div class="sachsNumbers two">
-						<p class="sachtwo">2</p>
-						<p class="numberdesc">"No distinct colour"</p>
-					</div>	
-					<div class="sachsNumbers three">
-						<p>3</p>
-						<p class="numberdesc">"Ash-grey"</p>
-					</div>	
-					<div class="sachsNumbers four">
-						<p>4</p>
-						<p class="numberdesc">"Vermilion"</p>
-					</div>	
-					<div class="sachsNumbers five">
-						<p>5</p>
-						<p class="numberdesc">"Yellow"</p>
-					</div>	
-					<div class="sachsNumbers six">
-						<p>6</p>
-						<p class="numberdesc">"Indigo"</p>
-					</div>	
-					<div class="sachsNumbers seven">
-						<p>7</p>
-						<p class="numberdesc">"Bluish Grey"</p></div>	
-					<div class="sachsNumbers eight">
-						<p>8</p>
-						<p class="numberdesc">"Brown"</p>
-					</div>		
-					<div class="sachsNumbers nine">
-						<p>9</p>
-						<p class="numberdesc">"Dark Green"</p>
-					</div>				
+			<div class="sachsnumberContainer " id="section9">	
+				<div class="sachsNumbers para">
+					<p id="sachnumberdescription">Sachs also had colours for numbers:
+						<br><span id="swipe-right">&#x2192;</span>
+					</p>
 				</div>
+				<div class="sachsNumbers ten ">
+					<p>0</p>
+					<p class="numberdesc">"Pale Yellow"</p></div>
+				<div class="sachsNumbers one">
+					<p>1</p>
+					<p class="numberdesc">"Definitely white"</p>
+				</div>	
+				<div class="sachsNumbers two">
+					<p class="sachtwo">2</p>
+					<p class="numberdesc">"No distinct colour"</p>
+				</div>	
+				<div class="sachsNumbers three">
+					<p>3</p>
+					<p class="numberdesc">"Ash-grey"</p>
+				</div>	
+				<div class="sachsNumbers four">
+					<p>4</p>
+					<p class="numberdesc">"Vermilion"</p>
+				</div>	
+				<div class="sachsNumbers five ">
+					<p>5</p>
+					<p class="numberdesc">"Yellow"</p>
+				</div>	
+				<div class="sachsNumbers six">
+					<p>6</p>
+					<p class="numberdesc">"Indigo"</p>
+				</div>	
+				<div class="sachsNumbers seven ">
+					<p>7</p>
+					<p class="numberdesc">"Bluish Grey"</p></div>	
+				<div class="sachsNumbers eight ">
+					<p>8</p>
+					<p class="numberdesc">"Brown"</p>
+				</div>		
+				<div class="sachsNumbers nine">
+					<p>9</p>
+					<p class="numberdesc">"Dark Green"</p>
+				</div>				
+			</div>
 	
-			<section id="history-video">
+			<section id="history-video" class="sections">
 				<video width="1000" controls>
 					<source src="videos/history_1848_1880.mp4" type="video/mp4">
 					Your browser does not support HTML video.
 				  </video>
 			</section>
 			
-			<section class="verticalScroll bleuler-lehmann">
+			<section class="verticalScroll bleuler-lehmann sections">
 				<figure>
 					<img src="images/bleuler.png" class="eugen zoom" 
 						alt="Portrait image of Eugen Bleuler"
@@ -216,21 +215,12 @@
 			 
 			</section>
 
-			<section class="verticalScroll types" id="sixtypes">
+			<section class="verticalScroll types sections" id="sixtypes">
 				<h1 class="overview">Bleuler and Lehmann discovered 6 types of Synaesthesia:</h1>
 
 				<figure class="first"><img src="images/knob.svg" class="ball" id="ball1" alt="Sphere-shaped image with a variety of colours"></figure>	
-				<!-- <audio controls id="audioTwo">						
-					<source src="sounds/Audio/B_and_L_first.mp3" type="audio/mp3">
-				Your browser does not support the audio element.
-				</audio>			 -->
-				<!-- <figure><img src="images/sphere.svg" class="ball" id="ball2" alt="Sphere-shaped image with a variety of colours"></figure>
-				<figure><img src="images/sphere.svg" class="ball" id="ball3" alt="Sphere-shaped image with a variety of colours"></figure>
-				<figure><img src="images/sphere.svg" class="ball" id="ball4" alt="Sphere-shaped image with a variety of colours"></figure>
-				<figure><img src="images/sphere.svg" class="ball" id="ball5" alt="Sphere-shaped image with a variety of colours"></figure>
-				<figure><img src="images/sphere.svg" class="ball" id="ball6" alt="Sphere-shaped image with a variety of colours"></figure> -->
 			</section>
-			<section class="verticalScroll prevalence">
+			<section class="verticalScroll prevalence sections">
 				<svg width="80%" height="100%" viewBox="-20 0 557 190" id="svg">
 					<circle cx="100" cy="100" r="3" />
 					<circle cx="300" cy="20" r="3" />
@@ -242,49 +232,6 @@
 				  </svg>
 				
 			</section>
-			<!-- <section class="massiveImage" id="section10"><p>Horizontal Scroll</p></section> -->
-			<!-- <div class="horizontalscroll">
-				<section class="last panels" id="section11">
-						<h1>The Rise of "Synaesthesia"</h1>
-				</section>			
-				<section class="panels one" id="section11">
-					<div id="squareContainer">		
-						<div class="container2">
-							<p class="absolute">1881</p>
-							<img src="images/frame.png" alt="Avatar" class="geoimage2">
-							<div class="overlay2">
-								<div class="text2"><p>An anonymous reviewer of Blueler & Lehmann uses the term "Color Hearing" for all types.</p></div>
-							</div>
-						</div>
-						<div class="container3">
-							<p class="absolute">1892</p>
-							<img src="images/frame.png" alt="Avatar" class="geoimage3">
-							<div class="overlay3">
-								<div class="text3"><p>Jules Antoine Millet differentiates Synaesthesia from "color hearing".</p></div>
-							</div>
-						</div>
-						<div class="container">
-							<p class="absolute">1893</p>
-							<img src="images/frame.png" alt="Avatar" class="geoimage">
-							<div class="overlay">
-								<div class="text"><p>Theodore Flournoy uses "Synopsia" and "Synesthesia" interchangeably in his studies, ousting the idea that Synaesthesia is based on colour alone.</p></div>
-							</div>
-						</div>
-						<div class="container4">
-							<p class="absolute">1895</p>
-							<img src="images/frame.png" alt="Avatar" class="geoimage4">
-							<div class="overlay4">
-								<div class="text4"><p>The term "Synæsthesia" is now known worldwide and denotes all variants.</p></div>
-							</div>
-						</div>
-					</div>		
-				</section>
-				<section class="panels two" id="section12"><i onclick="myFunction(this)" class="fa fa-hourglass-start"></i><p>Toggle test</p></section>
-				<section class="panels three" id="section13"><p>Next section</p></section>
-
-			</div>	
-			<section class="down" id="section14"><p>Next section</p></section>
-			<section class="down2"> <p>Next section</p></section> -->
 		</main>
 		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
@@ -295,6 +242,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
 		<script src="https://hammerjs.github.io/dist/hammer.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 		<script src="js/jquery.magnify.js"></script>
         <script src="js/timeline.js"></script>
