@@ -145,7 +145,7 @@ clock.addEventListener('click', function(){
   }else{ //hide the numbers if the clock is clicked again
     hideAllNumbers()
     hideVariantInfoBtn();
-    hideExitVariantBtn()
+    hideExitVariantBtn();
   }
 });
 
@@ -154,7 +154,7 @@ magazine.addEventListener('click', function() {
   if((magUpClose.style.visibility) === 'hidden'){
     hide3DCalendar();
     hideAllNumbers()
-
+    hideExitVariantBtn()
     showMagazineUpClose();
     hideMagazineOnTable();
   }else{  
@@ -179,8 +179,9 @@ exitNewspaperView.addEventListener('click', function(){
 //on toggle colour/monochrome click
 newspaperToggleBtn.addEventListener('click', function(){
   if(newspaper.getAttribute('src') == "images/newspaper_colour.png"){
-    newspaper.setAttribute('src', 'images/newspaper_bw.png');
     newspaperToggleBtn.src = 'images/icons/color-newspaper.png';
+    newspaper.setAttribute('src', 'images/newspaper_bw.png');
+    
   }
   else{
     newspaper.setAttribute('src', 'images/newspaper_colour.png');    
@@ -204,6 +205,7 @@ calendar.addEventListener('click', function(){
   else{
     hide3DCalendar();
     hideVariantInfoBtn();
+    hideExitVariantBtn()
   }
 });
 
