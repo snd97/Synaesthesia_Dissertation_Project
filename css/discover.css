@@ -235,8 +235,8 @@ em{
     from {top:90vh;}
     to {top:88vh;}
 }
-/*ALL PUSHIN LAYERS*/
-.pushin-layer {
+/*ALL section panels*/
+.section-panels{
     width: 100vw;
     height: 100vh;
     /* position: absolute; */
@@ -259,7 +259,7 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
  }
  /*DEFINITION OF SYNAESTHESIA*/
 
- .def{
+ .definitions{
     /* width:100%; */
     padding-top: 20px;
     text-align:center;
@@ -267,7 +267,7 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
     background-color: #ffee00;
 
 }
-.def h1{
+.definitions h1{
     color:rgb(0, 0, 0);
     font-size: 6vh;
 }
@@ -309,7 +309,7 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
 .gifs img{
     transform: scale(1.1);
 }
-.def .slick-dots li button:before {
+.definitions .slick-dots li button:before {
     font-size:20px;
     color:rgb(158, 1, 1);
   }
@@ -323,19 +323,15 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
   }
 
 /*FACTS ABOUT SYNAESTHESIA*/
-.alltypes{
+.seventytypes{
     background-color: #9e0500;
     /* background: linear-gradient(0deg, #dd0700, rgba(255,238,0,1) 100%); */
 
 }
-.alltypes img{
+.seventytypes img{
     width:80vw;
 }
-.alltypes p {
-    font-size: 1em; 
-    width:50vw;
-    line-height: 1.4;
-}
+
 .bold{
     font-weight:bold;
 }
@@ -344,8 +340,7 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
 /*4% OF WORLD POPULATION*/
 .percent{
     background-color: #9e0500;
-    background: linear-gradient(0deg, rgba(255,238,0,1) 10%, #9e0500  100%);
-    
+    background: linear-gradient(0deg, rgba(255,238,0,1) 10%, #9e0500  100%);    
 }
 .percentdiv{
     /* position:absolute;  */
@@ -355,30 +350,13 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
     justify-content: center;
     align-items: center;
 }
-.percent p{
-    font-size: 1em;
-}
-.percent h2{
-    color:rgb(0, 0, 0);
-    position:absolute;
-    font-size: 3vh;
-    /* text-shadow: rgb(3, 3, 3) 1px 0 10px; */
-    width:60%;
-    text-align: center;
-    background-color: #ffffffc9;
-    padding:10px 5px;
-    border-radius: 20px;
-}
 .percent img{
-    width:80vw;
-    /* border-radius:50%; */
-    /* margin:0 auto; */
-   
+    width:80vw;   
 }
 
 
 /*SYNAESTHESIA IS... SECTION*/
-.add{
+.synIs{
     
     /* background-color:  #ffee00; */
     background-color:  #ffee00;    
@@ -390,24 +368,24 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
     /* gap:10vh; */
    
 }
-.add .flex{    
+.synIs .flex{    
     align-items: flex-end;
 }
-.add h2{
+.synIs h2{
     font-size: 2.5vw;
     align-self:flex-start;
     color:#000000;
 }
-.add h3{
+.synIs h3{
     font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 7vw;
     margin:0;
     color: #fdfdfd;   
 }
-.add h3:hover{
+.synIs h3:hover{
     animation: glow 1s ease-in-out infinite alternate;
 }
-.add p{
+.synIs p{
     font-size: 2vw;
     line-height: 1;
     text-align: end;
@@ -424,8 +402,8 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
     }
 }
 
-/*VIDEO SECTION*/
-.video{
+/*Causes of Synaesthesia SECTION*/
+.causesOfSyn{
     width: 100vw;
     height: 100vh;
     /* margin: auto 0; */
@@ -437,7 +415,7 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
     background: linear-gradient(0deg, rgba(3,133,217,1) 0%, #ffee00 100%);
 
 }
-.video div{
+.causesOfSyn div{
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
@@ -445,12 +423,12 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
     justify-content:space-evenly;
     /* gap:10vh; */
 }
-.video h1{
+.causesOfSyn h1{
      color: rgb(0, 0, 0);
     font-size: 3vw;
     text-shadow: rgba(255, 255, 255, 0.705) 1px 0 5px;
 }
-.video p{
+.causesOfSyn p{
     font-size: 3vh;
     width:25vw;
     color:black;
@@ -473,38 +451,42 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
     font-size: 1.4vw;
     margin-top:10px;
 }
+
 /* A BRIEF HISTORY OF SYNAESTHESIA */
-.brief{
+.briefHistory{
     height: 100vh;
     /* background-color: #8d3f00;
     background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);  */
     background-image: url('../images/history_bg.jpg');
     background-size:cover;
     /* background-repeat: no-repeat; */
-    flex-direction: column;
-    
+    flex-direction: column;   
 
 }
-.brief p{
+.briefHistory p{
     font-size: 4em;
     text-align: center;
     color: white;
 }
 
 /* 1812 */
-.yearone{
+.firstDoc{
+    height: 100vh;
     background-color: #fdbb2d;   
-    /* background-image: url('../images/paper.jpg'); */
-    /* background-repeat:round; */
+    /* background-image: url('../images/gradient-unsplash.jpg'); */
+    background-image: url('../images/wooden-table.jpg');
+    background-repeat:round;
     /* background-position: center; */
     flex-direction: column; 
 }
-.yearone p{
-    color:rgb(255, 255, 255);
+.firstDoc p{
+    color:#ffffff; 
     font-size: 20em;
     margin:0; 
+   
+
 }
-.yearone #smaller{
+.firstDoc #smaller{
     color:rgb(255, 255, 255);
     font-size: 1.5em;
     width:50vw;
@@ -512,17 +494,17 @@ background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
 }
 
 /*SACHS'S THESIS*/
-.white{
+.sachsThesis{
     background-color: #ffffff; 
     background-image: url('../images/wooden-table.jpg');
     color:#ffffff;
     text-align: center;
     height:100vh;
 }
-.white img{
+.sachsThesis img{
     width:50vw;
 }
-.white figcaption{
+.sachsThesis figcaption{
     padding:10px;
     /* font-family: 'PT Serideff', serif; */
     /* background-color: #e4dab1; */
@@ -614,10 +596,10 @@ div.sachsNumbers{
 .sachsNumbers.nine p{
     color:#095E00;
 }
-.sachsNumbers.ten{
+.sachsNumbers.zero{
     background-color: #38be03;
 }
-.sachsNumbers.ten p{
+.sachsNumbers.zero p{
     color:#F7FFBE;
 }
 .sachsNumbers.one .numberdesc{
@@ -648,61 +630,26 @@ div.sachsNumbers{
 .sachsNumbers.nine .numberdesc{
     font-size: 2em;
 }
-.sachsNumbers.ten .numberdesc{
+.sachsNumbers.zero .numberdesc{
     font-size: 2em;
 }
 
-/*OTHER TYPES DESCRIBED BY SACHS*/
-#history-video{
+/*History video section*/
+.historyVideo{
     display:flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    /* gap:5vh; */
     background-color: #ffffff;
-    /* background-image: url('../images/paper-texture.jpg');
-    background-size: cover; */
-
 }
-#history-video video{
+.historyVideo video{
     cursor:pointer;
-    width:75vw;
+    width:70vw;
+    /* border:#000000 5px solid; */
+  
 }
-/* #OtherSachs h1{
-    font-size: 2em;
-    margin:0;
-}
-#OtherSachs p{
-    font-size: 1em;
-    display: flex;
-    align-items: center;
-} */
-
-/* #cardContainer{
-    display:flex;
-
-    align-items: flex-end;
-    justify-content: center;
-    gap:15vw;
-    text-align: center;
-    width:100%;
-} */
-/* .cards{
-    display:flex;
-    gap:20px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width:20vw;
-    height:25vw;
-    font-size:1.2em;
-    background-color: transparent;
-}
-.cards img{
-    width:20vw;
-} */
 
 @media (max-width: 800px) { 
     .slider {
@@ -718,73 +665,45 @@ div.sachsNumbers{
     #OtherSachs h1{
         font-size: 1em;
     }
-    #history-video{
+    .historyVideo{
         height: auto;
         padding-top: 50px;
         padding-bottom: 150px;
         /* gap:10vh; */
     }
-    /* #OtherSachs p{
-        margin-top: -30px;
-    }
-    #cardContainer{
-        flex-wrap: wrap;
-        gap:40vw;
-        width:100%;
-        padding:30px;
-    }
-    .cards{
-        width: 500px;
-        gap:15px;
-    }
-    .cards img{
-        width:35vh;
-    } */
-    
 }
 
 
 
-/*ALL VERTICAL SCROLL SECTIONS*/
-.verticalScroll{
-    width: 100vw;
-    height: 100vh;
-    /* position: absolute; */
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    gap:3vw;
-}
-
-
-
-.bleuler-lehmann{
+/*BLEULER AND LEHMANN SECTION WITH AUDIO*/
+.bleulerlehmann{
     background-color: rgb(255, 180, 180);
     background-image: url('../images/parchment.jpg') ;
     background-size: cover;
     color:black; 
     font-size: 1.2em;
+    gap:3vw;
 }
-.bleuler-lehmann div{
+.bleulerlehmann div{
   display: flex;
   flex-direction: column;  
   align-items: center;
   margin:0;
   position: relative;
 }
-.bleuler-lehmann h1{
+.bleulerlehmann h1{
     font-size: 5vw;
     margin:0;
     color:#5f4c3a;
     mix-blend-mode:color-burn; 
 }
-.bleuler-lehmann p{
+.bleulerlehmann p{
     font-size: 1.5vw;
     margin-top: 50px;
     margin-bottom: 50px;
    
 }
-.bleuler-lehmann img{
+.bleulerlehmann img{
     margin-top:20px;
     
 }
@@ -802,7 +721,7 @@ div.sachsNumbers{
     border-bottom: 40px solid rgb(245, 245, 245);
 }
 
-.bleuler-lehmann figcaption{
+.bleulerlehmann figcaption{
     font-size: 1.5vw;
     font-family: 'Homemade Apple', cursive;
     margin-top: 13px;
@@ -813,8 +732,8 @@ div.sachsNumbers{
     max-width:500px;
 }
 
-/*6 TYPES OF SYNAESTHESIA SECTION*/
-.types{
+/*BLEULER AND LEHMANN 6 TYPES OF SYNAESTHESIA SECTION*/
+.sixTypes{
     background-color: rgb(0, 0, 0);  
     background-image: url('../images/abstractbg.gif');
     background-size: cover;
@@ -825,14 +744,14 @@ div.sachsNumbers{
 }
 
 /*added with javascript*/
-.types .mainpara{
+.sixTypes .mainpara{
     font-size: 2vw;
     color:rgb(255, 255, 255); 
     /* text-transform: uppercase; */
     mix-blend-mode:difference;
 }
 
-.types h1{
+.sixTypes h1{
     color:rgba(255, 255, 255, 0.925); 
     margin-bottom: -10px;
     font-size: 1.5em;
@@ -840,31 +759,138 @@ div.sachsNumbers{
     mix-blend-mode:difference;
 }
 
-.types img{
+.sixTypes img{
     width:22vw;
 }
 
-.prevalence{
+.colourHearing{
     background-color: #000000;
+    background-image: url('../images/sky.jpg');
+    background-position: center;
+    background-size: cover;
     width:100vw;
     height:100vh;
+}
+
+.colorHearing{
+    font-weight: bold;
+    /* color:#FFCC00; */
+}
+.colourHearing div{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index:10;
+    gap:3vh;
+    text-align: center;
+    width:50%;
+}
+.colourHearing h1{
+    font-size: 8vh;
+}
+.colourHearing p{
+    color:white;
+    font-size: 4vh;
+    line-height: 1.2;
+    
+}
+#smallerPara{
+    font-size: 2.5vh;
+}
+#rect{
+    fill: transparent;
+    color:transparent;
+    background-color: transparent;
 }
 #rect text {
     pointer-events: none;
   }
-  circle {
-    fill: rgba(0, 0, 0, 0);
-  }
-  svg {
-    overflow: visible;
-    height: 100%;
-    
-    /* Fix Safari rendering bug */
-    transform: translateZ(0);
-  }
-  
-  path {
-    stroke-width: 2;
-    stroke: rgb(0, 0, 0);
-  }
+circle {
+fill: transparent;
+}
+svg {
+overflow: visible;
+height: 100%;
+fill: transparent;
+
+
+/* Fix Safari rendering bug */
+transform: translateZ(0);
+}
+
+path {
+stroke-width: 2;
+stroke: none;
+}
+
+.millet{
+    background-color: #8b4141;
+
+    /* background-color: #000000; */
+    width:100vw;
+    height:100vh;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.millet h1{
+    position:absolute;
+    color:white;
+    font-size:45vh;
+    /* font-family: 'pollerOne';     */
+    margin:0;
+    transform-origin: 0% 0%;
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg) translateX(-100%); 
+    width:100vh;
+    text-align: center;
+    text-decoration: underline;
+
+}
+#milletText{
+    width:55vw;
+    margin-left: 30vw;
+    padding-top: 20vh;
+}
+.millet p{
+    font-size:20vh;
+    color:white; 
+    font-family: 'Cochin';
+}
+#smallerMillet{
+    text-align: justify;
+    font-size:4vh;
+    padding-top: 5vh; 
+    font-family: 'Alice';
+    margin-bottom: -120px;
+}
+.millet img{
+    width:55vw;
+}
+
+footer{
+background-color: #D63286;
+height:20vh;
+display: flex;
+/* flex-direction: column; */
+align-items:center;
+justify-content: center;
+gap:15px;
+padding-left:30px;
+color:white;
+
+}
+footer p {
+font-size: 1em;
+}
+footer a{  
+color:white;
+}
+
+footer a:hover{  
+color:rgb(0, 0, 0);
+}
 

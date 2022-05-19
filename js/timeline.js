@@ -1,73 +1,26 @@
 let loader = document.getElementById('preloader');
 window.onload = (event) => {
-  console.log('page is fully loaded');
   loader.style.visibility = "hidden";
 };
 
-let images = new Array()
-function preload() {
-  
-  for (i = 0; i < preload.arguments.length; i++) {
-    images[i] = new Image()
-    images[i].src = preload.arguments[i]
-  }
-  // console.log(images[0]);
-  // console.log(images[1]);
-}
-preload(
-  "images/sachs-coloured.png",
-  "images/sachs-normal.png"
-)
+
+
 let showOnComplete = document.getElementById('showOnComplete');
 let audioOne = document.getElementById("audioOne");
 audioOne.onended = function() {
   showOnComplete.style.visibility = "visible";
 };
 
-// $('.scroll').click(function () {
 
-//   console.log('it was clicked')
-//   let fuller = $(this).closest('.sections').next(),
-//       section = $(this).closest('.sectionsContainer');
-
-//   section.animate({
-//       scrollTop: section.scrollTop() + fuller.offset()
-//   }, 700);
-
-// });
-
-
-
-
-//CHANGE TEXT ON HOVER
+//CHANGE TEXT on drag
+let typesSection = document.querySelector('.sixTypes');
 let type = document.createElement('p');
 type.classList.add('mainpara');
 type.textContent = "Rotate the dial clockwise";
-let div = document.getElementById('sixtypes');
-div.appendChild(type);
+typesSection.appendChild(type);
 
 let ball = document.querySelectorAll('.ball');
-// ball.forEach(ball => {
-//   ball.addEventListener('mouseover', function (event){
-//     if(ball.id === "ball1"){
-//       type.textContent = "Sound Photisms"
-//     }else if(ball.id === "ball2"){
-//       type.textContent = "Light Photisms"
-//     }else if(ball.id === "ball3"){
-//       type.textContent ="Gustation Photisms"
-//     }else if(ball.id === "ball4"){
-//       type.textContent = "Olfactory Photisms"
-//     }else if(ball.id === "ball5"){
-//       type.textContent = "Colour and shape sensations for pain, heat and tactile sensations"
-//     }else if(ball.id === "ball6"){
-//       type.textContent = "Colour Sensations for Shapes"
-//     } 
-//   });
-//   ball.onmouseout = function(){
-//     type.textContent = ""
-//   };
-// });
-let typesSection = document.querySelector('.types');
+
 const draggable = Draggable.create(".ball", {
     type: "rotation",
     bounds:{maxRotation:360, minRotation:0},
@@ -92,7 +45,6 @@ const draggable = Draggable.create(".ball", {
         }
         else if((this.rotation < 360/6*6) && (this.rotation > 360/6*5)){
           type.textContent = "Shapes which elicit color perceptions";
-          // typesSection.style.backgroundImage = "url('../images/burn.jpg')";        }
         }else{
           type.textContent = "(Rotate the dial anti-clockwise)";
         }
@@ -108,27 +60,9 @@ const draggable = Draggable.create(".ball", {
 gsap.registerPlugin(ScrollToPlugin);
 
 showOnComplete.addEventListener('click', function(){
-  gsap.to(window, {duration: 1, scrollTo:".types"});
+  gsap.to(window, {duration: 1, scrollTo:".sixTypes"});
 
 });
-
-// let whatis = document.getElementById('whatisSyn');
-// whatis.addEventListener('click', function(){
-//   gsap.to(window, {duration: 1, scrollTo:".whatis"});
-
-// });
-
-// let whatis = document.getElementById('whatisSyn');
-// whatis.addEventListener('click', function(){
-//   gsap.to(window, {duration: 1, scrollTo:".whatis"});
-
-// });
-
-// let historyOf = document.getElementById('historyof');
-// historyOf.addEventListener('click', function(){
-//   gsap.to(window, {duration: 1, scrollTo:".brief"});
-
-// })
 
 //ADD SCROLL TRIGGERS FOR TIMELEINE
 gsap.registerPlugin(ScrollTrigger);
@@ -136,121 +70,131 @@ gsap.registerPlugin(ScrollTrigger);
 
 
   //SACHS NUMBER LINE
-  let sachssections = gsap.utils.toArray(".sachsNumbers");
+let sachssections = gsap.utils.toArray(".sachsNumbers");
 
-  gsap.to(sachssections, {
-    xPercent: -100 * (sachssections.length - 1),
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".sachsnumberContainer",
-      pin: true,
-      scrub: 1,
-      snap: 1 / (sachssections.length - 1),
-      // base vertical scrolling on how wide the container is so it feels more natural.
-      end: "+=2500"
-      
-    }
+gsap.to(sachssections, {
+  xPercent: -100 * (sachssections.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".sachsnumberContainer",
+    pin: true,
+    scrub: 1,
+    snap: 1 / (sachssections.length - 1),
+    // base vertical scrolling on how wide the container is so it feels more natural.
+    end: "+=2500"
+    
+  }
   });
 
 
 
 let scolldown = document.querySelector("#scroll-down");
-  let scollbtn = document.querySelector(".scroll");
-  let sections = document.querySelectorAll('section');
-  let arrowtochange = document.querySelector(".arrowtochange");
+let scollbtn = document.querySelector(".scroll");
+let sections = document.querySelectorAll('section');
+let arrowtochange = document.querySelector(".arrowtochange");
 
-  scolldown.addEventListener("click", () => {
-    gsap.to(window, {duration: 1, scrollTo:".whatis" });
-  });
-
-
-  // $(() => {
-  //   let sections = $('.sections'),
-  //     btn = $(".scroll"),
-  //     idx = 1;
-  //   // adding the click listener to the "a" element //
-  //   btn.on('click', e => {
-  //     e.preventDefault(); // preventing the jump to top (and adding "#" to the URL) //
-  //     idx >= sections.length && (idx = 0); // if the counter reaches the number of the section in the page we must decrement it to 0 //
-  //     if(idx === sections.length -1){
-  //       console.log('idx is 0');
-  //       arrowtochange.setAttribute('src', 'images/icons/scroll-to-top.png')
-  //     }
-  //     else{
-  //       arrowtochange.setAttribute('src', 'images/icons/scroll-arrows.png')
-  //     }
-  //     // scroll effect: the "body" and the "html" elements should scroll not a section but the scroll destination is based on the section with the index "idx" offset from the top of the page (all the page not only the viewport) //
-  //       $("html, body").animate({
-  //         scrollTop: $(sections[idx++]).offset().top
-  //       }, 700);
-  //   });
-  // });
+scolldown.addEventListener("click", () => {
+  gsap.to(window, {duration: 1, scrollTo:".whatis" });
+});
 
 
-  // scollbtn.addEventListener("click", () => {
-  //   if(ScrollTrigger.isInViewport('.sachsnumberContainer')){
-
-  //     gsap.to(window, {duration: 1.5, scrollTo:".whatis" });      
-      
-  //   }
-
-  //   else if(ScrollTrigger.isInViewport('.prevalence ')){
-
-  //     gsap.to(window, {duration: 1.5, scrollTo:".whatis" });      
-      
-  //   }
-  // });
+  scollbtn.addEventListener("click", () => {
     
-    // if(ScrollTrigger.isInViewport('.hero')){
-    //   gsap.to(window, {duration: 1, scrollTo:".brief" });
-    // }
-    // else if(ScrollTrigger.isInViewport('.brief')){
-    //   gsap.to(window, {duration: 1, scrollTo:".whatis" });
-    // }
-    // else if(ScrollTrigger.isInViewport('.prevalance')){
-    //   gsap.to(window, {duration: 1.5, scrollTo:".whatis" });
-    // }
-
-
-    scolldown.addEventListener("click", () => {
+    if(ScrollTrigger.isInViewport('.hero')){
       gsap.to(window, {duration: 1, scrollTo:".whatis" });
-    });
-  
-    scollbtn.addEventListener("click", () => {
-      // if(ScrollTrigger.isInViewport('.hero')){
-      //   gsap.to(window, {duration: 1, scrollTo:".brief" });
-      // }
-      // else if(ScrollTrigger.isInViewport('.brief')){
-      //   gsap.to(window, {duration: 1, scrollTo:".whatis" });
-      // }
-      // else if(ScrollTrigger.isInViewport('.prevalance')){
-      //   gsap.to(window, {duration: 1.5, scrollTo:".whatis" });
-      // }
+    }
+    else if(ScrollTrigger.isInViewport('.whatis')){
+      gsap.to(window, {duration: 1, scrollTo:".definitions" });
+    }
+    else if(ScrollTrigger.isInViewport('.definitions')){
+      gsap.to(window, {duration: 1, scrollTo:".seventytypes" });
+    }
+    else if(ScrollTrigger.isInViewport('.seventytypes')){
+      gsap.to(window, {duration: 1, scrollTo:".percent" });
+    }
+    else if(ScrollTrigger.isInViewport('.percent')){
+      gsap.to(window, {duration: 1, scrollTo:".synIs" });
+    }
+    else if(ScrollTrigger.isInViewport('.synIs')){
+      gsap.to(window, {duration: 1, scrollTo:".causesOfSyn" });
+    }
+    else if(ScrollTrigger.isInViewport('.causesOfSyn')){
+      gsap.to(window, {duration: 1, scrollTo:".briefHistory" });
+    }
+    else if(ScrollTrigger.isInViewport('.briefHistory')){
+      gsap.to(window, {duration: 1, scrollTo:".firstDoc" });
+    }
+    else if(ScrollTrigger.isInViewport('.firstDoc')){
+      gsap.to(window, {duration: 1, scrollTo:".sachsThesis" });
+    }
+    else if(ScrollTrigger.isInViewport('.sachsThesis')){
+      gsap.to(window, {duration: 1, scrollTo:".sachsNumbers" });
+    }
+    else if(ScrollTrigger.isInViewport('.sachsNumbers')){
+      window.scrollBy({
+        top: window.innerHeight/2,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+    else if(ScrollTrigger.isInViewport('.historyVideo')){
+        window.scrollBy({
+        top: window.innerHeight,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+    else if(ScrollTrigger.isInViewport('.bleulerlehmann')){
       window.scrollBy({
         top: window.innerHeight,
         left: 0,
         behavior: 'smooth'
       });
-      if(ScrollTrigger.isInViewport('.prevalence')){
-        gsap.to(window, {duration: 1.5, scrollTo:".whatis" });      
-        
-      }
-     
-    // });
-    });
+    }
+    else if(ScrollTrigger.isInViewport('.sixTypes')){
+      window.scrollBy({
+        top: window.innerHeight,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+    else if(ScrollTrigger.isInViewport('.colourHearing')){
+      window.scrollBy({
+        top: window.innerHeight,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+    else if(ScrollTrigger.isInViewport('.millet')){
+      gsap.to(window, {duration: 2, scrollTo:".hero" });
+    }
+  });
 
+function checkIfInLastSection(){
+  if(ScrollTrigger.isInViewport('.footer')){
+    arrowtochange.setAttribute('src', 'images/icons/scroll-to-top.png');
+  }
+  else{
+    arrowtochange.setAttribute('src', 'images/icons/scroll-arrows.png');
+  }
+  
+}    
+
+$(window).on('resize scroll', function() {
+  checkIfInLastSection();
+});
 
 
 let firstdoc = document.getElementById('hoverchange');
 let doctext = document.getElementById('caption');
 
 firstdoc.addEventListener('mouseenter', function(){
-  firstdoc.src = images[0].src;
+  firstdoc.src =  "images/sachs-coloured.png"
   doctext.innerHTML = "Sachs had Grapheme-Colour Synaesthesia. He perceived distinct colours for many letters of the alphabet."
 
 
   firstdoc.onmouseout = function(){
-    firstdoc.src = images[1].src;
+    firstdoc.src = "images/sachs-normal.png"
     doctext.innerHTML = "Georg Tobias Ludwich Sachs wrote about his Synaesthetic-experience in his doctural thesis"
   };
 })
@@ -278,33 +222,6 @@ descriptors.forEach( (word) => {
   })
 
 });
-
-
-// const draggable = Draggable.create(".knob", {
-//   type: "rotation",
-//   bounds:{maxRotation:360, minRotation:0},
-//   inertia: true,
-//   onDrag: function(e) {
-//     // console.log(e.target.id); //show the target's id in the console
-//     // console.log(this.rotation);
-//     // let randomColor = Math.floor(Math.random()*16777215).toString(16);
-//     let otherSachsContainer = document.getElementById('OtherSachs');
-
-//     if(e.target.id === 'days'){
-//       if((this.rotation <= 360/7) && (this.rotation > 0)){
-//         otherSachsContainer.style.backgroundColor = '#44d1fc';
-//         // otherSachsContainer.style.backgroundImage = "url('../images/days/FRIDAY.png')"; //light blue
-//         // otherSachsContainer.style.backgroundSize = "cover";
-//         // otherSachsContainer.style.backgroundRepeat = "no-repeat";
-//       else{
-//         otherSachsContainer.style.backgroundColor = '#ffeaea'; //original pale pink
-//         // otherSachsContainer.style.backgroundImage = "url('../images/days/pink-bg.png')";
-//       }
-//     }
-
-
-
-preload();
 
 
 $(document).ready(function() {
@@ -341,18 +258,18 @@ slider.addEventListener('mouseup', function(){
 
 
 
-gsap.registerPlugin(MotionPathPlugin);
+// gsap.registerPlugin(MotionPathPlugin);
 
-gsap.to("#rect", {
-  duration: 5, 
-  repeat: 12,
-  repeatDelay: 3,
-  yoyo: true,
-  ease: "power1.inOut",
-  motionPath:{
-    path: "#path",
-    align: "#path",
-    autoRotate: true,
-    alignOrigin: [0.5, 0.5]
-  }
-});
+// gsap.to("#rect", {
+//   duration: 8, 
+//   repeat: 12,
+//   repeatDelay: 0,
+//   yoyo: true,
+//   ease: "power1.inOut",
+//   motionPath:{
+//     path: "#path",
+//     align: "#path",
+//     autoRotate: true,
+//     alignOrigin: [0.5, 0.5]
+//   }
+// });
