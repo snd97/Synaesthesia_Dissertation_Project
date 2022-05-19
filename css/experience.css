@@ -987,18 +987,13 @@ input:checked + .slider:before {
     width:80vw;
   }
 }
-/*white shell-like circle*/
+
 #highE{
   position:absolute; 
   left:75vw;
   top:0vh;
   filter: blur(0.5rem);
   visibility:hidden;
-  /* animation-name: moveUp;
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-direction: normal; */
 }
 #highE img, #highD img{
   transform: scale(0.5);
@@ -1009,25 +1004,26 @@ input:checked + .slider:before {
 #A img{
   transform: scale(0.6);
 }
-/* @keyframes moveUp {
-  from {transform: translateY(0px);}
-  to {transform: translateY(-50px);}
-} */
-
-
-
 
 footer{
-  background-color: rgb(158, 1, 1);
+  background-color: #D63286;
   height:20vh;
   display: flex;
-  flex-direction: column;
-  align-items:flex-start;
+  /* flex-direction: column; */
+  align-items:center;
   justify-content: center;
   gap:15px;
   padding-left:30px;
-}
-footer a{
-  font-size: 1em;
   color:white;
-}
+  
+  }
+  footer p {
+  font-size: 1em;
+  }
+  footer a{  
+  color:white;
+  }
+  
+  footer a:hover{  
+  color:rgb(0, 0, 0);
+  }
