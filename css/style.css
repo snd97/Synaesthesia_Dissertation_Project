@@ -10,7 +10,7 @@ body {
     opacity: 0;
     transition: opacity 3s;
     -webkit-transition: opacity 3s; /* Safari */
-    font-family: 'Alice', 'Unica One', cursive;
+    font-family: 'Alice', 'Cochin',  'Unica One', cursive;
     }
 
 .flex{
@@ -32,7 +32,7 @@ body {
     color:rgb(255, 255, 255);
     line-height: 2.1;
     font-size: 2vw;
-    margin-right:57vw;
+    /* margin-right:57vw; */
     font-family: 'Alice', 'Unica One', cursive;
     /* font-style: italic; */
     text-transform: uppercase; 
