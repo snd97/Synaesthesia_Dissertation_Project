@@ -66,13 +66,14 @@
             <img src="images/newspaper_bw.png" id="magUpClose" class="hotspots zoom changeImage" >
             <!-- data-magnify-src="images/newspaper-colour-smaller.png" -->
             <div id="newspapercontrols">
-                <button id="exitNewspaperView" class="hotspots" data-tooltip="Click to put back">&#10006;</button>
-                <img src="images/icons/more-info.png"  id="newspaperVariant" class="hotspots" data-tooltip="Find out more">
+                <!-- <button id="exitNewspaperView" class="hotspots" data-tooltip="Click to put back">&#10006;</button> -->
+                <img src="images/icons/exit.png" id="exitNewspaperView" class="hotspots" data-tooltip="Click to put back">
+                <img src="images/icons/more-info2.png"  id="newspaperVariant" class="hotspots" data-tooltip="Find out more">
                 <img src="images/icons/color-newspaper.png" class="hotspots" data-tooltip="Toggle colour/greyscale newspaper" id="newspaperToggle" >
             </div>
         
         </div>
-        <img class="hotspots" id="exitVariantView" src="images/icons/exit-btn.png" data-tooltip="Exit Variant View" style="visibility:hidden;"> 
+        <img class="hotspots" id="exitVariantView" src="images/icons/exit.png" data-tooltip="Exit Variant View" style="visibility:hidden;"> 
 
 
         <a-scene embedded vr-mode-ui="enabled: false" keyboard-shortcuts="enterVR: false" >
@@ -166,9 +167,9 @@
             </a-entity>
             
             <!-- Find out more about variant -->  
-            <a-image class="hotspots" id="whatsthis" src="images/icons/more-info.png"            
-             visible="false" sound="on: click; src: #pickup" scale="1 1 1" data-tooltip="Find out more"
-                animation="property: scale; to: 0.55 0.55 0.55; dur: 1500; easing: linear; elasticity: 400; delay: 0; dir: alternate; loop: true;"
+            <a-image class="hotspots" id="whatsthis" src="images/icons/more-info2.png"            
+             visible="false" sound="on: click; src: #pickup" scale="1.2 1.2 1.2" data-tooltip="Find out more"
+                animation="property: scale; to: 0.85 0.85 0.85; dur: 1500; easing: linear; elasticity: 400; delay: 0; dir: alternate; loop: true;"
             ></a-image>    
        
             <div id="showExtraInfo">
@@ -190,11 +191,12 @@
 
 
             <!-- CALENDAR HOTSPOT -->
-            <a-image class="rayobjs hotspots" id="calendar" src="images/calendar-pic.png" position="2.7 1.5 2.6"
-                    rotation="180 -5 179.53"  data-tooltip="Toggle circular calendar" scale="2 2 2"
-                    animation__scale="property: scale; to: 1.1 1.1 1.1; dur: 200; startEvents: mouseenter"
-                    animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"
+            <a-image class="rayobjs hotspots" id="calendar" src="images/calendar-pic.png" position="3.18 2 4.5"
+                    rotation="180 -2.9 179.53"  data-tooltip="Toggle circular calendar" scale="2 2 2"
+                    
                     sound="on: click; src: #pickup">
+                    <!-- animation__scale="property: scale; to: 1.1 1.1 1.1; dur: 200; startEvents: mouseenter"
+                    animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave" -->
             </a-image>
             <!--CIRCULAR CALENDAR-->
             <a-torus src="#ringtexture" id="torus" arc="360" radius="5" radius-tubular="0.2" 
@@ -259,7 +261,7 @@
                     <p>Keyboard Hints</p>
                  </div>
                  <div id="moreinfo">
-                    <img class="pianoInfoIcon" src="images/info2.png" alt="information icon" title="More Info" width="34">
+                    <img class="pianoInfoIcon" src="images/icons/info-icon.png" alt="information icon" title="More Info" width="35">
                     <p>Find out more</p>
                 </div>
                          
