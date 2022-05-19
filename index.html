@@ -5,101 +5,31 @@
         <meta name='viewport' content='width=device-width, initial-scale=1'>
 		<title>The World of Synaesthesia</title>
         <link rel="icon" type="image/x-icon" href="images/new-moon.png"> <!--FAVICON FOR BROWSER TAB-->
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/reset.css">  <!--Reset CSS to be same on all broswers-->
+        <link rel="stylesheet" href="css/style.css"> <!--Link to my own CSS-->
+        <!--LINKS TO GOOGLE FONTS-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
-
         <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">	
-
-        <!-- <link rel="stylesheet" href="css/transition.css"> -->
+        <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
 	</head>
-	<body onload="document.body.style.opacity='1'">     
+	<body onload="document.body.style.opacity='1'">  <!--Gradual fade in from black-->
         <div class="flex">        
             <div id="info">
                 <p class="syn">Reimagining</p>
                 <p><span class="col">SYNAESTHESIA</span></p> 
-            </div>         
-            
-            <p class="element" ></p> 
-            
+            </div>            
+            <p class="element"></p>             
         </div>  
         <canvas id="canvas"></canvas>
-
         <div id="links">
-            <!-- <a href="index.html" class="expbtn">EXPERIENCE</a> -->
             <a href="experience.html" class="glow-on-hover firstbutton">EXPERIENCE</a>
-            <!-- <a href="rellax.html" class="hisbtn">HISTORY</a> -->
             <a href="discover.html" class="glow-on-hover secondbutton">DISCOVER</a>
         </div>  
 
-        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> <!--TYPED.JS-->
-        <script src="js/smoke.js"></script> <!--SMOKE.JS-->
-        <script>
-
-            let typedglow = document.querySelector('.element');
-            let firstbutton = document.querySelector('.firstbutton');
-            let secondbutton = document.querySelector('.secondbutton');
-
-            function addGlow(){
-                // firstbutton.setAttribute('style', 'font-size: 1.2em')
-                // secondbutton.setAttribute('style', 'font-size: 1.2em');
-                firstbutton.classList.add("animated");
-                secondbutton.classList.add("animated");
-                // setTimeout(function() {
-                //     firstbutton.setAttribute('style', 'font-size: 1.2em');
-                //     secondbutton.setAttribute('style', 'font-size: 1.2em');
-                // }, 1050);
-            }
-            
-        let options = {
-            strings: ['How would you like to begin?'],
-            typeSpeed: 60,
-            backSpeed: 40,
-            startDelay: 2500,
-            loop: false,
-            showCursor: false,
-            onComplete: (self) => {
-                console.log('complete');
-                addGlow();
-                //MAKE BUTTON OUTLINE APPEAR BRIEFLY?
-            }        
-        
-        };
-
-        let typed = new Typed('.element', options);
-
-        var canvas = document.getElementById('canvas');
-
-        var ctx = canvas.getContext('2d')
-        canvas.width = innerWidth;
-        canvas.height = innerHeight;
-
-        var party = smokemachine(ctx, [16, 227, 235]);
-        party.start(); // start animating
-        // party.setPreDrawCallback(function(dt){
-        // 	party.addSmoke(innerWidth/2, innerHeight, .5);
-        // 	canvas.width = innerWidth;
-        // 	canvas.height = innerHeight;
-        // })
-        onmousemove = function (e) {
-            var x = e.clientX;
-            var y = e.clientY;
-            var n = 0.5;
-            var t = Math.floor(Math.random() * 200) + 3800;
-            party.addsmoke(x, y, n, t);
-            }
-
-            // let syn = document.getElementsByClassName('syn');
-            // const randomColor = Math.floor(Math.random()*16777215).toString(16); //creates hex code
-            //     syn.style.background = "#" + randomColor;            //add hash to the hex code
-
-
-        </script>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> <!--Link to Typed.js-->
+        <script src="js/smoke.js"></script> <!--Link to Smoke.js-->
+        <script src="js/home.js"></script> <!--Link to my own JS file-->
 	</body>
 </html>
