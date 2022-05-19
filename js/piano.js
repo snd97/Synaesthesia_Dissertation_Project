@@ -1,59 +1,17 @@
 //PIANO SECTION
 
-// let elem = document.querySelector('.buttonFull');
-// let pianosect = document.querySelector('.piano');
-
-// elem.addEventListener("click", function(e) {
-//   e.preventDefault();
-//   toggleFullScreen()
-// }, false);
-
-// let yOffset;
-
-
-// function toggleFullScreen(){
-
-//   if ((document.fullScreenElement && document.fullScreenElement !== null) ||
-//         (!document.mozFullScreen && !document.webkitIsFullScreen)) {
-//           yOffset = window.pageYOffset;
-//           console.log(yOffset);
-//           // elem.src = "../images/exit-full-screen.png";
-//         if (pianosect.requestFullScreen) {
-//           pianosect.requestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-//         } else if (document.documentElement.mozRequestFullScreen) {
-//           pianosect.mozRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-//         } else if (document.documentElement.webkitRequestFullScreen) {
-//           pianosect.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-//         }
-//     } else {
-     
-//       // elem.src = "../images/full-screen.png";
-//         if (document.cancelFullScreen) {
-//             document.exitFullscreen();
-//             setTimeout(() => window.scrollTo(0, yOffset), 100);
-            
-//         } else if (document.mozCancelFullScreen) {
-//             document.mozancelFullScreen();
-//             setTimeout(() => window.scrollTo(0, yOffset), 100);
-//         } else if (document.webkitCancelFullScreen) {
-//             document.webkitCancelFullScreen();
-//             setTimeout(() => window.scrollTo(0, yOffset), 100);
-//         }
-
-//     }
-// }
- let pianoInfoBtn = document.querySelector('.pianoInfoIcon');
- let pianoInfoBox = document.querySelector('.pianoInfoBox');
- pianoInfoBtn.addEventListener('click', function(){  
-  if(pianoInfoBox.style.visibility === 'hidden'){
-    pianoInfoBox.style.visibility = 'visible';
-  }else{
-    pianoInfoBox.style.visibility = 'hidden';  
-  }
- })
- pianoInfoBox.addEventListener('click', function(){  
-  pianoInfoBox.style.visibility = 'hidden';
- });
+let pianoInfoBtn = document.querySelector('.pianoInfoIcon');
+let pianoInfoBox = document.querySelector('.pianoInfoBox');
+pianoInfoBtn.addEventListener('click', function(){  
+if(pianoInfoBox.style.visibility === 'hidden'){
+  pianoInfoBox.style.visibility = 'visible';
+}else{
+  pianoInfoBox.style.visibility = 'hidden';  
+}
+})
+pianoInfoBox.addEventListener('click', function(){  
+pianoInfoBox.style.visibility = 'hidden';
+});
 
 //TOGGLE KEYBOARD HINTS
 let hintsbtn = document.querySelector('#togglehint');
@@ -166,14 +124,6 @@ if((document.fullScreenElement && document.fullScreenElement !== null) ||
   }
 });
 
-
-// let canvas = document.getElementById('canvas');
-
-// let ctx = canvas.getContext('2d');
-// canvas.width = innerWidth;
-// canvas.height = innerHeight;
-
-// let party = SmokeMachine(ctx, [227, 39, 164]);
 
 function setCircleColour(e){
   if(dataKey === 'a'){
