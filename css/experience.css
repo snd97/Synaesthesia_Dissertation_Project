@@ -23,45 +23,8 @@ body{
   position: fixed;
   z-index: 100;
 }
-/* header{
-    display:flex;  
-    flex-wrap: wrap;  
-    color:white;
-    align-items:center;
-    justify-content: space-evenly ;
-    padding:16px 1px;
-    background-color: #ffffff;
-    cursor: url('../images/circle24.png'), auto;	
-} */
-.logo{
-  /* font-size: 30px; */
-  color: #f0d802;
-  font-family: 'Lilita One', cursive;
-  /* font-size:1220%; */
-  font-size:1.5vw;
-  /* width:30%;   */
 
-  /* background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 4px transparent; */
- 
-}
-/* ul{
-  list-style-type: none;
-  padding:0;
-  margin:0;
-  display: flex;
-  gap:5vw;
-  text-transform: uppercase; 
-}
-.right-links a{
-  text-decoration: none;
-  color:#f0d802;
-} */
 
-/*NAV LINKS*/
-/*global links*/
 a{
   text-decoration: none;
   color:rgb(0, 0, 0);
@@ -117,17 +80,19 @@ a{
     color: black;
 }
 .homebtn:hover, .scroll:hover{
-    background-color: #FC0;
+    background-color: #FFCC00;
 }
 
 #navLinks:hover > .hisbtn:hover{
-    text-shadow: #FC0 1px 0 10px;
+    text-shadow: #FFCC00 1px 0 10px;
 }
 
 
 /*LANDING SECTION*/
 .first{
     background-color: #ffffff;
+    background-image: url('../images/white-bg.jpg');
+    background-size: cover;
     width:100vw;
     height: 100vh;
     cursor: url('../images/circle24.png'), auto;	
@@ -136,8 +101,6 @@ a{
 .hero{
   height:100vh;
   width:100vw;
-  background-color: #ffffff;
-  /* background-image: url('../images/little-bokeh.jpg'); */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -158,17 +121,20 @@ h1.experienceHeading{
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-stroke: 4px transparent;
+  /* font-size: 4.3vw; */
   font-size: 4.3vw;
   text-transform: uppercase; 
   /* font-family: 'Palette Mosaic', cursive; */
-  font-family: 'Staatliches', cursive;
+  font-family: 'Alice', 'Staatliches', cursive;
 }
 .left a{
-  color:rgb(253, 91, 245);
+  /* color:rgb(253, 91, 245); */
+  color:#ed1e79;
 }
 .left a:hover{
-  font-weight: bold;
-  color:rgb(255, 222, 74);
+  /* font-weight: bold; */
+  /* color:rgb(255, 222, 74); */
+    color:#FFCC00;
 }
 
 .hero p{
@@ -368,7 +334,8 @@ h1.experienceHeading{
   /* font-size: 4vh; */
 }
 .enter {
-  background-color:#f14e4e;
+  /* background-color:#f14e4e; */
+  background-color:#ed1e79;
   cursor:pointer;
   padding:0.5em 1.4em;
   border:0.16em solid rgba(255,255,255,0);
@@ -385,9 +352,13 @@ h1.experienceHeading{
 }
 .enter:hover{
   border-color: rgba(255,255,255,1);
+  /* border-color: #29abe2; */
   /* transition: all 0.2s; */
 }
-
+.enter:active{
+  background-color:#e23781;
+  border-color: rgb(209, 209, 209);
+}
 
 /**/
 .second{
@@ -685,7 +656,7 @@ h1.experienceHeading{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(161, 0, 0);
+  background-color: #ED1E79;
   -webkit-transition: .4s;
   transition: .4s;
 }
