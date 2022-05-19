@@ -1,3 +1,8 @@
+let loader = document.getElementById('preloader');
+window.onload = (event) => {
+  loader.style.visibility = "hidden";
+};
+
 //References to HTML elements
 let typedglow = document.querySelector('.element');
 let firstbutton = document.querySelector('.firstbutton');
@@ -42,3 +47,21 @@ let n = 0.5;
 let t = Math.floor(Math.random() * 200) + 3800;
 party.addsmoke(x, y, n, t);                         //render the smoke from the current mouse positions
 }
+
+
+let experienceText = document.querySelector('#experienceText');
+let discoverText = document.querySelector('#discoverText');
+
+firstbutton.addEventListener('mouseover', function(){
+    experienceText.style.visibility = "visible";
+});
+firstbutton.addEventListener('mouseout', function(){
+    experienceText.style.visibility = "hidden";
+});
+
+secondbutton.addEventListener('mouseover', function(){
+    discoverText.style.visibility = "visible";
+})
+secondbutton.addEventListener('mouseout', function(){
+    discoverText.style.visibility = "hidden";
+});

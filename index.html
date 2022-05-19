@@ -14,7 +14,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
 	</head>
-	<body onload="document.body.style.opacity='1'">  <!--Gradual fade in from black-->
+	<body>  <!--Gradual fade in from black-->
+        <div id="preloader">
+			<img src="images/preloader.gif">
+		</div>
         <div class="flex">        
             <div id="info">
                 <p class="syn">Reimagining</p>
@@ -24,8 +27,13 @@
         </div>  
         <canvas id="canvas"></canvas>
         <div id="links">
-            <a href="experience.html" class="glow-on-hover firstbutton">EXPERIENCE</a>
-            <a href="discover.html" class="glow-on-hover secondbutton">DISCOVER</a>
+            <a href="experience.html" class="glow-on-hover firstbutton">EXPERIENCE</a>                
+            <a href="discover.html" class="glow-on-hover secondbutton">DISCOVER</a>                
+            
+        </div>
+        <div id="hoverTexts">
+            <p id="experienceText" style="visibility:hidden">Experience Synaesthesia for yourself</p>
+            <p id="discoverText" style="visibility:hidden">Learn about the condition and its history</p>
         </div>  
 
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> <!--Link to Typed.js-->
