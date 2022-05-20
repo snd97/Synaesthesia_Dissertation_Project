@@ -95,7 +95,7 @@ a{
     background-size: cover;
     width:100vw;
     height: 100vh;
-    cursor: url('../images/circle24.png'), auto;	
+    cursor: url('../images/cursor.png'), auto;
 }
 /*flex container*/
 .hero{
@@ -124,16 +124,12 @@ h1.experienceHeading{
   /* font-size: 4.3vw; */
   font-size: 4.3vw;
   text-transform: uppercase; 
-  /* font-family: 'Palette Mosaic', cursive; */
   font-family: 'Alice', 'Staatliches', cursive;
 }
 .left a{
-  /* color:rgb(253, 91, 245); */
   color:#ed1e79;
 }
 .left a:hover{
-  /* font-weight: bold; */
-  /* color:rgb(255, 222, 74); */
     color:#FFCC00;
 }
 
@@ -175,7 +171,7 @@ h1.experienceHeading{
 
 /*360 SECTION*/
 #splash {
-  cursor: url('../images/circle24.png'), auto;	
+  cursor: url('../images/cursor.png'), auto;
   position: absolute;
   visibility: visible;
   display: flex;
@@ -204,10 +200,9 @@ h1.experienceHeading{
 #round{
   color:rgb(255, 255, 255);
   font-size: 1em;
-  background-color: rgb(36, 113, 255);
+  background-color: #29abe2;
   padding:5px 12px;
   border-radius: 50%;
-  /* border:0.16em solid rgb(0, 0, 0); */
 }
 #showExtraInfo{
   position: absolute;
@@ -274,7 +269,7 @@ h1.experienceHeading{
   margin: 0px auto;
  
   text-align: center;
-  cursor: url('../images/circle24.png'), auto;	
+  cursor: url('../images/cursor.png'), auto;
 }
 #magUpClose{
   height: auto;
@@ -370,22 +365,7 @@ h1.experienceHeading{
     align-items: center;
     position: relative;
 }
-/* .mute{
-  position:absolute;
-  top:0;
-  left:0;
-  z-index: 999999;
-  background: #333;
-	color: #fff;
-  padding: .35em 1.2em;
-  font-size: 2em;
-  cursor: pointer;
-  margin:5px;
-  border: 0;
-}
-.mute:hover{
-  color: rgb(255, 252, 89);
-} */
+
 .div-tooltip{
   visibility:hidden;
   /* position: fixed; */
@@ -459,9 +439,7 @@ h1.experienceHeading{
   padding:20px;
   text-align:center ;
   justify-content: center;
-  /* position: absolute; */
-
-  /* margin: auto; */
+ 
 }
 #infoHeading{
   font-size: 4vh;
@@ -486,6 +464,7 @@ h1.experienceHeading{
     background: url('../images/smokey.jpg');
      background-size: cover;
     background-color: #000000;
+    cursor: url('../images/favicon-32x32.png'), auto;
     /* display:flex;
     justify-content: center;
     align-items: center; */
@@ -580,13 +559,7 @@ h1.experienceHeading{
   /* z-index:10; */
 
 }
-/* #keyboardInstructions{
-  color:rgb(255, 208, 0);
-  width: 100%;
-  text-align: center;
-  position: absolute;
-  margin-top:14vw;
-} */
+
 
 .key {
   position: relative;
