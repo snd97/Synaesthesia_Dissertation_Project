@@ -3,6 +3,37 @@ window.onload = (event) => {
   loader.style.visibility = "hidden";
 };
 
+$(document).ready(function() {
+  $('.zoom').magnify({
+    speed: 200,
+   
+  });
+  $('.zoomlehmann').magnify({
+    speed: 200,
+   
+  });
+
+  
+  $('.slider').slick({
+    centerMode: true,
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  });
+  
+
+});
+
+
+let slider = document.querySelector('.slider');
+
+slider.addEventListener('mousedown', function(){
+  slider.style.cursor = "grabbing";
+});
+slider.addEventListener('mouseup', function(){
+  slider.style.cursor = "grab";
+})
 
 
 let showOnComplete = document.getElementById('showOnComplete');
@@ -11,7 +42,7 @@ audioOne.onended = function() {
   showOnComplete.style.visibility = "visible";
 };
 
-
+let changeOnHover = document.querySelector('#changeOnHover');
 //CHANGE TEXT on drag
 let typesSection = document.querySelector('.sixTypes');
 let type = document.createElement('p');
@@ -51,10 +82,6 @@ const draggable = Draggable.create(".ball", {
       }
   });
 
-//TOGGLE FUNCTION
-// function myFunction(x) {
-//   x.classList.toggle("fa-hourglass-end");
-// }
 
 //ADD SCROLLS
 gsap.registerPlugin(ScrollToPlugin);
@@ -81,7 +108,7 @@ gsap.to(sachssections, {
     scrub: 1,
     snap: 1 / (sachssections.length - 1),
     // base vertical scrolling on how wide the container is so it feels more natural.
-    end: "+=2500"
+    // end: "+=2500"
     
   }
   });
@@ -92,92 +119,120 @@ let scolldown = document.querySelector("#scroll-down");
 let scollbtn = document.querySelector(".scroll");
 let sections = document.querySelectorAll('section');
 let arrowtochange = document.querySelector(".arrowtochange");
+let neuralGenetic = document.getElementById('neural-and-genetic');
 
 scolldown.addEventListener("click", () => {
   gsap.to(window, {duration: 1, scrollTo:".whatis" });
 });
 
 
-  scollbtn.addEventListener("click", () => {
-    
-    if(ScrollTrigger.isInViewport('.hero')){
-      gsap.to(window, {duration: 1, scrollTo:".whatis" });
-    }
-    else if(ScrollTrigger.isInViewport('.whatis')){
-      gsap.to(window, {duration: 1, scrollTo:".definitions" });
-    }
-    else if(ScrollTrigger.isInViewport('.definitions')){
-      gsap.to(window, {duration: 1, scrollTo:".seventytypes" });
-    }
-    else if(ScrollTrigger.isInViewport('.seventytypes')){
-      gsap.to(window, {duration: 1, scrollTo:".percent" });
-    }
-    else if(ScrollTrigger.isInViewport('.percent')){
-      gsap.to(window, {duration: 1, scrollTo:".synIs" });
-    }
-    else if(ScrollTrigger.isInViewport('.synIs')){
-      gsap.to(window, {duration: 1, scrollTo:".causesOfSyn" });
-    }
-    else if(ScrollTrigger.isInViewport('.causesOfSyn')){
-      gsap.to(window, {duration: 1, scrollTo:".briefHistory" });
-    }
-    else if(ScrollTrigger.isInViewport('.briefHistory')){
-      gsap.to(window, {duration: 1, scrollTo:".firstDoc" });
-    }
-    else if(ScrollTrigger.isInViewport('.firstDoc')){
-      gsap.to(window, {duration: 1, scrollTo:".sachsThesis" });
-    }
-    else if(ScrollTrigger.isInViewport('.sachsThesis')){
-      gsap.to(window, {duration: 1, scrollTo:".sachsNumbers" });
-    }
-    else if(ScrollTrigger.isInViewport('.sachsNumbers')){
-      window.scrollBy({
-        top: window.innerHeight/2,
-        left: 0,
-        behavior: 'smooth'
-      });
-    }
-    else if(ScrollTrigger.isInViewport('.historyVideo')){
-        window.scrollBy({
-        top: window.innerHeight,
-        left: 0,
-        behavior: 'smooth'
-      });
-    }
-    else if(ScrollTrigger.isInViewport('.bleulerlehmann')){
-      window.scrollBy({
-        top: window.innerHeight,
-        left: 0,
-        behavior: 'smooth'
-      });
-    }
-    else if(ScrollTrigger.isInViewport('.sixTypes')){
-      window.scrollBy({
-        top: window.innerHeight,
-        left: 0,
-        behavior: 'smooth'
-      });
-    }
-    else if(ScrollTrigger.isInViewport('.colourHearing')){
-      window.scrollBy({
-        top: window.innerHeight,
-        left: 0,
-        behavior: 'smooth'
-      });
-    }
-    else if(ScrollTrigger.isInViewport('.millet')){
-      gsap.to(window, {duration: 2, scrollTo:".hero" });
-    }
-  });
+neuralGenetic.addEventListener("click", () => {
+  gsap.to(window, {duration: 2, scrollTo:".causesOfSyn" });
+})
+
+
+scollbtn.addEventListener("click", () => {
+  if ($('.hero').isInViewport()) {
+    document.querySelector('.whatis').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
+  else if ($('.whatis').isInViewport()) {
+    document.querySelector('.definitions').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
+  else if ($('.definitions').isInViewport()) {
+    document.querySelector('.seventytypes').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
+  else if ($('.seventytypes').isInViewport()) {
+    document.querySelector('.percent').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
+  else if ($('.percent').isInViewport()) {
+    document.querySelector('.synIs').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
+  else if ($('.synIs').isInViewport()) {
+    document.querySelector('.causesOfSyn').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
+  else if ($('.causesOfSyn').isInViewport()) {
+    document.querySelector('.briefHistory').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
+  else if ($('.briefHistory').isInViewport()) {
+    document.querySelector('.firstDoc').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
+  else if ($('.firstDoc').isInViewport()) {
+    document.querySelector('.sachsThesis').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
+  else if ($('.sachsThesis').isInViewport()) {
+    document.querySelector('.sachsNumbers').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
+  else if ($('.sachsNumbers').isInViewport()) {
+    window.scrollBy({
+      top: window.innerHeight/4,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
+  else if ($('.historyVideo').isInViewport()) {
+    //   window.scrollBy({
+    //   top: window.innerHeight,
+    //   left: 0,
+    //   behavior: 'smooth'
+    // });
+    document.querySelector('.bleulerlehmann').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
+  else if ($('.bleulerlehmann').isInViewport()) {
+    document.querySelector('.sixTypes').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
+  else if ($('.sixTypes').isInViewport()) {
+    document.querySelector('.colourHearing').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
+  else if ($('.colourHearing').isInViewport()) {
+    document.querySelector('.millet').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
+  else if ($('.millet').isInViewport()) {
+    document.querySelector('.conclusion').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
+  else if ($('.conclusion').isInViewport()) {
+    document.querySelector('.hero').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
+});
 
 function checkIfInLastSection(){
-  if(ScrollTrigger.isInViewport('.footer')){
+  if($('.footer').isInViewport()){
     arrowtochange.setAttribute('src', 'images/icons/scroll-to-top.png');
   }
   else{
     arrowtochange.setAttribute('src', 'images/icons/scroll-arrows.png');
-  }
-  
+  }  
 }    
 
 $(window).on('resize scroll', function() {
@@ -199,6 +254,12 @@ firstdoc.addEventListener('mouseenter', function(){
   };
 })
 
+changeOnHover.addEventListener('mouseenter', function(){
+  changeOnHover.src =  "images/five-senses-animated.gif";
+});
+changeOnHover.onmouseout = function(){
+  changeOnHover.src =  "images/five-senses.png";
+}
 
 
 let description = document.getElementById('addDescription');
@@ -224,52 +285,15 @@ descriptors.forEach( (word) => {
 });
 
 
-$(document).ready(function() {
-  $('.zoom').magnify({
-    speed: 200,
-   
-  });
-  $('.zoomlehmann').magnify({
-    speed: 200,
-   
-  });
 
-  
-  $('.slider').slick({
-    centerMode: true,
-    dots: true,
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1
-  });
-  
+//Function which checks if element is in the viewport - used for the scroll down button to make sure it goes to the next section
+$.fn.isInViewport = function() {
+  let elementTop = $(this).offset().top;
+  let elementBottom = elementTop + $(this).outerHeight();
 
-});
+  let viewportTop = $(window).scrollTop();
+  let viewportBottom = viewportTop + $(window).height();
 
+  return elementBottom > viewportTop && elementTop < viewportBottom;
+};
 
-let slider = document.querySelector('.slider');
-
-slider.addEventListener('mousedown', function(){
-  slider.style.cursor = "grabbing";
-});
-slider.addEventListener('mouseup', function(){
-  slider.style.cursor = "grab";
-})
-
-
-
-// gsap.registerPlugin(MotionPathPlugin);
-
-// gsap.to("#rect", {
-//   duration: 8, 
-//   repeat: 12,
-//   repeatDelay: 0,
-//   yoyo: true,
-//   ease: "power1.inOut",
-//   motionPath:{
-//     path: "#path",
-//     align: "#path",
-//     autoRotate: true,
-//     alignOrigin: [0.5, 0.5]
-//   }
-// });
