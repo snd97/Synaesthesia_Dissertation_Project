@@ -16,9 +16,10 @@ function animateLinks(){
 
 
 let options = {
-strings: ['How would you like to begin?'],  //text to type
+strings: ['There are two main routes through the website.', 'How would you like to begin?'],  //text to type
 typeSpeed: 60,                              //speed of animated type
-startDelay: 2500,                           //delay start of typing by 2500ms
+startDelay: 2500, 
+backSpeed: 40,                          //delay start of typing by 2500ms
 loop: false,                                //do not repeat
 showCursor: false,                          //do not show the typing cursor
 onComplete: (self) => {                     //on completion, call animateLinks function

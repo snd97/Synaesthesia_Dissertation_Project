@@ -2,7 +2,6 @@ html, body{
     scroll-behavior: smooth;
 }
 body {
-    /* font-family:monospace, Georgia, 'Times New Roman', Times, serif; */
     font-family: 'Alice', serif;
     cursor: url('../images/cursor.png'), auto;		
     overflow-x: hidden;
@@ -60,8 +59,8 @@ b{
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #ff0000; 
-
 }
+
 /*SIDE NAV BAR*/
 #navLinks{
     position:absolute;
@@ -340,16 +339,12 @@ em{
 
 /*SYNAESTHESIA IS... SECTION*/
 .synIs{
-    
-    /* background-color:  #ffee00; */
     background-color:  #ffee00;    
     background-image: url('../images/mesh.png');
     background-repeat: no-repeat;
     background-size:contain;
     line-height: 0.65;
-    /* flex-direction: column; */
-    /* gap:10vh; */
-   
+
 }
 .synIs .flex{    
     align-items: flex-end;
@@ -360,7 +355,7 @@ em{
     color:#000000;
 }
 .synIs h3{
-    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Cochin', Georgia, 'Times New Roman', serif;
     font-size: 7vw;
     margin:0;
     color: #fdfdfd;   
@@ -415,7 +410,7 @@ em{
     font-size: 3vh;
     width:25vw;
     color:black;
-    text-align:start;
+    text-align:center;
     background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='white' stroke-width='4' stroke-dasharray='50%25%2c 13%25' stroke-dashoffset='69' stroke-linecap='butt'/%3e%3c/svg%3e");    padding:30px 20px;
 }
 .synaesthetes img{
@@ -484,12 +479,11 @@ em{
 .sachsThesis img{
     width:50vw;
 }
-.sachsThesis figcaption{
+/* .sachsThesis figcaption{
     padding:10px;
-    /* font-family: 'PT Serideff', serif; */
-    /* background-color: #e4dab1; */
     font-size: 1vw;
-}
+} */
+
 /*SACHS NUMBER LINE*/
 .sachsnumberContainer{
     background-color: #850000;
@@ -714,8 +708,8 @@ div.sachsNumbers{
 }
 
 .bleulerlehmann figcaption{
-    font-size: 1.5vw;
-    font-family: 'Homemade Apple', cursive;
+    font-size: 5vh;
+    font-family: 'Square Peg', cursive;
     margin-top: 13px;
 }
 #secondary{
@@ -835,7 +829,6 @@ stroke: none;
     position:absolute;
     color:rgb(0, 0, 0);
     font-size:45vh;
-    /* font-family: 'pollerOne';     */
     margin:0;
     transform-origin: 0% 0%;
     -webkit-transform: rotate(270deg);
@@ -866,7 +859,7 @@ stroke: none;
     z-index: 10;
     font-size:4vh;
     padding-top: 5vh; 
-    font-family: 'Alice';
+    /* font-family: 'Alice', serif; */
     margin-bottom: -50px;
 }
 .smallerMillet.white{

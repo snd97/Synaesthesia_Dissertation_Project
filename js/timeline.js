@@ -115,13 +115,13 @@ gsap.to(sachssections, {
 
 
 
-let scolldown = document.querySelector("#scroll-down");
+let scrolldown = document.querySelector("#scroll-down");
 let scollbtn = document.querySelector(".scroll");
 let sections = document.querySelectorAll('section');
 let arrowtochange = document.querySelector(".arrowtochange");
 let neuralGenetic = document.getElementById('neural-and-genetic');
 
-scolldown.addEventListener("click", () => {
+scrolldown.addEventListener("click", () => {
   gsap.to(window, {duration: 1, scrollTo:".whatis" });
 });
 
@@ -241,16 +241,16 @@ $(window).on('resize scroll', function() {
 
 
 let firstdoc = document.getElementById('hoverchange');
-let doctext = document.getElementById('caption');
+// let doctext = document.getElementById('caption');
 
 firstdoc.addEventListener('mouseenter', function(){
   firstdoc.src =  "images/sachs-coloured.png"
-  doctext.innerHTML = "Sachs had Grapheme-Colour Synaesthesia. He perceived distinct colours for many letters of the alphabet."
+  // doctext.innerHTML = "Sachs had Grapheme-Colour Synaesthesia. He perceived distinct colours for many letters of the alphabet."
 
 
   firstdoc.onmouseout = function(){
     firstdoc.src = "images/sachs-normal.png"
-    doctext.innerHTML = "Georg Tobias Ludwich Sachs wrote about his Synaesthetic-experience in his doctural thesis"
+    // doctext.innerHTML = "Georg Tobias Ludwich Sachs wrote about his Synaesthetic-experience in his doctural thesis"
   };
 })
 

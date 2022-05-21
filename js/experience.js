@@ -12,13 +12,17 @@ let immersiveSection = document.getElementById('2');
 let pianoSection = document.getElementById('3');
 let hisbtn = document.querySelector('.hisbtn');
 let navLinks = document.getElementById('navLinks');
+let splash = document.getElementById('splash');
 
 introSection.addEventListener('mouseover', event => {
   hisbtn.setAttribute('style', 'color:black');
 });
 
 immersiveSection.addEventListener('mouseover', event => {
-  hisbtn.setAttribute('style', 'color:black');
+  hisbtn.setAttribute('style', 'color:white');
+    navLinks.addEventListener('mouseover', event => {
+    hisbtn.setAttribute('style', 'color:black');
+   });
 });
 //Change colour of Discover link when mouse is in the piano section, and then also if it's hovering over the nav links
 pianoSection.addEventListener('mouseover', event => {
@@ -114,7 +118,13 @@ let exitVariantViewBtn = document.getElementById('exitVariantView');
 
 //Show/hide Immersive Section Instructions when info button is clicked
 infoButton.addEventListener('click', function(){
-  infoBoxContainer.style.visibility = 'visible';
+  if(infoBoxContainer.style.visibility === 'visible'){
+    infoBoxContainer.style.visibility = 'hidden'
+  }
+  else{
+    infoBoxContainer.style.visibility = 'visible';
+  }
+  
 });
 infoBoxContainer.addEventListener('click', function (){
   infoBoxContainer.style.visibility = 'hidden';
@@ -199,8 +209,8 @@ calendar.addEventListener('click', function(){
 
     show3DCalendar();
     showVariantInfoBtn();
-    whatsthis.object3D.position.set(3.86, 2.5, 5.6);
-    whatsthis.object3D.rotation.set(0, 180, 0);
+    whatsthis.object3D.position.set(0.8, 2.5, 6);
+    whatsthis.object3D.rotation.set(-0.1, 180, 0);
   }
   else{
     hide3DCalendar();
@@ -209,13 +219,13 @@ calendar.addEventListener('click', function(){
   }
 });
 
-torus.addEventListener('click', function(){  
-  if(torus.object3D.visible === true){
-    hide3DCalendar();
-    hideVariantInfoBtn();
-    hideExitVariantBtn()
-  }  
-});
+// torus.addEventListener('click', function(){  
+//   if(torus.object3D.visible === true){
+//     hide3DCalendar();
+//     hideVariantInfoBtn();
+//     hideExitVariantBtn()
+//   }  
+// });
 //SHOW VARIANT INFORMATION ON CLICK
 whatsthis.addEventListener('click', function(){
   showExtraInfo.style.visibility = 'visible';
@@ -242,6 +252,11 @@ exitVariantViewBtn.addEventListener('click', function(){
 })
 
 // FUNCTIONS //
+// function checkOverlayVisibility(){
+  
+// }
+
+
 function showAllNumbers(){
   allNumbers.object3D.visible = true;
 }
@@ -273,11 +288,11 @@ function hideMagazineUpClose(){
 }
 function show3DCalendar(){
   torus.object3D.visible = true;
-  torus.classList.add('rayobjs');
+  // torus.classList.add('rayobjs');
 }
 function hide3DCalendar(){
   torus.object3D.visible = false;
-  torus.classList.remove('rayobjs');
+  // torus.classList.remove('rayobjs');
 }
 function showVariantInfoBtn(){
   whatsthis.object3D.visible = true;
@@ -303,13 +318,13 @@ function assignInfoText(){
   let variantP = document.getElementById('variantP');
   if(magUpClose.style.visibility === 'visible'){
     variantH2.innerHTML = "Grapheme-colour Synaesthesia";
-    variantP.innerHTML = "The most common type of Synaesthesia in which letters, numbers, symbols, etc. are experienced as having a consistent colour. Hover over the newspaper to get a glimpse of this phenomenon.";
+    variantP.innerHTML = "The most common type of Synaesthesia in which letters, numbers, symbols, etc. are experienced as having a consistent colour. Hover over the newspaper to get a glimpse of this phenomenon or toggle the colour wheel to see the variant in all its glory.";
   }else if(torus.object3D.visible === true){
-    variantH2.innerHTML = "Time-Space Synaesthesia: Circular Calendar";
-    variantP.innerHTML = "Time-space synaesthetes have 'conscious awareness of mappings between time and space (e.g., they may see months arranged in an ellipse, or years as columns or spirals)'. In this example, months are experienced visually in 3D space. The length of each month is dependent on how the synesthete percieves it and each also has a distinct colour association.";
+    variantH2.innerHTML = "Time-Space Synaesthesia";
+    variantP.innerHTML = "Time-space synaesthetes have conscious awareness of mappings between time and space (e.g., they may see months arranged in an ellipse, or years as columns or spirals). In this example, months are experienced as a circular calendar. The length of each month is dependent on how the synesthete percieves it and each also has a distinct colour association.";
   }else if(allNumbers.object3D.visible === true){
     variantH2.innerHTML = "Sequence-Space Synaesthesia";
-    variantP.innerHTML = "Sequence-space synaesthesia can cause any type of ordered sequence (days, months, playing cards, etc.) to be experienced visually, in the mind's eye or in the physical space around them. In this example, each number is represented by its own colour and appears physically in space.";
+    variantP.innerHTML = "Sequence-space synaesthesia can cause any type of ordered sequence (days, months, playing cards, etc.) to be experienced visually, in the mind's eye or in the physical space around them. In this example, each numbers are represented by distinct colours and appear physically in space.";
   }
 }
 function toggleFullScreen360(){

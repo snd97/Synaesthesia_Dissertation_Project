@@ -25,9 +25,9 @@
             <img src="images/preloader.gif">
         </div>
 
-        <div id="navLinks">
+        <div id="navLinks" class="unselectable">
             <a href="index.html" class="homebtn"><img class="imagetochange" src="images/icons/homepage-blue.png" alt="Go to home button"></a>
-            <a href="discover.html" class="hisbtn">DISCOVER</a>
+            <a href="discover.html" class="hisbtn">HISTORY</a>
             <a class="scroll" ><img class="imagetochangetwo" src="images/icons/scroll-arrows.png" alt="Scroll down button"></a>
         </div>
         <section id="1" class="first next">
@@ -49,12 +49,12 @@
             <div id="splash">
                 <h1>Immersive Environment</h1>
                 <p>Use your mouse to pan around and click on the interactive objects in the environment.
-                    Click the <span id="round">&#8505;</span> button at the bottom right for instructions or
-                    enter fullscreen to fully immerse yourself in VR.</p>
+                    Click the info button at the bottom right for instructions or
+                    enter fullscreen to fully immerse yourself in in the virtual space.</p>
                 <!-- <p>Synaesthesia experiences are unique to each individual. What you will experience on this website is just a taster of the infinite sensory possibilities associated with Synaesthesia.</p> -->
                 <div class="enter">ENTER</div>
             </div>
-            <div id="controls">
+            <div id="controls" class="unselectable">
                 <div id="infoButton"></div>
                 <img id="myEnterVRButton" title="Enter VR / Fullscreen" src="images/icons/fullscreen.png" width="50">            
             </div>
@@ -85,22 +85,22 @@
                 
                 <a-sky src="#panorama" id="sky" rotation="0 -130 0" visible="true"></a-sky>
 
-                <div class="infoBoxContainer">
+                <div class="infoBoxContainer unselectable">
                     <div id="infoBox">
                         <h1 id="infoHeading">Immersive Environment Instructions</h1>
                         <p id="infoPara">Use your mouse to pan around and click on objects in the environment. Click the info button at the bottom right to find out more about the current Synaesthesia variant or enter fullscreen to fully immerse yourself in VR.</p>
                     </div>
                 </div>
-                <a-camera position="0 1 0" look-controls wasd-controls-enabled="false">
+                <a-camera position="0 1 0" look-controls="reverseMouseDrag: true" wasd-controls-enabled="false">
                     <a-entity raycaster="objects: .rayobjs" id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
                 </a-camera> 
 
                 <!-- Tool tip div --> 
-                <div class="div-tooltip"></div>  
+                <div class="div-tooltip unselectable"></div>  
 
                 <!-- TIME-SPACE HOTSPOT -->  
                 <a-image class="rayobjs hotspots" id="clock" src="images/clock-unsplash.png" position="0.8 1.5 -1.5"
-                        rotation="1 2 0" width="0.4" height="0.4" data-tooltip="Click to toggle Number-Form Synaesthesia"
+                        rotation="1 2 0" width="0.4" height="0.4" data-tooltip="Toggle sequence-space Synaesthesia"
                         animation__scale="property: scale; to: 1.1 1.1 1.1; dur: 200; startEvents: mouseenter"
                         animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"
                         sound="on: click; src: #pickup"
@@ -152,7 +152,7 @@
                     animation="property: scale; to: 0.85 0.85 0.85; dur: 1500; easing: linear; elasticity: 400; delay: 0; dir: alternate; loop: true;"
                 ></a-image>    
         
-                <div id="showExtraInfo">
+                <div id="showExtraInfo" class="unselectable">
                     <div id="showExtraInfoBox">
                         <h2 id="variantH2">Sequence-Space Synaesthesia</h2>
                         <p id="variantP">Sequence-space synaesthesia can cause any type of ordered sequence (days, months, playing cards, etc.) to be experienced visually, in the mind's eye or in the physical space around them.</p>
@@ -165,7 +165,7 @@
 
                 <!-- CALENDAR HOTSPOT -->
                 <a-image class="rayobjs hotspots" id="calendar" src="images/calendar-pic.png" position="3.18 2 4.5"
-                        rotation="180 -2.9 179.53"  data-tooltip="Toggle circular calendar" scale="2 2 2"
+                        rotation="180 -2.9 179.53"  data-tooltip="Toggle time-space Synaesthesia" scale="2 2 2"
                         
                         sound="on: click; src: #pickup">
                         <!-- animation__scale="property: scale; to: 1.1 1.1 1.1; dur: 200; startEvents: mouseenter"
@@ -240,10 +240,11 @@
                 </div>
 
                 <div class="pianoInfoBox" style="visibility:hidden;">
-                    <h3>Tone-Colour Synaesthesia</h3>
-                    Some Synaesthetes associate specific colours with the musical scale. In this example, each piano note triggers a different colour to appear. Use your mouse or keyboard to visualise it for yourself!
-                    <img src="images/piano-colours.jpg">
-                    Colour perceptions may appear in the mind's eye or in the physical space around the synaesthete. The visual forms of these perceptions vary from person to person.
+                    <h3 class="unselectable">Tone-Colour Synaesthesia</h3>
+                    <p class="unselectable">Some synaesthetes associate specific colours with the musical scale. In this example, each piano note triggers a different colour to appear around the screen.
+                         Use your <span class="bold">mouse</span> or <span class="bold">keyboard</span> to visualise it for yourself!</p>
+                    <img src="images/mouse-keyboard.svg" class="unselectable">
+                    <p class="unselectable">Colour perceptions associated with synaesthesia may appear in the mind's eye or in the physical space around the synaesthete. The visual forms of these perceptions vary from person to person.</p>
                 </div>
             </div>
 
