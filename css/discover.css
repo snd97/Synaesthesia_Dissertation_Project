@@ -51,14 +51,13 @@ b{
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    /* background: linear-gradient(0deg, #ff0000, #fffb00,#ff0000); */
-    background: #fa4c4c; 
+    background: #D63286; 
     border-radius: 10px;
 }
 
-/* Handle on hover */
+/* scrollbar handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #ff0000; 
+    background: #d30a72; 
 }
 
 /*SIDE NAV BAR*/
@@ -147,6 +146,7 @@ b{
     /* background-color: #fefefe;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='152' height='152' viewBox='0 0 152 152'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='temple' fill='%23b70b00' fill-opacity='0.26'%3E%3Cpath d='M152 150v2H0v-2h28v-8H8v-20H0v-2h8V80h42v20h20v42H30v8h90v-8H80v-42h20V80h42v40h8V30h-8v40h-42V50H80V8h40V0h2v8h20v20h8V0h2v150zm-2 0v-28h-8v20h-20v8h28zM82 30v18h18V30H82zm20 18h20v20h18V30h-20V10H82v18h20v20zm0 2v18h18V50h-18zm20-22h18V10h-18v18zm-54 92v-18H50v18h18zm-20-18H28V82H10v38h20v20h38v-18H48v-20zm0-2V82H30v18h18zm-20 22H10v18h18v-18zm54 0v18h38v-20h20V82h-18v20h-20v20H82zm18-20H82v18h18v-18zm2-2h18V82h-18v18zm20 40v-18h18v18h-18zM30 0h-2v8H8v20H0v2h8v40h42V50h20V8H30V0zm20 48h18V30H50v18zm18-20H48v20H28v20H10V30h20V10h38v18zM30 50h18v18H30V50zm-2-40H10v18h18V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); */
 }
+
 #background-video-landing{
     width: 100vw;
     height: 100vh;
@@ -174,14 +174,29 @@ em{
     color:#ffffff;
     text-align: center;
     margin: 0;
-    font-family: 'Staatliches', cursive;
+    /* font-family: 'Staatliches', cursive; */
     font-size:8vw;
+    /* mix-blend-mode:luminosity */
+    text-shadow: rgba(0, 0, 0, 0.555) 1px 0 5px;
 }
 .hero p{
     font-size: 3.5vh;
-    padding:5px;
+    padding:10px;
     color:rgb(250, 250, 250);
     margin:0;
+    /* width:50vw; */
+    text-align: center;
+    background-color: #000000b0;
+}
+#instructions-para{
+    font-size: 2.5vh;
+    /* position:relative;
+    top:30vh; */
+   padding-bottom: 15px;
+}
+#instructions-para img{
+    position:relative;
+    top:8px;
 }
 #discoverlinks{
     display: flex;
@@ -194,12 +209,11 @@ em{
 #whatisSyn:hover, #historyof:hover{
     cursor:pointer;
     color:rgb(208, 211, 21);
-
 }
 
 /*SECTION 1*/
 
-#scroll-down{
+/* #scroll-down{
     position: absolute;
     z-index: 99;
     display:flex;
@@ -213,12 +227,12 @@ em{
     animation-timing-function: ease;
     animation-iteration-count: infinite;
     cursor: pointer;
-}
+} */
 
-@keyframes scroll {
+/* @keyframes scroll {
     from {top:90vh;}
     to {top:88vh;}
-}
+} */
 /*ALL section panels*/
 .section-panels{
     width: 100vw;
@@ -234,11 +248,13 @@ em{
 .whatis{
     background: rgb(255,238,0);
     background: linear-gradient(0deg, rgba(255,238,0,1) 0%, rgba(3,133,217,1) 100%);
+    position: relative;
 }
-.whatis h1{
+.whatis h2{
     color:rgb(0, 0, 0);
-    font-size: 7vw;
+    font-size: 7vw;    
  }
+
  /*DEFINITION OF SYNAESTHESIA*/
 
  .definitions{
@@ -249,7 +265,7 @@ em{
     background-color: #ffee00;
 
 }
-.definitions h1{
+.definitions h2{
     color:rgb(0, 0, 0);
     font-size: 6vh;
 }
@@ -340,7 +356,7 @@ em{
 /*SYNAESTHESIA IS... SECTION*/
 .synIs{
     background-color:  #ffee00;    
-    background-image: url('../images/mesh.png');
+    background-image: url('../images/backgrounds/mesh.png');
     background-repeat: no-repeat;
     background-size:contain;
     line-height: 0.65;
@@ -401,7 +417,7 @@ em{
     justify-content:space-evenly;
     /* gap:10vh; */
 }
-.causesOfSyn h1{
+.causesOfSyn h2{
      color: rgb(0, 0, 0);
     font-size: 3vw;
     /* text-shadow: rgba(255, 255, 255, 0.705) 1px 0 5px; */
@@ -432,7 +448,7 @@ em{
     height: 100vh;
     /* background-color: #8d3f00;
     background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);  */
-    background-image: url('../images/history_bg.jpg');
+    background-image: url('../images/backgrounds/history_bg.jpg');
     background-size:cover;
     /* background-repeat: no-repeat; */
     flex-direction: column;   
@@ -449,7 +465,7 @@ em{
     height: 100vh;
     background-color: #fdbb2d;   
     /* background-image: url('../images/gradient-unsplash.jpg'); */
-    background-image: url('../images/wooden-table.jpg');
+    background-image: url('../images/backgrounds/wooden-table.jpg');
     background-repeat:round;
     /* background-position: center; */
     flex-direction: column; 
@@ -471,7 +487,7 @@ em{
 /*SACHS'S THESIS*/
 .sachsThesis{
     background-color: #ffffff; 
-    background-image: url('../images/wooden-table.jpg');
+    background-image: url('../images/backgrounds/wooden-table.jpg');
     color:#ffffff;
     text-align: center;
     height:100vh;
@@ -648,7 +664,7 @@ div.sachsNumbers{
     .slider p{
         font-size: 2vh;
     }
-    #OtherSachs h1{
+    #OtherSachs h2{
         font-size: 1em;
     }
     .historyVideo{
@@ -664,7 +680,7 @@ div.sachsNumbers{
 /*BLEULER AND LEHMANN SECTION WITH AUDIO*/
 .bleulerlehmann{
     background-color: rgb(255, 180, 180);
-    background-image: url('../images/parchment.jpg') ;
+    background-image: url('../images/backgrounds/parchment.jpg') ;
     background-size: cover;
     color:black; 
     font-size: 1.2em;
@@ -677,7 +693,7 @@ div.sachsNumbers{
   margin:0;
   position: relative;
 }
-.bleulerlehmann h1{
+.bleulerlehmann h2{
     font-size: 5vw;
     margin:0;
     color:#5f4c3a;
@@ -721,7 +737,7 @@ div.sachsNumbers{
 /*BLEULER AND LEHMANN 6 TYPES OF SYNAESTHESIA SECTION*/
 .sixTypes{
     background-color: rgb(0, 0, 0);  
-    background-image: url('../images/abstractbg.gif');
+    background-image: url('../images/backgrounds/abstractbg.gif');
     background-size: cover;
     height:100vh;
     width:100vw;
@@ -737,7 +753,7 @@ div.sachsNumbers{
     mix-blend-mode:difference;
 }
 
-.sixTypes h1{
+.sixTypes h2{
     color:rgba(255, 255, 255, 0.925); 
     margin-bottom: -10px;
     font-size: 1.5em;
@@ -751,7 +767,7 @@ div.sachsNumbers{
 
 .colourHearing{
     background-color: #000000;
-    background-image: url('../images/sky.jpg');
+    background-image: url('../images/backgrounds/sky.jpg');
     background-position: center;
     background-size: cover;
     width:100vw;
@@ -771,7 +787,7 @@ div.sachsNumbers{
     text-align: center;
     width:50%;
 }
-.colourHearing h1{
+.colourHearing h2{
     font-size: 8vh;
 }
 .colourHearing p{
@@ -825,7 +841,7 @@ stroke: none;
     /* justify-content: center; */
     /* align-items: center; */
 }
-.millet h1{
+.millet h2{
     position:absolute;
     color:rgb(0, 0, 0);
     font-size:45vh;
@@ -874,14 +890,14 @@ stroke: none;
 /*CONCLUSION SECTION*/
 .conclusion{
     background-color: #000000;
-    background-image: url('../images/white-bg.jpg');
+    background-image: url('../images/backgrounds/white-bg.jpg');
     background-position: center;
     background-size: cover;
     flex-direction: column;
 }
-.conclusion h1{
+.conclusion h2{
     font-size: 5vh;
-    color:#000000;
+    color:#D63286;
     margin-bottom: 5vh;
     font-weight: bold;
 }
@@ -892,13 +908,13 @@ stroke: none;
     text-align: justify; 
 }
 
-.conclusion #neural-and-genetic{
+/* .conclusion #neural-and-genetic{
     color: #D63286;
     cursor:pointer;
 }
 .conclusion #neural-and-genetic:hover{
     color: #FFCC00;
-}
+} */
 
 
 footer{
