@@ -48,13 +48,14 @@ a{
 /* Handle */
 ::-webkit-scrollbar-thumb {
   /* background: linear-gradient(0deg, #ff0000, #fffb00,#ff0000); */
-  background: #fa4c4c; 
+  background: #D63286;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff0000; 
+  background: #d30a72;
+
 }
 
 
@@ -119,7 +120,7 @@ a{
 /*LANDING SECTION*/
 .first{
     background-color: #ffffff;
-    background-image: url('../images/white-bg.jpg');
+    background-image: url('../images/backgrounds/white-bg.jpg');
     background-size: cover;
     width:100vw;
     height: 100vh;
@@ -490,7 +491,7 @@ h1.experienceHeading{
 .piano{
     height:100vh;
     width:100vw;
-    background: url('../images/smokey.jpg');
+    background: url('../images/backgrounds/smokey.jpg');
      background-size: cover;
     background-color: #000000;
     cursor: url('../images/cursor.png'), auto;
@@ -559,7 +560,7 @@ h1.experienceHeading{
 .pianoInfoBox img{
   margin:-70px;
   width:23vw;
-  /* padding:20px; */
+  padding:55px;
 }
 .pianoInfoBox h3{
   font-weight: bold;
