@@ -7,9 +7,9 @@ window.onload = (event) => {
 
 
 // LANDING SECTION //
-let introSection = document.getElementById('1');
-let immersiveSection = document.getElementById('2');
-let pianoSection = document.getElementById('3');
+let introSection = document.querySelector('.first');
+let immersiveSection = document.querySelector('.second');
+let pianoSection = document.querySelector('.piano');
 let hisbtn = document.querySelector('.hisbtn');
 let navLinks = document.getElementById('navLinks');
 let splash = document.getElementById('splash');
@@ -188,13 +188,13 @@ exitNewspaperView.addEventListener('click', function(){
 });
 //on toggle colour/monochrome click
 newspaperToggleBtn.addEventListener('click', function(){
-  if(newspaper.getAttribute('src') == "images/newspaper_colour.png"){
+  if(newspaper.getAttribute('src') == "images/aframe-assets/newspaper_colour.png"){
     newspaperToggleBtn.src = 'images/icons/color-newspaper.png';
-    newspaper.setAttribute('src', 'images/newspaper_bw.png');
+    newspaper.setAttribute('src', 'images/aframe-assets/newspaper_bw.png');
     
   }
   else{
-    newspaper.setAttribute('src', 'images/newspaper_colour.png');    
+    newspaper.setAttribute('src', 'images/aframe-assets/newspaper_colour.png');    
     newspaperToggleBtn.src = 'images/icons/greyscale-newspaper.png';
   }
 });
@@ -403,14 +403,14 @@ $(document).ready(function() {
   if(windowsize > 1920){
     $('.zoom').magnify({
       speed: 100,
-      src: 'images/newspaper_colour.png'
+      src: 'images/aframe-assets/newspaper_colour.png'
       });
 
   }
   else{
     $('.zoom').magnify({
       speed: 100,
-      src: 'images/newspaper-colour-smaller.png'
+      src: 'images/aframe-assets/newspaper-colour-smaller.png'
       });
 
   }

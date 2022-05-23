@@ -119,16 +119,11 @@ let scrolldown = document.querySelector("#scroll-down");
 let scollbtn = document.querySelector(".scroll");
 let sections = document.querySelectorAll('section');
 let arrowtochange = document.querySelector(".arrowtochange");
-let neuralGenetic = document.getElementById('neural-and-genetic');
+
 
 scrolldown.addEventListener("click", () => {
   gsap.to(window, {duration: 1, scrollTo:".whatis" });
 });
-
-
-neuralGenetic.addEventListener("click", () => {
-  gsap.to(window, {duration: 2, scrollTo:".causesOfSyn" });
-})
 
 
 scollbtn.addEventListener("click", () => {
@@ -244,21 +239,21 @@ let firstdoc = document.getElementById('hoverchange');
 // let doctext = document.getElementById('caption');
 
 firstdoc.addEventListener('mouseenter', function(){
-  firstdoc.src =  "images/sachs-coloured.png"
+  firstdoc.src =  "images/history/sachs-coloured.png"
   // doctext.innerHTML = "Sachs had Grapheme-Colour Synaesthesia. He perceived distinct colours for many letters of the alphabet."
 
 
   firstdoc.onmouseout = function(){
-    firstdoc.src = "images/sachs-normal.png"
+    firstdoc.src = "images/history/sachs-normal.png"
     // doctext.innerHTML = "Georg Tobias Ludwich Sachs wrote about his Synaesthetic-experience in his doctural thesis"
   };
 })
 
 changeOnHover.addEventListener('mouseenter', function(){
-  changeOnHover.src =  "images/five-senses-animated.gif";
+  changeOnHover.src =  "images/history/five-senses-animated.gif";
 });
 changeOnHover.onmouseout = function(){
-  changeOnHover.src =  "images/five-senses.png";
+  changeOnHover.src =  "images/history/five-senses.png";
 }
 
 
