@@ -145,7 +145,7 @@ a{
 
 }
 
-h1.experienceHeading{
+h1{
   background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
   background-clip: text;
   -webkit-background-clip: text;
@@ -207,17 +207,21 @@ h1.experienceHeading{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.753);
+  /* background-color: rgba(0, 0, 0, 0.753); */
+  background-color: #000;
   z-index: 98;
   width: 100vw;
   height: 100vh;
   margin: auto;
   gap:5vh;
 }
-#splash h1{
-  font-family: 'Staatliches', cursive;
+#splash h2{
+  font-family: 'Cochin', serif;
   color:white;
   font-size: 3.2em;
+  font-weight:bold;
+  text-transform: uppercase;
+  text-align: center;
 }
 #splash p{
   color:white;
@@ -317,7 +321,7 @@ h1.experienceHeading{
 }
 #newspaperVariant{
   cursor:pointer;
-  width:60px;
+  width:8vh;
    /* transform: scale(1) */
 }
 #newspaperVariant:hover, #newspaperToggle:hover{
@@ -352,6 +356,10 @@ h1.experienceHeading{
     top:15%;
   }
 }
+/* #newspapercontrols img{
+  width:7vh;
+  height:7vh;
+} */
 
 #exitNewspaperView:hover{
   background-color: rgb(0, 0, 0);
@@ -359,10 +367,10 @@ h1.experienceHeading{
   /* font-size: 4vh; */
 }
 .enter {
-  /* background-color:#f14e4e; */
   background-color:#ed1e79;
   cursor:pointer;
-  padding:0.5em 1.4em;
+  padding: 8px 28px;
+
   border:0.16em solid rgba(255,255,255,0);
   border-radius:2em;
   box-sizing: border-box;
@@ -373,12 +381,10 @@ h1.experienceHeading{
   text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
   text-align:center;
   /* transition: all 0.2s; */
-  transform: scale(1.2);
+  transform: scale(1.4);
 }
 .enter:hover{
   border-color: rgba(255,255,255,1);
-  /* border-color: #29abe2; */
-  /* transition: all 0.2s; */
 }
 .enter:active{
   background-color:#e23781;
@@ -554,8 +560,13 @@ h1.experienceHeading{
   align-items: center;
   justify-content: center;  
   text-align: justify;
-  
+}
 
+@media only screen and (min-width: 2000px) {
+  .pianoInfoBox {
+    bottom: 27vh;
+    right:23.7vw; 
+  }
 }
 .pianoInfoBox img{
   margin:-70px;
