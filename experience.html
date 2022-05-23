@@ -22,7 +22,7 @@
     </head>
     <body>
         <div id="preloader">
-            <img src="images/preloader.gif">
+            <img src="images/preloader.gif" alt="A gif which plays while the content of the page is loading">
         </div>
 
         <div id="navLinks" class="unselectable">
@@ -30,7 +30,7 @@
             <a href="discover.html" class="hisbtn">HISTORY</a>
             <a class="scroll" ><img class="imagetochangetwo" src="images/icons/scroll-arrows.png" alt="Scroll down button"></a>
         </div>
-        <section id="1" class="first next">
+        <section class="first" id="1" >
             <div class="hero">
                 <div class="left">
                     <h1 class="experienceHeading">Experience Synaesthesia</h1>
@@ -39,13 +39,13 @@
 
                 </div>
         
-                <div id="floatdiv"><img src="images/output.gif" class="float" alt="Gif of person floating">
-                    <img src="images/ArrowsFrameColour.svg" class="fireworks" alt="Decorative colours">
+                <div id="floatdiv"><img src="images/experience/output.gif" class="float" alt="Gif of person floating">
+                    <img src="images/experience/ArrowsFrameColour.svg" class="fireworks" alt="Decorative colours">
                 </div>
             </div>
         </section>
 
-        <section id="2" class="second next">
+        <section id="2" class="second">
             <div id="splash">
                 <h1>Immersive Environment</h1>
                 <p>Use your mouse to pan around and click on the interactive objects in the environment.
@@ -61,28 +61,42 @@
 
             <div id="magUpCloseContainer" style="visibility:hidden;">
                 
-                <img src="images/newspaper_bw.png" id="magUpClose" class="hotspots zoom changeImage" >
+                <img src="images/aframe-assets/newspaper_bw.png" id="magUpClose" class="hotspots zoom changeImage" alt="Fictional newspaper called Synaesthesia Today demonstrating grapheme-colour">
                 <div id="newspapercontrols">
-                    <img src="images/icons/exit.png" id="exitNewspaperView" class="hotspots" data-tooltip="Click to put back">
-                    <img src="images/icons/more-info2.png"  id="newspaperVariant" class="hotspots" data-tooltip="Find out more">
-                    <img src="images/icons/color-newspaper.png" class="hotspots" data-tooltip="Toggle colour/greyscale newspaper" id="newspaperToggle" >
+                    <img src="images/icons/exit.png" id="exitNewspaperView" class="hotspots" data-tooltip="Click to put back" alt="exit icon">
+                    <img src="images/icons/more-info2.png"  id="newspaperVariant" class="hotspots" data-tooltip="Find out more" alt="More information icon">
+                    <img src="images/icons/color-newspaper.png" class="hotspots" data-tooltip="Toggle colour/greyscale newspaper" id="newspaperToggle" alt="Colour wheel icon to toggle grescale/colour newspaper">
                 </div>
             
             </div>
-            <img class="hotspots" id="exitVariantView" src="images/icons/exit.png" data-tooltip="Exit Variant View" style="visibility:hidden;"> 
+            <img class="hotspots" id="exitVariantView" src="images/icons/exit.png" data-tooltip="Exit Variant View" style="visibility:hidden;" alt="exit icon"> 
 
-
+            <!--embed an aframe scene to webpage. disable a-frame's VR icon and feature so that I can add my own fullscreen option-->
             <a-scene embedded vr-mode-ui="enabled: false" keyboard-shortcuts="enterVR: false" >
-                <!--  -->
+                <!--use A-Frame's asset management system to preload and cache assets for better performance  -->
                 <a-assets>
-                    <img id="ringtexture" src="images/Months-new.png" alt="Coloured months to demonstrate synaesthesia">
-                    <!-- <img id="colouredDocument" src="images/Synaesthesia-today-version2.gif" crossorigin="anonymous" alt="Sachs's doctural thesis"/> -->
-                    <img id="newspaper" src="images/newspaper_bw.png" crossorigin="anonymous" alt="Fictional 'Synaesthesia Today' newspaper"/>
-                    <img id="panorama" src="images/comfy_cafe.jpg" crossorigin="anonymous" alt="Equirectangular image of an empty cafe"/>
+                    <img id="panorama" src="images/aframe-assets/comfy_cafe.jpg" crossorigin="anonymous" alt="Equirectangular image of an empty cafe"/>
+                    <img id="ringtexture" src="images/aframe-assets/Months-new.png" alt="Coloured months to demonstrate synaesthesia">
+                    <img id="newspaper" src="images/aframe-assets/newspaper_bw.png" crossorigin="anonymous" alt="Fictional 'Synaesthesia Today' newspaper"/>
+                    <img id="interactiveClock" src="images/aframe-assets/clock.png" alt="Antique clock">
+                    <img id="interactiveCalendar" src="images/aframe-assets/calendar-pic.png" alt="Wall calendar">
+                    <img id="variantInfoIcon" src="images/icons/more-info2.png" alt="Icon with question mark">
                     <audio id="pickup" src="sounds/pick-up.wav"></audio>
                     <audio id="paperSound" src="sounds/Page_Turn.mp3"></audio>
+                    <img id="one" src="images/numbers/one.png" alt="Image of number one with transparent background">
+                    <img id="two" src="images/numbers/two.png" alt="Image of number two with transparent background">
+                    <img id="three" src="images/numbers/three.png" alt="Image of number three with transparent background">
+                    <img id="four" src="images/numbers/four.png" alt="Image of number four with transparent background">
+                    <img id="five" src="images/numbers/five.png" alt="Image of number five with transparent background">
+                    <img id="six" src="images/numbers/six.png" alt="Image of number six with transparent background">
+                    <img id="seven" src="images/numbers/seven.png" alt="Image of number seven with transparent background">
+                    <img id="eight" src="images/numbers/eight.png" alt="Image of number eight with transparent background">
+                    <img id="nine" src="images/numbers/nine.png" alt="Image of number nine with transparent background">
+                    <img id="ten" src="images/numbers/ten.png" alt="Image of number ten with transparent background">
+                    <img id="eleven" src="images/numbers/eleven.png" alt="Image of number eleven with transparent background">
+                    <img id="twelve" src="images/numbers/twelve.png" alt="Image of number twelve with transparent background">
                 </a-assets>
-                
+            <!--Set the a-sky to the preloaded panorama image with id='panorama'-->    
                 <a-sky src="#panorama" id="sky" rotation="0 -130 0" visible="true"></a-sky>
 
                 <div class="infoBoxContainer unselectable">
@@ -91,67 +105,68 @@
                         <p id="infoPara">Use your mouse to pan around and click on objects in the environment. Click the info button at the bottom right to find out more about the current Synaesthesia variant or enter fullscreen to fully immerse yourself in VR.</p>
                     </div>
                 </div>
+                <!--create the camera. reverse the mouse drag and disable the WASD keys for moving around environment-->
                 <a-camera position="0 1 0" look-controls="reverseMouseDrag: true" wasd-controls-enabled="false">
-                    <a-entity raycaster="objects: .rayobjs" id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
+                    <a-entity raycaster="objects: .rayobjs" id="mouseCursor" cursor="rayOrigin: mouse"></a-entity> <!--Add the class "rayobjs" which will be required classes for all interactive elements in scene; set the mouse as the raycaster origin-->
                 </a-camera> 
 
                 <!-- Tool tip div --> 
                 <div class="div-tooltip unselectable"></div>  
 
                 <!-- TIME-SPACE HOTSPOT -->  
-                <a-image class="rayobjs hotspots" id="clock" src="images/clock-unsplash.png" position="0.8 1.5 -1.5"
+                <a-image class="rayobjs hotspots" id="clock" src="#interactiveClock" position="0.8 1.5 -1.5"
                         rotation="1 2 0" width="0.4" height="0.4" data-tooltip="Toggle sequence-space Synaesthesia"
                         animation__scale="property: scale; to: 1.1 1.1 1.1; dur: 200; startEvents: mouseenter"
                         animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"
                         sound="on: click; src: #pickup"
                         ></a-image>
 
-                <!-- TIME-SPACE NUMBERS-->  
+                <!-- Sequence-space Numbers-->  
                 <a-entity id="allNumbers" visible="false">
-                    <a-image class="numbers" src="images/numbers/one.png" position="4.749 1 -7.491"
+                    <a-image class="numbers" src="#one" position="4.749 1 -7.491"
                             rotation="-1.094 -40 1.472" width="1.5" height="1.5" >
                     </a-image>
-                    <a-image class="numbers" src="images/numbers/number-2.png" position="8.752 1 -3.242"
+                    <a-image class="numbers" src="#two" position="8.752 1 -3.242"
                             rotation="-1.29 -80 0" width="1.5" height="1.5" material="" geometry="" scale="1 1 1">
                     </a-image>
-                    <a-image class="numbers" src="images/numbers/three.png" position="10.334 1 2.3"
+                    <a-image class="numbers" src="#three" position="10.334 1 2.3"
                         rotation="180 -270 -180" width="1.5" height="1.5">
                     </a-image>
-                    <a-image class="numbers" src="images/numbers/four.png" position="7.34 1 5.477"
+                    <a-image class="numbers" src="#four" position="7.34 1 5.477"
                         rotation="178.5 20 179" width="1.5" height="1.5">
                     </a-image>
-                    <a-image class="numbers" src="images/numbers/five.png" position="3.86 1 8.629"
+                    <a-image class="numbers" src="#five" position="3.86 1 8.629"
                         rotation="178.8 -17.9 179.64" width="1.5" height="1.5" >
                     </a-image>
-                    <a-image class="numbers" src="images/numbers/6.png" position="0.114 1 9.021"
+                    <a-image class="numbers" src="#six" position="0.114 1 9.021"
                         rotation="178.8 5.99 -179.8" width="1.5" height="1.5">
                     </a-image>
-                    <a-image class="numbers" src="images/numbers/seven.png" position="-5 1 8.660"
+                    <a-image class="numbers" src="#seven" position="-5 1 8.660"
                         rotation="178.7 0 -179.3" width="1.5" height="1.5" >
                     </a-image>
-                    <a-image class="numbers" src="images/numbers/eight.png" position="-7.051 1 4.889"
+                    <a-image class="numbers" src="#eight" position="-7.051 1 4.889"
                         rotation="178.1 85 -178.4" width="1.5" height="1.5" >
                     </a-image>
-                    <a-image class="numbers" src="images/numbers/nine.png" position="-7.332 1 1.201"
+                    <a-image class="numbers" src="#nine" position="-7.332 1 1.201"
                         rotation="179 -60 -179.8" width="1.5" height="1.5">
                     </a-image>
-                    <a-image class="numbers" src="images/numbers/10.png" position="-7.831 1 -1.470"
+                    <a-image class="numbers" src="#ten" position="-7.831 1 -1.470"
                         rotation="5.286 77.95 0" width="1.5" height="1.5" >
                     </a-image>
-                    <a-image class="numbers" src="images/numbers/11.png" position="-6.148 1 -4.269"
+                    <a-image class="numbers" src="#eleven" position="-6.148 1 -4.269"
                         rotation="1.873 53.98 -1.516" width="1.5" height="1.5" >
                     </a-image>
-                    <a-image class="numbers" src="images/numbers/12.png" position="-1.577 1.1 -7.128"
+                    <a-image class="numbers" src="#twelve" position="-1.577 1.1 -7.128"
                         rotation="1.272 0 -0.636" width="1.5" height="1.5" >
                     </a-image>
                 </a-entity>
                 
                 <!-- Find out more about variant -->  
-                <a-image class="hotspots" id="whatsthis" src="images/icons/more-info2.png"            
+                <a-image class="hotspots" id="whatsthis" src="#variantInfoIcon"            
                 visible="false" sound="on: click; src: #pickup" scale="1.2 1.2 1.2" data-tooltip="Find out more"
                     animation="property: scale; to: 0.85 0.85 0.85; dur: 1500; easing: linear; elasticity: 400; delay: 0; dir: alternate; loop: true;"
                 ></a-image>    
-        
+                <!--create div containing information about each variant. Content is dynamically changed with JavaScript depending on which variant is selected-->
                 <div id="showExtraInfo" class="unselectable">
                     <div id="showExtraInfoBox">
                         <h2 id="variantH2">Sequence-Space Synaesthesia</h2>
@@ -164,12 +179,10 @@
                 rotation="270 60 32" data-tooltip="Click to examine" visible="true" sound="on: click; src: #paperSound"></a-image>
 
                 <!-- CALENDAR HOTSPOT -->
-                <a-image class="rayobjs hotspots" id="calendar" src="images/calendar-pic.png" position="3.18 2 4.5"
-                        rotation="180 -2.9 179.53"  data-tooltip="Toggle time-space Synaesthesia" scale="2 2 2"
-                        
-                        sound="on: click; src: #pickup">
-                        <!-- animation__scale="property: scale; to: 1.1 1.1 1.1; dur: 200; startEvents: mouseenter"
-                        animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave" -->
+                <a-image class="rayobjs hotspots" id="calendar" src="#interactiveCalendar" position="3.18 2 4.5"
+                        rotation="180 -2.9 179.53"  data-tooltip="Toggle time-space Synaesthesia" scale="2 2 2"                        
+                        sound="on: click; src: #pickup" animation__scale="property: scale; to: 2.1 2.1 2.1; dur: 200; startEvents: mouseenter"
+                        animation__scale_reverse="property: scale; to: 2 2 2; dur: 200; startEvents: mouseleave">
                 </a-image>
                 <!--CIRCULAR CALENDAR-->
                 <a-torus src="#ringtexture" id="torus" arc="360" radius="5" radius-tubular="0.2" 
@@ -178,9 +191,8 @@
             </a-scene>
             
         </section>   
-        <section id="3" class="piano next">
-            
-            <canvas id="canvas"></canvas>
+        <!--VIRTUAL PIANO-->
+        <section class="piano" id="3" >            
             <div id="shapes">
                 <div id="C"></div>
                 <div id="Csharp"><img src="images/piano/black.png" alt="circular image of white smoke"></div>               
@@ -224,7 +236,6 @@
                     
                 </div>
                 <div id="toggleContainer">
-
                     <div id="toggle">
                         <label class="switch">
                             <input type="checkbox" id="togglehint">
@@ -243,7 +254,7 @@
                     <h3 class="unselectable">Tone-Colour Synaesthesia</h3>
                     <p class="unselectable">Some synaesthetes associate specific colours with the musical scale. In this example, each piano note triggers a different colour to appear around the screen.
                          Use your <span class="bold">mouse</span> or <span class="bold">keyboard</span> to visualise it for yourself!</p>
-                    <img src="images/mouse-keyboard.svg" class="unselectable">
+                    <img src="images/experience/mouse-keyboard.png" class="unselectable" alt="image of a keyboard and mouse to indicate how the user should play the virtual piano">
                     <p class="unselectable">Colour perceptions associated with synaesthesia may appear in the mind's eye or in the physical space around the synaesthete. The visual forms of these perceptions vary from person to person.</p>
                 </div>
             </div>
@@ -252,7 +263,7 @@
         <footer class="footer">
             <p><a href="index.html">Home</a> &#8214;</p>
             <p><a href="#1">Experience Synaesthesia</a> &#8214;</p>
-            <p><a href="discover.html">Discover Synaesthesia</a></p>
+            <p><a href="discover.html">History of Synaesthesia</a></p>
         </footer>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
