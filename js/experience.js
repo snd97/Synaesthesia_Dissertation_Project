@@ -37,7 +37,7 @@ pianoSection.addEventListener('mouseover', event => {
 $(window).on('mousemove resize scroll', function() {
   if ($('.first').isInViewport()) {
     // console.log('in landing section');
-    $(".imagetochangetwo").attr("src","images/icons/scroll-arrows.png");
+    $(".imagetochangetwo").attr("src","images/icons/scroll-down-arrows.svg");
       $(".scroll").on( "click", function() {
         window.scrollTo({
           top: window.innerHeight,
@@ -48,7 +48,7 @@ $(window).on('mousemove resize scroll', function() {
 // #2 The 360 section - if so, ensure arrow icon is correct and if clicked, scroll down to beginning of piano section
   } else if ($('.second').isInViewport()) {
     // console.log('in 360 section');
-    $(".imagetochangetwo").attr("src","images/icons/scroll-arrows.png");
+    $(".imagetochangetwo").attr("src","images/icons/scroll-down-arrows.svg");
     $(".scroll").on( "click", function() {      
       window.scrollTo({
         top: window.innerHeight * 2,
@@ -59,7 +59,7 @@ $(window).on('mousemove resize scroll', function() {
 // #3 The piano section - if so, ensure arrow icon is correct and if clicked, scroll to top
   }else if ($('.piano').isInViewport()){
     // console.log('in piano section');
-    $(".imagetochangetwo").attr("src","images/icons/scroll-to-top.png");
+    $(".imagetochangetwo").attr("src","images/icons/scroll-to-top.svg");
     $(".scroll").on( "click", function() {      
       window.scrollTo({
         top: 0,
@@ -331,7 +331,6 @@ function toggleFullScreen360(){
   if ((document.fullScreenElement && document.fullScreenElement !== null) ||
         (!document.mozFullScreen && !document.webkitIsFullScreen)) {
           yOffset360 = window.pageYOffset;
-          console.log(yOffset360);
         if (immersiveSection.requestFullScreen) {
           immersiveSection.requestFullScreen();
         } else if (document.documentElement.mozRequestFullScreen) {
@@ -397,7 +396,6 @@ function showObjects(){
 }
 
 let windowsize = $(window).width();
-console.log(windowsize);
 
 $(document).ready(function() { 
   if(windowsize > 1920){

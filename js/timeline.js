@@ -223,10 +223,10 @@ scollbtn.addEventListener("click", () => {
 
 function checkIfInLastSection(){
   if($('.footer').isInViewport()){
-    arrowtochange.setAttribute('src', 'images/icons/scroll-to-top.png');
+    arrowtochange.setAttribute('src', 'images/icons/scroll-to-top.svg');
   }
   else{
-    arrowtochange.setAttribute('src', 'images/icons/scroll-arrows.png');
+    arrowtochange.setAttribute('src', 'images/icons/scroll-down-arrows.svg');
   }  
 }    
 
