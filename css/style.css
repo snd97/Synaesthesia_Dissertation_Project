@@ -3,11 +3,12 @@ body {
     padding:0;
     height:100vh;
     width:100vw;
-    cursor: url('../images/cursor.png'), auto;	
-    overflow: hidden;
+    cursor: url('../images/cursor.png'), auto;	/* set own cursor */
+    overflow: hidden; /* hide any scroll overflow */
     background-color: #000000;
-    font-family: 'Alice', 'Cochin',  'Unica One', cursive;
+    font-family: 'Alice','Unica One', 'Cochin', serif;
 }
+/* style for preloader - cover entire viewport and center the gif on the page */
 #preloader{
     background: #000000;
     background-size: 50%;
@@ -19,7 +20,15 @@ body {
     position: fixed;
     z-index: 100;
 }
-
+/* all links - remove underline, define colour and center text content */
+a{
+    text-decoration: none;
+    color:rgb(255, 255, 255); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* set position to absolute so that it sits in front of canvas. Define container as flex and center the content on full page */
 .flex{
     position: absolute;
     width:100vw;
@@ -31,21 +40,26 @@ body {
     align-items:center;
     gap:60px;
 }
+/*only define canvas as absolute if smoke should appear in front of title*/
+/* #canvas{ */
+    /* position:absolute;       */
+/* } */
 
+/* increase distance from bottom of page and from typed.js text*/
 #info {
     margin-bottom: 10%;
 }
-.syn{
+/* target first part of text and set color to white, define font-family*/
+.titleFirst{
     color:rgb(255, 255, 255);
     line-height: 2.1;
     font-size: 2vw;
-    /* margin-right:57vw; */
-    font-family: 'Alice', 'Unica One', cursive;
-    /* font-style: italic; */
+    font-family: 'Alice', 'Unica One', 'Cochin', serif;
     text-transform: uppercase; 
 }
-.col{
-    font-family: 'Alice', 'Unica One', cursive;
+/* target second part of text and set a linear gradient as the background colour and the text itself as transparent*/
+.titleSecond{
+    font-family: 'Alice','Unica One', 'Cochin', serif;
     font-weight: bolder;
     font-size:11vw;
     padding-right:7px;
@@ -54,30 +68,18 @@ body {
     background-clip: text;    
     -webkit-text-stroke: 4px transparent;
 }
+/* target typed.js paragraph and add space at top, set its position to absolute and set the font-family */
 .element{
     margin-top: 15%;
     position: absolute;
     color:white;
     font-size:5vh;
-    /* font-family: 'Homemade Apple', cursive; */
     font-family: 'Square Peg', cursive;
     color:rgb(255, 255, 255);
 }
 
-.typed{
-    /* position: absolute; */
-    color:white;
-    font-size:2.5vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 12%;
-}
-
-
-
+/* target div holding links and position it toward bottom of webpage, center everything and */
 #links{ 
-    margin:auto;
     position: absolute;
     bottom:20vh;
     display: flex;
@@ -86,12 +88,10 @@ body {
     align-items: center;
     text-align: center;
     gap:180px;
-    font-family: 'Alice', 'Unica One', cursive;
-    background-color: transparent;
-   
+
 }
+/* target div for text on hover and center it on screen*/
 #hoverTexts{
-    margin:auto;
     position: absolute;
     bottom:12vh;
     display: flex;
@@ -99,27 +99,14 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family: 'Alice', 'Unica One', cursive;
 }
-
+/* target the hover paragraphs and set position to absolute so that they will stay at center*/
 #hoverTexts p{
     color: rgb(255, 255, 255);
     position: absolute;
     font-size: 1.1em;
-    /* width:50vw; */
-
 }
-
-a{
-    text-decoration: none;
-    color:rgb(255, 255, 255); 
-    /* padding:20px;     */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
+/* class added with JS - adds a scale animation to links */
 .animated{
     animation-name: scaleUpscaleDown;
     animation-duration: 2s;
@@ -127,7 +114,7 @@ a{
     animation-direction: normal;
     animation-timing-function: ease-in-out;
 }
-
+/* pulse-like animation effect*/
 @keyframes scaleUpscaleDown{
     0% {transform: scale(1);}
     25% {transform: scale(1.1);} 
@@ -136,9 +123,9 @@ a{
     100% {transform: scale(1);
     }
 }
+/* target links and style like buttons*/
 .glow-on-hover {
     font-size:1.3em;
-    font-family: 'Alice', 'Unica One', cursive;
     width: 220px;
     height: 50px;
     border: none;
@@ -150,7 +137,7 @@ a{
     z-index: 0;
     border-radius: 10px;
 }
-
+/* on hover, set the background as a colorful linear gradient, increase the background size to make it appear like a border */
 .glow-on-hover:before {
     content: '';
     background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
@@ -159,10 +146,10 @@ a{
     left:-2px;
     background-size: 400%;
     z-index: -1;
-    filter: blur(5px);
+    filter: blur(5px); /* add a blur effect */ 
     width: calc(100% + 4px);
     height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
+    animation: glowing 20s linear infinite; /* add the glowing animation effect which loops infintely on hover */
     opacity: 0;
     transition: opacity .3s ease-in-out;
     border-radius: 10px;
@@ -179,14 +166,14 @@ a{
 .glow-on-hover:hover:before {
     opacity: 1;
 }
-
+/* remove the colourful background after hover */
 .glow-on-hover:after {
     z-index: -1;
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #111;
+    background: rgb(0, 0, 0);
     left: 0;
     top: 0;
     border-radius: 10px;
@@ -198,14 +185,10 @@ a{
     100% { background-position: 0 0; }
 }
 
-
+    /* For mobile phones reduce gap between buttons */
 @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
     #links{
         gap:50px;
     }
   }
 
-  #canvas{
-      position:absolute;      
-  }

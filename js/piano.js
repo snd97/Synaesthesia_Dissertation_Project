@@ -1,33 +1,9 @@
 //PIANO SECTION
-
+//html references
 let pianoInfoBtn = document.querySelector('.pianoInfoIcon');
 let pianoInfoBox = document.querySelector('.pianoInfoBox');
-pianoInfoBtn.addEventListener('click', function(){  
-if(pianoInfoBox.style.visibility === 'hidden'){
-  pianoInfoBox.style.visibility = 'visible';
-}else{
-  pianoInfoBox.style.visibility = 'hidden';  
-}
-})
-pianoInfoBox.addEventListener('click', function(){  
-pianoInfoBox.style.visibility = 'hidden';
-});
-
-//TOGGLE KEYBOARD HINTS
 let hintsbtn = document.querySelector('#togglehint');
 let hints = document.querySelectorAll('.hint');
-
-hintsbtn.addEventListener('click', function(){
-  hints.forEach((hint) => {
-    if(hint.style.visibility === 'hidden'){
-      hint.style.visibility = 'visible';
-    }else{
-      hint.style.visibility = 'hidden';  
-    }
-  })  
-});
-
-
 let dataKey;
 //SHAPE REFERENCES:
 let C = document.getElementById('C'); 
@@ -48,6 +24,30 @@ let highD = document.getElementById('highD');
 let highEflat = document.getElementById('highEflat');
 let highE = document.getElementById('highE');
 
+//EVENT LISTENERS
+//if icon to toggle more information is clicked, change the info box's visibility to visible
+pianoInfoBtn.addEventListener('click', function(){  
+  if(pianoInfoBox.style.visibility === 'hidden'){
+    pianoInfoBox.style.visibility = 'visible';
+  }else{ //otherwsie, hide it
+    pianoInfoBox.style.visibility = 'hidden';  
+  }
+  });
+//if the info box itself is clicked, hide it
+pianoInfoBox.addEventListener('click', function(){  
+pianoInfoBox.style.visibility = 'hidden';
+});
+
+//TOGGLE KEYBOARD HINTS - if toggle is off, show all the hints on the keyboard, otherwise hide them
+hintsbtn.addEventListener('click', function(){
+  hints.forEach((hint) => {
+    if(hint.style.visibility === 'hidden'){
+      hint.style.visibility = 'visible';
+    }else{
+      hint.style.visibility = 'hidden';  
+    }
+  })  
+});
 
 //MOUSE EVENTS
 //select all the elements with the class "key"
@@ -66,19 +66,18 @@ let allKeys = document.querySelectorAll('.key');
   //when it detects a 'tap' or 'press' set some style to the key and play the audio associated with that key        
     mc.on("press tap", function(ev) { 
       key.setAttribute('style', 'transform: scale(.95); border-color: #f5f242; box-shadow: 0 0 1rem #028ae9;');
-      mouseSounds.play();
-      // circle.setAttribute('style', 'visibility:visible');     
+      mouseSounds.play();   
       dataKey = key.getAttribute('data-key');
-      setCircleColour();
+      setCircleColour(); //show the correct shape on screen
 
-  //set a timeout and reset the original style
+  //set a timeout for the key style and reset the original style
       setTimeout(function(){
         key.style.transform = 'scale(1)';
         key.style.borderColor = 'black';
         key.style.boxShadow = 'none';
     }, 60);
 
-    setShapeTimeout();
+    setShapeTimeout(); //set timeout for shape on screen
     });
   })
 
@@ -92,10 +91,10 @@ window.addEventListener('keydown', event => {
 if((document.fullScreenElement && document.fullScreenElement !== null) ||
   (!document.mozFullScreen && !document.webkitIsFullScreen)) {
     if ($('.piano-keys').isInViewport()){
-      //select the audio element which has a data key equal to the key of the keyboard event 
-      let audio = document.querySelector(`audio[data-key="${event.key}"]`); 
+      //select the audio element which has a data key equal to the key of the keyboard event. NB - add toLowerCase() method to ensure it works even is user has CapsLocks on 
+      let audio = document.querySelector(`audio[data-key="${event.key.toLowerCase()}"]`); 
       //select the div which has a data key equal to the key of the keyboard event
-      let pianoKey = document.querySelector(`div[data-key="${event.key}"]`);
+      let pianoKey = document.querySelector(`div[data-key="${event.key.toLowerCase()}"]`);
       
       //check whether an audio file exists on the key which has been pressed - if not, break out of function
       if(!audio) return;
@@ -109,11 +108,11 @@ if((document.fullScreenElement && document.fullScreenElement !== null) ||
     //when the audio is played, add some style to the key div
       pianoKey.setAttribute('style', 'transform: scale(.95); border-color: #f5f242; box-shadow: 0 0 1rem #028ae9;');
 
-      dataKey = event.key;
-      setCircleColour();
-      setShapeTimeout();
+      dataKey = event.key.toLowerCase();
+      setCircleColour(); //show the correct shape on screen
+      setShapeTimeout(); //set timeout for shape on screen
 
-    //set a timeout and reset the original style
+    //set a timeout for the key style and reset the original style
       setTimeout(function(){
         pianoKey.style.transform = 'scale(1)';
         pianoKey.style.borderColor = 'black';
@@ -124,48 +123,49 @@ if((document.fullScreenElement && document.fullScreenElement !== null) ||
   }
 });
 
-
+//set the shape associated with the current dataKey to visible 
 function setCircleColour(e){
   if(dataKey === 'a'){
     C.style.background = '#04d400'; // green circle shape
     C.style.visibility = 'visible';
   }else if(dataKey === 'w'){
-    Csharp.style.visibility = 'visible';
+    Csharp.style.visibility = 'visible'; //black circle
   }else if(dataKey === 's'){
-    D.style.visibility = 'visible'; // pink cloud
+    D.style.visibility = 'visible'; // grey cloud
   }else if(dataKey === 'e'){
-    Eflat.style.visibility = 'visible'; //yellow circle
+    Eflat.style.visibility = 'visible'; //purple
   }else if(dataKey === 'd'){
-    E.style.visibility = 'visible'; // large turqoise circle shape
+    E.style.visibility = 'visible'; // turqoise circle shape
     E.style.background = '#09b5b5';
   }else if(dataKey === 'f'){
-    F.style.visibility = 'visible'; // white/blue circle
+    F.style.visibility = 'visible'; // blue circle
   }else if(dataKey === 't'){
-    Fsharp.style.visibility = 'visible'; // purple-y blob
+    Fsharp.style.visibility = 'visible'; // blue/white 
   }else if(dataKey === 'g'){
-    G.style.visibility = 'visible'; // red splatter
+    G.style.visibility = 'visible'; // yellow
   }else if(dataKey === 'y'){
-    Aflat.style.visibility = 'visible'; // blue/red/pink blob
+    Aflat.style.visibility = 'visible'; // orange/pink circles
   }else if(dataKey === 'h'){
-    A.style.visibility = 'visible'; // blue/white/purple rec. circle
+    A.style.visibility = 'visible'; // pink
   }else if(dataKey === 'u'){
-    Bflat.style.visibility = 'visible';  // pink/yellow/blue blob
+    Bflat.style.visibility = 'visible';  // purple
    }else if(dataKey === 'j'){
-    B.style.visibility = 'visible'; // pink circle
+    B.style.visibility = 'visible'; // pale yellow
   }else if(dataKey === 'k'){
-    highC.style.visibility = 'visible'; //orange circle outline
+    highC.style.visibility = 'visible'; //yellow
   }else if(dataKey === 'o'){
-    highCsharp.style.visibility = 'visible'; //orange planet-like shape
+    highCsharp.style.visibility = 'visible'; //orange 
   }else if(dataKey === 'l'){
-    highD.style.visibility = 'visible'; //black lined circle
+    highD.style.visibility = 'visible'; //orange outline circle
   }else if(dataKey === 'p'){
-    highEflat.style.visibility = 'visible'; //texture circle
+    highEflat.style.visibility = 'visible'; //pink fluffy
   }else if(dataKey === ';'){
-    highE.style.visibility = 'visible'; //white shell-like circle
+    highE.style.visibility = 'visible'; //white 
   }else{
     C.style.background = '#' + randomColor;
   }
 }
+//hide the shape after 550ms
 function setShapeTimeout(){
   setTimeout(function(){
     C.style.visibility = 'hidden';

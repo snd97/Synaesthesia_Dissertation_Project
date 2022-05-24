@@ -1,131 +1,165 @@
+//PRELOADER - show gif while page is loading. Show page content only when content is finished loading
 let loader = document.getElementById('preloader');
 window.onload = (event) => {
   loader.style.visibility = "hidden";
 };
-
+//When DOM is loaded, make magnify functions available
 $(document).ready(function() {
   $('.zoom').magnify({
-    speed: 200,
-   
+    speed: 200   
   });
   $('.zoomlehmann').magnify({
-    speed: 200,
-   
+    speed: 200   
   });
 
-  
+  //initiate Slick.js carousel  
   $('.slider').slick({
-    centerMode: true,
-    dots: true,
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1
+    centerMode: true, //put current slide at center
+    dots: true, //add the dots at bottom of carousel
+    infinite: true, //infinite scroll through each slide
+    slidesToShow: 1, //show one at a time
+    slidesToScroll: 1 //scroll one slide at a time
   });
-  
-
 });
 
-
+//CAROUSEL 
 let slider = document.querySelector('.slider');
-
+//when the mouse is down over the slider, change the cursor to "grabbing"
 slider.addEventListener('mousedown', function(){
   slider.style.cursor = "grabbing";
 });
+//when the mouse lifted over the slider, change the cursor to "grab"
 slider.addEventListener('mouseup', function(){
   slider.style.cursor = "grab";
 })
 
+//Synaesthesia Is... section
+let description = document.getElementById('addDescription');
+let descriptors = document.querySelectorAll('.words');
+//For each descriptive word, on mouseover, change the innerHTML of the descriptive paragraph to appropriate information
+descriptors.forEach( (word) => {
+  word.addEventListener('mouseover', function() {
+    if(word.id === 'involuntary'){
+    description.innerHTML = "Sensory experiences happen automatically.";
+    }else if(word.id === 'additive'){
+    description.innerHTML = "Experiences happen in addition to initial sensory input.";
+    }else if(word.id === 'idiosyncratic'){
+    description.innerHTML = "Experiences are unique to the individual - it's unlikely two people share the exact same perceptions.";
+    }else if(word.id === 'consistent'){
+    description.innerHTML = "Experiences are consistent over time - they won't change from childhood into adulthood.";
+  }
+//when the mouse is not hovering over any of the words, change the descriptive paragraph content
+    word.addEventListener('mouseout', function() {
+      description.innerHTML = "Hover to find out more.";
+    })
+  });
+});
 
+//CHANGE SACHS THESIS TO COLOURED DOCUMENT ON HOVER
+let firstdoc = document.getElementById('hoverchange');
+//When mouse is hovering over the thesis, change the image src to coloured doc
+firstdoc.addEventListener('mouseenter', function(){
+  firstdoc.src =  "images/history/sachs-coloured.png";
+  //Onmouseout, change the image src to original doc
+  firstdoc.onmouseout = function(){
+    firstdoc.src = "images/history/sachs-normal.png";
+  };
+});
+
+//CHANGE SENSES IMAGE ON HOVER
+let changeOnHover = document.querySelector('#changeOnHover');
+//When mouse is hovering over the senses image, change the image src to senses gif
+changeOnHover.addEventListener('mouseenter', function(){
+  changeOnHover.src =  "images/history/five-senses-animated.gif";
+});
+//onmouseout, change the image src to original senses
+changeOnHover.onmouseout = function(){
+  changeOnHover.src =  "images/history/five-senses.png";
+}
+
+//Show "continue to next section" link when audio clip has finished
 let showOnComplete = document.getElementById('showOnComplete');
 let audioOne = document.getElementById("audioOne");
 audioOne.onended = function() {
   showOnComplete.style.visibility = "visible";
 };
 
-let changeOnHover = document.querySelector('#changeOnHover');
-//CHANGE TEXT on drag
-let typesSection = document.querySelector('.sixTypes');
-let type = document.createElement('p');
-type.classList.add('mainpara');
-type.textContent = "Rotate the dial clockwise";
-typesSection.appendChild(type);
-
-let ball = document.querySelectorAll('.ball');
-
-const draggable = Draggable.create(".ball", {
-    type: "rotation",
-    bounds:{maxRotation:360, minRotation:0},
-    inertia: true,
-    onDrag: function(e) {
-      if(this.rotation <= 0){
-        type.textContent = "(Rotate the dial clockwise)";
-      }else if((this.rotation <= 360/6) && (this.rotation > 0)){
-        type.textContent = "Sound Photisms:  Sounds which elicit color and light perceptions";
-        }else if((this.rotation <= 360/6*2) && (this.rotation > 360/6)){
-          type.textContent = "Light Photisms: Visual elements which trigger sound sensations";
-        }
-        else if((this.rotation <= 360/6*3) && (this.rotation > 360/6*2)){
-          type.textContent ="Gustation Photisms: Tastes which elicit colour sensations";
-        }
-        else if((this.rotation <= 360/6*4) && (this.rotation > 360/6*3)){
-          type.textContent = "Olfactory Photisms: Smells which elicit colour sensations";
-        }
-        else if((this.rotation <= 360/6*5) && (this.rotation > 360/6*4)){
-          type.textContent = "Pain, heat and tactile sensations which elicit colour and shape sensations";
-
-        }
-        else if((this.rotation < 360/6*6) && (this.rotation > 360/6*5)){
-          type.textContent = "Shapes which elicit color perceptions";
-        }else{
-          type.textContent = "(Rotate the dial anti-clockwise)";
-        }
-      }
-  });
-
-
-//ADD SCROLLS
+//REGISTER GSAP PLUGINS
 gsap.registerPlugin(ScrollToPlugin);
-
-showOnComplete.addEventListener('click', function(){
-  gsap.to(window, {duration: 1, scrollTo:".sixTypes"});
-
-});
-
-//ADD SCROLL TRIGGERS FOR TIMELEINE
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(Draggable);
 
+//SACHS HORIZONTAL NUMBER LINE
+let sachssections = gsap.utils.toArray(".sachsNumbers"); //each element with '.sachNumbers' added to array called sachssections
 
-
-  //SACHS NUMBER LINE
-let sachssections = gsap.utils.toArray(".sachsNumbers");
-
+//using ScrollTrigger plugin, create a horizontal scroll section
 gsap.to(sachssections, {
   xPercent: -100 * (sachssections.length - 1),
   ease: "none",
   scrollTrigger: {
-    trigger: ".sachsnumberContainer",
-    pin: true,
-    scrub: 1,
-    snap: 1 / (sachssections.length - 1),
-    // base vertical scrolling on how wide the container is so it feels more natural.
-    // end: "+=2500"
-    
+    trigger: ".sachsnumberContainer", // the container which triggers a horizontal scroll
+    pin: true, // pin the trigger element while active
+    scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+    snap: 1 / (sachssections.length - 1)    // snap to the next section
   }
   });
 
-
-
+//When the scroll down icon is clicked, scroll to "What is Synaesthesia?" section
 let scrolldown = document.querySelector("#scroll-down");
-let scollbtn = document.querySelector(".scroll");
-let sections = document.querySelectorAll('section');
-let arrowtochange = document.querySelector(".arrowtochange");
-
 
 scrolldown.addEventListener("click", () => {
   gsap.to(window, {duration: 1, scrollTo:".whatis" });
 });
 
+//When "continue to next section" link is clicked, scroll to next section
+showOnComplete.addEventListener('click', function(){
+  gsap.to(window, {duration: 1, scrollTo:".sixTypes"});
+});
 
+//CHANGE TEXT WHEN DRAGGING DIAL
+let typesSection = document.querySelector('.sixTypes');
+//create paragraph
+let type = document.createElement('p');
+//add the class "mainpara" to the new paragraph for styling
+type.classList.add('mainpara');
+//create initial text content to the new paragraph
+type.textContent = "Rotate the dial clockwise";
+//append new paragraph to the 6 types section
+typesSection.appendChild(type);
+
+//Using GSAP plugin Draggable, create a draggable element which rotates from 0degrees to 360degrees
+const draggable = Draggable.create(".knob", {
+  type: "rotation",
+  bounds:{maxRotation:360, minRotation:0},
+  inertia: true,
+  onDrag: function(e) { //when the dial is being dragged, change the text content based on the degree which dial has been rotated
+    if(this.rotation <= 0){
+      type.textContent = "(Rotate the dial clockwise)";
+    }else if((this.rotation <= 360/6) && (this.rotation > 0)){
+      type.textContent = "Sound Photisms:  Sounds which elicit color and light perceptions";
+      }else if((this.rotation <= 360/6*2) && (this.rotation > 360/6)){
+        type.textContent = "Light Photisms: Visual elements which trigger sound sensations";
+      }
+      else if((this.rotation <= 360/6*3) && (this.rotation > 360/6*2)){
+        type.textContent ="Gustation Photisms: Tastes which elicit colour sensations";
+      }
+      else if((this.rotation <= 360/6*4) && (this.rotation > 360/6*3)){
+        type.textContent = "Olfactory Photisms: Smells which elicit colour sensations";
+      }
+      else if((this.rotation <= 360/6*5) && (this.rotation > 360/6*4)){
+        type.textContent = "Pain, heat and tactile sensations which elicit colour and shape sensations";
+      }
+      else if((this.rotation < 360/6*6) && (this.rotation > 360/6*5)){
+        type.textContent = "Shapes which elicit color perceptions";
+      }else{
+        type.textContent = "(Rotate the dial anti-clockwise)"; //text which shows at end of rotation
+      }
+    }
+});
+
+//NAV BAR- SCROLL DOWN BUTTON 
+let scollbtn = document.querySelector(".scroll");
+//When scroll down button is clicked, check if a specific section is in the viewport, if it is, scroll to the next section with behaviour:smooth
 scollbtn.addEventListener("click", () => {
   if ($('.hero').isInViewport()) {
     document.querySelector('.whatis').scrollIntoView({ 
@@ -177,7 +211,7 @@ scollbtn.addEventListener("click", () => {
       behavior: 'smooth' 
     });
   }
-  else if ($('.sachsNumbers').isInViewport()) {
+  else if ($('.sachsNumbers').isInViewport()) { //when the number line is in the viewport, scroll more slowly through it
     window.scrollBy({
       top: window.innerHeight/4,
       left: 0,
@@ -185,11 +219,6 @@ scollbtn.addEventListener("click", () => {
     });
   }
   else if ($('.historyVideo').isInViewport()) {
-    //   window.scrollBy({
-    //   top: window.innerHeight,
-    //   left: 0,
-    //   behavior: 'smooth'
-    // });
     document.querySelector('.bleulerlehmann').scrollIntoView({ 
       behavior: 'smooth' 
     });
@@ -221,7 +250,9 @@ scollbtn.addEventListener("click", () => {
   }
 });
 
-function checkIfInLastSection(){
+let arrowtochange = document.querySelector(".arrowtochange");
+//Check whehter the footer is in viewport. If it is, change scroll down icon to scroll-to-top
+function checkPosition(){
   if($('.footer').isInViewport()){
     arrowtochange.setAttribute('src', 'images/icons/scroll-to-top.svg');
   }
@@ -229,56 +260,10 @@ function checkIfInLastSection(){
     arrowtochange.setAttribute('src', 'images/icons/scroll-down-arrows.svg');
   }  
 }    
-
+//call the checkPosition() function when there is a scroll or resize event
 $(window).on('resize scroll', function() {
-  checkIfInLastSection();
+  checkPosition();
 });
-
-
-let firstdoc = document.getElementById('hoverchange');
-// let doctext = document.getElementById('caption');
-
-firstdoc.addEventListener('mouseenter', function(){
-  firstdoc.src =  "images/history/sachs-coloured.png"
-  // doctext.innerHTML = "Sachs had Grapheme-Colour Synaesthesia. He perceived distinct colours for many letters of the alphabet."
-
-
-  firstdoc.onmouseout = function(){
-    firstdoc.src = "images/history/sachs-normal.png"
-    // doctext.innerHTML = "Georg Tobias Ludwich Sachs wrote about his Synaesthetic-experience in his doctural thesis"
-  };
-})
-
-changeOnHover.addEventListener('mouseenter', function(){
-  changeOnHover.src =  "images/history/five-senses-animated.gif";
-});
-changeOnHover.onmouseout = function(){
-  changeOnHover.src =  "images/history/five-senses.png";
-}
-
-
-let description = document.getElementById('addDescription');
-
-let descriptors = document.querySelectorAll('.words');
-
-descriptors.forEach( (word) => {
-  word.addEventListener('mouseover', function() {
-    if(word.id === 'involuntary'){
-    description.innerHTML = "Sensory experiences happen automatically.";
-    }else if(word.id === 'additive'){
-    description.innerHTML = "Experiences happen in addition to initial sensory input.";
-    }else if(word.id === 'idiosyncratic'){
-    description.innerHTML = "Experiences are unique to the individual - it's unlikely two people share the exact same perceptions.";
-    }else if(word.id === 'consistent'){
-    description.innerHTML = "Experiences are consistent over time - they won't change from childhood into adulthood.";
-  }
-  word.addEventListener('mouseout', function() {
-    description.innerHTML = "Hover to find out more.";
-  })
-  })
-
-});
-
 
 
 //Function which checks if element is in the viewport - used for the scroll down button to make sure it goes to the next section

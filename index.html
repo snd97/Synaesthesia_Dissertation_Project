@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-		<title>The World of Synaesthesia</title>
-        <link rel="icon" type="image/x-icon" href="images/syn-favicon.png"> <!--FAVICON FOR BROWSER TAB-->
+		<title>Reimagining Synaesthesia</title>
+        <link rel="icon" type="image/x-icon" href="images/syn-favicon.png"> <!--Favicon for browser-->
         <link rel="stylesheet" href="css/reset.css">  <!--Reset CSS to be same on all broswers-->
         <link rel="stylesheet" href="css/style.css"> <!--Link to my own CSS-->
         <!--LINKS TO GOOGLE FONTS-->
@@ -13,33 +13,36 @@
         <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet">
 	</head>
 	<body> 
+        <!--Insert preloader gif-->
         <div id="preloader">
 			<img src="images/preloader.gif" alt="A gif which plays while the content of the page is loading">
 		</div>
+        <!--Div which contains title of website and p tag for Typed.js animation-->
         <div class="flex">        
             <div id="info">
-                <p class="syn">Reimagining</p>
-                <p><span class="col">SYNAESTHESIA</span></p> 
+                <p class="titleFirst">Reimagining</p>
+                <p><span class="titleSecond">SYNAESTHESIA</span></p> 
             </div>            
             <p class="element"></p>             
-        </div>  
+        </div>
+        <!--Create canvas for Smoke.js to render effect-->  
         <canvas id="canvas"></canvas>
+        <!--Div which contain two links-->
         <div id="links">
             <a href="experience.html" class="glow-on-hover firstbutton">EXPERIENCE</a>                
-            <a href="discover.html" class="glow-on-hover secondbutton">HISTORY</a>                
-            
+            <a href="discover.html" class="glow-on-hover secondbutton">HISTORY</a>            
         </div>
+        <!--Div which contains the text which appears when hovering over each link-->
         <div id="hoverTexts">
             <p id="experienceText" style="visibility:hidden">Experience synaesthesia through an immersive environment or play the interactive piano.</p>
             <p id="discoverText" style="visibility:hidden">Learn about Synaesthesia and discover the major milestones of its history.</p>
         </div>  
-
-        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> <!--Link to Typed.js-->
-        <script src="js/smoke.js"></script> <!--Link to Smoke.js-->
-        <script src="js/home.js"></script> <!--Link to my own JS file    .-->
+        <!--Links to required JS files-->
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> 
+        <script src="js/smoke.js"></script> 
+        <script src="js/home.js"></script> 
 	</body>
 </html>

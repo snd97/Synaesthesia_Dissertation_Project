@@ -1,72 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- <meta charset="UTF-8"> -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Embedded - A-Frame">
-        <meta http-equiv="Content-Type" content="text/html"/>
-        
+        <meta http-equiv="Content-Type" content="text/html"/>        
         <link rel="icon" type="image/x-icon" href="images/syn-favicon.png"> <!--FAVICON FOR BROWSER TAB-->
-        <link rel="stylesheet" href="css/reset.css"/> 
-        <link rel="stylesheet" href="css/experience.css"/> 
-        <link rel="stylesheet" href="css/magnify.css">
-        <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/reset.css"/>  <!--Reset CSS to be same on all broswers-->
+        <link rel="stylesheet" href="css/experience.css"/> <!--Link to my own CSS-->
+        <link rel="stylesheet" href="css/magnify.css"> <!--Link to magnify css-->
+        <!--LINKS TO GOOGLE FONTS-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
-        <!--A-FRAME-->
+        <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+        <!--A-FRAME connection-->
         <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
         <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script> 
         <title>Experience Synaesthesia</title>
     </head>
     <body>
+        <!--Insert preloader gif-->
         <div id="preloader">
             <img src="images/preloader.gif" alt="A gif which plays while the content of the page is loading">
         </div>
-
-        <div id="navLinks" class="unselectable">
-            <a href="index.html" class="homebtn"><img class="imagetochange" src="images/icons/homepage.svg" alt="Go to home button"></a>
+        <!--container for navigation. Add "unselectable" class which prohibits user from selecting the text - this fixes issue within immersive environment-->
+        <nav id="navLinks" class="unselectable">
+            <a href="index.html" class="homebtn"><img class="imagetochange" src="images/icons/homepage.svg" alt="Homepage icon"></a>
             <a href="discover.html" class="hisbtn">HISTORY</a>
-            <a class="scroll" ><img class="imagetochangetwo" src="images/icons/scroll-down-arrows.svg" alt="Scroll down button"></a>
-        </div>
-        <section class="first" id="1" >
+            <a class="scroll" ><img class="imagetochangetwo" src="images/icons/scroll-down-arrows.svg" alt="Scroll down icon"></a>
+        </nav>
+        <!--Landing section-->
+        <section class="first" id="1">
+            <!--div containing content-->
             <div class="hero">
+                <!--Descriptive paragraph on left side of screen-->
                 <div class="left">
                     <h1 class="experienceHeading">Experience Synaesthesia</h1>
                     <p>Here you can explore what it is like to have various forms of Synaesthesia. Explore the<a href="#2">immersive environment</a>to find out how synaesthetes experience sequences in physical space. 
                         Play a tune on the<a href="#3">interactive piano</a>to visualise how music and colour unites with tone-colour synaesthesia... </p>
-
                 </div>
-        
+                <!--Decorative gif on right side of screen-->
                 <div id="floatdiv"><img src="images/experience/output.gif" class="float" alt="Gif of person floating">
                     <img src="images/experience/ArrowsFrameColour.svg" class="fireworks" alt="Decorative colours">
                 </div>
             </div>
         </section>
-
+        <!--Immersive environment section-->
         <section id="2" class="second">
+            <!--div which is visible before user enters the 360deg space-->
             <div id="splash">
                 <h2>Immersive Environment</h2>
                 <p>Use your mouse to pan around and click on the interactive objects in the environment.
                     Click the info button at the bottom right for instructions or
                     enter fullscreen to fully immerse yourself in in the virtual space.</p>
-                <!-- <p>Synaesthesia experiences are unique to each individual. What you will experience on this website is just a taster of the infinite sensory possibilities associated with Synaesthesia.</p> -->
                 <div class="enter">ENTER</div>
             </div>
+            <!--Container for Immersive environment controls including more info button and fullscreen option-->
             <div id="controls" class="unselectable">
                 <div id="infoButton"></div>
                 <img id="myEnterVRButton" title="Enter VR / Fullscreen" src="images/icons/fullscreen.svg" width="50">            
             </div>
-
-            <div id="magUpCloseContainer" style="visibility:hidden;">
-                
+            <!--Div containing the newspaper image and controls. Hidden at first and visible when user selects newspaper on table-->
+            <div id="magUpCloseContainer" style="visibility:hidden;">                
                 <img src="images/aframe-assets/newspaper_bw.png" id="magUpClose" class="hotspots zoom changeImage" alt="Fictional newspaper called Synaesthesia Today demonstrating grapheme-colour">
                 <div id="newspapercontrols">
                     <img src="images/icons/exit.png" id="exitNewspaperView" class="hotspots" data-tooltip="Click to put back" alt="exit icon">
                     <img src="images/icons/more-info2.png"  id="newspaperVariant" class="hotspots" data-tooltip="Find out more" alt="More information icon">
                     <img src="images/icons/color-newspaper.png" class="hotspots" data-tooltip="Toggle colour/greyscale newspaper" id="newspaperToggle" alt="Colour wheel icon to toggle grescale/colour newspaper">
-                </div>
-            
+                </div>            
             </div>
+            <!--image for exiting variant views. Hidden at first until an interactive element is engaged-->
             <img class="hotspots" id="exitVariantView" src="images/icons/exit.png" data-tooltip="Exit Variant View" style="visibility:hidden;" alt="exit icon"> 
 
             <!--embed an aframe scene to webpage. disable a-frame's VR icon and feature so that I can add my own fullscreen option-->
@@ -96,7 +100,7 @@
                 </a-assets>
             <!--Set the a-sky to the preloaded panorama image with id='panorama'-->    
                 <a-sky src="#panorama" id="sky" rotation="0 -130 0" visible="true"></a-sky>
-
+            <!--Container for immersive environment instructions. Add "unselectable" class so user can't select text-->
                 <div class="infoBoxContainer unselectable">
                     <div id="infoBox">
                         <h2 id="infoHeading">Immersive Environment Instructions</h2>
@@ -108,10 +112,11 @@
                     <a-entity raycaster="objects: .rayobjs" id="mouseCursor" cursor="rayOrigin: mouse"></a-entity> <!--Add the class "rayobjs" which will be required classes for all interactive elements in scene; set the mouse as the raycaster origin-->
                 </a-camera> 
 
-                <!-- Tool tip div --> 
+                <!-- Tool tip div. Text dynamically changes depending on what user is hovering over and is dictated my data-tooltips --> 
                 <div class="div-tooltip unselectable"></div>  
 
                 <!-- TIME-SPACE HOTSPOT -->  
+                <!--Add a-frame image, set position in 3D space, add animation which scales up on hover and add sound on click -->
                 <a-image class="rayobjs hotspots" id="clock" src="#interactiveClock" position="0.8 1.5 -1.5"
                         rotation="1 2 0" width="0.4" height="0.4" data-tooltip="Toggle sequence-space Synaesthesia"
                         animation__scale="property: scale; to: 1.1 1.1 1.1; dur: 200; startEvents: mouseenter"
@@ -119,7 +124,7 @@
                         sound="on: click; src: #pickup"
                         ></a-image>
 
-                <!-- Sequence-space Numbers-->  
+                <!-- Sequence-space Numbers - set positions around 3D space-->  
                 <a-entity id="allNumbers" visible="false">
                     <a-image class="numbers" src="#one" position="4.749 1 -7.491"
                             rotation="-1.094 -40 1.472" width="1.5" height="1.5" >
@@ -172,7 +177,7 @@
                     </div>
                 </div>
 
-                <!-- MAGAZINE HOTSPOT -->  
+                <!-- NEWSPAPER HOTSPOT -->  
                 <a-image class="rayobjs hotspots" id="magazine" src="#newspaper" position="-2.25 -0.5 -0.8" width="1.5" height="1.1"
                 rotation="270 60 32" data-tooltip="Click to examine" visible="true" sound="on: click; src: #paperSound"></a-image>
 
@@ -182,16 +187,18 @@
                         sound="on: click; src: #pickup" animation__scale="property: scale; to: 2.1 2.1 2.1; dur: 200; startEvents: mouseenter"
                         animation__scale_reverse="property: scale; to: 2 2 2; dur: 200; startEvents: mouseleave">
                 </a-image>
-                <!--CIRCULAR CALENDAR-->
+                <!--CIRCULAR CALENDAR - create 3D torus shape and set its material to #ringtexture image-->
                 <a-torus src="#ringtexture" id="torus" arc="360" radius="5" radius-tubular="0.2" 
                         position="0 1 0" rotation="90 0 60" visible="false" sound="on: click; src: #pickup"></a-torus>
 
-            </a-scene>
-            
-        </section>   
-        <!--VIRTUAL PIANO-->
-        <section class="piano" id="3" >            
+            </a-scene>            
+        </section>
+
+        <!--VIRTUAL PIANO SECTION-->
+        <section class="piano" id="3" >   
+            <!--div containing all shapes/colours that appear along with piano sounds-->         
             <div id="shapes">
+                <!--Each shape represents music note on piano-->
                 <div id="C"></div>
                 <div id="Csharp"><img src="images/piano/black.png" alt="circular image of white smoke"></div>               
                 <div id="D"><img src="images/piano/purple-chalk.png" alt="circular image of pink water colour"></div> 
@@ -210,10 +217,12 @@
                 <div id="highEflat"><img src="images/piano/pink.png" alt="circular image of textured orange and blue colours"></div>  
                 <div id="highE"><img src="images/piano/white.png" alt="circular image of white shell-like shape"></div>                               
             </div>
-
+            <!--div containing section title and div for all sounds --> 
             <div id="containerwithHint">
                 <h2>Tone-colour Synaesthesia</h2>
+                <!--div containing all sounds which should be associated with the key on keyboard--> 
                 <div class="piano-keys" >
+                    <!--div contains audio and p tag for toggle hints which are initially hidden --> 
                     <div data-key="a" class="key"><audio data-key="a" src="sounds/piano/a.wav"></audio><p class="hint" style="visibility:hidden;">A</p></div>
                     <div data-key="w" class="key sharp"><audio data-key="w" src="sounds/piano/w.wav"></audio><p class="hint" style="visibility:hidden;">W</p></div>
                     <div data-key="s" class="key"><audio data-key="s" src="sounds/piano/s.wav"></audio><p class="hint" style="visibility:hidden;">S</p></div>
@@ -230,9 +239,9 @@
                     <div data-key="o" class="key sharp"><audio data-key="o" src="sounds/piano/o.wav"></audio><p class="hint" style="visibility:hidden;">O</p></div>
                     <div data-key="l" class="key"><audio data-key="l" src="sounds/piano/l.wav"></audio><p class="hint" style="visibility:hidden;">L</p></div>
                     <div data-key="p" class="key sharp"><audio data-key="p" src="sounds/piano/p.wav"></audio><p class="hint" style="visibility:hidden;">P</p></div>
-                    <div data-key=";" class="key"><audio data-key=";" src="sounds/piano/semic.wav"></audio><p class="hint" style="visibility:hidden;">;</p></div>
-                    
+                    <div data-key=";" class="key"><audio data-key=";" src="sounds/piano/semic.wav"></audio><p class="hint" style="visibility:hidden;">;</p></div>                    
                 </div>
+                <!--div containing toggle for keyboard hints and more info button --> 
                 <div id="toggleContainer">
                     <div id="toggle">
                         <label class="switch">
@@ -244,10 +253,9 @@
                     <div id="moreinfo">
                         <img class="pianoInfoIcon" src="images/icons/info-icon.png" alt="information icon" title="More Info" width="35">
                         <p>Find out more</p>
-                    </div>
-                            
+                    </div>                            
                 </div>
-
+                <!--div containing information about current section - hidden initially and visible when user clicks info icon --> 
                 <div class="pianoInfoBox" style="visibility:hidden;">
                     <h3 class="unselectable">Tone-Colour Synaesthesia</h3>
                     <p class="unselectable">Some synaesthetes associate specific colours with the musical scale. In this example, each piano note triggers a different colour to appear around the screen.
@@ -256,21 +264,20 @@
                     <p class="unselectable">Colour perceptions associated with synaesthesia may appear in the mind's eye or in the physical space around the synaesthete. The visual forms of these perceptions vary from person to person.</p>
                 </div>
             </div>
-
         </section>
+        <!--footer containing links to other pages --> 
         <footer class="footer">
             <p><a href="index.html">Home</a> &#8214;</p>
             <p><a href="#1">Experience Synaesthesia</a> &#8214;</p>
             <p><a href="discover.html">History of Synaesthesia</a></p>
         </footer>
-
+        <!--Links to required JS files-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
         <script src="https://hammerjs.github.io/dist/hammer.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="js/jquery.magnify.js"></script>
         <script src="js/experience.js"></script>
-        <script src="js/piano.js"></script>
-        
+        <script src="js/piano.js"></script>        
 
     </body>
 </html>

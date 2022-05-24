@@ -4,49 +4,56 @@
 		<meta charset='utf-8'>
 		<meta name='viewport' content='width=device-width, initial-scale=1'>
 		<link rel="icon" type="image/x-icon" href="images/syn-favicon.png"> <!--FAVICON FOR BROWSER TAB-->
-		<title>Discover Synaesthesia</title>
-	
-		<link rel="stylesheet" href="css/reset.css"> 
-		<link rel="stylesheet" href="css/magnify.css">
-		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-		<link rel='stylesheet' href='css/discover.css'>
+		<title>History of Synaesthesia</title>	
+		<link rel="stylesheet" href="css/reset.css">   <!--Reset CSS to be same on all broswers-->
+		<link rel="stylesheet" href="css/magnify.css"> <!--Link to magnify css-->
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> <!--Link to slick.js css-->
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/> <!--Link slick.js's default styling-->
+		<link rel='stylesheet' href='css/discover.css'> <!--Link to my own CSS-->
+		<!--LINKS TO GOOGLE FONTS-->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">	
 		<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Poller+One&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet">
 	</head>
-	<body >
+	<body>
+		<!--Insert preloader gif-->
 		<div id="preloader">
 			<img src="images/preloader.gif" alt="A gif which plays while the content of the page is loading">
 		</div>
-
-        <div id="navLinks">
-            <a class="homebtn previous" href="index.html"><img src="images/icons/homepage.svg" alt="Go to home button"></a>
+        <!--container for navigation. Add "unselectable" class which prohibits user from selecting the text - this fixes issue within immersive environment-->
+        <nav id="navLinks">
+            <a class="homebtn" href="index.html"><img src="images/icons/homepage.svg" alt="Go to home button"></a>
             <a href="experience.html" class="expbtn">EXPERIENCE</a>
 			<a class="next scroll" id="scroll"><img src="images/icons/scroll-down-arrows.svg" class="arrowtochange" alt="Scroll down button"></a>
-        </div>		
-		<main class="main">	
-			<section class="hero sections">
+        </nav>		
+		<main>
+			<!--landing section-->	
+			<section class="hero">
+				<!--Insert background video which autoplays and loops-->
 				<video id="background-video-landing" autoplay loop muted >
 					<source src="videos/pexels-colours.mp4" type="video/mp4">
 				</video>
+				<!--div for page heading and paragraph info-->
 				<div class="flex">
 					<h1>History of Synaesthesia</h1>
 					<p>Learn all about the condition and discover major milestones of its fascinating history</p>	
-					<p id="instructions-para">Use your mouse to scroll or use <img src="images/icons/scroll-down.svg" width="25" id="scroll-down" alt="Arrow icon to prompt user to scroll down"> to reveal each section </p>
+					<p id="instructions-para">Use your mouse to scroll or use <img src="images/icons/scroll-down.svg" id="scroll-down" width="25" alt="Arrow icon to prompt user to scroll down"> to reveal each section </p>
 				</div>
-			</section> 	
-			<section class="section-panels whatis sections">
+			</section>
+			<!--First Section-->
+			<section class="section-panels whatis">
 				<div>
 					<h2>What <em>is</em> Synaesthesia?</h2>
 				</div>
 			</section>
-			<section class="section-panels definitions sections">
+			<!--Second Section - Definitions of Synaesthesia-->
+			<section class="section-panels definitions">
+				<!--div containing the Slick.js carousel-->
 				<div id="slickTest" class="slider">
+					<!--individual divs represent each slide in carousel with one image and one paragraph-->
 					<div>
 						<div class="senseimages"><img src="images/slider/synesthesia-senses.gif" alt="gif of brain and five senses"></div>
 						<p>A condition which causes unusual sensory perceptions and cognitive experiences.</p>						
@@ -73,16 +80,18 @@
 					</div>
 				</div>
 			</section> 
-			<section class="section-panels seventytypes sections">
+			<!--Third Section - Seventy Types-->
+			<section class="section-panels seventytypes">
 				<img src="images/backgrounds/seventynew2.png" alt="image that says there are over seventy types of synaesthesia">
 			</section> 
-			<section class="section-panels percent sections">
+			<!--Fourth Section - 4 Percent-->
+			<section class="section-panels percent">
 				<div class="percentdiv">
 					<img src="images/backgrounds/world-pop.png" alt="image that says about four percent of world population has synaesthesia">
 				</div>				
 			</section> 
-			
-			<section class="section-panels synIs sections">
+			<!--Fifth Section - Synaesthesia Is... section-->
+			<section class="section-panels synIs">
 				<div class="flex">
 					<h2>Synaesthesia is...</h2>
 					<h3 class="words" id="involuntary">INVOLUNTARY</h3>	
@@ -91,8 +100,9 @@
 					<h3 class="words" id="consistent">CONSISTENT</h3>	
 					<p id="addDescription">Hover to learn more.</p>
 				</div>
-			</section>  
-			<section class="section-panels causesOfSyn sections">
+			</section>
+			<!--Sixth Section - Causes of Synaesthesia section-->
+			<section class="section-panels causesOfSyn">
 				<h2>What causes Synaesthesia?</h2>
 				<div>					
 					<figure class="synaesthetes">
@@ -110,28 +120,32 @@
 					
 				</div>
 			</section>  
-			<section class="section-panels briefHistory sections">
+			<!--Seventh Section - A Brief History-->
+			<section class="section-panels briefHistory">
 				<p>A BRIEF HISTORY OF <br>SYNAESTHESIA</p>
 			</section>
-			<section class="section-panels firstDoc sections">
+			<!--Eighth Section - 1812 First Document -->
+			<section class="section-panels firstDoc">
 				<p>1812</p>
 				<p id="smaller">The first known documented case of Synaesthesia appears in a doctural thesis by Georg Tobias Ludwich Sachs who had multiple types of Synaesthesia. Hover over the following image to reveal how he perceived letters and numbers:</p>
 			</section>	
-
-			<section class="section-panels sachsThesis sections" >
-				
+			<!--Ninth Section - Sachs' Thesis -->
+			<section class="section-panels sachsThesis">
+				<!--figure of Sachs' thesis, dynamically changed with JS-->
 				<figure>
 					<img src="images/history/sachs-normal.png" id="hoverchange" alt="Image of Ludwig Sach's doctural thesis">
 					<!-- <figcaption id="caption">The first documented case of Synaesthesia: Georg Tobias Ludwich Sachs</figcaption> -->
 				</figure>
 			</section>
-			<!-- <section> -->
-			<div class="sachsnumberContainer sections" >	
+			<!--Tenth Section - Number line -->
+			<div class="sachsnumberContainer" >	<!--div used by ScrollTrigger to begin horizontal scroll-->
+				<!--First div is full window width and describes the number line -->
 				<div class="sachsNumbers para">
 					<p id="sachnumberdescription">Sachs also had colours for numbers:
 						<br><span id="swipe-right">&#x2192;</span>
 					</p>
 				</div>
+				<!--Each div represents one number with two paragraphs for the number followed by Sachs' colour description -->
 				<div class="sachsNumbers zero">
 					<p>0</p>
 					<p class="numberdesc">"Pale Yellow"</p></div>
@@ -171,51 +185,53 @@
 					<p class="numberdesc">"Dark Green"</p>
 				</div>				
 			</div>
-			<!-- </section> -->
-			<section id="history-video" class="sections historyVideo">
+			<!--Eleventh Section - History Video -->
+			<section id="history-video" class="historyVideo">
+				<!--Insert video with video controls -->
 				<video width="1000" controls>
 					<source src="videos/history_1848_1880.mp4" type="video/mp4">
 					Your browser does not support HTML video.
 				  </video>
 			</section>
-			
-			<section class="section-panels bleulerlehmann sections">
+			<!--Twelfth Section - Bleuler and Lehmann-->
+			<section class="section-panels bleulerlehmann">
+				<!--Include two figures and an audio clip-->
 				<figure>
 					<img src="images/history/bleuler.png" class="eugen zoom" 
 						alt="Portrait image of Eugen Bleuler"
-						data-magnify-src="images/history/bleuler-color.png" >
+						data-magnify-src="images/history/bleuler-color.png" >  <!--data-magnify-src refers to the image to show on the magnifying glass --> 
 					<figcaption>Eugen Bleuler</figcaption>
 				</figure>
 				<div>
 					<h2>1881</h2>
 					<p>"Secondary Sensations"</p>
+					<!--insert audio clip with controls which explains more about Bleuler and Lehmann-->
 					<audio controls id="audioOne">						
 						<source src="sounds/Audio/Bleuler_and_Lehmann_audio.mp3" type="audio/mp3">
 					Your browser does not support the audio element.
 					</audio>
 					<p style="visibility:hidden;" id="showOnComplete">Continue to next section</p>
-				</div>
-	
+				</div>	
 				<figure>
 					<img src="images/history/lehmann.png" class="lehmann zoomlehmann"
 						alt="Portrait image of Karl Bernhard Lehmann" data-magnify-src="images/history/lehmann.png" >
 					<figcaption>Karl Bernhard Lehmann</figcaption>
-				</figure>	
-			 
+				</figure>
 			</section>
-
-			<section class="section-panels sixTypes sections">
+			<!--Thirteenth Section - Six Types of Synaesthesia-->
+			<section class="section-panels sixTypes">
 				<h2 class="overview">Bleuler and Lehmann discovered 6 types of Synaesthesia:</h2>
 
-				<figure class="first"><img src="images/history/knob.svg" class="ball" id="ball1" alt="Sphere-shaped image with a variety of colours"></figure>	
+				<figure class="first"><img src="images/history/knob.svg" class="knob" alt="Sphere-shaped image with a variety of colours"></figure>	
 			</section>
-			<section class="section-panels colourHearing sections">
+			<!--Fourteenth Section - Colour Hearing-->
+			<section class="section-panels colourHearing">
 				<div>
 					<h2>1882 &#8594; 1892</h2>
 					<p>The term <span class="colorHearing">"colour hearing"</span> began circulating around the world to denote all forms of the phenomenon.</p>
-				</div>
-			
+				</div>			
 			</section>
+			<!--Fifteenth Section - Millet defines 'synesthesia'-->
 			<section class="millet">
 				<h2>1892</h2>
 				<div id="milletText">
@@ -225,6 +241,7 @@
 					<p class="smallerMillet white">This ended the notion that all unusual sensory perceptions involved colour-only experiences.</p>
 				</div>
 			</section>
+			<!--Final Section - 1892 - Present-->
 			<section class="section-panels conclusion">
 				<h2>1892 &#8594; Present</h2>
 				<p>It is not until the late 1990s that scientists begin uncovering the neural and genetic origins of Synaesthesia. Research continues to this day to discover even more about this fascinating condition.
@@ -232,16 +249,13 @@
 				<img src="images/history/line-black.svg" alt="Pink decorative divider">
 			</section>
 		</main>
+		 <!--footer containing links to other pages --> 
 		<footer class="footer">
 			<p><a href="index.html">Home</a> &#124;</p>
 			<p><a href="experience.html">Experience Synaesthesia</a> &#124;</p>
 			<p><a href="discover.html">History of Synaesthesia</a></p>
 		</footer>
-		
-		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/Draggable.min.js"></script> -->
+		<!--Links to required JS files-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js"></script>

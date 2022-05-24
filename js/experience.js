@@ -2,11 +2,10 @@
 let loader = document.getElementById('preloader');
 window.onload = (event) => {
   loader.style.visibility = "hidden";
-  // document.body.style.opacity ='1';
 };
 
-
-// LANDING SECTION //
+//LANDING SECTION
+// References to html elements 
 let introSection = document.querySelector('.first');
 let immersiveSection = document.querySelector('.second');
 let pianoSection = document.querySelector('.piano');
@@ -14,17 +13,19 @@ let hisbtn = document.querySelector('.hisbtn');
 let navLinks = document.getElementById('navLinks');
 let splash = document.getElementById('splash');
 
+//event listeners
+//set colour of History link to black while mouse is in the landing section 
 introSection.addEventListener('mouseover', event => {
   hisbtn.setAttribute('style', 'color:black');
 });
-
+//set colour of History link to white while mouse is in the immersive section and black if user hovers over the nav bar
 immersiveSection.addEventListener('mouseover', event => {
   hisbtn.setAttribute('style', 'color:white');
     navLinks.addEventListener('mouseover', event => {
     hisbtn.setAttribute('style', 'color:black');
    });
 });
-//Change colour of Discover link when mouse is in the piano section, and then also if it's hovering over the nav links
+//set colour of History link to white when mouse is in the piano section, and black if it's hovering over the nav bar
 pianoSection.addEventListener('mouseover', event => {
   hisbtn.setAttribute('style', 'color:white');
   navLinks.addEventListener('mouseover', event => {
@@ -32,11 +33,10 @@ pianoSection.addEventListener('mouseover', event => {
    });
  });
 
- //on a mousemove, resize or scroll event, check if user is in:
+//Function which detects a mousemove, resize or scroll event and check whether user is in:
 // #1 The landing section - if so, ensure arrow icon is correct and if clicked, scroll down to beginning of 360 section
 $(window).on('mousemove resize scroll', function() {
   if ($('.first').isInViewport()) {
-    // console.log('in landing section');
     $(".imagetochangetwo").attr("src","images/icons/scroll-down-arrows.svg");
       $(".scroll").on( "click", function() {
         window.scrollTo({
@@ -47,7 +47,6 @@ $(window).on('mousemove resize scroll', function() {
     });
 // #2 The 360 section - if so, ensure arrow icon is correct and if clicked, scroll down to beginning of piano section
   } else if ($('.second').isInViewport()) {
-    // console.log('in 360 section');
     $(".imagetochangetwo").attr("src","images/icons/scroll-down-arrows.svg");
     $(".scroll").on( "click", function() {      
       window.scrollTo({
@@ -58,7 +57,6 @@ $(window).on('mousemove resize scroll', function() {
     });
 // #3 The piano section - if so, ensure arrow icon is correct and if clicked, scroll to top
   }else if ($('.piano').isInViewport()){
-    // console.log('in piano section');
     $(".imagetochangetwo").attr("src","images/icons/scroll-to-top.svg");
     $(".scroll").on( "click", function() {      
       window.scrollTo({
@@ -72,49 +70,46 @@ $(window).on('mousemove resize scroll', function() {
 });
 
 //360 IMMERSIVE SECTION
+//html references
+let overlay = document.querySelector('#splash'); //overlay before entering VR section
+let enterBtn = document.querySelector('.enter'); //enter immersive environment button
 
-// document.addEventListener('DOMContentLoaded', function() {
-let overlay = document.querySelector('#splash');
-let enterBtn = document.querySelector('.enter');
+let infoButton = document.querySelector('#infoButton'); //info icon at bottom-right of container
+let infoBoxContainer = document.querySelector('.infoBoxContainer'); //full viewport container for instructions
+let infoBox = document.querySelector('.infoBox'); //container for instruction h2 and p elements
+
+let audioPickup = document.querySelector('#pickup'); //audio sound
+
+let allHotspots = document.querySelectorAll('.hotspots'); //all elements which are interactive
+let tooltip = ""; //initial text for tooltip at bottom left corner
+let tooltipDiv = document.querySelector(".div-tooltip"); //div for tooltip
+
+let numbers = document.querySelectorAll('.numbers'); //all individual numbers for time-space synaesthesia
+let allNumbers = document.getElementById('allNumbers'); //entity containing all numbers
+
+let clock = document.querySelector('#clock'); //clock image on wall
+let newspaperonTable = document.querySelector('#magazine'); //newspaper image on table
+let calendar = document.querySelector('#calendar'); //calendar image on wall
+let torus = document.querySelector('#torus'); //3D torus for circular calendar
+
+let magUpClose = document.querySelector('#magUpCloseContainer'); //div containing newspaper up close and controls
+let newspaperToggleBtn = document.querySelector('#newspaperToggle'); //icon to toggle greyscale/colour newspaper
+let newspaper = document.querySelector('#magUpClose'); //image of newspaper up close
+let exitNewspaperView = document.getElementById('exitNewspaperView'); //icon to exit newspaper up close
+let newspaperMoreInfoBtn = document.getElementById('newspaperVariant'); //icon to toggle more newspaper info
+
+let whatsthis = document.getElementById('whatsthis'); //icon to toggle more variant information
+let showExtraInfo = document.querySelector('#showExtraInfo'); //div containing more variant information
+let exitVariantViewBtn = document.getElementById('exitVariantView'); //icon to exit variant view
+const myEnterVRButton = document.getElementById('myEnterVRButton'); //fullscreen icon
+
+
+// EVENT LISTENERS //
+
+//if enter button is clicked, hide the immersive section overlay
 enterBtn.addEventListener('click', function (e) {
   overlay.style.visibility = 'hidden';
   });
-// });
-
-let infoButton = document.querySelector('#infoButton');
-let infoBoxContainer = document.querySelector('.infoBoxContainer');
-let infoBox = document.querySelector('.infoBox');
-
-let audioPickup = document.querySelector('#pickup');
-
-let allHotspots = document.querySelectorAll('.hotspots');
-let tooltip = "";
-let tooltipDiv = document.querySelector(".div-tooltip");
-
-let numbers = document.querySelectorAll('.numbers');
-let allNumbers = document.getElementById('allNumbers');
-
-let clock = document.querySelector('#clock');
-let magazine = document.querySelector('#magazine');
-// let magazineUpClose = document.querySelector('#showMagazine');
-
-let magUpClose = document.querySelector('#magUpCloseContainer');
-let newspaperToggleBtn = document.querySelector('#newspaperToggle');
-let newspaper = document.querySelector('#magUpClose');
-let exitNewspaperView = document.getElementById('exitNewspaperView');
-let newspaperMoreInfoBtn = document.getElementById('newspaperVariant');
-
-let calendar = document.querySelector('#calendar');
-let torus = document.querySelector('#torus');
-
-let whatsthis = document.getElementById('whatsthis');
-let showExtraInfo = document.querySelector('#showExtraInfo');
-const myEnterVRButton = document.getElementById('myEnterVRButton');
-let yOffset360;
-
-let exitVariantViewBtn = document.getElementById('exitVariantView');
-
-// EVENT LISTENERS //
 
 //Show/hide Immersive Section Instructions when info button is clicked
 infoButton.addEventListener('click', function(){
@@ -123,14 +118,14 @@ infoButton.addEventListener('click', function(){
   }
   else{
     infoBoxContainer.style.visibility = 'visible';
-  }
-  
+  }  
 });
+//hide instructions when the container is clicked
 infoBoxContainer.addEventListener('click', function (){
   infoBoxContainer.style.visibility = 'hidden';
 });
 
-//SHOW TOOLTIPS ON HOVER
+//SHOW TOOLTIPS ON HOVER based on the elements data-tooltip content
 allHotspots.forEach((spot) => {
   spot.addEventListener('mouseenter', function(e){
     displayTooltip(e, this); //detect which object has been hovered over and pass it to displayTooltip function to show relevant tip
@@ -140,179 +135,173 @@ allHotspots.forEach((spot) => {
   })
 });
 
-//CLOCK HOTSPOT
+//CLOCK HOTSPOT - when clicked show the time-space variant and hide other variants
 clock.addEventListener('click', function(){
-  if(allNumbers.object3D.visible === false){ //check if the numbers are hidden, if so
-    hideMagazineUpClose();                   //ensure other variants are hidden 
-    hide3DCalendar();
-    showMagazineOnTable();
-    showExitVariantBtn()
+  if(allNumbers.object3D.visible === false){ //check if the numbers' visibility is hidden, if so
+    hideMagazineUpClose();  //ensure newspaper up close is hidden 
+    hide3DCalendar(); //ensure 3D calendar is hidden 
+    showMagazineOnTable(); //ensure newspaper on table is still visible
 
-    showAllNumbers()   //show the numbers         
-    showVariantInfoBtn(); //assign the correct variant info text to the ? button
+    showExitVariantBtn() //show the exit variant button
+    showAllNumbers()   //show the numbers for time-space synaesthesia         
+    showVariantInfoBtn(); //assign the correct variant info text to the ? button and make it visible
     whatsthis.object3D.position.set(2.7, 2, -7.5); //assign the ? button's position and rotation
     whatsthis.object3D.rotation.set(0, 0, 0);
-  }else{ //hide the numbers if the clock is clicked again
+  }else{ //otherwise, if the numbers are already visible, hide them if the clock is clicked again
     hideAllNumbers()
-    hideVariantInfoBtn();
-    hideExitVariantBtn();
+    hideVariantInfoBtn(); //hide the more variant info button
+    hideExitVariantBtn(); //hide the exit variant button
   }
 });
 
-//NEWSPAPER HOTSPOT
-magazine.addEventListener('click', function() {  
-  if((magUpClose.style.visibility) === 'hidden'){
-    hide3DCalendar();
-    hideAllNumbers()
-    hideExitVariantBtn()
-    showMagazineUpClose();
-    hideMagazineOnTable();
-  }else{  
-    hideMagazineUpClose();
-    showMagazineOnTable();
-    // hideVariantInfoBtn();
+//NEWSPAPER HOTSPOT - when clicked show the grapheme-color variant example and hide other variants
+newspaperonTable.addEventListener('click', function() {  
+  if((magUpClose.style.visibility) === 'hidden'){ //check if the newspaper's visibility is hidden, if so
+    hide3DCalendar(); //ensure 3D calendar is hidden
+    hideAllNumbers() //hide the time-space numbers
+    hideExitVariantBtn() //hide the exit variant button
+    showMagazineUpClose(); //show the newspaper up close and its controls
+    hideMagazineOnTable(); //hide the newspaper on the table
+  }else{   //otherwise, if the newspaper's visibility is visible, if so hide it
+    hideMagazineUpClose(); //hide the newspaper up close and its controls
+    showMagazineOnTable(); //show the newspaper on the table
   }
 });
-//on question mark click
+
+//More information icon - if icon is clicked make the extra information container visible
 newspaperMoreInfoBtn.addEventListener('click', function() {  
   showExtraInfo.style.visibility = 'visible';
-  assignInfoText();
+  assignInfoText(); //set the correct text to info container
   });
-//on close button click
+//Exit Newspaper View - if exit button is clicked hide the newspaper
 exitNewspaperView.addEventListener('click', function(){  
   if(magUpClose.style.visibility === 'visible'){
-    hideMagazineUpClose();
-    showMagazineOnTable();
-    hideVariantInfoBtn();
+    hideMagazineUpClose(); //hide the newspaper up close and its controls
+    showMagazineOnTable(); //show the newspaper on the table
+    hideVariantInfoBtn(); //hide the more variant info button
   }
 });
-//on toggle colour/monochrome click
+//On toggle colour/monochrome click
 newspaperToggleBtn.addEventListener('click', function(){
-  if(newspaper.getAttribute('src') == "images/aframe-assets/newspaper_colour.png"){
-    newspaperToggleBtn.src = 'images/icons/color-newspaper.png';
+  if(newspaper.getAttribute('src') == "images/aframe-assets/newspaper_colour.png"){ //check the image src of newspaper, if it's coloured version, show the greyscale
     newspaper.setAttribute('src', 'images/aframe-assets/newspaper_bw.png');
+    newspaperToggleBtn.src = 'images/icons/color-newspaper.png'; //set the toggle icon to the coloured wheel
+    
     
   }
-  else{
+  else{ //otherwise if the image src is greyscale version, show the coloured version
     newspaper.setAttribute('src', 'images/aframe-assets/newspaper_colour.png');    
-    newspaperToggleBtn.src = 'images/icons/greyscale-newspaper.png';
+    newspaperToggleBtn.src = 'images/icons/greyscale-newspaper.png'; //set the toggle icon to the black and white colour wheel
   }
 });
 
 //CALENDAR HOTSPOT
 calendar.addEventListener('click', function(){
   if(torus.object3D.visible === false){
-    hideAllNumbers()
-    hideMagazineUpClose();
-    showMagazineOnTable();
-    showExitVariantBtn();  
+    hideAllNumbers() //hide the time-space numbers
+    hideMagazineUpClose(); //ensure the newspaper up close and its controls are hidden
+    showMagazineOnTable(); //ensure the newspaper on the table is visble
+    showExitVariantBtn();  //assign the correct variant info text to the ? button and make it visible
 
-    show3DCalendar();
-    showVariantInfoBtn();
-    whatsthis.object3D.position.set(0.8, 2.5, 6);
+    show3DCalendar(); //show the 3D torus
+    showVariantInfoBtn(); //assign the correct variant info text to the ? button and make it visible
+    whatsthis.object3D.position.set(0.8, 2.5, 6); //assign the ? button's position and rotation
     whatsthis.object3D.rotation.set(-0.1, 180, 0);
   }
   else{
-    hide3DCalendar();
-    hideVariantInfoBtn();
-    hideExitVariantBtn()
+    hide3DCalendar(); //hide the 3D torus
+    hideVariantInfoBtn(); //hide the more variant info button
+    hideExitVariantBtn() //hide the exit variant button
   }
 });
 
-// torus.addEventListener('click', function(){  
-//   if(torus.object3D.visible === true){
-//     hide3DCalendar();
-//     hideVariantInfoBtn();
-//     hideExitVariantBtn()
-//   }  
-// });
-//SHOW VARIANT INFORMATION ON CLICK
+
+//SHOW VARIANT INFORMATION ON ICON CLICK
 whatsthis.addEventListener('click', function(){
   showExtraInfo.style.visibility = 'visible';
-  assignInfoText();
+  assignInfoText(); //set the correct text to info container
 });
-//HIDE VARIANT INFO ON CLICK
+
+//HIDE VARIANT INFO ON CONTAINER CLICK
 showExtraInfo.addEventListener('click', function(){
   showExtraInfo.style.visibility = 'hidden';
 });
 
-//TOGGLE FULLSCREEN
+//EXIT VARIANT VIEW ON EXIT BTN CLICK
+exitVariantViewBtn.addEventListener('click', function(){
+  hideAllNumbers(); //hide the time-space numbers
+  hide3DCalendar(); //hide the 3D torus
+  hideVariantInfoBtn(); //hide the more variant info button
+  hideExitVariantBtn(); //hide the exit variant button
+})
+
+//TOGGLE FULLSCREEN ON ICON CLICK
 myEnterVRButton.addEventListener("click", function(e) {
   e.preventDefault();
   toggleFullScreen360();
 }, false);
 
 
-//EXIT VARIANT VIEW
-exitVariantViewBtn.addEventListener('click', function(){
-  hideAllNumbers();
-  hide3DCalendar();
-  hideVariantInfoBtn();
-  hideExitVariantBtn();
-})
-
-// FUNCTIONS //
-// function checkOverlayVisibility(){
-  
-// }
-
-
+//FUNCTIONS
+//Make allNumbers object visible
 function showAllNumbers(){
   allNumbers.object3D.visible = true;
 }
+//Hide allNumbers object
 function hideAllNumbers(){
   allNumbers.object3D.visible = false;
 }
+//Make newspaperonTable object visible and add the rayobjs class so that it is clickable
 function showMagazineOnTable(){
-  magazine.object3D.visible = true;
-  magazine.classList.add('rayobjs');
+  newspaperonTable.object3D.visible = true;
+  newspaperonTable.classList.add('rayobjs');
 }
+//Hide newspaperonTable and remove the rayobjs class so that it is not clickable
 function hideMagazineOnTable(){
-  magazine.object3D.visible = false;
-  magazine.classList.remove('rayobjs'); 
+  newspaperonTable.object3D.visible = false;
+  newspaperonTable.classList.remove('rayobjs'); 
 }
-// function showMagazineUpClose(){
-//   magazineUpClose.object3D.visible = true; 
-//   magazineUpClose.classList.add('rayobjs');
-// }
+//Show newspaper up close
 function showMagazineUpClose(){
   magUpClose.style.visibility = 'visible';
-
 }
-// function hideMagazineUpClose(){
-//   magazineUpClose.object3D.visible = false;
-//   magazineUpClose.classList.remove('rayobjs');
-// }
+//Hide newspaper up close
 function hideMagazineUpClose(){
   magUpClose.style.visibility = 'hidden';
 }
+//Show torus object/circular calendar
 function show3DCalendar(){
   torus.object3D.visible = true;
-  // torus.classList.add('rayobjs');
 }
+//Hide torus object/circular calendar
 function hide3DCalendar(){
   torus.object3D.visible = false;
-  // torus.classList.remove('rayobjs');
 }
+//Show the icon for variant information and add rayobjs class so that it is clickable
 function showVariantInfoBtn(){
   whatsthis.object3D.visible = true;
   whatsthis.classList.add('rayobjs');
 }
+//Hide the icon for variant information and add rayobjs class so that it is not clickable
 function hideVariantInfoBtn(){
   whatsthis.object3D.visible = false;
   whatsthis.classList.remove('rayobjs');
 }
+//Show the exit icon for variant views
 function showExitVariantBtn(){
   exitVariantViewBtn.style.visibility = "visible";
 }
+//Hide the exit icon for variant views
 function hideExitVariantBtn(){
   exitVariantViewBtn.style.visibility = "hidden";
 }
+//set the tooltip inner html to the content of the current object's data-tooltip. Make the tooltip visible
 function displayTooltip(e, obj){
   tooltip = obj.dataset.tooltip;
   tooltipDiv.innerHTML = tooltip;
   tooltipDiv.style.visibility = "visible";
 }
+//attach the appropriate innerHTML to the variant info container based on which variant is currently visible
 function assignInfoText(){
   let variantH2 = document.getElementById('variantH2');
   let variantP = document.getElementById('variantP');
@@ -327,32 +316,31 @@ function assignInfoText(){
     variantP.innerHTML = "Sequence-space synaesthesia can cause any type of ordered sequence (days, months, playing cards, etc.) to be experienced visually, in the mind's eye or in the physical space around them. In this example, each numbers are represented by distinct colours and appear physically in space.";
   }
 }
+//toggle full screen mode 
 function toggleFullScreen360(){
   if ((document.fullScreenElement && document.fullScreenElement !== null) ||
-        (!document.mozFullScreen && !document.webkitIsFullScreen)) {
-          yOffset360 = window.pageYOffset;
+        (!document.mozFullScreen && !document.webkitIsFullScreen)) {  //check that fullscreen mode is not already in effect
         if (immersiveSection.requestFullScreen) {
-          immersiveSection.requestFullScreen();
+          immersiveSection.requestFullScreen(); //enter fullscreen
         } else if (document.documentElement.mozRequestFullScreen) {
-          immersiveSection.mozRequestFullScreen();
+          immersiveSection.mozRequestFullScreen(); //enter fullscreen - Firefox
         } else if (document.documentElement.webkitRequestFullScreen) {
-          immersiveSection.webkitRequestFullScreen();
+          immersiveSection.webkitRequestFullScreen(); //enter fullscreen - Safari
         }
-    } else {
+    } else { //if fullscreen is active, exit it
         if (document.cancelFullScreen) {
-            document.exitFullscreen();
-            // setTimeout(() => window.scrollTo(0, yOffset360), 100);
-            
+            document.exitFullscreen();    //exit fullscreen        
         } else if (document.mozCancelFullScreen) {
-            document.mozancelFullScreen();
-            // setTimeout(() => window.scrollTo(0, yOffset360), 100);
+            document.mozancelFullScreen(); //exit fullscreen - Firefox
         } else if (document.webkitCancelFullScreen) {
-            document.webkitCancelFullScreen();
-            // setTimeout(() => window.scrollTo(0, yOffset360), 100);
+            document.webkitCancelFullScreen(); //exit fullscreen - Safari
         }
     }
 }
-//CHECK IF USER IS IN PARTICULAR PAGE SECTION
+
+//jQuery
+
+//FUNCTION WHICH CHECKS IF USER IS IN PARTICULAR PAGE SECTION
 $.fn.isInViewport = function() {
   let elementTop = $(this).offset().top;
   let elementBottom = elementTop + $(this).outerHeight();
@@ -362,92 +350,22 @@ $.fn.isInViewport = function() {
 
   return elementBottom > viewportTop && elementTop < viewportBottom;
 };
-//Exit Room
-function toggleSkyVideo(){
-  let sky = document.querySelector('a-sky');
-  let videosphere = document.querySelector('a-videosphere');
-  if(sky.object3D.visible === true){
-   sky.object3D.visible = false;
-   hideObjects();
-   videosphere.object3D.visible = true;
-   videosphere.components.material.data.src.currentTime = 0;
-   videosphere.components.material.material.map.image.play();    
-  }else if(videosphere.object3D.visible === true){
-   videosphere.object3D.visible = false;
-   videosphere.components.material.material.map.image.pause();
-   sky.object3D.visible = true; 
-   showObjects(); 
-  } 
- }
-//hideObjects function will hide all clickable objects while in thesecond room
-function hideObjects(){
-  hideMagazineOnTable();
-  calendar.object3D.visible = false;
-  calendar.classList.remove('rayobjs');
-  clock.object3D.visible = false;
-  clock.classList.remove('rayobjs');
-}
-function showObjects(){
-  showMagazineOnTable()
-  calendar.object3D.visible = true;
-  calendar.classList.add('rayobjs');
-  clock.object3D.visible = true;
-  clock.classList.add('rayobjs');
-}
 
+//Magnify Library
 let windowsize = $(window).width();
-
+//When DOM is loaded, make magnify function available
 $(document).ready(function() { 
-  if(windowsize > 1920){
+  if(windowsize > 1920){ //check if the user's window width is greater than 1920, if so set the magnify image to a larger version of the newspaper
     $('.zoom').magnify({
       speed: 100,
       src: 'images/aframe-assets/newspaper_colour.png'
       });
 
   }
-  else{
+  else{ //otherwise if the window width is less than than 1920, set the magnify image to a smaller version of the newspaper
     $('.zoom').magnify({
       speed: 100,
       src: 'images/aframe-assets/newspaper-colour-smaller.png'
       });
-
-  }
-    
-
+  } 
 });
-
-//change sky when icon is clicked
-
-// function toggleSky(){  
-//   if(document.querySelector('a-sky').getAttribute('src') === '#panorama2'){
-//     document.getElementById('sky').setAttribute('src', '#panorama');
-//     magazine.object3D.visible = true;
-//     magazine.classList.add('rayobjs');
-//     calendar.object3D.visible = true;
-//     calendar.classList.add('rayobjs');
-//     clock.object3D.visible = true;
-//     clock.classList.add('rayobjs');
-//   }else if(document.querySelector('a-sky').getAttribute('src') === '#panorama'){
-//     document.getElementById('sky').setAttribute('src', '#panorama2');
-//     magazine.object3D.visible = false;
-//     magazine.classList.remove('rayobjs');
-//     calendar.object3D.visible = false;
-//     calendar.classList.remove('rayobjs');
-//     clock.object3D.visible = false;
-//     clock.classList.remove('rayobjs');
-//   }
-// }
-
-// let randomColor = Math.floor(Math.random()*16777215).toString(16);
-
-
-// let paperSound = new Howl({
-//   src: ["../sounds/Page_Turn.mp3"],
-//   preload: true, html5: true
-// });
-// let pickUpSound = new Howl({
-//   src: ["../sounds/pick-up.wav"],
-//   preload: true, html5: true
-// });
-// let paperSound;
-// let pickUpSound;
