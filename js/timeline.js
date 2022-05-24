@@ -31,7 +31,12 @@ slider.addEventListener('mousedown', function(){
 //when the mouse lifted over the slider, change the cursor to "grab"
 slider.addEventListener('mouseup', function(){
   slider.style.cursor = "grab";
-})
+});
+
+//change the color of the experience link to black while in the Video section
+let historySection = document.querySelector('.historyVideo');
+let expbtn = document.querySelector(".expbtn");
+let navLinks = document.querySelector("#navLinks");
 
 //Synaesthesia Is... section
 let description = document.getElementById('addDescription');
@@ -72,7 +77,7 @@ let changeOnHover = document.querySelector('#changeOnHover');
 changeOnHover.addEventListener('mouseenter', function(){
   changeOnHover.src =  "images/history/five-senses-animated.gif";
 });
-//onmouseout, change the image src to original senses
+//onmouseout, change the image src to original
 changeOnHover.onmouseout = function(){
   changeOnHover.src =  "images/history/five-senses.png";
 }
@@ -250,6 +255,8 @@ scollbtn.addEventListener("click", () => {
   }
 });
 
+
+
 let arrowtochange = document.querySelector(".arrowtochange");
 //Check whehter the footer is in viewport. If it is, change scroll down icon to scroll-to-top
 function checkPosition(){
@@ -258,7 +265,7 @@ function checkPosition(){
   }
   else{
     arrowtochange.setAttribute('src', 'images/icons/scroll-down-arrows.svg');
-  }  
+  } 
 }    
 //call the checkPosition() function when there is a scroll or resize event
 $(window).on('resize scroll', function() {
