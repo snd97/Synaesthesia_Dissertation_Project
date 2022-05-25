@@ -372,10 +372,10 @@ em{
 /* A BRIEF HISTORY OF SYNAESTHESIA */
 .briefHistory{
     background-image: url('../images/backgrounds/history_bg.jpg'); /*set bg to wooden table*/
-    background-repeat:round;
+    background-size: cover;
 }
 .briefHistory p{
-    font-size: 4em;
+    font-size: 5em;
     text-align: center;
     color: white;
 }
@@ -384,7 +384,7 @@ em{
 .firstDoc{
     background-color: #fdbb2d; /*backup bg*/  
     background-image: url('../images/backgrounds/wooden-table.jpg'); /*set bg to wooden table*/
-    background-repeat:round;
+    background-size: cover;
     flex-direction: column; 
 }
 .firstDoc p{
@@ -403,6 +403,7 @@ em{
 .sachsThesis{
     background-color: #fdbb2d; /*backup bg*/  
     background-image: url('../images/backgrounds/wooden-table.jpg');
+    background-size: cover;
     color:#ffffff;
     text-align: center;
 }
