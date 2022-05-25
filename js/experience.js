@@ -145,7 +145,7 @@ clock.addEventListener('click', function(){
     showExitVariantBtn() //show the exit variant button
     showAllNumbers()   //show the numbers for time-space synaesthesia         
     showVariantInfoBtn(); //assign the correct variant info text to the ? button and make it visible
-    whatsthis.object3D.position.set(2.7, 2, -7.5); //assign the ? button's position and rotation
+    whatsthis.object3D.position.set(2.5, 2, -7.5); //assign the ? button's position and rotation
     whatsthis.object3D.rotation.set(0, 0, 0);
   }else{ //otherwise, if the numbers are already visible, hide them if the clock is clicked again
     hideAllNumbers()
@@ -206,7 +206,8 @@ calendar.addEventListener('click', function(){
     show3DCalendar(); //show the 3D torus
     showVariantInfoBtn(); //assign the correct variant info text to the ? button and make it visible
     whatsthis.object3D.position.set(0.8, 2.5, 6); //assign the ? button's position and rotation
-    whatsthis.object3D.rotation.set(-0.1, 180, 0);
+    // whatsthis.object3D.rotation.set(-0.1, 180, 0);
+    whatsthis.object3D.rotation.set(-0.2, 180, 0);
   }
   else{
     hide3DCalendar(); //hide the 3D torus
