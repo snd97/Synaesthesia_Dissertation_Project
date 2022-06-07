@@ -1000,20 +1000,49 @@ input:checked + .slider:before {
   gap:35vh;
 }
 
-.infoBox{
-  height:50vh;
-  width:60vw;
+#infoBox{
+  height:60vh;
+  width:70vw;
 }
 #infoHeading{
-font-size: 4vh;
+font-size: 5vh;
 }
+#infoPara{
+  width:85%;
+  font-size: 2.5vh;
+}
+#infoButton{
+  width: 42px;
+  height: 42px;
+}
+#myEnterVRButton{ 
+  width: 40px;
+  height: 40px;
+}
+#myEnterVRButton:hover, #infoButton:hover{
+  transform:scale(1);
+}
+#exitVariantView{
+  width:6vh;
+  right:20px;
+  top:20px;
+}
+#exitVariantView:hover{
+  transform: scale(1);
+}
+
+
+
 #toggleContainer p{
   color: rgb(247, 247, 247);
   font-size: 3vw;
   /* margin-bottom: 1vh; */
 }
+
+
 #toggleContainer{
   gap:10vw;
+  z-index:10;
 }
 }
 @media (max-width: 600px) { 
