@@ -467,13 +467,50 @@ h1{
   font-size: 2vh;
 }
 @media only screen and (max-width: 800px) {
+  #navLinks{
+    font-size:1.5vh;
+    width: 12vw;
+    height: 3vw;
+  }
+  .scroll img{
+    width:2vh;
+  }
+  .homebtn img{
+    width:2.7vh;
+  }
+  .hero{
+    flex-direction: column;
+    gap:15vw;      
+  }
+  .hero .left{
+    width:75vw;  
+  }
+  h1{
+    font-size: 5vh;
+  }
+  .hero p{
+    font-size:1.9vh;
+  }
+  #floatdiv{
+    width:35vw;
+  }
+  .float{
+    width:35vw;
+  }
+  .arrowscolour{
+    width:45vw;
+    
+  }
+
   .infoBox{
     height:50vh;
     width:60vw;
   }
   #infoHeading{
   font-size: 4vh;
-}
+  }
+
+
 }
 /*PIANO SECTION*/
 .piano{

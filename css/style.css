@@ -187,8 +187,27 @@ a{
 
     /* For mobile phones reduce gap between buttons */
 @media only screen and (max-width: 768px) {
+    #info {
+        margin-bottom: 30%;
+    }
     #links{
         gap:50px;
+    }
+    .titleFirst{
+        font-size: 2vh;
+    }
+    .element{
+        margin-top: 10%;
+        font-size:4vh;
+    }
+    .glow-on-hover {
+        font-size:1em;
+        width: 180px;
+        height: 30px;
+    }
+    #hoverTexts p{
+        font-size: 0.9em;
+        width:80%;
     }
   }
 
