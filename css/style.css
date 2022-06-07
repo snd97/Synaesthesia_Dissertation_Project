@@ -191,7 +191,7 @@ a{
         margin-bottom: 30%;
     }
     #links{
-        gap:50px;
+        gap:40px;
     }
     .titleFirst{
         font-size: 2vh;
@@ -203,7 +203,7 @@ a{
     .glow-on-hover {
         font-size:1em;
         width: 180px;
-        height: 30px;
+        height: 40px;
     }
     #hoverTexts p{
         font-size: 0.9em;
