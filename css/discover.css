@@ -2,12 +2,7 @@ html, body{
     scroll-behavior: smooth;
 }
 
-@media only screen and (max-width: 800px) {
-    html{
-      width: 100vw;
-      overflow-x: hidden;
-    }
-}
+
 body {
     font-family: 'Alice','Unica One', serif;
     cursor: url('../images/cursor.png'), auto;	/* set own cursor */	 
@@ -767,6 +762,10 @@ color:rgb(0, 0, 0);
     .seventytypes img, .percent img{
         width:100%;
     }
+    .synIs{
+        background-size:cover;
+        background-position: center;
+    }
     .synIs h3{
         font-size:9vw;
     }
@@ -807,6 +806,25 @@ color:rgb(0, 0, 0);
         width:50%;        
         padding:30px;        
     }
+    .briefHistory p{
+        font-size: 7vh;
+        padding:10px;
+        width:80vw;
+    }
+    .firstDoc{
+        gap:50px;
+    }
+    .firstDoc p{
+        font-size: 15vh;
+    }
+    .firstDoc #smaller{
+        font-size: 3vh;
+        width:80vw;
+        line-height: 1.4;
+    }
+    .sachsThesis img{
+        width:75vw;
+    }
     #OtherSachs h2{
         font-size: 1em;
     }
@@ -816,4 +834,17 @@ color:rgb(0, 0, 0);
         padding-bottom: 150px;
         /* gap:10vh; */
     }    
+    .sachsNumbers{
+        visibility: hidden;
+    }
+    .sachsnumberContainer:after{
+        content: "view on desktop"
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    html {
+      width: 100vw;
+      overflow-x: hidden;
+    }
 }
