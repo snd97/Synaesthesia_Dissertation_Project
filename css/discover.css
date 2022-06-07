@@ -1,6 +1,13 @@
 html, body{
     scroll-behavior: smooth;
 }
+
+@media only screen and (max-width: 800px) {
+    html{
+      width: 100vw;
+      overflow-x: hidden;
+    }
+}
 body {
     font-family: 'Alice','Unica One', serif;
     cursor: url('../images/cursor.png'), auto;	/* set own cursor */	 
