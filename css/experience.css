@@ -510,6 +510,7 @@ h1{
     width:65vw;
     font-size: 2.5vh;
     line-height: 1.5;
+    gap:8vh;
   }
   .enter {
     transform: scale(1.2);
