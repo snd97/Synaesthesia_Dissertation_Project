@@ -422,6 +422,10 @@ em{
     display: flex;
     flex-wrap: nowrap;
 }
+#showOnSmallDevice{
+    visibility: hidden;
+    display: none;
+}
 /*sections holding numbers*/
 div.sachsNumbers{
     display:flex;
@@ -762,7 +766,15 @@ color:rgb(0, 0, 0);
         height: 2.5vw;
       }
     #instructions-para{
-        font-size: 1.8vh;
+        font-size: 1.5vh;
+    }
+    #instructions-para img{
+        width:20px;
+    }
+    .whatis h2{
+        font-size: 12vw;  
+        width:70vw;
+        text-align: center;
     }
     .seventytypes img, .percent img{
         width:100%;
@@ -862,13 +874,29 @@ color:rgb(0, 0, 0);
         padding-top: 50px;
         padding-bottom: 150px;
         /* gap:10vh; */
-    }    
+    }   
+    .sachsnumberContainer{
+        width: 100vw; /*extra long length to hold the horizontal scroll sections*/
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
     .sachsNumbers{
+        display: none;
         visibility: hidden;
     }
-    .sachsnumberContainer:after{
-        content: "view on desktop"
+    #showOnSmallDevice{
+        visibility: visible;
+        display:block;
     }
+    #showOnSmallDevice img{
+        width:300px;
+    }
+    .colourHearing h2{
+
+    }
+
 }
 
 @media only screen and (max-width: 800px) {
