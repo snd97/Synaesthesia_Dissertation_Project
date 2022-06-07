@@ -515,9 +515,39 @@ h1{
   .enter {
     transform: scale(1.2);
   }
-  #containerwithHint h2{
-    font-size: 5vh;
+
+
+  #infoBox{
+    height:60vh;
+    width:70vw;
   }
+  #infoHeading{
+  font-size: 5vh;
+  }
+  #infoPara{
+    width:85%;
+    font-size: 2.5vh;
+  }
+  #infoButton{
+    width: 42px;
+    height: 42px;
+  }
+  #myEnterVRButton{ 
+    width: 40px;
+    height: 40px;
+  }
+  #myEnterVRButton:hover, #infoButton:hover{
+    transform:scale(1);
+  }
+  #exitVariantView{
+    width:6vh;
+    right:20px;
+    top:20px;
+  }
+  #exitVariantView:hover{
+    transform: scale(1);
+  }
+  
 }
 /*PIANO SECTION*/
 .piano{
@@ -971,87 +1001,6 @@ input:checked + .slider:before {
   width: 30vh;
   height: 30vh;
 }
-
-@media (max-width: 1000px) { 
-  .piano-keys {
-    height: 40vh;
-    width:70vw;
-  }
-}
-
-@media (max-width: 800px) { 
-  .piano{
-    background-size:cover;
-    background-position: center;
-
-}
-  #shapes img{
-    width: 30vh;
-  }
-  #C, #E, #highC{
-    width: 15vh;
-    height: 15vh;
-  }
-  .piano-keys {
-    height: 35vh;
-    width:80vw;  
- }
- #containerwithHint{
-  gap:35vh;
-}
-
-#infoBox{
-  height:60vh;
-  width:70vw;
-}
-#infoHeading{
-font-size: 5vh;
-}
-#infoPara{
-  width:85%;
-  font-size: 2.5vh;
-}
-#infoButton{
-  width: 42px;
-  height: 42px;
-}
-#myEnterVRButton{ 
-  width: 40px;
-  height: 40px;
-}
-#myEnterVRButton:hover, #infoButton:hover{
-  transform:scale(1);
-}
-#exitVariantView{
-  width:6vh;
-  right:20px;
-  top:20px;
-}
-#exitVariantView:hover{
-  transform: scale(1);
-}
-
-
-
-#toggleContainer p{
-  color: rgb(247, 247, 247);
-  font-size: 3vw;
-  /* margin-bottom: 1vh; */
-}
-
-
-#toggleContainer{
-  gap:10vw;
-  z-index:10;
-}
-}
-@media (max-width: 600px) { 
-  .piano-keys {
-    height: 30vh;
-    width:80vw;
-  }
-}
-
 #highE{
   position:absolute; 
   left:75vw;
@@ -1068,6 +1017,73 @@ font-size: 5vh;
 #A img{
   transform: scale(0.6);
 }
+
+@media (max-width: 1000px) { 
+  .piano-keys {
+    height: 40vh;
+    width:70vw;
+  }
+}
+
+@media (max-width: 800px) { 
+  .piano{
+    background-size:cover;
+    background-position: center;
+}
+  #shapes img{
+    width: 30vh;
+  }
+  #C, #E, #highC{
+    width: 15vh;
+    height: 15vh;
+  }
+  .piano-keys {
+    height: 35vh;
+    width:80vw;  
+ }
+ #toggleContainer{
+  gap:10vw;
+  z-index:10;
+}
+ #containerwithHint{
+  gap:35vh;
+  }
+  #containerwithHint h2{
+    font-size: 5vh;
+  }
+  .pianoInfoBox {
+    z-index:11;
+    bottom: 10vh;
+    right:10vw; 
+    height:70vh;
+    width:70vw;
+    padding: 30px;
+  }
+  .pianoInfoBox p{
+    width:60vw;
+    font-size: 2.5vh;
+  }
+  .pianoInfoBox img{
+    margin:0;
+    width:43vw;
+    padding:25px;
+  }
+  .pianoInfoBox:after {
+    visibility: hidden;
+  }
+#toggleContainer p{
+  color: rgb(247, 247, 247);
+  font-size: 3vw;
+}
+
+}
+@media (max-width: 600px) { 
+  .piano-keys {
+    height: 30vh;
+    width:80vw;
+  }
+}
+
 
 footer{
   background-color: #D63286;
