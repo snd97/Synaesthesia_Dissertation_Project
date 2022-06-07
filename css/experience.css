@@ -576,7 +576,7 @@ h1{
   margin: 0;
   align-self: center;
 }
-#optionsContainer{
+/* #optionsContainer{
   right:2.5vw;
   bottom: 1.5vw;
   display:flex;
@@ -584,7 +584,7 @@ h1{
   align-items: center;
   gap:30px;
 
-}
+} */
 /*FULLSCREEN OPTION*/
 .pianoInfoIcon{
   cursor: pointer;
@@ -1050,6 +1050,8 @@ input:checked + .slider:before {
   }
   #containerwithHint h2{
     font-size: 5vh;
+    width: 80%;
+    top:15%;
   }
   .pianoInfoBox {
     z-index:11;
@@ -1070,6 +1072,9 @@ input:checked + .slider:before {
   }
   .pianoInfoBox:after {
     visibility: hidden;
+  }
+  #toggleContainer{
+    gap:25vw;
   }
 #toggleContainer p{
   color: rgb(247, 247, 247);
