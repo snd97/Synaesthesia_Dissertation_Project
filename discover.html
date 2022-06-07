@@ -195,27 +195,55 @@
 			<!--Twelfth Section - Bleuler and Lehmann-->
 			<section class="section-panels bleulerlehmann">
 				<!--Include two figures and an audio clip-->
-				<figure>
-					<img src="images/history/bleuler.png" class="eugen zoom" 
-						alt="Portrait image of Eugen Bleuler"
-						data-magnify-src="images/history/bleuler-color.png" >  <!--data-magnify-src refers to the image to show on the magnifying glass --> 
-					<figcaption>Eugen Bleuler</figcaption>
-				</figure>
-				<div>
+				<div id="larger-devices">
+					<figure>
+						<img src="images/history/bleuler.png" class="eugen zoom" 
+							alt="Portrait image of Eugen Bleuler"
+							data-magnify-src="images/history/bleuler-color.png" >  <!--data-magnify-src refers to the image to show on the magnifying glass --> 
+						<figcaption>Eugen Bleuler</figcaption>
+					</figure>
+					<div id="audio-content">
+						<h2>1881</h2>
+						<p>"Secondary Sensations"</p>
+						<!--insert audio clip with controls which explains more about Bleuler and Lehmann-->
+						<audio controls id="audioOne">						
+							<source src="sounds/Audio/Bleuler_and_Lehmann_audio.mp3" type="audio/mp3">
+						Your browser does not support the audio element.
+						</audio>
+						<p style="visibility:hidden;" id="showOnComplete">Continue to next section</p>
+					</div>	
+					<figure>
+						<img src="images/history/lehmann.png" class="lehmann zoomlehmann"
+							alt="Portrait image of Karl Bernhard Lehmann" data-magnify-src="images/history/lehmann.png" >
+						<figcaption>Karl Bernhard Lehmann</figcaption>
+					</figure>
+				</div>
+				<div id="smaller-devices">
 					<h2>1881</h2>
 					<p>"Secondary Sensations"</p>
-					<!--insert audio clip with controls which explains more about Bleuler and Lehmann-->
-					<audio controls id="audioOne">						
-						<source src="sounds/Audio/Bleuler_and_Lehmann_audio.mp3" type="audio/mp3">
-					Your browser does not support the audio element.
-					</audio>
-					<p style="visibility:hidden;" id="showOnComplete">Continue to next section</p>
-				</div>	
-				<figure>
-					<img src="images/history/lehmann.png" class="lehmann zoomlehmann"
-						alt="Portrait image of Karl Bernhard Lehmann" data-magnify-src="images/history/lehmann.png" >
-					<figcaption>Karl Bernhard Lehmann</figcaption>
-				</figure>
+					<div id="two-lads">
+						<figure>
+							<img src="images/history/bleuler.png" class="eugen zoom" 
+								alt="Portrait image of Eugen Bleuler"
+								data-magnify-src="images/history/bleuler-color.png" >  <!--data-magnify-src refers to the image to show on the magnifying glass --> 
+							<figcaption>Eugen Bleuler</figcaption>
+						</figure>
+						<figure>
+							<img src="images/history/lehmann.png" class="lehmann zoomlehmann"
+								alt="Portrait image of Karl Bernhard Lehmann" data-magnify-src="images/history/lehmann.png" >
+							<figcaption>Karl Bernhard Lehmann</figcaption>
+						</figure>
+					</div>
+					<div id="bl-info">						
+						<!--insert audio clip with controls which explains more about Bleuler and Lehmann-->
+						<audio controls id="audioOne">						
+							<source src="sounds/Audio/Bleuler_and_Lehmann_audio.mp3" type="audio/mp3">
+						Your browser does not support the audio element.
+						</audio>
+						
+					</div>	
+
+				</div>
 			</section>
 			<!--Thirteenth Section - Six Types of Synaesthesia-->
 			<section class="section-panels sixTypes">
