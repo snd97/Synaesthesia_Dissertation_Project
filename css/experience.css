@@ -980,6 +980,11 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 800px) { 
+  .piano{
+    background-size:cover;
+    background-position: center;
+
+}
   #shapes img{
     width: 30vh;
   }
