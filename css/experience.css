@@ -469,8 +469,8 @@ h1{
 @media only screen and (max-width: 800px) {
   #navLinks{
     font-size:1.5vh;
-    width: 12vw;
-    height: 3vw;
+    width: 17vw;
+    height: 2.5vw;
   }
   .scroll img{
     width:2vh;
@@ -480,7 +480,7 @@ h1{
   }
   .hero{
     flex-direction: column;
-    gap:15vw;      
+    gap:25vw;      
   }
   .hero .left{
     width:75vw;  
@@ -492,32 +492,38 @@ h1{
     font-size:1.9vh;
   }
   #floatdiv{
-    width:35vw;
+    width:25vh;
   }
   .float{
-    width:35vw;
+    width:25vh;
   }
   .arrowscolour{
-    width:45vw;
-    
+    width:30vh;    
   }
-
-  .infoBox{
-    height:50vh;
-    width:60vw;
+  #splash h2{
+    font-size: 5vh;
+    padding-left: 30px;
+    padding-right: 30px;
   }
-  #infoHeading{
-  font-size: 4vh;
+  #splash p{
+    color:white;
+    width:65vw;
+    font-size: 2.5vh;
+    line-height: 1.5;
   }
-
-
+  .enter {
+    transform: scale(1.2);
+  }
+  #containerwithHint h2{
+    font-size: 5vh;
+  }
 }
 /*PIANO SECTION*/
 .piano{
     height:100vh;
     width:100vw;
     background: url('../images/backgrounds/smokey.jpg');
-     background-size: cover;
+    background-size: cover;
     background-color: #000000;
     cursor: url('../images/cursor.png'), auto;
 }
@@ -986,6 +992,22 @@ input:checked + .slider:before {
  }
  #containerwithHint{
   gap:35vh;
+}
+
+.infoBox{
+  height:50vh;
+  width:60vw;
+}
+#infoHeading{
+font-size: 4vh;
+}
+#toggleContainer p{
+  color: rgb(247, 247, 247);
+  font-size: 3vw;
+  /* margin-bottom: 1vh; */
+}
+#toggleContainer{
+  gap:10vw;
 }
 }
 @media (max-width: 600px) { 
