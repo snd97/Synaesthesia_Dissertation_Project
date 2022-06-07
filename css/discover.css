@@ -779,12 +779,20 @@ color:rgb(0, 0, 0);
         width: 25vw;
         height: 3vw;
       }
-      .scroll img{
-        width:2vh;
-      }
-      .homebtn img{
-        width:2.7vh;
-      }
+    .scroll img{
+    width:2vh;
+    }
+    .homebtn img{
+    width:2.7vh;
+    }
+    .homebtn:hover, .scroll:hover{
+        background-color: #ffcc0000;
+    }
+    /*on hovering over the nav bar, add yellow text shadow to Experience link */  
+    #navLinks:hover > .expbtn:hover{
+        text-shadow: #FFCC00 1px 0 10px;
+    }
+    
     #instructions-para{
         visibility: hidden;
     }
