@@ -971,9 +971,6 @@ color:rgb(0, 0, 0);
        flex-direction: column;
        gap:30px;
     }
-    #showOnComplete{
-        font-size: 3vh;
-    }
     .sixTypes img{
         width:30vh;
     }
@@ -981,18 +978,27 @@ color:rgb(0, 0, 0);
         font-size: 4.5vw;
         text-align: center;
         width:85vw;
-
     }
     .sixTypes h2{
         margin-bottom: -10px;
         font-size: 4vw;
        text-align: center;
     }
-
     .colourHearing div{
         width:80%;
     }
+    .colourHearing p{
+        font-size: 3vh;    
+    }
+    
 
+    .conclusion p{
+        font-size: 3vh;
+        width:80vw;
+    }
+    .conclusion img{
+        width:80vw;
+    }
 }
 
 @media only screen and (max-width: 800px) {
@@ -1001,3 +1007,49 @@ color:rgb(0, 0, 0);
       overflow-x: hidden;
     }
 }
+
+@media (max-width: 800px) { 
+    footer{
+      flex-direction: column;
+      gap:20px;
+      font-size: 0.8em;
+    }
+  }
+  @media (max-width: 1200px) { 
+    .millet{
+        padding-left:0vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:40px;
+    }
+    .millet h2{
+        position:relative;
+        margin: 0;
+        font-size:12vh;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg) translateX(0%); 
+    }
+    #milletText{
+        margin-left: 0vw;
+        padding:0;
+        width:80vw;
+        justify-content: center;
+        align-items: center;
+        gap:30px;
+    }
+    #large{
+        font-size:8vh;
+    }
+    .smallerMillet{
+        font-size:3vh;
+    }
+    .millet img{
+        width:80vw;
+    }
+
+  }
