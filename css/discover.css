@@ -269,7 +269,7 @@ em{
   }
 /*move left arrow slightly to the left*/
   .slick-prev{
-    left: -35px;
+    left: -35px;   
   }
 
 /*SEVENTY TYPES OF SYNAESTHESIA SECTION*/
@@ -776,14 +776,22 @@ color:rgb(0, 0, 0);
         font-size:5vw;
     }
     .slider {
-        width:90%; 
+        width:95%; 
     }
     .slider img{
         width:25vh;
     }
     .slider p{
-        font-size: 2vh;
+        font-size: 2.5vh;
+        width:40vw;
     }
+    .slick-prev{
+        visibility: hidden;
+      }
+      .slick-next{
+        visibility: hidden;
+      }
+    
     .causesOfSyn {
         height:auto; 
         padding-top:20px;   
@@ -805,6 +813,12 @@ color:rgb(0, 0, 0);
     .causesOfSyn figure{
         width:50%;        
         padding:30px;        
+    }
+    .seventytypes img{
+        transform: scale(1.1);
+    }
+    .percent img{
+        transform: scale(1.2);
     }
     .briefHistory p{
         font-size: 7vh;
