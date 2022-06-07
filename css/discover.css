@@ -779,6 +779,10 @@ color:rgb(0, 0, 0);
         width: 25vw;
         height: 3vw;
       }
+      #navLinks:hover{
+        background-color: rgba(249, 251, 252, 0);
+        opacity:0.9;
+    }
     .scroll img{
     width:2vh;
     }
