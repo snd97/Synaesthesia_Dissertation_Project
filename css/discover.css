@@ -756,6 +756,11 @@ color:rgb(0, 0, 0);
         font-size: 2vh;
         width:70vw;
     }
+    #navLinks{
+        font-size:1.5vh;
+        width: 17vw;
+        height: 2.5vw;
+      }
     #instructions-para{
         font-size: 1.8vh;
     }
@@ -771,6 +776,9 @@ color:rgb(0, 0, 0);
     }
     .synIs h2{
         font-size:5vw;
+    }
+    .synIs p{
+        width: 70vw;
     }
     #addDescription{
         font-size:5vw;
@@ -791,7 +799,12 @@ color:rgb(0, 0, 0);
       .slick-next{
         visibility: hidden;
       }
-    
+    .seventytypes img{
+        transform: scale(1.1);
+    }
+    .percent img{
+        transform: scale(1.2);
+    }
     .causesOfSyn {
         height:auto; 
         padding-top:20px;   
@@ -811,19 +824,21 @@ color:rgb(0, 0, 0);
         font-size: 2.5vh;
     }
     .causesOfSyn figure{
-        width:50%;        
+        width:50vw;        
         padding:30px;        
     }
-    .seventytypes img{
-        transform: scale(1.1);
+    .synaesthetes img{
+        width:50vw;
     }
-    .percent img{
-        transform: scale(1.2);
+    .synaesthetes figcaption{
+        font-size: 3vw;
     }
+
     .briefHistory p{
         font-size: 7vh;
         padding:10px;
         width:80vw;
+        text-align: center;
     }
     .firstDoc{
         gap:50px;
