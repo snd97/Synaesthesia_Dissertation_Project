@@ -897,7 +897,10 @@ color:rgb(0, 0, 0);
     #OtherSachs h2{
         font-size: 1em;
     }
- 
+    .sachsNumbers{
+        display: none;
+        visibility: hidden;
+    }
     .sachsnumberContainer{
         width: 100vw; /*extra long length to hold the horizontal scroll sections*/
         height: 100%;
@@ -905,13 +908,21 @@ color:rgb(0, 0, 0);
         align-items: center;
         flex-wrap: nowrap;
     }
-    .sachsNumbers{
-        display: none;
-        visibility: hidden;
-    }
+
     #showOnSmallDevice{
+        position: absolute;
         visibility: visible;
-        display:block;
+        display:flex;
+        gap:30px;
+        flex-direction: column;
+        width:100vw;
+        height:100vh;
+        justify-content: center;
+        align-items: center;
+    }
+    #showOnSmallDevice p{
+        color:white;
+        font-size: 3vh;
     }
     #showOnSmallDevice img{
         width:300px;
