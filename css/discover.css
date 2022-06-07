@@ -559,7 +559,21 @@ div.sachsNumbers{
     font-size: 1.2em;
     gap:3vw;
 }
-.bleulerlehmann div{
+#larger-devices{
+    visibility: visible;
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;  
+    gap:3vw;
+}
+#smaller-devices{
+    visibility: hidden;
+    display: none;
+}
+#audio-content{
   display: flex;
   flex-direction: column;  
   align-items: center;
@@ -762,11 +776,17 @@ color:rgb(0, 0, 0);
     }
     #navLinks{
         font-size:1.5vh;
-        width: 17vw;
-        height: 2.5vw;
+        width: 25vw;
+        height: 3vw;
+      }
+      .scroll img{
+        width:2vh;
+      }
+      .homebtn img{
+        width:2.7vh;
       }
     #instructions-para{
-        font-size: 1.5vh;
+        visibility: hidden;
     }
     #instructions-para img{
         width:20px;
@@ -869,12 +889,7 @@ color:rgb(0, 0, 0);
     #OtherSachs h2{
         font-size: 1em;
     }
-    .historyVideo{
-        height: auto;
-        padding-top: 50px;
-        padding-bottom: 150px;
-        /* gap:10vh; */
-    }   
+ 
     .sachsnumberContainer{
         width: 100vw; /*extra long length to hold the horizontal scroll sections*/
         height: 100%;
@@ -893,8 +908,89 @@ color:rgb(0, 0, 0);
     #showOnSmallDevice img{
         width:300px;
     }
-    .colourHearing h2{
+    .historyVideo{
+        height: auto;
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }  
+    .historyVideo video{
+        width:80vw;  
+    }
+    .bleulerlehmann{
+        flex-direction: column;
+        height:100vh;
+    }
+    .bleulerlehmann div{
+        /* position: absolute; */
+    }
+    #larger-devices{
+        visibility: hidden;
+        display: none;
+    }
+    #smaller-devices{
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+    #two-lads{
+        display: flex;
+        gap:40px;
+    }
+    .bleulerlehmann figcaption{
+        font-size: 3vh;
+        margin-top: 13px;
+        text-align: center;
+    }
+    .bleulerlehmann img{
+        margin-top:0;    
+    }
+    .bleulerlehmann h2, .bleulerlehmann p{
+        text-align: center;
+    }
+    .bleulerlehmann h2{
+        font-size: 5vh;
+    }
+    .bleulerlehmann p{
+        font-size: 3vh;
+        margin-top: 20px;
+        margin-bottom: 20px;  
+    }
+    .eugen, .lehmann{
+        width:30vw;
+        border: 10px solid rgb(255, 255, 255);
+        border-radius: 10px;
+        border-bottom: 30px solid rgb(245, 245, 245);
+    }
+    #bl-info{
+       margin-top: 50px;
+       display: flex;
+       flex-direction: column;
+       gap:30px;
+    }
+    #showOnComplete{
+        font-size: 3vh;
+    }
+    .sixTypes img{
+        width:30vh;
+    }
+    .sixTypes .mainpara{
+        font-size: 4.5vw;
+        text-align: center;
+        width:85vw;
 
+    }
+    .sixTypes h2{
+        margin-bottom: -10px;
+        font-size: 4vw;
+       text-align: center;
+    }
+
+    .colourHearing div{
+        width:80%;
     }
 
 }
