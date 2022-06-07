@@ -55,7 +55,7 @@ descriptors.forEach( (word) => {
   }
 //when the mouse is not hovering over any of the words, change the descriptive paragraph content
     word.addEventListener('mouseout', function() {
-      description.innerHTML = "Hover to find out more.";
+      description.innerHTML = "Hover/touch to learn more.";
     })
   });
 });
