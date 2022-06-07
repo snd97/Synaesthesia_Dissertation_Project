@@ -485,6 +485,9 @@ h1{
   .homebtn img{
     width:2.7vh;
   }
+  .homebtn:hover, .scroll:hover{
+    background-color: #ffcc0000;
+}
   .hero{
     flex-direction: column;
     gap:25vw;      
