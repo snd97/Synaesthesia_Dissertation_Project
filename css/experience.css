@@ -466,11 +466,17 @@ h1{
   width:80%;
   font-size: 2vh;
 }
+
 @media only screen and (max-width: 800px) {
+  body{
+    width:100vw;
+    height: 100vh;
+  }
   #navLinks{
     font-size:1.5vh;
     width: 17vw;
     height: 2.5vw;
+    
   }
   .scroll img{
     width:2vh;
@@ -516,7 +522,6 @@ h1{
     transform: scale(1.2);
   }
 
-
   #infoBox{
     height:60vh;
     width:70vw;
@@ -546,6 +551,9 @@ h1{
   }
   #exitVariantView:hover{
     transform: scale(1);
+  }
+  #controls{
+    gap:30px;
   }
   
 }
@@ -1080,12 +1088,22 @@ input:checked + .slider:before {
   color: rgb(247, 247, 247);
   font-size: 3vw;
 }
+.hint{
+  font-size: 2vw;
+  padding:2px;
+  visibility: hidden;
+
+}
 
 }
 @media (max-width: 600px) { 
   .piano-keys {
     height: 30vh;
     width:80vw;
+  }
+  .pianoInfoBox {
+    bottom: 10vh;
+    right:5vw; 
   }
 }
 
@@ -1096,7 +1114,7 @@ footer{
   display: flex;
   align-items:center;
   justify-content: center;
-  gap:15px;
+  gap:100px;
   padding-left:30px;
   color:white;
   
@@ -1110,4 +1128,11 @@ footer{
   
   footer a:hover{  
   color:rgb(0, 0, 0);
+  }
+
+  @media (max-width: 800px) { 
+    footer{
+      flex-direction: column;
+      gap:20px;
+    }
   }
